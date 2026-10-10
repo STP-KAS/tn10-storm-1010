@@ -38,7 +38,7 @@ Same 8-hour plan as Friday. Friday failed because the shared desk node locus die
 - The bot's own wallet. Coins through TN10 ops' claim protocol (claim file created with O_EXCL, then the append-only used list) so no coin is spent twice. Skip coins already claimed, including the parked trump2028 odd-mint coins.
 - Rate = the Bot column below. Fees: pair 200 and 300 sompi/gram, half the lanes each, frozen for the step from n2's quote. Cap 600, floor 200. If n2's quote is above 200, do not send that step: sit it out and log `step-sit-out` with the quote.
 - Pause every other bot-side sender that is not in this plan from G1 to END, so B0 means something. If a sender belongs to another bot (for example kns tn10), ask it to pause and log what it said.
-- **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when n2's RPC fails for 5 s in a row, n2 is not synced, sink lag is over 60 s, or n2's virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. This is also in TN10 ops' sender gate.
+- **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when n2's RPC fails for 5 s in a row, n2 is not synced, sink lag from a fresh read is over 60 s, or n2's virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. This is also in TN10 ops' sender gate.
 - The headline is network unique accepted tx/s, counted once. Do not add your accepted count to Build's.
 
 ## Clock
@@ -114,7 +114,7 @@ The full list, file names and columns are [go/LOGGING.md](../LOGGING.md). In sho
 - **Per step** (`steps.csv`, `confirm.csv`, `order.csv`), **gates** (`gates.csv`), **NTP offset** at start and end (`ntp.csv`).
 - Per-transaction logs stay on the box. Ids, keys, addresses never go in git.
 
-Write live logs on the box under `/workspace/artifacts/stress-tests/storm-1010/bot/`.
+TN10 ops' scheduler writes raw per-second and per-minute logs on the box under `/workspace/artifacts/stress-tests/box-1008/storm1010p/out/` and `run/`. tn ops2 builds the count, COMBINED and the write-up from those.
 
 ## After END
 

@@ -44,7 +44,7 @@ If stp has to paste anything, give him **one** PowerShell block that does all of
 - Fees: pair 200 and 300 sompi/gram, half the lanes each, frozen for the step from your node's quote. Cap 600, floor 200. If the quote is above 200, do not send that step: sit it out and log `step-sit-out` with the quote.
 - At G1 stop every desk sender not in this plan.
 - **One step clock.** One holder process reads one step file: a copy of [go/steps-utc.json](../steps-utc.json) as it was when stp sent this prompt. Refuse any step file whose T0 differs from the header above. Never start a second holder. (Friday failed partly because an old step file came back.)
-- **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when your node's RPC fails for 5 s in a row, the node is not synced, sink lag is over 60 s, or the virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. One failed read never ends a row.
+- **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when your node's RPC fails for 5 s in a row, the node is not synced, sink lag from a fresh read is over 60 s, or the virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. One failed read never ends a row.
 - The headline is network unique accepted tx/s, counted once. Do not add your accepted count to the bot's.
 
 ## Clock

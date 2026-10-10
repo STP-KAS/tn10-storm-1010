@@ -2,7 +2,7 @@
 
 # logs/bot
 
-Written by TN10 ops and tn ops2 after the run. Node: n2 (box). Live logs are kept at `/workspace/artifacts/stress-tests/storm-1010/bot/` on the box; this folder gets the copy.
+Written by TN10 ops and tn ops2 after the run. Node: n2 (box). Live logs are kept at `/workspace/artifacts/stress-tests/box-1008/storm1010p/out/` and `run/` on the box; this folder gets the copy.
 
 Status: **empty until the run.**
 
