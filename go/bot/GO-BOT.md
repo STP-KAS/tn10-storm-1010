@@ -41,6 +41,17 @@ Same 8-hour plan as Friday. Friday failed because the shared desk node locus die
 - **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when n2's RPC fails for 5 s in a row, n2 is not synced, sink lag from a fresh read is over 60 s, or n2's virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. This is also in TN10 ops' sender gate.
 - The headline is network unique accepted tx/s, counted once. Do not add your accepted count to Build's.
 
+## Coins
+
+**Added 10 Oct 2026, 12:21 CEST, by stp.** The bot wallet holds millions of tKAS, but as about 2.7 million small coinbase coins. The senders can only spend coins on the bot's saved spendable list, and that list held only about 22,700 tKAS (7,120 coins, saved Friday). At the 25/75 split the bot needs about 24,000 tKAS of fees through the HOLD (800 tx/s). So the list must be refreshed from n2.
+
+- **When:** once n2 is synced with the UTXO index on, and before G1 if possible. Then check every 30 minutes during the run.
+- **How:** in small batches only. Use fresh mature coinbases (the coinbase feeder or a walk over n2's recent blocks), or a bounded UTXO query. **Never list the whole bot address in one call.** On 2 Oct, one getUtxosByAddresses call for the whole address pushed n0 to 9.4 GB of memory and it was OOM-killed. Watch n2's memory during a refresh and abort it if free memory on the box falls below 2 GB.
+- **Buffer:** keep at least 1.5 times the run's need, about **40,000 tKAS** unclaimed on the list. During the run, top up when the unclaimed balance falls below about **10,000 tKAS**.
+- **Never twice:** skip every coin already claimed (claim file created with O_EXCL, then the append-only used list), including coins parked for other jobs such as the trump2028 odd mints. A refresh only adds coins. It never re-adds a claimed one.
+- **Log** every refresh as an event in `events.csv` (`coin-refresh`: coins added, tKAS added, unclaimed balance after, method, n2 memory peak).
+- **If the buffer cannot be kept:** lower the bot's rate (log a `deviation` with the reason and the new rate). Do not stop the senders.
+
 ## Clock
 
 Brussels is UTC+2. Clocks in git stay in UTC.

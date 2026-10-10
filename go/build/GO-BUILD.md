@@ -46,6 +46,7 @@ If stp has to paste anything, give him **one** PowerShell block that does all of
 - **One step clock.** One holder process reads one step file: a copy of [go/steps-utc.json](../steps-utc.json) as it was when stp sent this prompt. Refuse any step file whose T0 differs from the header above. Never start a second holder. (Friday failed partly because an old step file came back.)
 - **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when your node's RPC fails for 5 s in a row, the node is not synced, sink lag from a fresh read is over 60 s, or the virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. One failed read never ends a row.
 - The headline is network unique accepted tx/s, counted once. Do not add your accepted count to the bot's.
+- **Coins (added 10 Oct 2026, 12:21 CEST, by stp):** if Build also spends from a saved coin list, the same refresh rule as the bot's applies to Build's own wallet and node: refresh in small, memory-safe batches once the node is synced, keep about 1.5 times the run's need unclaimed, top up when it runs low, never re-add a coin already spent or claimed, log every refresh, and lower the rate (logged) rather than stop if the buffer cannot be kept. See [Coins in GO-BOT](../bot/GO-BOT.md#coins). If Build manages coins differently, keep your own method.
 
 ## Clock
 
