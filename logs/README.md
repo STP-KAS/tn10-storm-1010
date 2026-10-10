@@ -13,4 +13,8 @@ File names and columns are in [go/LOGGING.md](../go/LOGGING.md). Both folders us
 
 The headline, network unique accepted tx/s, is counted once from chain data, never summed across sides. A combined page, `COMBINED.md`, is written here after both folders are filled.
 
+Live during the run: [bot/SUMMARY.md](bot/SUMMARY.md), every 15 minutes. How to read the run in 5 minutes: [go/LOGGING.md](../go/LOGGING.md#how-to-read-the-run-in-5-minutes).
+
+After the run, once the logs are on GitHub, TN10 ops makes this repo public.
+
 Counts only. No txid, key, seed, host IP, port or wallet address.

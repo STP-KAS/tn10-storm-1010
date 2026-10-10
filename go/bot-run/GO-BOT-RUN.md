@@ -147,6 +147,7 @@ If stp says stop: write the halt flag, **stop the watchdog first**, then the sch
 2. **COUNT (the two hours after END, before pruning):** per minute from one hour before T0 to END: network unique accepted, blocks, our mined blocks. Write `chain-count.csv`.
 3. Read Build's `FOR-TN10-OPS-result-1010.txt` when stp passes it. Write `steps.csv` and `SUMMARY.md`: per step, bot submitted and accepted, Build's reported numbers, network unique accepted (counted once, never summed), what broke, what was done.
 4. **By PUSH:** commit to `logs/bot/` in **STP-KAS/tn10-storm-1010**, as STP-KAS. Counts only. No force-push. No tags or releases.
+5. **Make public (the bot's task):** after the run, once the logs are on GitHub, TN10 ops makes this repo public. Until then it stays private.
 
 ## Never
 

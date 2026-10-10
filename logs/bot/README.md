@@ -4,23 +4,25 @@
 
 Written by TN10 ops and tn ops2 after the run. Submits: the five public TN10 nodes. Reads: n2 (the bot's private node on the box). Raw logs stay on the box; this folder gets the copy.
 
-Status: **empty until the run.**
+Status: **`SUMMARY.md` is live from G1 (20:00 CEST)**, updated every 15 minutes; the other files land after END.
 
-| File | What |
-|---|---|
-| `sec.csv` | Every second: sent, submit-ok, rejects, accepted, mempool, lag, sync, DAA, blue score, fees, node state |
-| `minute.csv` | Every minute: the same, plus network unique accepted, blocks, our mined blocks, CPU, RAM, disk |
-| `rejects.csv` | Rejects by reason |
-| `miner.csv` | Miner state, hashrate, blocks found, every 10 s |
-| `host.csv` | CPU, RAM, disk, datadir size, every 10 s |
-| `node.csv` | Node health every 10 s |
-| `public-nodes.csv` | Per minute, per public node: submits ok, rejects, errors |
-| `events.csv` | Gates, steps, sender pause and stop, node-dead and node-back, restarts, miner on and off, deviations |
-| `steps.csv` | One row per step, with clean yes or no |
-| `gates.csv` | The G1 and G2 reads, incl. the Build-started check |
-| `ntp.csv` | Clock offset at start and end |
-| `chain-count.csv` | Per-minute chain count, one hour before T0 to END, made in the COUNT row before pruning |
-| `confirm.csv` | Confirmation time by fee tier |
-| `SUMMARY.md` | Counts per step, what broke, what was done |
+| File | Every | What | Read it for |
+|---|---|---|---|
+| `sec.csv` | every second | One row per second per side: what the senders did and how the node looked. | [columns](../../go/LOGGING.md#seccsv) |
+| `minute.csv` | every minute | One row per minute per side; the file to line up with Kaspa Pulse's count. | [columns](../../go/LOGGING.md#minutecsv) |
+| `public-nodes.csv` | every minute, per public node | Which public node took, refused or failed. | [columns](../../go/LOGGING.md#public-nodescsv) |
+| `rejects.csv` | every second with a reject | Why submits failed. | [columns](../../go/LOGGING.md#rejectscsv) |
+| `miner.csv` | every 10 s | The side's one miner. | [columns](../../go/LOGGING.md#minercsv) |
+| `host.csv` | every 10 s | The machine: is it the bottleneck? | [columns](../../go/LOGGING.md#hostcsv) |
+| `node.csv` | every 10 s | The side's own node (bot: n2, the reader; Build: its desk node). | [columns](../../go/LOGGING.md#nodecsv) |
+| `events.csv` | each event | Everything that happened, in order (list below). | [columns](../../go/LOGGING.md#eventscsv) |
+| `steps.csv` | each step | The verdict per step. | [columns](../../go/LOGGING.md#stepscsv) |
+| `gates.csv` | each gate read | G1 and G2. | [columns](../../go/LOGGING.md#gatescsv) |
+| `ntp.csv` | start and end | Clock offset, so rows line up. | [columns](../../go/LOGGING.md#ntpcsv) |
+| `chain-count.csv` | COUNT, per minute, one hour before T0 to END | The chain count right after END, before pruning (Kaspa Pulse's fix). | [columns](../../go/LOGGING.md#chain-countcsv) |
+| `confirm.csv` | each step | How long a submit took to be accepted, by fee tier. | [columns](../../go/LOGGING.md#confirmcsv) |
+| [`SUMMARY.md`](SUMMARY.md) | every 15 min during the run (live), final after END | Now, public nodes, n2 and box, steps so far, last events | the 5-minute read |
+
+How to read the run in 5 minutes: [go/LOGGING.md](../../go/LOGGING.md#how-to-read-the-run-in-5-minutes).
 
 Columns: [go/LOGGING.md](../../go/LOGGING.md). Counts only. Per-transaction logs and ids stay local.

@@ -2,7 +2,7 @@
 """The one place for times and rates of the bot run and the build run. Edit T0 below, run `python3 go/clock.py`, commit.
 
 It rewrites the blocks between <!-- clock:NAME --> and <!-- /clock:NAME --> in README.md, go/README.md,
-go/bot-run/GO-BOT-RUN.md and go/build-run/GO-BUILD-RUN.md, and writes go/steps-utc.json.
+go/bot-run/GO-BOT-RUN.md, go/build-run/GO-BUILD-RUN.md and docs/TIMELINE.md, and writes go/steps-utc.json.
 Every step is an offset in minutes from T0. Do not change times or rates by hand anywhere else.
 Do not run this after stp has sent the prompts (they are locked then).
 """
@@ -85,7 +85,7 @@ def targets():
 
 BLOCKS = {"table": table(), "key": key(), "header": header(), "targets": targets()}
 root = pathlib.Path(__file__).resolve().parent.parent
-for f in ["README.md", "go/README.md", "go/bot-run/GO-BOT-RUN.md", "go/build-run/GO-BUILD-RUN.md"]:
+for f in ["README.md", "go/README.md", "go/bot-run/GO-BOT-RUN.md", "go/build-run/GO-BUILD-RUN.md", "docs/TIMELINE.md"]:
     p = root / f; s = p.read_text()
     for name, body in BLOCKS.items():
         s = re.sub(rf"(<!-- clock:{name} -->\n)(?:.*?\n)?(<!-- /clock:{name} -->)", lambda m: m.group(1) + body + "\n" + m.group(2), s, flags=re.S)
