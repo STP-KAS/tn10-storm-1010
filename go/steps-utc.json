@@ -2,7 +2,7 @@
  "t0": "2026-10-10T15:00:00Z",
  "end": "2026-10-10T23:00:00Z",
  "success_network_unique_accepted_tx_s": 3000,
- "targets_note": "Fixed combined targets (stp, 10 Oct 12:05 CEST). B0 is measured and reported, not used for targets.",
+ "targets_note": "Fixed combined targets (stp, 10 Oct 12:05 CEST), split about 25% bot / 75% Build (stp 12:11 CEST). B0 is measured and reported, not used for targets.",
  "steps": [
   {
    "step": "PREP",
@@ -159,55 +159,55 @@
    "start": "2026-10-10T16:30:00Z",
    "end": "2026-10-10T16:45:00Z",
    "drain_end": "2026-10-10T16:50:00Z",
-   "bot": "400 (combined 1,000)",
-   "build": "600",
+   "bot": "250 (combined 1,000)",
+   "build": "750",
    "combined_tx_s": 1000,
-   "bot_tx_s": 400,
-   "build_tx_s": 600
+   "bot_tx_s": 250,
+   "build_tx_s": 750
   },
   {
    "step": "C1500",
    "start": "2026-10-10T16:50:00Z",
    "end": "2026-10-10T17:05:00Z",
    "drain_end": "2026-10-10T17:10:00Z",
-   "bot": "700 (combined 1,500)",
-   "build": "800",
+   "bot": "375 (combined 1,500)",
+   "build": "1,125",
    "combined_tx_s": 1500,
-   "bot_tx_s": 700,
-   "build_tx_s": 800
+   "bot_tx_s": 375,
+   "build_tx_s": 1125
   },
   {
    "step": "C2000",
    "start": "2026-10-10T17:10:00Z",
    "end": "2026-10-10T17:25:00Z",
    "drain_end": "2026-10-10T17:30:00Z",
-   "bot": "950 (combined 2,000)",
-   "build": "1,050",
+   "bot": "500 (combined 2,000)",
+   "build": "1,500",
    "combined_tx_s": 2000,
-   "bot_tx_s": 950,
-   "build_tx_s": 1050
+   "bot_tx_s": 500,
+   "build_tx_s": 1500
   },
   {
    "step": "C2500",
    "start": "2026-10-10T17:30:00Z",
    "end": "2026-10-10T17:45:00Z",
    "drain_end": "2026-10-10T17:50:00Z",
-   "bot": "1,200 (combined 2,500)",
-   "build": "1,300",
+   "bot": "625 (combined 2,500)",
+   "build": "1,875",
    "combined_tx_s": 2500,
-   "bot_tx_s": 1200,
-   "build_tx_s": 1300
+   "bot_tx_s": 625,
+   "build_tx_s": 1875
   },
   {
    "step": "MAX",
    "start": "2026-10-10T17:50:00Z",
    "end": "2026-10-10T18:05:00Z",
    "drain_end": "2026-10-10T18:15:00Z",
-   "bot": "1,600 (combined 3,500)",
-   "build": "1,900, may go above with up to 9 senders, never below",
+   "bot": "900 (combined 3,500)",
+   "build": "2,600, may go above with up to 9 senders, never below",
    "combined_tx_s": 3500,
-   "bot_tx_s": 1600,
-   "build_tx_s": 1900
+   "bot_tx_s": 900,
+   "build_tx_s": 2600
   },
   {
    "step": "B1",
@@ -222,11 +222,11 @@
    "start": "2026-10-10T18:25:00Z",
    "end": "2026-10-10T22:45:00Z",
    "drain_end": null,
-   "bot": "1,500 (combined 3,200); if not clean at that level, the last clean level, or 30 if none",
-   "build": "1,700; if not clean at that level, the last clean rate, or 250 if none",
+   "bot": "800 (combined 3,200); if not clean at that level, the last clean level, or 30 if none",
+   "build": "2,400; if not clean at that level, the last clean rate, or 250 if none",
    "combined_tx_s": 3200,
-   "bot_tx_s": 1500,
-   "build_tx_s": 1700
+   "bot_tx_s": 800,
+   "build_tx_s": 2400
   },
   {
    "step": "DRAIN",

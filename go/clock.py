@@ -32,22 +32,22 @@ STEPS = [
     ("OFF0", 60, 65, None, "Settle, 0. **Miner off.**", "Settle, 0. **Miner off.**"),
     ("OFF", 65, 80, 85, "Miners-off check: 60 (combined 250, same as X2)", "Miners-off check: 190 (same as X2)"),
     ("ON", 85, 90, None, "Settle, 0. **Miner on.**", "Settle, 0. **Miner on.**"),
-    ("C1000", 90, 105, 110, "400 (combined 1,000)", "600"),
-    ("C1500", 110, 125, 130, "700 (combined 1,500)", "800"),
-    ("C2000", 130, 145, 150, "950 (combined 2,000)", "1,050"),
-    ("C2500", 150, 165, 170, "1,200 (combined 2,500)", "1,300"),
-    ("MAX", 170, 185, 195, "1,600 (combined 3,500)", "1,900, may go above with up to 9 senders, never below"),
+    ("C1000", 90, 105, 110, "250 (combined 1,000)", "750"),
+    ("C1500", 110, 125, 130, "375 (combined 1,500)", "1,125"),
+    ("C2000", 130, 145, 150, "500 (combined 2,000)", "1,500"),
+    ("C2500", 150, 165, 170, "625 (combined 2,500)", "1,875"),
+    ("MAX", 170, 185, 195, "900 (combined 3,500)", "2,600, may go above with up to 9 senders, never below"),
     ("B1", 195, 205, None, "No load", "No load"),
-    ("HOLD", 205, 465, None, "1,500 (combined 3,200); if not clean at that level, the last clean level, or 30 if none", "1,700; if not clean at that level, the last clean rate, or 250 if none"),
+    ("HOLD", 205, 465, None, "800 (combined 3,200); if not clean at that level, the last clean level, or 30 if none", "2,400; if not clean at that level, the last clean rate, or 250 if none"),
     ("DRAIN", 465, 480, None, "Senders 0", "Senders 0"),
     ("END", 480, None, None, "Miner off. Live loggers stop.", "Miner off. Live loggers stop. Node stays up."),
     ("COUNT", 480, 600, None, "Chain count from n2, before pruning", "Chain count from the desk node, before pruning"),
     ("PUSH", None, 660, None, "Logs to `logs/bot/` in this repo", "Logs to `logs/build/` in this repo"),
 ]
 
-# Fixed targets in tx/s (stp, 10 Oct 12:05 CEST): step -> (combined, bot, build). B0 is measured and reported, not used for targets.
-TARGETS = {"X2": (250, 60, 190), "OFF": (250, 60, 190), "C1000": (1000, 400, 600), "C1500": (1500, 700, 800),
-           "C2000": (2000, 950, 1050), "C2500": (2500, 1200, 1300), "MAX": (3500, 1600, 1900), "HOLD": (3200, 1500, 1700)}
+# Fixed targets in tx/s (stp, 10 Oct 12:05 CEST; split 25% bot / 75% Build chosen by stp 12:11 CEST): step -> (combined, bot, build). B0 is measured and reported, not used for targets.
+TARGETS = {"X2": (250, 60, 190), "OFF": (250, 60, 190), "C1000": (1000, 250, 750), "C1500": (1500, 375, 1125),
+           "C2000": (2000, 500, 1500), "C2500": (2500, 625, 1875), "MAX": (3500, 900, 2600), "HOLD": (3200, 800, 2400)}
 SUCCESS_TX_S = 3000   # network unique accepted, step median over >= 10 valid minutes, counted once
 
 def t(m, tz=timezone.utc):
@@ -102,13 +102,14 @@ def targets():
         "The scaled rule, combined = (multiplier − 1) × B, is dropped. Friday's B was about 55 to 59 tx/s, so scaling would have shrunk "
         "every step (the 2,500 step to about 1,700) and the run could never reach 3,000. "
         "**The combined targets are now fixed.** B0 is still measured and reported, but it no longer sets any rate. "
+        "**Split, 12:11 CEST, stp:** about 25% bot, 75% Build, to keep load off the box (n2 and the bot's senders share one machine). "
         "Times, rows, gates, fees, the node-dead rule, the miners and logging are unchanged. Only the rates changed.",
         "",
         "Rates in tx/s, send window only (drains are 0). S1, S2, S3 and the rehearsal keep their rates from the timeline table.",
         "",
         *rows,
         "",
-        "- **MAX:** Build may go above 1,900 (up to 9 senders), never below its share.",
+        "- **MAX:** Build may go above 2,600 (up to 9 senders), never below its share.",
         "- **HOLD:** each side holds its HOLD rate only if it was clean at that rate or higher at MAX. If not, it holds its last clean rate "
         "(bot: or 30 if none; Build: or 250 if none). Neither side raises its rate mid-step to cover the other's shortfall.",
         f"- **Success line:** network unique accepted ≥ **{SUCCESS_TX_S:,} tx/s**, as the median of a step's valid minutes, over at least 10 valid minutes "
@@ -118,7 +119,8 @@ def targets():
         "**Not sure / open for debate: n2's disk at 2,000+ tx/s.** On this same box, the old pruned node n0 grew 2 to 3 GB a minute under sustained "
         "load of about 2,000 tx/s or more and filled its disk. n2 has the same disk, and it also runs the UTXO index. So n2 may hit its disk guard "
         "during MAX or the long hold. If it does, the bot's senders stop (logged as `disk-guard` and `node-dead`) and Build carries on alone. "
-        "Then the combined rate can fall below 3,000. We have not measured n2's growth at these rates yet.",
+        "Then the combined rate can fall below 3,000. n2 grows with the total network load, not with the bot's share, so the 25/75 split does not remove this risk. "
+        "We have not measured n2's growth at these rates yet.",
     ])
 
 BLOCKS = {"table": table(), "key": key(), "header": header(), "targets": targets()}
@@ -136,5 +138,5 @@ for sid, s, e, dr, bot, build in STEPS:
     row = {"step": sid, "start": iso(s), "end": iso(e), "drain_end": iso(dr), "bot": bot, "build": build}
     if sid in TARGETS: row.update(dict(zip(("combined_tx_s", "bot_tx_s", "build_tx_s"), TARGETS[sid])))
     steps.append(row)
-(root / "go/steps-utc.json").write_text(json.dumps({"t0": T0.strftime("%Y-%m-%dT%H:%M:%SZ"), "end": (T0 + timedelta(minutes=480)).strftime("%Y-%m-%dT%H:%M:%SZ"), "success_network_unique_accepted_tx_s": SUCCESS_TX_S, "targets_note": "Fixed combined targets (stp, 10 Oct 12:05 CEST). B0 is measured and reported, not used for targets.", "steps": steps}, indent=1, ensure_ascii=False) + "\n")
+(root / "go/steps-utc.json").write_text(json.dumps({"t0": T0.strftime("%Y-%m-%dT%H:%M:%SZ"), "end": (T0 + timedelta(minutes=480)).strftime("%Y-%m-%dT%H:%M:%SZ"), "success_network_unique_accepted_tx_s": SUCCESS_TX_S, "targets_note": "Fixed combined targets (stp, 10 Oct 12:05 CEST), split about 25% bot / 75% Build (stp 12:11 CEST). B0 is measured and reported, not used for targets.", "steps": steps}, indent=1, ensure_ascii=False) + "\n")
 print("T0", T0.isoformat())

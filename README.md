@@ -35,7 +35,7 @@ All times are set in one place, [go/clock.py](go/clock.py). The full timeline is
 ## Tonight
 
 <!-- clock:targets -->
-**Changed 10 Oct 2026, 12:05 CEST, by stp:** "make sure that bot and Build go over 3,000 tx/s, share the load." The goal is now **over 3,000 tx/s combined**, with the load shared between the two sides. The scaled rule, combined = (multiplier − 1) × B, is dropped. Friday's B was about 55 to 59 tx/s, so scaling would have shrunk every step (the 2,500 step to about 1,700) and the run could never reach 3,000. **The combined targets are now fixed.** B0 is still measured and reported, but it no longer sets any rate. Times, rows, gates, fees, the node-dead rule, the miners and logging are unchanged. Only the rates changed.
+**Changed 10 Oct 2026, 12:05 CEST, by stp:** "make sure that bot and Build go over 3,000 tx/s, share the load." The goal is now **over 3,000 tx/s combined**, with the load shared between the two sides. The scaled rule, combined = (multiplier − 1) × B, is dropped. Friday's B was about 55 to 59 tx/s, so scaling would have shrunk every step (the 2,500 step to about 1,700) and the run could never reach 3,000. **The combined targets are now fixed.** B0 is still measured and reported, but it no longer sets any rate. **Split, 12:11 CEST, stp:** about 25% bot, 75% Build, to keep load off the box (n2 and the bot's senders share one machine). Times, rows, gates, fees, the node-dead rule, the miners and logging are unchanged. Only the rates changed.
 
 Rates in tx/s, send window only (drains are 0). S1, S2, S3 and the rehearsal keep their rates from the timeline table.
 
@@ -43,18 +43,18 @@ Rates in tx/s, send window only (drains are 0). S1, S2, S3 and the rehearsal kee
 |---|---|---|---|---|---|
 | X2 | 15:40–15:55 | 17:40–17:55 | 250 | 60 | 190 |
 | OFF | 16:05–16:20 | 18:05–18:20 | 250 | 60 | 190 |
-| C1000 | 16:30–16:45 | 18:30–18:45 | 1,000 | 400 | 600 |
-| C1500 | 16:50–17:05 | 18:50–19:05 | 1,500 | 700 | 800 |
-| C2000 | 17:10–17:25 | 19:10–19:25 | 2,000 | 950 | 1,050 |
-| C2500 | 17:30–17:45 | 19:30–19:45 | 2,500 | 1,200 | 1,300 |
-| MAX | 17:50–18:05 | 19:50–20:05 | 3,500 | 1,600 | 1,900 |
-| HOLD | 18:25–22:45 | 20:25–00:45 Sun | 3,200 | 1,500 | 1,700 |
+| C1000 | 16:30–16:45 | 18:30–18:45 | 1,000 | 250 | 750 |
+| C1500 | 16:50–17:05 | 18:50–19:05 | 1,500 | 375 | 1,125 |
+| C2000 | 17:10–17:25 | 19:10–19:25 | 2,000 | 500 | 1,500 |
+| C2500 | 17:30–17:45 | 19:30–19:45 | 2,500 | 625 | 1,875 |
+| MAX | 17:50–18:05 | 19:50–20:05 | 3,500 | 900 | 2,600 |
+| HOLD | 18:25–22:45 | 20:25–00:45 Sun | 3,200 | 800 | 2,400 |
 
-- **MAX:** Build may go above 1,900 (up to 9 senders), never below its share.
+- **MAX:** Build may go above 2,600 (up to 9 senders), never below its share.
 - **HOLD:** each side holds its HOLD rate only if it was clean at that rate or higher at MAX. If not, it holds its last clean rate (bot: or 30 if none; Build: or 250 if none). Neither side raises its rate mid-step to cover the other's shortfall.
 - **Success line:** network unique accepted ≥ **3,000 tx/s**, as the median of a step's valid minutes, over at least 10 valid minutes (a valid minute is a complete minute in the chain count). The headline is counted once from chain data, never summed across the two nodes. Report the signed shape (Build) and the no-signature hop shape (bot) separately.
 
-**Not sure / open for debate: n2's disk at 2,000+ tx/s.** On this same box, the old pruned node n0 grew 2 to 3 GB a minute under sustained load of about 2,000 tx/s or more and filled its disk. n2 has the same disk, and it also runs the UTXO index. So n2 may hit its disk guard during MAX or the long hold. If it does, the bot's senders stop (logged as `disk-guard` and `node-dead`) and Build carries on alone. Then the combined rate can fall below 3,000. We have not measured n2's growth at these rates yet.
+**Not sure / open for debate: n2's disk at 2,000+ tx/s.** On this same box, the old pruned node n0 grew 2 to 3 GB a minute under sustained load of about 2,000 tx/s or more and filled its disk. n2 has the same disk, and it also runs the UTXO index. So n2 may hit its disk guard during MAX or the long hold. If it does, the bot's senders stop (logged as `disk-guard` and `node-dead`) and Build carries on alone. Then the combined rate can fall below 3,000. n2 grows with the total network load, not with the bot's share, so the 25/75 split does not remove this risk. We have not measured n2's growth at these rates yet.
 <!-- /clock:targets -->
 
 ## Why
