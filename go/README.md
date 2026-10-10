@@ -6,11 +6,11 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). Three of today's
 
 This page is the shared rule book. The two prompts are [bot/GO-BOT.md](bot/GO-BOT.md) and [build/GO-BUILD.md](build/GO-BUILD.md). Each prompt carries the same timeline, so each side can run from its own prompt alone. Logging is [LOGGING.md](LOGGING.md).
 
-Base: TN10 ops' plan, [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43). The step shape, gates, rates and fees below are the same. **The clock is 2 hours later** than that commit (T0 15:00Z, not 13:00Z), relayed by TN10 ops at 11:32 CEST, pending stp's confirmation. If this page and that plan disagree on a number, tell stp; do not pick one silently.
+Base: TN10 ops' plan, [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43). The step shape, gates and fees below are the same. **The rates are not:** since 10 Oct 12:05 CEST (stp) the combined targets are fixed and the load is shared, to go over 3,000 tx/s combined (see [Targets](#targets)). **The clock is 2 hours later** than that commit (T0 15:00Z, not 13:00Z), relayed by TN10 ops at 11:32 CEST, pending stp's confirmation. If this page and that plan disagree on a number, tell stp; do not pick one silently.
 
 ## Goals
 
-1. **Headline:** network unique accepted tx/s, counted once from chain data. Never add the bot's accepted count to Build's.
+1. **Headline:** network unique accepted tx/s, counted once from chain data. Never add the bot's accepted count to Build's. **Target (stp, 10 Oct 12:05 CEST): over 3,000 tx/s combined, load shared** (see [Targets](#targets)).
 2. Run the same 8-hour shape as Friday: rehearsal, B0, one side then the other, both, the ramp, miners-off, max, B1, long hold, drain.
 3. Each side on its own private, non-archival node. Show that a dead or lagging node no longer spoils the run.
 4. **Log everything that can be found** ([LOGGING.md](LOGGING.md)), on both sides, in one format.
@@ -66,24 +66,49 @@ Rates are tx/s. "Drain" means senders 0 and the row's logging continues.
 | S1 | 15:10–15:20 | 17:10–17:20 | 60 | 0 |
 | S2 | 15:20–15:30 | 17:20–17:30 | 0 | 60 |
 | S3 | 15:30–15:40 | 17:30–17:40 | 60 | 60 |
-| X2 | 15:40–15:55, drain to 16:00 | 17:40–17:55, drain to 18:00 | 2×, bot 60 | 2×, fallback 190, or the scaled rate |
+| X2 | 15:40–15:55, drain to 16:00 | 17:40–17:55, drain to 18:00 | 60 (combined 250) | 190 |
 | OFF0 | 16:00–16:05 | 18:00–18:05 | Settle, 0. **Miner off.** | Settle, 0. **Miner off.** |
-| OFF | 16:05–16:20, drain to 16:25 | 18:05–18:20, drain to 18:25 | Miners-off check, same rate as X2 | Miners-off check, same rate as X2 |
+| OFF | 16:05–16:20, drain to 16:25 | 18:05–18:20, drain to 18:25 | Miners-off check: 60 (combined 250, same as X2) | Miners-off check: 190 (same as X2) |
 | ON | 16:25–16:30 | 18:25–18:30 | Settle, 0. **Miner on.** | Settle, 0. **Miner on.** |
-| C1000 | 16:30–16:45, drain to 16:50 | 18:30–18:45, drain to 18:50 | bot 120 | 1,000 − bot (fallback 880) |
-| C1500 | 16:50–17:05, drain to 17:10 | 18:50–19:05, drain to 19:10 | bot 240 | 1,500 − bot (fallback 1,260) |
-| C2000 | 17:10–17:25, drain to 17:30 | 19:10–19:25, drain to 19:30 | bot 480 | 2,000 − bot (fallback 1,520) |
-| C2500 | 17:30–17:45, drain to 17:50 | 19:30–19:45, drain to 19:50 | bot 960 | 2,500 − bot (fallback 1,540) |
-| MAX | 17:50–18:05, drain to 18:15 | 19:50–20:05, drain to 20:15 | The bot's own max | Uncapped, up to 9 senders |
+| C1000 | 16:30–16:45, drain to 16:50 | 18:30–18:45, drain to 18:50 | 400 (combined 1,000) | 600 |
+| C1500 | 16:50–17:05, drain to 17:10 | 18:50–19:05, drain to 19:10 | 700 (combined 1,500) | 800 |
+| C2000 | 17:10–17:25, drain to 17:30 | 19:10–19:25, drain to 19:30 | 950 (combined 2,000) | 1,050 |
+| C2500 | 17:30–17:45, drain to 17:50 | 19:30–19:45, drain to 19:50 | 1,200 (combined 2,500) | 1,300 |
+| MAX | 17:50–18:05, drain to 18:15 | 19:50–20:05, drain to 20:15 | 1,600 (combined 3,500) | 1,900, may go above with up to 9 senders, never below |
 | B1 | 18:15–18:25 | 20:15–20:25 | No load | No load |
-| HOLD | 18:25–22:45 | 20:25–00:45 Sun | Last clean level, or 30 if none | Last clean rate, or 250 if none |
+| HOLD | 18:25–22:45 | 20:25–00:45 Sun | 1,500 (combined 3,200); if not clean at that level, the last clean level, or 30 if none | 1,700; if not clean at that level, the last clean rate, or 250 if none |
 | DRAIN | 22:45–23:00 | 00:45 Sun–01:00 Sun | Senders 0 | Senders 0 |
 | **END** | 23:00 | 01:00 Sun | Miner off. Live loggers stop. | Miner off. Live loggers stop. Node stays up. |
 | COUNT | 23:00–01:00 Sun | 01:00 Sun–03:00 Sun | Chain count from n2, before pruning | Chain count from the desk node, before pruning |
 | PUSH | by 02:00 Sun | by 04:00 Sun | Logs to `logs/bot/` in this repo | Logs to `logs/build/` in this repo |
 <!-- /clock:table -->
 
-**B and the combined targets** (from tn10-private). B is this run's own B0 (the first ten minutes from T0), with no load, on each side's own node. Do not reuse an old baseline (66 or 67). If 50 ≤ B ≤ 200, combined = (multiplier − 1) × B, and the 2× step is capped at 250. Otherwise the combined targets are 250, 1,000, 1,500, 2,000 and 2,500. The bot column is the bot's send rate. Build sends combined minus that column.
+**B.** B is this run's own B0 (the first ten minutes from T0), with no load, on each side's own node. Do not reuse an old baseline (66 or 67). B is measured and reported, but since 10 Oct 12:05 CEST it no longer sets any rate: the combined targets are fixed (see [Targets](#targets)). The Bot column is the bot's send rate; the Build column is Build's.
+
+## Targets
+
+<!-- clock:targets -->
+**Changed 10 Oct 2026, 12:05 CEST, by stp:** "make sure that bot and Build go over 3,000 tx/s, share the load." The goal is now **over 3,000 tx/s combined**, with the load shared between the two sides. The scaled rule, combined = (multiplier − 1) × B, is dropped. Friday's B was about 55 to 59 tx/s, so scaling would have shrunk every step (the 2,500 step to about 1,700) and the run could never reach 3,000. **The combined targets are now fixed.** B0 is still measured and reported, but it no longer sets any rate. Times, rows, gates, fees, the node-dead rule, the miners and logging are unchanged. Only the rates changed.
+
+Rates in tx/s, send window only (drains are 0). S1, S2, S3 and the rehearsal keep their rates from the timeline table.
+
+| Step | UTC | Brussels (CEST) | Combined target | Bot | Build |
+|---|---|---|---|---|---|
+| X2 | 15:40–15:55 | 17:40–17:55 | 250 | 60 | 190 |
+| OFF | 16:05–16:20 | 18:05–18:20 | 250 | 60 | 190 |
+| C1000 | 16:30–16:45 | 18:30–18:45 | 1,000 | 400 | 600 |
+| C1500 | 16:50–17:05 | 18:50–19:05 | 1,500 | 700 | 800 |
+| C2000 | 17:10–17:25 | 19:10–19:25 | 2,000 | 950 | 1,050 |
+| C2500 | 17:30–17:45 | 19:30–19:45 | 2,500 | 1,200 | 1,300 |
+| MAX | 17:50–18:05 | 19:50–20:05 | 3,500 | 1,600 | 1,900 |
+| HOLD | 18:25–22:45 | 20:25–00:45 Sun | 3,200 | 1,500 | 1,700 |
+
+- **MAX:** Build may go above 1,900 (up to 9 senders), never below its share.
+- **HOLD:** each side holds its HOLD rate only if it was clean at that rate or higher at MAX. If not, it holds its last clean rate (bot: or 30 if none; Build: or 250 if none). Neither side raises its rate mid-step to cover the other's shortfall.
+- **Success line:** network unique accepted ≥ **3,000 tx/s**, as the median of a step's valid minutes, over at least 10 valid minutes (a valid minute is a complete minute in the chain count). The headline is counted once from chain data, never summed across the two nodes. Report the signed shape (Build) and the no-signature hop shape (bot) separately.
+
+**Not sure / open for debate: n2's disk at 2,000+ tx/s.** On this same box, the old pruned node n0 grew 2 to 3 GB a minute under sustained load of about 2,000 tx/s or more and filled its disk. n2 has the same disk, and it also runs the UTXO index. So n2 may hit its disk guard during MAX or the long hold. If it does, the bot's senders stop (logged as `disk-guard` and `node-dead`) and Build carries on alone. Then the combined rate can fall below 3,000. We have not measured n2's growth at these rates yet.
+<!-- /clock:targets -->
 
 ## Gates
 
