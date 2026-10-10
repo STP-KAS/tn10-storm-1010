@@ -7,7 +7,7 @@ Empty until the run (T0 20:30 CEST, 10 Oct 2026). Each side drops its files here
 | Folder | Side | Submits to | Who writes it |
 |---|---|---|---|
 | [bot/](bot/README.md) | Bot run | The five public TN10 nodes (n2 for reads) | TN10 ops and tn ops2 |
-| [build/](build/README.md) | Build run | Public nodes or Build's own node, as Build chose | Grok Build |
+| [build/](build/README.md) | Build run | Build's own desk node (public nodes as fallback) | Grok Build |
 
 File names and columns are in [go/LOGGING.md](../go/LOGGING.md). Both folders use the same names, so files can be joined on `minute_utc` and lined up with Kaspa Pulse's count.
 

@@ -22,15 +22,23 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). The node-dead ru
 
 The 17:00 CEST run was halted by stp at 17:39 CEST because Build had not been started. Tonight the bot **does not send** until stp confirms you have started. So: arm everything as soon as you read this, and write the ready file (below) by 20:15 CEST.
 
-## You decide how you send
+## Where you send: your own desk node first, the public nodes as fallback
 
-stp, 17:43 CEST: if Build operates differently, let it be. Pick **one** of these, write it down in your ready file, and keep it for the night:
+**Changed 10 Oct 2026, 18:18 CEST, by stp:** Build uses its **own desk node as primary** for its whole 75% share (2,600 at MAX, 2,400 in the hold). The five public TN10 nodes are Build's **fallback only**.
 
-- **A. The five public TN10 nodes**, as the bot does: `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green` (wRPC, Borsh, testnet-10). Spread your senders over all five at random. **Claim (measured on TN10):** this afternoon the bot alone pushed about 3,170 tx/s through these nodes at its peak, while you were also sending to them.
-- **B. Your own desk node:** kaspad 2.1.0, `--testnet --netsuffix=10 --utxoindex`, pruned (no `--archival`), peers and RPC on loopback only, no tunnel, no public peer port, a watcher that restarts it on the same flags. It must be synced by G1.
-- **C. Both:** your node for reads, the public nodes for submits.
+- **Primary, your desk node:** kaspad 2.1.0, `--testnet --netsuffix=10 --utxoindex`, pruned (no `--archival`), peers and RPC on loopback only, no tunnel, no public peer port, a watcher that restarts it on the same flags. It must be **synced with the UTXO index on by G2 (20:15 CEST)**.
+- **If it is not synced by G2:** start on the public nodes at the listed times, log a `deviation`, and move to your node once it is synced and healthy for 2 minutes (log `node-back`).
+- **Fallback, the five public TN10 nodes:** `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green` (wRPC, Borsh, testnet-10), random spread over all five, per-node back-off (below).
+- **Move to the fallback** (only the affected senders) when your desk node: has a sink lag over 60 s, or its virtual DAA score stalls for 30 s, or stops being synced, or dies (RPC fails for 5 s). Log `node-fallback` and a `deviation` with the reason.
+- **Move back** when your node has been healthy (synced, sink lag at most 60 s, DAA moving) for **2 minutes**. Log `node-back`.
+- **Desk safety:** keep **at least 4 GB RAM free** on the desk. If memory gets tight, move senders to the public fallback (log `node-fallback`, reason `desk RAM`) instead of letting the node crash.
+- **Never submit to the bot's node**, and **never fire at a dead node** (below).
 
-Whatever you pick: **never submit to the bot's node**, and **never fire at a dead node** (below).
+### Desk lessons
+
+- **Claim (measured on TN10):** Build pushed over 3,000 tx/s into blocks from the desk last week.
+- **Claim (measured on TN10):** on 9 Oct the desk nodes keel and locus lagged and froze about every 10 minutes, and locus died at about 03:28 CEST on Saturday 10 Oct.
+- **Not sure / open for debate:** node B most likely crashed because the desk's 32 GB of memory ran out while it was building its UTXO index on 9 Oct. Hence the 4 GB free-RAM rule and the public fallback.
 
 ## Your rates
 
@@ -61,8 +69,8 @@ Fees, both sides: half the lanes at **400** and half at **600** sompi/gram, froz
 
 ## Node-dead rule (Kaspa Pulse)
 
-- **Public nodes:** a node that gives about 20 connection or RPC errors in a row is cooled for 30 s and your load moves to the other live nodes. If none is live, wait and count no attempt. Log `node-dead` and `node-back` with the node name.
-- **Your own node (B or C):** a sender stops itself when the node's RPC fails for 5 s, the node is not synced, its sink lag is over 60 s, or its virtual DAA score stops for 30 s. It starts again after a fresh health read passes, inside the open step.
+- **Public nodes (fallback):** a node that gives about 20 connection or RPC errors in a row is cooled for 30 s and your load moves to the other live nodes. If none is live, wait and count no attempt. Log `node-dead` and `node-back` with the node name.
+- **Your own node (primary):** a sender never fires at it when the node's RPC fails for 5 s, the node is not synced, its sink lag is over 60 s, or its virtual DAA score stops for 30 s. Instead it moves to the public fallback (`node-fallback`) and comes back after 2 minutes of good health (`node-back`), inside the open step.
 - A failed submit is a reject, never "sent".
 
 ## Coins
@@ -73,17 +81,17 @@ Fees, both sides: half the lanes at **400** and half at **600** sompi/gram, froz
 
 ## Your miner
 
-- At most **one** miner, one thread, on **your own node only**, paying Build's own address (kept out of git). On at G2, off at END. No miner if you have no node (option A).
+- At most **one** miner, one thread, on **your own node only**, paying Build's own address (kept out of git). On at G2, off at END.
 
 ## Clock
 
 Brussels is UTC+2. Clocks in git stay in UTC.
 
-- **G1 (20:00 CEST):** stop every desk sender not in this plan. Read your setup: node synced (B, C) or each public node reachable (A, C), coins ready, disk free. Logging starts. A failed read is retried for two minutes and fixed; it does not move T0.
+- **G1 (20:00 CEST):** stop every desk sender not in this plan. Read your setup: desk node synced with the UTXO index on, sink lag at most 60 s, at least 4 GB RAM free, each public fallback node reachable, coins ready, disk free. Logging starts. A failed read is retried for two minutes and fixed; it does not move T0.
 - **G2 (20:15 CEST):** write `FOR-TN10-OPS-ready-1010.txt` (below). stp passes it to the bot. Miner on.
 - **One step clock.** One holder process reads one copy of [go/steps-utc.json](../steps-utc.json) as it was when stp sent this prompt. Refuse any step file whose `t0` is not `2026-10-10T18:30:00Z`. Never start a second holder.
 - If you open this file after a step has ended, join the open step. Never rerun a finished step.
-- If stp has to paste anything, give him **one** PowerShell block that does all of it (senders, loggers, the step clock, and the node if you chose B or C) and then needs nothing more from him. Put everything under `%USERPROFILE%\grok-build\tn10-storm-1010\`.
+- If stp has to paste anything, give him **one** PowerShell block that does all of it (node and watcher, senders with the public fallback, loggers, the step clock) and then needs nothing more from him. Put everything under `%USERPROFILE%\grok-build\tn10-storm-1010\`.
 
 ## Key times
 
@@ -107,8 +115,8 @@ Brussels is UTC+2. Clocks in git stay in UTC.
 <!-- clock:table -->
 | Step | Brussels (CEST) | UTC | Bot tx/s | Build tx/s | Combined tx/s |
 |---|---|---|---|---|---|
-| PREP | until 20:00 | until 18:00 | Re-armed. n2 synced. Coins topped up. No sends. Miner off. | Read this file. Arm your node or nodes, coins and senders. No sends. Miner off. | – |
-| G1 | 20:00 | 18:00 | Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts. | Gate 1: your node health (or the public nodes), coins, disk. Logging starts. Stop every sender not in this plan. | – |
+| PREP | until 20:00 | until 18:00 | Re-armed. n2 synced. Coins topped up. No sends. Miner off. | Read this file. Desk node synced with UTXO index, coins, senders, public fallback. No sends. Miner off. | – |
+| G1 | 20:00 | 18:00 | Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts. | Gate 1: desk node health, RAM >= 4 GB free, public fallback reachable, coins, disk. Logging starts. Stop every sender not in this plan. | – |
 | G2 | 20:15 | 18:15 | Gate 2, **ready check**: stp confirms Build has started. Miner on. | Gate 2, **ready check**: write `FOR-TN10-OPS-ready-1010.txt`, stp passes it to the bot. Miner on. | – |
 | **B0** | 20:30–20:40 | 18:30–18:40 | **T0.** No load. Miner on. | **T0.** No load. Miner on. | 0 |
 | X250 | 20:40–20:55, drain to 21:00 | 18:40–18:55, drain to 19:00 | 60 | 190 | 250 |
@@ -121,25 +129,25 @@ Brussels is UTC+2. Clocks in git stay in UTC.
 | **HOLD** | 22:50–04:15 Sun | 20:50–02:15 Sun | 800 (see the hold rule) | 2,400 (see the hold rule) | 3,200 |
 | DRAIN | 04:15 Sun–04:30 Sun | 02:15 Sun–02:30 Sun | Senders 0 | Senders 0 | 0 |
 | **END** | 04:30 Sun | 02:30 Sun | Senders stop. Miner off. Live loggers stop. | Senders stop. Miner off. Live loggers stop. Node stays up. | – |
-| COUNT | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun | Chain count from n2, before pruning | Chain count from your node, before pruning (skip if you have no node) | – |
+| COUNT | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun | Chain count from n2, before pruning | Chain count from your desk node, before pruning | – |
 | PUSH | by 07:30 Sun | by 05:30 Sun | Logs to `logs/bot/` | Logs to `logs/build/`, plus `FOR-TN10-OPS-result-1010.txt` to stp | – |
 <!-- /clock:table -->
 
 ## Log everything
 
-From G1 to END, even when sending nothing, with the columns in [LOGGING.md](../LOGGING.md): `sec.csv`, `minute.csv`, `rejects.csv`, `host.csv`, `events.csv`, `steps.csv`, `gates.csv`, `ntp.csv`; plus `node.csv`, `miner.csv` and `chain-count.csv` if you run a node; plus `public-nodes.csv` (per minute, per public node: submits ok, rejects, errors) if you use the public nodes. Per-transaction logs and ids stay on the desk.
+From G1 to END, even when sending nothing, with the columns in [LOGGING.md](../LOGGING.md): `sec.csv`, `minute.csv`, `rejects.csv`, `host.csv`, `events.csv`, `steps.csv`, `gates.csv`, `ntp.csv`; plus `node.csv`, `miner.csv` and `chain-count.csv` from your node; plus `public-nodes.csv` (per minute, per public node: submits ok, rejects, errors) for any minute on the fallback; plus every `node-fallback` / `node-back` in `events.csv`. Per-transaction logs and ids stay on the desk.
 
 ## Handoff files for the bot
 
 The bot cannot see your screen. stp carries two plain-text files from you to the bot. Formats are in [LOGGING.md](../LOGGING.md#handoff-files-build-to-the-bot).
 
-1. **`FOR-TN10-OPS-ready-1010.txt` at G2 (20:15 CEST):** started yes, option A/B/C, senders, coins ready (tKAS), fee pair, node synced (if any), miner on/off, step file `t0`.
-2. **`FOR-TN10-OPS-result-1010.txt` after END (by 06:30 CEST):** one line per step: target, mean submitted, mean accepted, rejects, clean yes/no and why; plus node deaths, restarts, sit-outs and deviations.
+1. **`FOR-TN10-OPS-ready-1010.txt` at G2 (20:15 CEST):** started yes, submit path (own node, or public fallback and why), senders, coins ready (tKAS), fee pair, desk node synced, desk RAM free, miner on/off, step file `t0`.
+2. **`FOR-TN10-OPS-result-1010.txt` after END (by 06:30 CEST):** one line per step: target, mean submitted, mean accepted, rejects, clean yes/no and why; plus node deaths, restarts, every fallback to the public nodes (CEST from–to, reason), sit-outs and deviations.
 
 ## After END
 
 1. **END (04:30 CEST):** senders stop, miner off, live loggers stop. Your node, if any, stays up.
-2. **COUNT (04:30 to 06:30 CEST):** if you have a node, write `chain-count.csv` per minute from one hour before T0 to END, before pruning.
+2. **COUNT (04:30 to 06:30 CEST):** write `chain-count.csv` from your node per minute from one hour before T0 to END, before pruning.
 3. Write `steps.csv`, `SUMMARY.md` and the result handoff file.
 4. **By PUSH (07:30 CEST):** commit your files to `logs/build/` in **STP-KAS/tn10-storm-1010**. Counts only. No force-push. No tags or releases.
 

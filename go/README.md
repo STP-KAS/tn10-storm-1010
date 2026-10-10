@@ -39,8 +39,8 @@ Rates are tx/s, per side, in the send window only. "Drain" means senders 0 while
 <!-- clock:table -->
 | Step | Brussels (CEST) | UTC | Bot tx/s | Build tx/s | Combined tx/s |
 |---|---|---|---|---|---|
-| PREP | until 20:00 | until 18:00 | Re-armed. n2 synced. Coins topped up. No sends. Miner off. | Read this file. Arm your node or nodes, coins and senders. No sends. Miner off. | – |
-| G1 | 20:00 | 18:00 | Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts. | Gate 1: your node health (or the public nodes), coins, disk. Logging starts. Stop every sender not in this plan. | – |
+| PREP | until 20:00 | until 18:00 | Re-armed. n2 synced. Coins topped up. No sends. Miner off. | Read this file. Desk node synced with UTXO index, coins, senders, public fallback. No sends. Miner off. | – |
+| G1 | 20:00 | 18:00 | Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts. | Gate 1: desk node health, RAM >= 4 GB free, public fallback reachable, coins, disk. Logging starts. Stop every sender not in this plan. | – |
 | G2 | 20:15 | 18:15 | Gate 2, **ready check**: stp confirms Build has started. Miner on. | Gate 2, **ready check**: write `FOR-TN10-OPS-ready-1010.txt`, stp passes it to the bot. Miner on. | – |
 | **B0** | 20:30–20:40 | 18:30–18:40 | **T0.** No load. Miner on. | **T0.** No load. Miner on. | 0 |
 | X250 | 20:40–20:55, drain to 21:00 | 18:40–18:55, drain to 19:00 | 60 | 190 | 250 |
@@ -53,7 +53,7 @@ Rates are tx/s, per side, in the send window only. "Drain" means senders 0 while
 | **HOLD** | 22:50–04:15 Sun | 20:50–02:15 Sun | 800 (see the hold rule) | 2,400 (see the hold rule) | 3,200 |
 | DRAIN | 04:15 Sun–04:30 Sun | 02:15 Sun–02:30 Sun | Senders 0 | Senders 0 | 0 |
 | **END** | 04:30 Sun | 02:30 Sun | Senders stop. Miner off. Live loggers stop. | Senders stop. Miner off. Live loggers stop. Node stays up. | – |
-| COUNT | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun | Chain count from n2, before pruning | Chain count from your node, before pruning (skip if you have no node) | – |
+| COUNT | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun | Chain count from n2, before pruning | Chain count from your desk node, before pruning | – |
 | PUSH | by 07:30 Sun | by 05:30 Sun | Logs to `logs/bot/` | Logs to `logs/build/`, plus `FOR-TN10-OPS-result-1010.txt` to stp | – |
 <!-- /clock:table -->
 
@@ -83,9 +83,9 @@ Fees, both sides: half the lanes at **400** and half at **600** sompi/gram, froz
 | Side | Submits to | Reads (health, accepted, coins, count) | Miner |
 |---|---|---|---|
 | Bot | **Only** the five public TN10 nodes: `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green` | n2, its own private pruned node (kaspad 2.1.0, UTXO index on, loopback only) | 1 thread, on n2 |
-| Build | The same five public nodes, or its own desk node, **as Build decides** | Its own node, or a public node | At most 1 thread, on its own node (none if it has no node) |
+| Build | **Its own desk node (primary)**; the same five public nodes **only as fallback** when its node lags, freezes, unsyncs, dies, or desk RAM gets tight | Its own desk node | At most 1 thread, on its own node |
 
-stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now and the 17:00 test. More space, more runners." stp, 17:43 CEST, for Build: if Build operates differently, let it be. Build writes down what it chose.
+stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now and the 17:00 test. More space, more runners." stp, 18:18 CEST, for Build: its own desk node is primary for its 75% share; the public nodes are its fallback only. Build moves the affected senders to the public nodes when its node has a sink lag over 60 s, a virtual DAA stall of 30 s, is not synced, or dies, and moves back after 2 minutes of good health. It keeps at least 4 GB RAM free on the desk. So the load on the public nodes is mostly the bot's 25%.
 
 ## Gates
 
@@ -105,7 +105,7 @@ stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now an
 - A sender **never fires at a dead node.** A node is dead for a sender when it gives about 20 connection or RPC errors in a row, or fails health reads for 5 s. The sender cools that node for 30 s and moves its lanes to its other live nodes. If none is live, it waits and counts no attempt. Log `node-dead` and `node-back` per node.
 - A failed submit is a reject, never "sent".
 - **For the bot, n2 lagging or not synced does not zero the senders** (stp, 16:19 CEST). n2 is only the bot's reader. If n2 freezes (virtual DAA still for over 3 minutes and sink lag over 3 minutes), the bot restarts n2 on the same flags, at most once per 20 minutes, and logs it. That is what fixed the 15:57 CEST freeze.
-- For a side that sends to its own node (Build, if it chooses), the old rule stays: stop when the node's RPC fails for 5 s, the node is not synced, sink lag is over 60 s, or the virtual DAA score stops for 30 s.
+- **Build's own node:** never fire at it when its RPC fails for 5 s, it is not synced, its sink lag is over 60 s, or its virtual DAA score stops for 30 s. The affected senders move to the public fallback (`node-fallback`) and come back after 2 minutes of good health (`node-back`). If the desk node is not synced with the UTXO index by G2, Build starts on the public nodes and moves to its node when it is synced.
 
 ## Coins
 
@@ -154,6 +154,9 @@ stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now an
 | After a kill, a watchdog started senders again | A halt stops the watchdog first, then the scheduler, then the senders with a hard kill. |
 | boson, electron and neutrino often refused connections when many senders booted at once | Staggered launches. Each sender holds four of the five nodes, picked at random, and moves its lanes off a node that fails. **Not sure / open for debate:** why those three refused. |
 | Build was not started at 17:00 CEST | The ready check at G2 and the handoff file. |
+| Build pushed over 3,000 tx/s into blocks from the desk last week (**Claim**) | Build's own desk node is primary for its 75% share. |
+| On 9 Oct keel and locus lagged and froze about every 10 minutes; locus died at about 03:28 CEST Sat (**Claim**) | Build's senders move to the public fallback when the desk node lags or freezes, and back after 2 minutes healthy. |
+| Node B likely crashed when the desk's 32 GB ran out while building its UTXO index on 9 Oct (**Not sure / open for debate**) | Keep at least 4 GB RAM free on the desk; if memory gets tight, move senders to the fallback instead of crashing the node. |
 
 ## Keep going, but fix first
 

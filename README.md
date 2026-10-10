@@ -19,7 +19,7 @@ Landing this repo (or `go/bot-run` / `go/build-run`) in the bot's or Build's cha
 One TN10 storm on Saturday evening, 10 Oct 2026, run by two sides at the same time, on one clock:
 
 - **The bot run**: the bot (TN10 ops, with tn ops2) on the box. It **submits only to the five public TN10 nodes**, spread at random. Its own private node **n2** is used for reads, coins, the chain count and its one miner. Prompt: [go/bot-run/GO-BOT-RUN.md](go/bot-run/GO-BOT-RUN.md).
-- **The build run**: Grok Build on stp's Windows desk, with its own coins. Build sends to the same five public nodes or to its own desk node, as it decides. Prompt: [go/build-run/GO-BUILD-RUN.md](go/build-run/GO-BUILD-RUN.md).
+- **The build run**: Grok Build on stp's Windows desk, with its own coins. Build sends to **its own desk node** (primary, stp 18:18 CEST); the five public nodes are its **fallback only**, used when its node lags, freezes, unsyncs, dies or desk memory gets tight, with a move back after 2 minutes healthy. Prompt: [go/build-run/GO-BUILD-RUN.md](go/build-run/GO-BUILD-RUN.md).
 
 Load split: **25% bot, 75% Build**. Goal: **over 3,000 tx/s combined**, network unique accepted, counted once.
 
@@ -78,7 +78,7 @@ Today's afternoon public-node test changed the picture (**Claim (measured on TN1
 | 9 Oct night, 10 Oct take 2 ([tn10-locus](https://github.com/STP-KAS/tn10-locus)) | Two nodes on one desk: locus (Build) and keel (bot, via a tunnel) | keel lagged; locus aborted at 03:28, 08:52 and 09:26 CEST. Failed as a test of the plan. |
 | 10 Oct 17:00 CEST ([tn10-private](https://github.com/STP-KAS/tn10-private) shape, refined here) | n2 for the bot (public-node submit from 14:36 CEST), a desk node for Build | Halted by stp at 17:39 CEST: Build had not been started. The bot's S1 row (60 tx/s) was evaluated clean; S3 ran at 60 tx/s and was not evaluated before the halt. [history/2026-10-10-1700-halted.md](history/2026-10-10-1700-halted.md). |
 | 10 Oct public-node test, 14:23 to 16:18 CEST (private repo `tn10-storm-1010-public-nodes`) | Bot senders on the five public nodes, n2 for reads | Peak about 3,170 bot tx/s; clean hold about 900 to 985 bot tx/s on 14 senders. Lessons are folded into this plan. |
-| **Tonight, T0 20:30 CEST** (this repo) | Bot: five public nodes, n2 for reads. Build: public nodes or its own node | This run. |
+| **Tonight, T0 20:30 CEST** (this repo) | Bot: five public nodes, n2 for reads. Build: its own desk node, public nodes as fallback | This run. |
 
 ## Map
 

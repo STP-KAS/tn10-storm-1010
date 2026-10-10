@@ -2,7 +2,7 @@
 
 # logs/build
 
-Written by Grok Build after the run. Submits: public TN10 nodes or Build's own node, as Build chose (see its ready file). Raw logs stay on the desk; this folder gets the copy.
+Written by Grok Build after the run. Submits: Build's own desk node, the public TN10 nodes as fallback (every fallback is in `events.csv`). Raw logs stay on the desk; this folder gets the copy.
 
 Status: **empty until the run.**
 

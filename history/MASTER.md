@@ -56,7 +56,7 @@ Numbers from different eras are not directly comparable.
 ### 25 Sep: break test (round 1)
 - **Setup:** box node n0 alone, small mempool cap.
 - **Reported:** Processed counter mean **6,466 tx/s**, 10-s peak **9,274**; mempool 99.97k; **30,298** evictions by feerate; one panic at `100001 > 100000`.
-- **Source:** [mainnet-implications note §2](https://github.com/STP-KAS/tn10-storm-2026-10-public-report/blob/main/TN10-STORMS-MAINNET-IMPLICATIONS-2026-10-04.md); [grok-bot-vprogs findings](https://github.com/STP-KAS/grok-bot-vprogs/blob/main/findings/overload-30m-summary.md) (private). Local handoff notes on the box (`/workspace/tn10-break-test-2026-09-25/HANDOFF.md`, not on GitHub).
+- **Source:** [mainnet-implications note §2](https://github.com/STP-KAS/tn10-storm-2026-10-public-report/blob/main/TN10-STORMS-MAINNET-IMPLICATIONS-2026-10-04.md); [grok-bot-vprogs findings](https://github.com/STP-KAS/grok-bot-vprogs/blob/main/findings/overload-30m-summary.md) (private). Local handoff notes on the box (not on GitHub).
 - **What broke:** the public api-tn10 indexer stopped advancing accepted transactions at **19:55:38** and still returned HTTP 503 on 29 Sep (at least 3 days 15 hours). Cause not proven; time correlation is not causation. [tn10-indexer-stall-2026-09](https://github.com/STP-KAS/tn10-indexer-stall-2026-09) (private).
 - **Learned:** Processed is not unique throughput. A full mempool panics at its cap.
 
@@ -80,7 +80,7 @@ Numbers from different eras are not directly comparable.
 - **Setup:** index-free runners on n0; Build adding load from the desk through public nodes.
 - **Reported:** **58,905,910** box transactions included in four legs, 152 rejected, 361,814 tKAS fees. Best 1 min **4,253 tx/s**, best 10 min **3,717**, best 60 min **2,518**. Our block share 50–63% while the box miners ran.
 - **What broke:** public API lagged up to 11.7 min and froze about 85 min on the night of 2 Oct; each episode we saw end recovered within 2–5 min. n0 disk-full on 3 Oct.
-- **Source:** [tn10-storm-2026-10-public-report](https://github.com/STP-KAS/tn10-storm-2026-10-public-report); raw data and analysis in [tn10-storm-2026-10-analysis](https://github.com/STP-KAS/tn10-storm-2026-10-analysis) (private); [tn10-stress-tests](https://github.com/STP-KAS/tn10-stress-tests) (private); local box notes `/workspace/artifacts/stress-tests/run/timeline.md` (not on GitHub).
+- **Source:** [tn10-storm-2026-10-public-report](https://github.com/STP-KAS/tn10-storm-2026-10-public-report); raw data and analysis in [tn10-storm-2026-10-analysis](https://github.com/STP-KAS/tn10-storm-2026-10-analysis) (private); [tn10-stress-tests](https://github.com/STP-KAS/tn10-stress-tests) (private); local box notes (not on GitHub).
 - **Learned:** "about 5k TPS" does not hold as unique included transactions. Label every mainnet sentence A/B/C ([note, 4 Oct](https://github.com/STP-KAS/tn10-storm-2026-10-public-report/blob/main/TN10-STORMS-MAINNET-IMPLICATIONS-2026-10-04.md)).
 
 ### 1–2 Oct: full gusto

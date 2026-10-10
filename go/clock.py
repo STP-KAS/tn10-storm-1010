@@ -16,8 +16,8 @@ SUCCESS_TX_S = 3000
 
 # id, kind, start, end, drain_end, bot tx/s, build tx/s, bot text, build text   (minutes from T0; None = a point in time)
 STEPS = [
-    ("PREP", "prep", None, -30, None, 0, 0, "Re-armed. n2 synced. Coins topped up. No sends. Miner off.", "Read this file. Arm your node or nodes, coins and senders. No sends. Miner off."),
-    ("G1", "gate", -30, None, None, 0, 0, "Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts.", "Gate 1: your node health (or the public nodes), coins, disk. Logging starts. Stop every sender not in this plan."),
+    ("PREP", "prep", None, -30, None, 0, 0, "Re-armed. n2 synced. Coins topped up. No sends. Miner off.", "Read this file. Desk node synced with UTXO index, coins, senders, public fallback. No sends. Miner off."),
+    ("G1", "gate", -30, None, None, 0, 0, "Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts.", "Gate 1: desk node health, RAM >= 4 GB free, public fallback reachable, coins, disk. Logging starts. Stop every sender not in this plan."),
     ("G2", "gate", -15, None, None, 0, 0, "Gate 2, **ready check**: stp confirms Build has started. Miner on.", "Gate 2, **ready check**: write `FOR-TN10-OPS-ready-1010.txt`, stp passes it to the bot. Miner on."),
     ("B0", "baseline", 0, 10, None, 0, 0, "**T0.** No load. Miner on.", "**T0.** No load. Miner on."),
     ("X250", "step", 10, 25, 30, 60, 190, "60", "190"),
@@ -30,7 +30,7 @@ STEPS = [
     ("HOLD", "hold", 140, 465, None, 800, 2400, "800 (see the hold rule)", "2,400 (see the hold rule)"),
     ("DRAIN", "drain", 465, 480, None, 0, 0, "Senders 0", "Senders 0"),
     ("END", "end", 480, None, None, 0, 0, "Senders stop. Miner off. Live loggers stop.", "Senders stop. Miner off. Live loggers stop. Node stays up."),
-    ("COUNT", "count", 480, 600, None, 0, 0, "Chain count from n2, before pruning", "Chain count from your node, before pruning (skip if you have no node)"),
+    ("COUNT", "count", 480, 600, None, 0, 0, "Chain count from n2, before pruning", "Chain count from your desk node, before pruning"),
     ("PUSH", "push", None, 660, None, 0, 0, "Logs to `logs/bot/`", "Logs to `logs/build/`, plus `FOR-TN10-OPS-result-1010.txt` to stp"),
 ]
 G1, G2, END = -30, -15, 480

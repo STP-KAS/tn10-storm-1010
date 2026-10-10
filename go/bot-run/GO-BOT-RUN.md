@@ -30,6 +30,7 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). The node-dead ru
 - **Random spread:** each sender picks four of the five at random at launch, one connection each, and spreads its lanes over them. Over 15 senders every node gets load.
 - **Per-node back-off:** a node that gives 20 connection or RPC errors in a row is cooled for 30 s; its lanes move to the sender's other live nodes; the dropped connection is retried in the background. If no node of a sender is live, that sender waits and counts no attempt. Log `node-dead` / `node-back` with the node name.
 - **Per-node fee check:** every minute, read each node's normal fee quote. A node quoting above 400 is skipped for that minute (`node-quote-skip`).
+- **Build is on its own desk node** (stp, 18:18 CEST) and uses the public nodes only as a fallback, so the load on the public nodes is mostly the bot's 25%. If Build falls back, the public nodes carry more; the bot does not change its rate for that.
 - **Be a fair guest.** These are community nodes. If one node keeps rejecting or dropping for more than 10 minutes, drop it for the step and log it. Do not raise the bot's rate to "test" a node.
 
 ## n2: your reader
@@ -95,8 +96,8 @@ Brussels is UTC+2. Clocks in git stay in UTC.
 <!-- clock:table -->
 | Step | Brussels (CEST) | UTC | Bot tx/s | Build tx/s | Combined tx/s |
 |---|---|---|---|---|---|
-| PREP | until 20:00 | until 18:00 | Re-armed. n2 synced. Coins topped up. No sends. Miner off. | Read this file. Arm your node or nodes, coins and senders. No sends. Miner off. | – |
-| G1 | 20:00 | 18:00 | Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts. | Gate 1: your node health (or the public nodes), coins, disk. Logging starts. Stop every sender not in this plan. | – |
+| PREP | until 20:00 | until 18:00 | Re-armed. n2 synced. Coins topped up. No sends. Miner off. | Read this file. Desk node synced with UTXO index, coins, senders, public fallback. No sends. Miner off. | – |
+| G1 | 20:00 | 18:00 | Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts. | Gate 1: desk node health, RAM >= 4 GB free, public fallback reachable, coins, disk. Logging starts. Stop every sender not in this plan. | – |
 | G2 | 20:15 | 18:15 | Gate 2, **ready check**: stp confirms Build has started. Miner on. | Gate 2, **ready check**: write `FOR-TN10-OPS-ready-1010.txt`, stp passes it to the bot. Miner on. | – |
 | **B0** | 20:30–20:40 | 18:30–18:40 | **T0.** No load. Miner on. | **T0.** No load. Miner on. | 0 |
 | X250 | 20:40–20:55, drain to 21:00 | 18:40–18:55, drain to 19:00 | 60 | 190 | 250 |
@@ -109,7 +110,7 @@ Brussels is UTC+2. Clocks in git stay in UTC.
 | **HOLD** | 22:50–04:15 Sun | 20:50–02:15 Sun | 800 (see the hold rule) | 2,400 (see the hold rule) | 3,200 |
 | DRAIN | 04:15 Sun–04:30 Sun | 02:15 Sun–02:30 Sun | Senders 0 | Senders 0 | 0 |
 | **END** | 04:30 Sun | 02:30 Sun | Senders stop. Miner off. Live loggers stop. | Senders stop. Miner off. Live loggers stop. Node stays up. | – |
-| COUNT | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun | Chain count from n2, before pruning | Chain count from your node, before pruning (skip if you have no node) | – |
+| COUNT | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun | Chain count from n2, before pruning | Chain count from your desk node, before pruning | – |
 | PUSH | by 07:30 Sun | by 05:30 Sun | Logs to `logs/bot/` | Logs to `logs/build/`, plus `FOR-TN10-OPS-result-1010.txt` to stp | – |
 <!-- /clock:table -->
 

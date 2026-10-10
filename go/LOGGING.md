@@ -33,11 +33,11 @@ Both sides log the same files, with the same columns, so the bot's minutes, Buil
 | `confirm.csv` | each step | `step, side, fee_tier, n, p50_s, p90_s, max_s` |
 | `SUMMARY.md` | once | Counts per step, what broke, what was done |
 
-A side without its own node (Build option A) leaves the node columns empty and skips `node.csv`, `miner.csv` and `chain-count.csv`.
+The bot's node columns are n2 (its reader). Build's node columns are its desk node, also while some senders are on the public fallback.
 
 ### Events
 
-One `events.csv` row for each: `gate`, `build-confirmed`, `build-not-confirmed` (each minute without it, from G2), `step-start`, `step-end`, `step-sit-out` (the quote), `sender-start`, `sender-relaunch` (count so far), `sender-pause`, `sender-stop`, **`node-dead`**, **`node-back`** (both with the node name), `node-quote-skip`, `node-lag`, `node-restart`, `miner-on`, `miner-off`, `coin-refresh` (coins and tKAS added, unclaimed after, memory low point), `disk-guard`, `halt`, `deviation` (what and why).
+One `events.csv` row for each: `gate`, `build-confirmed`, `build-not-confirmed` (each minute without it, from G2), `step-start`, `step-end`, `step-sit-out` (the quote), `sender-start`, `sender-relaunch` (count so far), `sender-pause`, `sender-stop`, **`node-dead`**, **`node-back`** (both with the node name), `node-quote-skip`, `node-fallback` (Build: senders moved to the public nodes, with the reason),  `node-lag`, `node-restart`, `miner-on`, `miner-off`, `coin-refresh` (coins and tKAS added, unclaimed after, memory low point), `disk-guard`, `halt`, `deviation` (what and why).
 
 ### Words used
 
@@ -66,7 +66,8 @@ The bot cannot see Build's screen. Build writes these two plain-text files; stp 
 ```
 build_started: yes
 written_cest: 20:14
-option: A | B | C            (A public nodes, B own node, C own node for reads + public nodes for submits)
+submit_path: own-node | public-fallback (reason)
+desk_ram_free_gb: <n>
 senders: <n>
 coins_ready_tkas: <n>
 fee_pair: 400/600
