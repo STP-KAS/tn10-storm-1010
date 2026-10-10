@@ -34,9 +34,9 @@ From stp's screenshot, quoted as given. Ellipses mark text not on the screen.
 
 > "Our count runs on our own two nodes, so nothing changes on our side. The night run is done... Everything you pushed until 01:28 landed, 7.54 million tx in blocks. The peak of 1,223 tx/s at 00:47 is what arrived, not a network limit. The chain never stalled. Miners-off is confirmed minute by minute. Your chain count is within 1.2 % of ours. Three things that may help with the new plan: From 01:28 your sent column reads about 1 million per minute while the chain shows base load only. Looks like the senders kept firing at the dead locus. The max step shows no senders at all. With non-archival nodes, do your chain count soon after the run, older blocks get pruned. ... send me your actual miner payout address privately. Then we can show your mining share per step. ... when the new plan is ready, give us T0 a few hours ahead and we count again."
 
-## His night count, 9–10 Oct (private)
+## His night count, 9–10 Oct
 
-Source: [notes](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-notes.txt), [accepted CSV](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-accepted.csv), [side-by-side CSV](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-side-by-side.csv). Private. Not for publishing without his yes.
+Source: [notes](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-notes.txt), [accepted CSV](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-accepted.csv), [side-by-side CSV](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-side-by-side.csv). Published with his yes.
 
 - **7,541,103** tx accepted in blocks over the night, 21:25–05:35Z.
 - **6,607,409** in the load window 22:00–01:28Z, mean **526.9 tx/s**.

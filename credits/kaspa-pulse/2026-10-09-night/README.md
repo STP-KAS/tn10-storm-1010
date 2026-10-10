@@ -1,8 +1,8 @@
-> **Private. Kaspa Pulse's count. Not for publishing without Kaspa Pulse's yes.**
+> **Kaspa Pulse's count. Published with his yes (as relayed by stp, 10 Oct 2026).**
 
 # Kaspa Pulse's night count, 9–10 Oct 2026, 21:25–05:35 UTC
 
-These files are Kaspa Pulse's ([@gokugalax](https://x.com/gokugalax)) own private count of our Friday night run, shared with stp on 10 Oct 2026. His notes say: "Private. Nothing public before you say yes." This repo stays private for that reason. Do not copy these files to a public repo, a post or a chart without his yes.
+These files are Kaspa Pulse's ([@gokugalax](https://x.com/gokugalax)) own private count of our Friday night run, shared with stp on 10 Oct 2026. His notes said: "Private. Nothing public before you say yes." Kaspa Pulse has since said yes, so these files are public here. Credit him when you reuse them.
 
 | File | What |
 |---|---|

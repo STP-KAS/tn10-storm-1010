@@ -6,7 +6,7 @@
 
 **Thank you first to Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)).** He counted our chain from outside, on his own two nodes, and shaped this plan with his questions, method and fixes. Every input he gave us, with its source and what we changed, is in [credits/KASPA-PULSE.md](credits/KASPA-PULSE.md).
 
-Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host, IP, port or address in this repo. This repo is private. It holds Kaspa Pulse's private night count, which is not for publishing without his yes.
+Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host, IP, port or address in this repo. This repo is public. It includes Kaspa Pulse's night count, published with his yes (as relayed by stp on 10 Oct 2026).
 
 ## What
 
@@ -61,7 +61,7 @@ Same 8-hour plan as Friday night. Friday failed because the shared desk node **l
 | [go/LOGGING.md](go/LOGGING.md) | What both sides log, file names and columns |
 | [logs/](logs/README.md) | Where each side drops its logs after the run ([bot](logs/bot/README.md), [Build](logs/build/README.md)) |
 | [history/](history/README.md) | All earlier runs. [MASTER.md](history/MASTER.md) is the one master file |
-| [credits/](credits/KASPA-PULSE.md) | Kaspa Pulse's inputs, and his private night count in [kaspa-pulse/2026-10-09-night/](credits/kaspa-pulse/2026-10-09-night/README.md) |
+| [credits/](credits/KASPA-PULSE.md) | Kaspa Pulse's inputs, and his night count in [kaspa-pulse/2026-10-09-night/](credits/kaspa-pulse/2026-10-09-night/README.md) |
 
 ---
 
