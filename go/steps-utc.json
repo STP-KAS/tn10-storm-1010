@@ -1,0 +1,238 @@
+{
+ "t0": "2026-10-10T15:00:00Z",
+ "end": "2026-10-10T23:00:00Z",
+ "steps": [
+  {
+   "step": "PREP",
+   "start": null,
+   "end": "2026-10-10T14:15:00Z",
+   "drain_end": null,
+   "bot": "Prepare. n2 syncing. No sends. Miner off.",
+   "build": "Start node sync now. Prepare. No sends. Miner off."
+  },
+  {
+   "step": "G1",
+   "start": "2026-10-10T14:15:00Z",
+   "end": null,
+   "drain_end": null,
+   "bot": "First gate on n2. Rehearsal go/no-go.",
+   "build": "Stop every sender not in this plan. First gate on the desk node."
+  },
+  {
+   "step": "G2",
+   "start": "2026-10-10T14:30:00Z",
+   "end": null,
+   "drain_end": null,
+   "bot": "Second gate. Start 1 miner, only if n2 is synced.",
+   "build": "Second gate. Start exactly 1 miner."
+  },
+  {
+   "step": "R1",
+   "start": "2026-10-10T14:30:00Z",
+   "end": "2026-10-10T14:40:00Z",
+   "drain_end": null,
+   "bot": "60, only if both gates passed",
+   "build": "0"
+  },
+  {
+   "step": "R2",
+   "start": "2026-10-10T14:40:00Z",
+   "end": "2026-10-10T14:45:00Z",
+   "drain_end": null,
+   "bot": "20",
+   "build": "0"
+  },
+  {
+   "step": "R3",
+   "start": "2026-10-10T14:45:00Z",
+   "end": "2026-10-10T14:50:00Z",
+   "drain_end": null,
+   "bot": "50",
+   "build": "0"
+  },
+  {
+   "step": "R4",
+   "start": "2026-10-10T14:50:00Z",
+   "end": "2026-10-10T14:53:00Z",
+   "drain_end": null,
+   "bot": "60",
+   "build": "0"
+  },
+  {
+   "step": "R5",
+   "start": "2026-10-10T14:53:00Z",
+   "end": "2026-10-10T14:56:00Z",
+   "drain_end": null,
+   "bot": "0",
+   "build": "60"
+  },
+  {
+   "step": "R6",
+   "start": "2026-10-10T14:56:00Z",
+   "end": "2026-10-10T14:59:00Z",
+   "drain_end": null,
+   "bot": "60",
+   "build": "60"
+  },
+  {
+   "step": "R7",
+   "start": "2026-10-10T14:59:00Z",
+   "end": "2026-10-10T15:00:00Z",
+   "drain_end": null,
+   "bot": "0",
+   "build": "0"
+  },
+  {
+   "step": "B0",
+   "start": "2026-10-10T15:00:00Z",
+   "end": "2026-10-10T15:10:00Z",
+   "drain_end": null,
+   "bot": "**T0.** No load. Miner on.",
+   "build": "**T0.** No load. Miner on."
+  },
+  {
+   "step": "S1",
+   "start": "2026-10-10T15:10:00Z",
+   "end": "2026-10-10T15:20:00Z",
+   "drain_end": null,
+   "bot": "60",
+   "build": "0"
+  },
+  {
+   "step": "S2",
+   "start": "2026-10-10T15:20:00Z",
+   "end": "2026-10-10T15:30:00Z",
+   "drain_end": null,
+   "bot": "0",
+   "build": "60"
+  },
+  {
+   "step": "S3",
+   "start": "2026-10-10T15:30:00Z",
+   "end": "2026-10-10T15:40:00Z",
+   "drain_end": null,
+   "bot": "60",
+   "build": "60"
+  },
+  {
+   "step": "X2",
+   "start": "2026-10-10T15:40:00Z",
+   "end": "2026-10-10T15:55:00Z",
+   "drain_end": "2026-10-10T16:00:00Z",
+   "bot": "2×, bot 60",
+   "build": "2×, fallback 190, or the scaled rate"
+  },
+  {
+   "step": "OFF0",
+   "start": "2026-10-10T16:00:00Z",
+   "end": "2026-10-10T16:05:00Z",
+   "drain_end": null,
+   "bot": "Settle, 0. **Miner off.**",
+   "build": "Settle, 0. **Miner off.**"
+  },
+  {
+   "step": "OFF",
+   "start": "2026-10-10T16:05:00Z",
+   "end": "2026-10-10T16:20:00Z",
+   "drain_end": "2026-10-10T16:25:00Z",
+   "bot": "Miners-off check, same rate as X2",
+   "build": "Miners-off check, same rate as X2"
+  },
+  {
+   "step": "ON",
+   "start": "2026-10-10T16:25:00Z",
+   "end": "2026-10-10T16:30:00Z",
+   "drain_end": null,
+   "bot": "Settle, 0. **Miner on.**",
+   "build": "Settle, 0. **Miner on.**"
+  },
+  {
+   "step": "C1000",
+   "start": "2026-10-10T16:30:00Z",
+   "end": "2026-10-10T16:45:00Z",
+   "drain_end": "2026-10-10T16:50:00Z",
+   "bot": "bot 120",
+   "build": "1,000 − bot (fallback 880)"
+  },
+  {
+   "step": "C1500",
+   "start": "2026-10-10T16:50:00Z",
+   "end": "2026-10-10T17:05:00Z",
+   "drain_end": "2026-10-10T17:10:00Z",
+   "bot": "bot 240",
+   "build": "1,500 − bot (fallback 1,260)"
+  },
+  {
+   "step": "C2000",
+   "start": "2026-10-10T17:10:00Z",
+   "end": "2026-10-10T17:25:00Z",
+   "drain_end": "2026-10-10T17:30:00Z",
+   "bot": "bot 480",
+   "build": "2,000 − bot (fallback 1,520)"
+  },
+  {
+   "step": "C2500",
+   "start": "2026-10-10T17:30:00Z",
+   "end": "2026-10-10T17:45:00Z",
+   "drain_end": "2026-10-10T17:50:00Z",
+   "bot": "bot 960",
+   "build": "2,500 − bot (fallback 1,540)"
+  },
+  {
+   "step": "MAX",
+   "start": "2026-10-10T17:50:00Z",
+   "end": "2026-10-10T18:05:00Z",
+   "drain_end": "2026-10-10T18:15:00Z",
+   "bot": "The bot's own max",
+   "build": "Uncapped, up to 9 senders"
+  },
+  {
+   "step": "B1",
+   "start": "2026-10-10T18:15:00Z",
+   "end": "2026-10-10T18:25:00Z",
+   "drain_end": null,
+   "bot": "No load",
+   "build": "No load"
+  },
+  {
+   "step": "HOLD",
+   "start": "2026-10-10T18:25:00Z",
+   "end": "2026-10-10T22:45:00Z",
+   "drain_end": null,
+   "bot": "Last clean level, or 30 if none",
+   "build": "Last clean rate, or 250 if none"
+  },
+  {
+   "step": "DRAIN",
+   "start": "2026-10-10T22:45:00Z",
+   "end": "2026-10-10T23:00:00Z",
+   "drain_end": null,
+   "bot": "Senders 0",
+   "build": "Senders 0"
+  },
+  {
+   "step": "END",
+   "start": "2026-10-10T23:00:00Z",
+   "end": null,
+   "drain_end": null,
+   "bot": "Miner off. Live loggers stop.",
+   "build": "Miner off. Live loggers stop. Node stays up."
+  },
+  {
+   "step": "COUNT",
+   "start": "2026-10-10T23:00:00Z",
+   "end": "2026-10-11T01:00:00Z",
+   "drain_end": null,
+   "bot": "Chain count from n2, before pruning",
+   "build": "Chain count from the desk node, before pruning"
+  },
+  {
+   "step": "PUSH",
+   "start": null,
+   "end": "2026-10-11T02:00:00Z",
+   "drain_end": null,
+   "bot": "Logs to `logs/bot/` in this repo",
+   "build": "Logs to `logs/build/` in this repo"
+  }
+ ]
+}

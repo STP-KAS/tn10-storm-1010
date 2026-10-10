@@ -2,7 +2,7 @@
 
 # logs: where the results land
 
-Empty until the run. Each side drops its files here after the chain count, by 23:59Z on 10 Oct 2026.
+Empty until the run. Each side drops its files here after the chain count, by the PUSH time in [go/README.md](../go/README.md#key-times).
 
 | Folder | Side | Node | Who writes it |
 |---|---|---|---|

@@ -7,12 +7,12 @@ Both sides log the same files, with the same columns, so the bot's minutes, Buil
 ## Format, both sides
 
 - CSV, UTF-8, comma, one header row, LF line ends.
-- Time in UTC, ISO 8601 with `Z`. Seconds: `2026-10-10T13:00:05Z`. Minutes: `2026-10-10T13:00Z` (the same as Kaspa Pulse's CSV).
+- Time in UTC, ISO 8601 with `Z`. Seconds: `2026-10-10T15:00:05Z`. Minutes: `2026-10-10T15:00Z` (the same as Kaspa Pulse's CSV).
 - `side` is `bot` or `build`. `step` is the step id from the [timeline](README.md#timeline) (`G1`, `R1` … `B0`, `S1`, `X2`, `OFF`, `C1000` … `MAX`, `B1`, `HOLD`, `DRAIN`, `COUNT`).
 - An empty cell means **not measured**. Never write 0 for not measured.
 - Clocks NTP-synced. Log the offset at the start and at the end (`ntp.csv`).
 - **Counts only in git.** No txid, key, seed, host, IP, port or address. Per-transaction logs and ids stay on the machine that made them.
-- Logging runs from G1 (12:15Z) to END (21:00Z), even when a side sends nothing. The COUNT file runs after.
+- Logging runs from G1 to END ([times](README.md#key-times)), even when a side sends nothing. The COUNT file runs after.
 
 ## Files
 
@@ -28,7 +28,7 @@ Both sides log the same files, with the same columns, so the bot's minutes, Buil
 | `steps.csv` | each step | `step, side, start_utc, end_utc, target_tx_s, mean_sent, mean_submit_ok, mean_node_accepted, rejects, zero_seconds, fee_low, fee_high, clean, reason` |
 | `gates.csv` | each gate read | `utc, side, gate, synced, utxoindex, sink_lag_s, result` |
 | `ntp.csv` | start and end | `utc, side, when, offset_ms, source` |
-| `chain-count.csv` | COUNT, per minute 12:00Z–21:00Z | `minute_utc, side, network_unique_accepted, accepted_tx_per_s, blocks, our_mined_blocks, complete_minute` |
+| `chain-count.csv` | COUNT, per minute from one hour before T0 to END | `minute_utc, side, network_unique_accepted, accepted_tx_per_s, blocks, our_mined_blocks, complete_minute` |
 | `confirm.csv` | each step | `step, side, fee_tier, n, p50_s, p90_s, max_s` (submit to accept, from the local per-tx log) |
 | `order.csv` | each step | `step, side, n, reordered, reordered_pct` (send order vs accept order) |
 | `SUMMARY.md` | once | Counts only, per step, plus what broke and what was done |
@@ -56,6 +56,6 @@ While `node_state` is not `ok`, `sent` is 0 for that side. Submit attempts are n
 
 ## After the run
 
-1. 21:00–23:00Z: write `chain-count.csv` from the own node, before pruning.
+1. COUNT, the two hours after END: write `chain-count.csv` from the own node, before pruning.
 2. Write `steps.csv` and `SUMMARY.md`.
 3. Copy the files to `logs/bot/` or `logs/build/` in this repo. Keep raw per-tx logs and ids local.

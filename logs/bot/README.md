@@ -16,9 +16,9 @@ Status: **empty until the run.**
 | `node.csv` | Node health every 10 s |
 | `events.csv` | Gates, steps, sender pause and stop, node-dead and node-back, restarts, miner on and off, deviations |
 | `steps.csv` | One row per step, with clean yes or no |
-| `gates.csv` | The 12:15Z and 12:30Z reads |
+| `gates.csv` | The G1 and G2 reads |
 | `ntp.csv` | Clock offset at start and end |
-| `chain-count.csv` | Per-minute chain count, 12:00Z–21:00Z, made 21:00–23:00Z before pruning |
+| `chain-count.csv` | Per-minute chain count, one hour before T0 to END, made in the COUNT row before pruning |
 | `confirm.csv`, `order.csv` | Confirmation time by fee tier, send vs accept order |
 | `SUMMARY.md` | Counts per step, what broke, what was done |
 

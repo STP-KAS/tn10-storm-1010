@@ -15,13 +15,20 @@ One TN10 storm on Saturday 10 Oct 2026, run by two sides at the same time:
 
 Each node is private and not archival. No shared node. No tunnel between the sides. One miner per side.
 
-| | UTC | Brussels (CEST, UTC+2) |
+<!-- clock:key -->
+| What | UTC | Brussels (CEST) |
 |---|---|---|
-| First gate | 12:15 | 14:15 |
-| Second gate, rehearsal | 12:30 | 14:30 |
-| **T0** | **13:00** | **15:00** |
-| End | 21:00 | 23:00 |
-| Chain count, both sides | 21:00–23:00 | 23:00–01:00 |
+| First gate G1 | 14:15 | 16:15 |
+| Second gate G2, miners on, rehearsal | 14:30 | 16:30 |
+| **T0** (B0 starts) | **15:00** | **17:00** |
+| Miners off (OFF0 to ON) | 16:00–16:25 | 18:00–18:25 |
+| End (END), miners off | 23:00 | 01:00 Sun |
+| Chain count (COUNT) | 23:00–01:00 Sun | 01:00 Sun–03:00 Sun |
+| Logs pushed (PUSH) | by 02:00 Sun | by 04:00 Sun |
+| Suggested window for Kaspa Pulse's counter | 14:25–23:05 | 16:25–01:05 Sun |
+<!-- /clock:key -->
+
+All times are set in one place, [go/clock.py](go/clock.py). The full timeline is in [go/README.md](go/README.md#timeline).
 
 ## Why
 
@@ -33,11 +40,11 @@ Same 8-hour plan as Friday night. Friday failed because the shared desk node **l
 |---|---|---|
 | Up to 8 Oct | Box node n0 (+ public nodes for Build) | n0 filled its disk while pruning and was retired. |
 | 9 Oct night, 10 Oct take 2 ([tn10-locus](https://github.com/STP-KAS/tn10-locus)) | Two nodes on one desk: locus (Build) and keel (bot, via a tunnel) | keel lagged; locus aborted at 01:28, 06:52 and 07:26 UTC. Failed as a test of the plan. |
-| **Today** ([tn10-private](https://github.com/STP-KAS/tn10-private) @ `517fb43`, refined here) | Two private, non-archival nodes on two machines: n2 (box) and Build's new desk node | This run. |
+| **Today** ([tn10-private](https://github.com/STP-KAS/tn10-private) @ `517fb43`, refined here, clock 2 h later) | Two private, non-archival nodes on two machines: n2 (box) and Build's new desk node | This run. |
 
 ## Sources
 
-- TN10 ops' plan: [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43). This repo keeps its clock, gates, rates and fees.
+- TN10 ops' plan: [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43). This repo keeps its step shape, gates, rates and fees. The clock is 2 hours later (T0 15:00Z, not 13:00Z), as relayed by TN10 ops at 11:32 CEST.
 - Friday and take 2: [tn10-locus](https://github.com/STP-KAS/tn10-locus), its [run report](https://github.com/STP-KAS/tn10-locus/blob/main/tn10-storm-2026-10-09/build/RUN-REPORT.md) and [abort note](https://github.com/STP-KAS/tn10-locus/blob/main/tn10-storm-2026-10-10/build/INCIDENT-0652.md).
 - Method and questions: [tn10-storm-throughput-questions](https://github.com/STP-KAS/tn10-storm-throughput-questions).
 - Everything earlier: [history/MASTER.md](history/MASTER.md).
