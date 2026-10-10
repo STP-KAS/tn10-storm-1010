@@ -2,6 +2,8 @@
 
 # tn10-storm-1010
 
+> 📘 **[MASTER: every storm, late Sep to 10 Oct 2026, in one file](history/MASTER.md)**
+
 **Thank you first to Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)).** He counted our chain from outside, on his own two nodes, and shaped this plan with his questions, method and fixes. Every input he gave us, with its source and what we changed, is in [credits/KASPA-PULSE.md](credits/KASPA-PULSE.md).
 
 Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host, IP, port or address in this repo. This repo is private. It holds Kaspa Pulse's private night count, which is not for publishing without his yes.
