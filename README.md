@@ -6,7 +6,7 @@
 
 **Thank you first to Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)).** He counted our chain from outside, on his own two nodes, and shaped this plan with his questions, method and fixes. Every input he gave us, with its source and what we changed, is in [credits/KASPA-PULSE.md](credits/KASPA-PULSE.md).
 
-Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host IP, port or wallet address in this repo. This repo is public. The public TN10 node names below are the community resolver nodes, not ours.
+Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host IP, port or wallet address in this repo. This repo is private during the test. The public TN10 node names below are the community resolver nodes, not ours.
 
 **Rewritten 10 Oct 2026, 17:43 CEST, by stp's order**, for a new start at **20:30 CEST**. The 17:00 CEST run was halted by stp at 17:39 CEST because Build had not been started. Nothing from that run is resumed. The old `go/bot` and `go/build` prompts are gone; there is one plan, in two prompts.
 
