@@ -1,6 +1,6 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **23:30:18 CEST / 21:30:18 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **23:45:06 CEST / 21:45:06 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
@@ -8,8 +8,8 @@ Updated **23:30:18 CEST / 21:30:18 UTC**, about every 10 minutes from G1 to END.
 |---|---|
 | Step | **HOLD**, until 04:15 CEST / 02:15 UTC |
 | Bot target (plan) | 880 tx/s |
-| Bot submitted, last 10 min | 876.9 tx/s (526,159 tx) |
-| Bot accepted on n2, last 10 min | 875.4 tx/s (525,247 tx) |
+| Bot submitted, last 10 min | 874.8 tx/s (524,868 tx) |
+| Bot accepted on n2, last 10 min | 875.0 tx/s (525,019 tx) |
 | Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
 | Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
@@ -20,22 +20,22 @@ Updated **23:30:18 CEST / 21:30:18 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 114,947 | 0 | 0 | 0 |
-| electron-10.kaspa.blue | 106,279 | 0 | 0 | 0 |
-| muon-10.kaspa.blue | 101,289 | 0 | 0 | 0 |
-| neutrino-10.kaspa.stream | 97,366 | 0 | 0 | 0 |
-| vector-10.kaspa.green | 106,278 | 0 | 0 | 0 |
+| boson-10.kaspa.red | 113,902 | 0 | 0 | 0 |
+| electron-10.kaspa.blue | 105,322 | 0 | 0 | 0 |
+| muon-10.kaspa.blue | 103,742 | 0 | 0 | 0 |
+| neutrino-10.kaspa.stream | 96,566 | 0 | 0 | 0 |
+| vector-10.kaspa.green | 105,336 | 0 | 0 | 0 |
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
 | n2 synced / UTXO index | True / False |
-| n2 sink age (lag) | 0.5 s |
-| n2 virtual DAA score | 593,338,050 |
+| n2 sink age (lag) | 0.4 s |
+| n2 virtual DAA score | 593,346,891 |
 | Miner processes | 1 |
-| Coins left (unclaimed) | 618,443 tKAS in 19,567 coins |
-| Disk free / RAM available | 40 GB / 4,106 MB |
+| Coins left (unclaimed) | 601,988 tKAS in 18,993 coins |
+| Disk free / RAM available | 40 GB / 4,132 MB |
 
 ## Steps so far
 
