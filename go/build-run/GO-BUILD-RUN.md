@@ -146,7 +146,7 @@ The bot cannot see your screen. stp carries two plain-text files from you to the
 
 ## After END
 
-1. **END (04:30 CEST):** senders stop, miner off, live loggers stop. Your node, if any, stays up.
+1. **END (04:30 CEST):** senders stop, miner off, live loggers stop. Your desk node stays up.
 2. **COUNT (04:30 to 06:30 CEST):** write `chain-count.csv` from your node per minute from one hour before T0 to END, before pruning.
 3. Write `steps.csv`, `SUMMARY.md` and the result handoff file.
 4. **By PUSH (07:30 CEST):** commit your files to `logs/build/` in **STP-KAS/tn10-storm-1010**. Counts only. No force-push. No tags or releases.

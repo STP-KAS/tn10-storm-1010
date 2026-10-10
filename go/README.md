@@ -89,7 +89,7 @@ stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now an
 
 ## Gates
 
-- **G1, 20:00 CEST (18:00 UTC).** Each side reads its own setup: node synced (if it has one), UTXO index on, sink lag at or under 60 s, coins ready, disk free, the public nodes reachable. Logging starts. A failed read is retried for two minutes and logged. **A failed G1 never blocks the public-node senders** (lesson of 16:15 CEST, when n2's freeze failed the gate and the scheduler held the senders at 0).
+- **G1, 20:00 CEST (18:00 UTC).** Each side reads its own setup: node synced (n2 for the bot, the desk node for Build), UTXO index on, sink lag at or under 60 s, Build: at least 4 GB RAM free on the desk, coins ready, disk free, the public nodes reachable. Logging starts. A failed read is retried for two minutes and logged. **A failed G1 never blocks the public-node senders** (lesson of 16:15 CEST, when n2's freeze failed the gate and the scheduler held the senders at 0).
 - **G2, 20:15 CEST (18:15 UTC), the ready check.** Both sides started and armed. **Build started?** Build writes `FOR-TN10-OPS-ready-1010.txt` (format in [LOGGING.md](LOGGING.md#handoff-files-build-to-the-bot)) and stp passes it to the bot, or stp tells the bot "Build started". Miners on.
 - **If Build is not confirmed at G2:** the bot tells stp at once. T0 does not move. The bot does not send until stp confirms Build or tells it to go alone; then it joins the open step. Every minute without that confirmation is logged as `build-not-confirmed`.
 
