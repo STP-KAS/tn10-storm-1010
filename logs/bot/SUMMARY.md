@@ -1,6 +1,6 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **21:29:23 CEST / 19:29:23 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **21:30:11 CEST / 19:30:11 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
@@ -10,7 +10,7 @@ Updated **21:29:23 CEST / 19:29:23 UTC**, about every 10 minutes from G1 to END.
 | Bot target (plan) | 413 tx/s |
 | Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
 | Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
-| Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
+| Rejects, last 10 min | 0 consensus/mempool; 25 public-node transport errors |
 | Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
 | Build started? | yes (BUILD-OK present) |
@@ -20,22 +20,24 @@ Updated **21:29:23 CEST / 19:29:23 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 0 | 0 | 0 | 0 |
-| electron-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| muon-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| neutrino-10.kaspa.stream | 0 | 0 | 0 | 0 |
-| vector-10.kaspa.green | 0 | 0 | 0 | 0 |
+| boson-10.kaspa.red | 0 | 0 | 7 | 0 |
+| electron-10.kaspa.blue | 0 | 0 | 5 | 0 |
+| muon-10.kaspa.blue | 0 | 0 | 4 | 0 |
+| neutrino-10.kaspa.stream | 0 | 0 | 5 | 0 |
+| vector-10.kaspa.green | 0 | 0 | 4 | 0 |
+
+Rejects by class: rpc 25
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
 | n2 synced / UTXO index | False / True |
-| n2 sink age (lag) | 1,278.5 s |
+| n2 sink age (lag) | 1,327.1 s |
 | n2 virtual DAA score | 593,253,219 |
 | Miner processes | 1 |
 | Coins left (unclaimed) | 934,337 tKAS in 29,485 coins |
-| Disk free / RAM available | 13 GB / 2,671 MB |
+| Disk free / RAM available | 10 GB / 2,753 MB |
 
 ## Steps so far
 
