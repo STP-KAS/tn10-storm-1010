@@ -1,6 +1,6 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **00:26:26 CEST / 22:26:26 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **00:30:17 CEST / 22:30:17 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
@@ -8,9 +8,9 @@ Updated **00:26:26 CEST / 22:26:26 UTC**, about every 10 minutes from G1 to END.
 |---|---|
 | Step | **HOLD**, until 04:15 CEST / 02:15 UTC |
 | Bot target (plan) | 880 tx/s |
-| Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
-| Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
-| Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
+| Bot submitted, last 10 min | 112.2 tx/s (67,336 tx) |
+| Bot accepted on n2, last 10 min | 110.4 tx/s (66,268 tx) |
+| Rejects, last 10 min | 0 consensus/mempool; 2,971 public-node transport errors |
 | Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
 | Build started? | yes (BUILD-OK present) |
@@ -20,22 +20,24 @@ Updated **00:26:26 CEST / 22:26:26 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 0 | 0 | 0 | 0 |
-| electron-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| muon-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| neutrino-10.kaspa.stream | 0 | 0 | 0 | 0 |
-| vector-10.kaspa.green | 0 | 0 | 0 | 0 |
+| boson-10.kaspa.red | 13,772 | 0 | 645 | 0 |
+| electron-10.kaspa.blue | 13,365 | 0 | 599 | 0 |
+| muon-10.kaspa.blue | 16,850 | 0 | 578 | 0 |
+| neutrino-10.kaspa.stream | 9,829 | 0 | 550 | 0 |
+| vector-10.kaspa.green | 13,520 | 0 | 599 | 0 |
+
+Rejects by class: rpc 2,971
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
-| n2 synced / UTXO index | False / False |
-| n2 sink age (lag) | 1,153.4 s |
-| n2 virtual DAA score | 593,360,157 |
+| n2 synced / UTXO index | True / False |
+| n2 sink age (lag) | 186.9 s |
+| n2 virtual DAA score | 593,370,102 |
 | Miner processes | 1 |
-| Coins left (unclaimed) | 583,937 tKAS in 18,426 coins |
-| Disk free / RAM available | 39 GB / 3,435 MB |
+| Coins left (unclaimed) | 488,999 tKAS in 15,426 coins |
+| Disk free / RAM available | 39 GB / 2,418 MB |
 
 ## Steps so far
 
@@ -61,17 +63,17 @@ Updated **00:26:26 CEST / 22:26:26 UTC**, about every 10 minutes from G1 to END.
 
 | CEST | Event | Step | Detail |
 |---|---|---|---|
-| 22:54:13 | sender-start | HOLD | S11 mode=pub |
-| 22:54:16 | sender-relaunch | HOLD | S12 relaunch 5/30 |
-| 22:54:16 | sender-start | HOLD | S12 mode=pub |
-| 22:54:19 | sender-relaunch | HOLD | S13 relaunch 5/30 |
-| 22:54:19 | sender-start | HOLD | S13 mode=pub |
-| 22:54:22 | sender-relaunch | HOLD | S14 relaunch 6/30 |
-| 22:54:22 | sender-start | HOLD | S14 mode=pub |
-| 22:54:25 | sender-relaunch | HOLD | S15 relaunch 6/30 |
-| 22:54:25 | sender-start | HOLD | S15 mode=pub |
-| 22:59:33 | coin-refresh | HOLD | buffer check 618443 tKAS 19567 coins |
-| 23:29:39 | coin-refresh | HOLD | buffer check 618443 tKAS 19567 coins |
-| 23:59:46 | coin-refresh | HOLD | buffer check 584786 tKAS 18446 coins |
+| 00:28:23 | sender-relaunch | HOLD | S11 relaunch 6/30 |
+| 00:28:23 | sender-start | HOLD | S11 mode=pub |
+| 00:28:26 | sender-relaunch | HOLD | S12 relaunch 6/30 |
+| 00:28:26 | sender-start | HOLD | S12 mode=pub |
+| 00:28:29 | sender-relaunch | HOLD | S13 relaunch 6/30 |
+| 00:28:29 | sender-start | HOLD | S13 mode=pub |
+| 00:28:32 | sender-relaunch | HOLD | S14 relaunch 7/30 |
+| 00:28:32 | sender-start | HOLD | S14 mode=pub |
+| 00:28:35 | sender-relaunch | HOLD | S15 relaunch 7/30 |
+| 00:28:35 | sender-start | HOLD | S15 mode=pub |
+| 00:29:32 | miner-on | HOLD | n2 synced again / process relaunch |
+| 00:29:52 | coin-refresh | HOLD | buffer check 488999 tKAS 15426 coins |
 
 How to read: *Now* answers "is the bot sending what the plan says?"; *Public nodes* shows which node rejects or errors; *Steps so far* is the per-step verdict (clean = at least 90% of target delivered, at least 99% accepted, p90 at most 10 s). Final per-second files land here after END.
