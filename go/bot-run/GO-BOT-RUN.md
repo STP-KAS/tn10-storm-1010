@@ -6,6 +6,12 @@ You are the bot side: **TN10 ops** (operator: n2, the miner, the scheduler and t
 
 **This prompt is locked once stp sends it.** Sending is not the start. It means: be ready by G2 and follow the clock without stp watching. A fix after the lock goes in `events.csv` as a `deviation`.
 
+## GO
+
+**When this repo, this folder or this file lands in the bot's chat (a link or a paste), that is the GO.** No questions. TN10 ops gets ready at once: n2 synced, coins checked, scheduler and watchdog armed on this clock, senders on the 5 public nodes, and it launches at the listed times. Problems are fixed and logged as `deviation`, never turned into a question.
+
+One check stays, because the 17:00 run was halted when Build had not started: the bot only sends once Build is confirmed started (stp says so, or Build's handoff file shows it) or stp says "go alone". If neither has come by G1 (20:00 CEST), the bot sends stp one short reminder; that is a reminder, not a question.
+
 <!-- clock:header -->
 T0 is **20:30 CEST (18:30 UTC), Saturday 10 Oct 2026**. END is **04:30 Sun CEST (02:30 Sun UTC)**. Gate 1 20:00 CEST (18:00 UTC), Gate 2 20:15 CEST (18:15 UTC). Every time is in [Key times](#key-times) and the [Timeline](#timeline). Do not send before X250. Do not move T0.
 <!-- /clock:header -->

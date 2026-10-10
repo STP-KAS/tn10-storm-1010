@@ -10,6 +10,10 @@ Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed
 
 **Rewritten 10 Oct 2026, 17:43 CEST, by stp's order**, for a new start at **20:30 CEST**. The 17:00 CEST run was halted by stp at 17:39 CEST because Build had not been started. Nothing from that run is resumed. The old `go/bot` and `go/build` prompts are gone; there is one plan, in two prompts.
 
+## GO
+
+Landing this repo (or `go/bot-run` / `go/build-run`) in the bot's or Build's chat is the GO: each side gets ready without questions and launches at the times in its file. Bot: [GO-BOT-RUN.md](go/bot-run/GO-BOT-RUN.md). Build: [GO-BUILD-RUN.md](go/build-run/GO-BUILD-RUN.md).
+
 ## What
 
 One TN10 storm on Saturday evening, 10 Oct 2026, run by two sides at the same time, on one clock:
