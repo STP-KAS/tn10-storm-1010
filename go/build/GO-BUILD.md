@@ -12,6 +12,10 @@ T0 is **2026-10-10T15:00:00Z (17:00 Brussels)**. End is **23:00Z (01:00 Sun Brus
 
 Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). Three rules below are his fixes from Friday night.
 
+## Note: the bot side changed (stp, 10 Oct 2026)
+
+**Changed 10 Oct 2026, 14:35/14:36 CEST, by stp, for the bot only.** The bot's senders now submit only to the five public TN10 nodes (muon, boson, electron, neutrino, vector) and use n2 for reads, coins, the chain count and its miner. The bot's rehearsal was not run (its G1 failed while n2 was frozen). Details: [GO-BOT, Changed during the run](../bot/GO-BOT.md#changed-during-the-run-bot-submits-to-public-nodes-stp-10-oct-2026). **Build's own rules do not change:** Build still sends only to its own node. Network load on those public nodes now includes the bot's share, so counts stay from chain data, counted once.
+
 ## Why this run
 
 Same 8-hour plan as Friday. Friday failed because locus died at about 01:28Z and the desk senders kept firing at it; Kaspa Pulse's count shows base load only from then on. Take 2 hit the same locus abort (`0xc0000409`) at 06:52Z and 07:26Z. Today each side has its own private node, no tunnel, and a sender stops itself when its node dies. Do not resume Friday's run or take 2. Do not reuse a baseline of 66 or 67. locus and keel are gone; do not restart them.

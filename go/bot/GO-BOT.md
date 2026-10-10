@@ -16,12 +16,26 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). Three rules belo
 
 Same 8-hour plan as Friday. Friday failed because the shared desk node locus died at about 01:28Z and the senders kept firing at it; the bot's node keel lagged behind a tunnel. Today each side has its own private node, no tunnel, and a sender stops itself when its node dies. Do not resume Friday's run or Saturday's take 2. Do not reuse a baseline of 66 or 67. keel and locus are gone.
 
+## Changed during the run: bot submits to public nodes (stp, 10 Oct 2026)
+
+**Changed 10 Oct 2026, 14:35 and 14:36 CEST, by stp.** Written into this file at stp's request at 17:31 CEST ("update github repo with plan using public nodes, keep working as you are"). It overrides the "send only to n2" and "no shared node" lines for the **bot side only**. Build's own node rules in [GO-BUILD.md](../build/GO-BUILD.md) are unchanged. The [Timeline](#timeline) table is unchanged.
+
+- **Submit path.** Every bot sender submits **only** to the five public TN10 wRPC nodes: `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green`. Never to n2. The load is spread over all five: each sender holds connections to three of them, rotated so all five are covered, and a lane that loses its node moves to any live connection of its sender. 14:35 CEST was a fallback (public nodes when n2 is low on disk or lagging); 14:36 CEST made it always.
+- **What n2 still does.** Reads only: health and fee quote, own-tx acceptance (virtual chain), the coin list and coin refresh, the chain count, and the one miner. n2 stays private, loopback only.
+- **Why (Claim, measured on TN10).** n2 shares one box with the senders; the public nodes take the submit load off n2's RPC and disk. A 2-hour public-node test the same afternoon (private report repo `tn10-storm-1010-public-nodes`) reached a peak of about 3,170 bot submitted tx/s and held about 900 to 980 tx/s clean on 14 senders. Build also used the same five nodes in that test, so those network numbers are combined.
+- **Node-dead rule, new form (stp 16:19 CEST).** The rule now keys on the **public nodes, per sender**: a node that gives about 20 connection errors in a row is cooled for 30 s and the sender uses its other live nodes; if none is live, the sender waits and counts no attempt. A failed submit is still a reject, never "sent". **n2 lag or n2 not synced no longer zeros the senders.** If n2's RPC itself fails, senders pause (they need n2 to see their own transactions accepted). The fee rule (pair 200/300, cap 600, floor 200, quote from n2 or a public node) is unchanged.
+- **Rehearsal not run.** n2's tip froze at about 15:57 CEST (virtual DAA stopped, sink lag climbing past 1,200 s). G1 at 16:15 CEST **failed** (not synced, lag about 1,238 s). n2 was restarted on the same flags at 16:19 CEST and was healthy again at about 16:21 CEST. G2 at 16:30 CEST passed. Rule: both gates must pass, so the rehearsal was **not run**. T0 did not move; the bot sent from row S1 (17:10 CEST) on the public nodes.
+- **Coins: 1M fill.** stp, 12:44 CEST: "fill with tKAS from the wallet, 1 million". The bot consolidated old bot-wallet coinbases (read from n2's UTXO index in small, memory-safe reads, never one whole-address listing) into about 49 tKAS outputs back to the bot, through the same claim ledger: about 1,000,000 tKAS added by 14:10 CEST, a 250,000 tKAS top-up at 15:13 CEST, and a second 1,000,000 tKAS fill started 17:35 CEST before the big steps. Every fill is logged as an event.
+- **Disk.** Senders pause at **8 GB** free on the box. n2's disk guard writes STOP at **5 GB** free and stops n2 cleanly at **3 GB** free.
+
+**Certainty.** Claim (measured on TN10): the public-node peak and hold rates, the n2 freeze and gate results. Not sure / open for debate: why three of the five public nodes refused connections under heavy fan-out. Needs more testing: public-node behaviour at the HOLD rate for four hours with Build on the same nodes.
+
 ## Your node: n2
 
 - **n2** on the box. kaspad 2.1.0, testnet-10, pruned (**not archival**), UTXO index on (spends need it; that is not archival mode). Owned and run by TN10 ops.
 - Peer and RPC on loopback only. No tunnel. No inbound peers. No public peer port. Do not publish the listen address.
 - One process. If it aborts, start it again on the same flags. Never switch on archival to "fix" anything.
-- Send only to n2. Never to Build's node, never to a public node.
+- Send only to n2. Never to Build's node, never to a public node. **Superseded for the bot's submits, 10 Oct 14:36 CEST by stp: submit only to the five public TN10 nodes; see [Changed during the run](#changed-during-the-run-bot-submits-to-public-nodes-stp-10-oct-2026).**
 - **n2 is not ready yet.** At 09:27Z on 10 Oct it was in initial sync (about 1.16M of about 6.3M headers, about 260/s, 0 blocks). Let it sync. Guard its disk. It may miss the gates and maybe T0. **Do not write n2 as ready until a gate read says so.**
 - **If n2 is not synced:** the rehearsal is **not run** (write `not-run` in `events.csv`). The bot joins the **first send row that opens after n2 is synced**. T0 does not move. Every gap is logged.
 - Sink lag = UTC now minus the timestamp of n2's sink. Build's lag is not your gate.
@@ -38,7 +52,7 @@ Same 8-hour plan as Friday. Friday failed because the shared desk node locus die
 - The bot's own wallet. Coins through TN10 ops' claim protocol (claim file created with O_EXCL, then the append-only used list) so no coin is spent twice. Skip coins already claimed, including the parked trump2028 odd-mint coins.
 - Rate = the Bot column below. Fees: pair 200 and 300 sompi/gram, half the lanes each, frozen for the step from n2's quote. Cap 600, floor 200. If n2's quote is above 200, do not send that step: sit it out and log `step-sit-out` with the quote.
 - Pause every other bot-side sender that is not in this plan from G1 to END, so B0 means something. If a sender belongs to another bot (for example kns tn10), ask it to pause and log what it said.
-- **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when n2's RPC fails for 5 s in a row, n2 is not synced, sink lag from a fresh read is over 60 s, or n2's virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. This is also in TN10 ops' sender gate.
+- **Node-dead rule (Kaspa Pulse):** a sender stops itself and logs `node-dead` when n2's RPC fails for 5 s in a row, n2 is not synced, sink lag from a fresh read is over 60 s, or n2's virtual DAA score stops for 30 s. It **never fires at a dead node**. A failed submit is a reject, never "sent". It starts again only after a fresh health read passes, inside the open row, and logs `node-back`. This is also in TN10 ops' sender gate. **Changed 10 Oct 16:19 CEST by stp:** the rule now keys on the public nodes per sender; n2 lag or not-synced no longer zeros the senders (see [Changed during the run](#changed-during-the-run-bot-submits-to-public-nodes-stp-10-oct-2026)).
 - The headline is network unique accepted tx/s, counted once. Do not add your accepted count to Build's.
 
 ## Coins
@@ -163,6 +177,6 @@ TN10 ops' scheduler writes raw per-second and per-minute logs on the box under `
 
 - If something breaks, **first try to fix it**: restart n2 on the same flags, re-arm a sender, refresh coins, free disk. Log what broke and what you did.
 - **Then keep going.** Join the open row. Do not stop at the first risk; find a way inside these rules. Never end the run early. Never move T0.
-- Keep going never means breaking a rule: no shared node, no tunnel, no second miner, no archival, no public port, no fee over the cap, no sending to a dead or lagging node.
+- Keep going never means breaking a rule (for the bot, public-node submit is allowed since 10 Oct 14:36 CEST, stp): no shared node, no tunnel, no second miner, no archival, no public port, no fee over the cap, no sending to a dead or lagging node.
 - Do not wait for stp. Do not ping Kaspa Pulse; stp does that. TN10 ops and tn ops2 may talk to each other.
 - Do not put a host, IP, port, key, seed, txid or address in the repo.

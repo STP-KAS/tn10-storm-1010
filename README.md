@@ -17,6 +17,8 @@ One TN10 storm on Saturday 10 Oct 2026, run by two sides at the same time:
 
 Each node is private and not archival. No shared node. No tunnel between the sides. One miner per side.
 
+**Changed 10 Oct 2026, 14:35/14:36 CEST, by stp (bot side only):** the bot submits only to the five public TN10 nodes (muon-10.kaspa.blue, boson-10.kaspa.red, electron-10.kaspa.blue, neutrino-10.kaspa.stream, vector-10.kaspa.green), spread over all five. n2 stays private and is used for reads, coins, the chain count and the bot's miner. The node-dead rule now keys on the public nodes per sender (16:19 CEST); n2 lag no longer zeros the senders. The rehearsal was not run: G1 failed while n2's tip was frozen (about 15:57 to 16:21 CEST, restarted 16:19). Coins: 1M tKAS fill from the bot wallet (done 14:10 CEST), top-ups after. Disk: senders pause at 8 GB free, n2 guard 5 GB / 3 GB. Build's own node rules are unchanged. Details: [GO-BOT](go/bot/GO-BOT.md#changed-during-the-run-bot-submits-to-public-nodes-stp-10-oct-2026). The public-node test report is in the private repo `tn10-storm-1010-public-nodes`.
+
 <!-- clock:key -->
 | What | UTC | Brussels (CEST) |
 |---|---|---|
