@@ -4,7 +4,7 @@
 
 Written by Grok Build after the run. Submits: Build's own desk node, the public TN10 nodes as fallback (every fallback is in `events.csv`). Raw logs stay on the desk; this folder gets the copy.
 
-Status: **empty until the run.**
+Status: **10 Oct 2026 run.** Counts only. Per-transaction logs stayed on the desk.
 
 | File | Every | What | Read it for |
 |---|---|---|---|

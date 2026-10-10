@@ -1,0 +1,113 @@
+utc,side,step,event,detail
+2026-10-10T17:28:15Z,build,PREP,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,G1,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,G2,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R1,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R2,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R3,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R4,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R5,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R6,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,R7,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,B0,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,S1,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,S2,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,S3,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,X2,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,OFF0,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,OFF,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,ON,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,C1000,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,C1500,not-run,plan opened after the row ended
+2026-10-10T17:28:15Z,build,,deviation,joined at 2026-10-10T17:28:15Z after T0; prompt sha a755dfe; saved coin list was stale so C2000 was not sent; next open send row is joined after a coin refresh
+2026-10-10T17:28:15Z,build,G1,step-start,target 0
+2026-10-10T17:28:17Z,build,,coin-refresh,lanes 1805/1805/1805/1804/1804/1804/1804/1804 order 473
+2026-10-10T17:30:35Z,build,,deviation,false G1 step-start corrected before any send
+2026-10-10T17:30:35Z,build,PUSH,step-start,target 0
+2026-10-10T17:30:37Z,build,,coin-refresh,lanes 1805/1805/1805/1804/1804/1804/1804/1804 order 473
+2026-10-10T17:31:42Z,build,,deviation,false PUSH step-start corrected before any send
+2026-10-10T17:31:42Z,build,C2500,step-start,target 1875
+2026-10-10T17:31:44Z,build,,coin-refresh,lanes 1805/1805/1805/1804/1804/1804/1804/1804 order 473
+2026-10-10T17:31:44Z,build,C2500,sender-start,s0 target 312
+2026-10-10T17:31:44Z,build,C2500,sender-start,s1 target 312
+2026-10-10T17:31:44Z,build,C2500,sender-start,s2 target 312
+2026-10-10T17:31:44Z,build,C2500,sender-start,s3 target 312
+2026-10-10T17:31:44Z,build,C2500,sender-start,s4 target 312
+2026-10-10T17:31:44Z,build,C2500,sender-start,s5 target 311
+2026-10-10T17:31:44Z,build,C2500,sender-start,order target 4
+2026-10-10T17:45:00Z,build,C2500,sender-stop,s0 drain
+2026-10-10T17:45:00Z,build,C2500,sender-stop,s1 drain
+2026-10-10T17:45:00Z,build,C2500,sender-stop,s2 drain
+2026-10-10T17:45:00Z,build,C2500,sender-stop,s3 drain
+2026-10-10T17:45:00Z,build,C2500,sender-stop,s4 drain
+2026-10-10T17:45:00Z,build,C2500,sender-stop,s5 drain
+2026-10-10T17:45:00Z,build,C2500,sender-stop,order drain
+2026-10-10T17:50:00Z,build,C2500,step-end,clean
+2026-10-10T17:50:00Z,build,MAX,step-start,target 2600
+2026-10-10T17:50:00Z,build,MAX,sender-start,s0 target 325
+2026-10-10T17:50:00Z,build,MAX,sender-start,s1 target 325
+2026-10-10T17:50:00Z,build,MAX,sender-start,s2 target 325
+2026-10-10T17:50:00Z,build,MAX,sender-start,s3 target 325
+2026-10-10T17:50:00Z,build,MAX,sender-start,s4 target 324
+2026-10-10T17:50:00Z,build,MAX,sender-start,s5 target 324
+2026-10-10T17:50:00Z,build,MAX,sender-start,s6 target 324
+2026-10-10T17:50:00Z,build,MAX,sender-start,s7 target 324
+2026-10-10T17:50:00Z,build,MAX,sender-start,order target 4
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s0 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s1 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s2 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s3 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s4 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s5 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s6 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,s7 drain
+2026-10-10T18:05:00Z,build,MAX,sender-stop,order drain
+2026-10-10T18:15:00Z,build,MAX,step-end,clean
+2026-10-10T18:15:00Z,build,HOLD,deviation,hold rate set to 2400 from MAX clean=yes
+2026-10-10T18:15:00Z,build,B1,step-start,target 0
+2026-10-10T18:25:00Z,build,B1,step-end,not-clean
+2026-10-10T18:25:00Z,build,HOLD,step-start,target 2400
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s0 target 300
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s1 target 300
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s2 target 300
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s3 target 300
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s4 target 299
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s5 target 299
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s6 target 299
+2026-10-10T18:25:00Z,build,HOLD,sender-start,s7 target 299
+2026-10-10T18:25:00Z,build,HOLD,sender-start,order target 4
+2026-10-10T19:46:09Z,build,HOLD,deviation,"MAX minute submit was about 870 tx/s, under 2600, so MAX was not clean. The 2400 hold event is superseded. HOLD uses the last clean rate 1875 from C2500"
+2026-10-10T19:46:09Z,build,HOLD,step-start,target 1875
+2026-10-10T19:46:11Z,build,,coin-refresh,lanes 1795/1795/1795/1795/1795/1795/1794/1794 order 548
+2026-10-10T19:46:11Z,build,HOLD,sender-start,s0 target 312
+2026-10-10T19:46:11Z,build,HOLD,sender-start,s1 target 312
+2026-10-10T19:46:11Z,build,HOLD,sender-start,s2 target 312
+2026-10-10T19:46:11Z,build,HOLD,sender-start,s3 target 312
+2026-10-10T19:46:11Z,build,HOLD,sender-start,s4 target 312
+2026-10-10T19:46:12Z,build,HOLD,sender-start,s5 target 311
+2026-10-10T19:46:12Z,build,HOLD,sender-start,order target 4
+2026-10-10T19:49:19Z,build,HOLD,deviation,sec row 2026-10-10T19:46:12Z and its orphan reject row were a sender log replay and were cleared. That arm was stopped. Minutes 19:43Z through 19:46Z were not flushed. Coin list refreshed again before the next arm
+2026-10-10T19:49:19Z,build,HOLD,step-start,target 1875
+2026-10-10T19:49:21Z,build,,coin-refresh,lanes 1782/1781/1781/1781/1781/1781/1781/1781 order 657
+2026-10-10T19:49:21Z,build,HOLD,sender-start,s0 target 312
+2026-10-10T19:49:21Z,build,HOLD,sender-start,s1 target 312
+2026-10-10T19:49:21Z,build,HOLD,sender-start,s2 target 312
+2026-10-10T19:49:21Z,build,HOLD,sender-start,s3 target 312
+2026-10-10T19:49:21Z,build,HOLD,sender-start,s4 target 312
+2026-10-10T19:49:21Z,build,HOLD,sender-start,s5 target 311
+2026-10-10T19:49:21Z,build,HOLD,sender-start,order target 4
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,s0 step-end
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,s1 step-end
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,s2 step-end
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,s3 step-end
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,s4 step-end
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,s5 step-end
+2026-10-10T22:45:00Z,build,HOLD,sender-stop,order step-end
+2026-10-10T22:45:01Z,build,HOLD,step-end,not-clean
+2026-10-10T22:45:01Z,build,DRAIN,step-start,target 0
+2026-10-10T23:00:00Z,build,DRAIN,step-end,not-clean
+2026-10-10T23:00:00Z,build,END,miner-off,end of run
+2026-10-10T23:00:00Z,build,END,step-end,loggers stopping; node left up
+2026-10-10T23:08:04Z,build,COUNT,step-start,chain count started; per minute from 2026-10-10T14:00Z to 2026-10-10T23:00Z
+2026-10-10T23:35:03Z,build,COUNT,step-end,chain count written; chain blocks 152625; our chain blocks 23764; minute rows filled 325
+2026-10-10T23:37:11Z,build,COUNT,deviation,"chain-count.csv covers 14:00Z through 22:59Z: 49246307 network unique accepts and 23189 of our chain blocks. The COUNT step-end figure 23764 includes the 10 minute lead-in. minute.csv has no 22:59Z row because the clock stopped at 23:00Z before that flush"

@@ -1,0 +1,6 @@
+step,side,start_utc,end_utc,target_tx_s,mean_sent,mean_submit_ok,mean_node_accepted,rejects,zero_seconds,fee_low,fee_high,clean,reason
+C2500,build,2026-10-10T17:31:42Z,2026-10-10T17:50:00Z,1875,1949.05,1949.05,1942.01,0,3,200,300,yes,
+MAX,build,2026-10-10T17:50:00Z,2026-10-10T18:15:00Z,2600,2691.28,2686.83,2679.06,3738,1,200,300,yes,
+B1,build,2026-10-10T18:15:00Z,2026-10-10T18:25:00Z,0,,,,0,0,200,300,no,below target or too many zero seconds
+HOLD,build,2026-10-10T19:49:19Z,2026-10-10T22:45:01Z,1875,1718,1718,1717.74,0,4,200,300,no,below target or too many zero seconds
+DRAIN,build,2026-10-10T22:45:01Z,2026-10-10T23:00:00Z,0,,,,0,0,200,300,no,below target or too many zero seconds

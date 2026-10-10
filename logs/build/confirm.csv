@@ -1,0 +1,11 @@
+step,side,fee_tier,n,p50_s,p90_s,max_s
+C2500,build,200,,,,
+C2500,build,300,,,,
+MAX,build,200,,,,
+MAX,build,300,,,,
+B1,build,200,,,,
+B1,build,300,,,,
+HOLD,build,200,,,,
+HOLD,build,300,,,,
+DRAIN,build,200,,,,
+DRAIN,build,300,,,,
