@@ -2,7 +2,7 @@
 
 # logs/build
 
-Written by Grok Build after the run. Node: Build's own desk node. Live logs are kept at `%USERPROFILE%\grok-build\tn10-storm-1010\logs\` on the desk; this folder gets the copy.
+Written by Grok Build after the run. Submits: public TN10 nodes or Build's own node, as Build chose (see its ready file). Raw logs stay on the desk; this folder gets the copy.
 
 Status: **empty until the run.**
 
@@ -14,12 +14,13 @@ Status: **empty until the run.**
 | `miner.csv` | Miner state, hashrate, blocks found, every 10 s |
 | `host.csv` | CPU, RAM, disk, datadir size, every 10 s |
 | `node.csv` | Node health every 10 s |
+| `public-nodes.csv` | Per minute, per public node: submits ok, rejects, errors |
 | `events.csv` | Gates, steps, sender pause and stop, node-dead and node-back, restarts, miner on and off, deviations |
 | `steps.csv` | One row per step, with clean yes or no |
-| `gates.csv` | The G1 and G2 reads |
+| `gates.csv` | The G1 and G2 reads, incl. the Build-started check |
 | `ntp.csv` | Clock offset at start and end |
 | `chain-count.csv` | Per-minute chain count, one hour before T0 to END, made in the COUNT row before pruning |
-| `confirm.csv`, `order.csv` | Confirmation time by fee tier, send vs accept order |
+| `confirm.csv` | Confirmation time by fee tier |
 | `SUMMARY.md` | Counts per step, what broke, what was done |
 
 Columns: [go/LOGGING.md](../../go/LOGGING.md). Counts only. Per-transaction logs and ids stay local.

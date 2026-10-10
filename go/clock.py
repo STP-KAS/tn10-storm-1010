@@ -1,142 +1,104 @@
 #!/usr/bin/env python3
-"""The one place for times. Edit T0 below, run `python3 go/clock.py`, commit.
+"""The one place for times and rates of the bot run and the build run. Edit T0 below, run `python3 go/clock.py`, commit.
 
-It rewrites the blocks between <!-- clock:NAME --> and <!-- /clock:NAME -->
-in README.md, go/README.md, go/bot/GO-BOT.md and go/build/GO-BUILD.md,
-and writes go/steps-utc.json (times, plus the fixed rate targets in TARGETS). Every step is an offset in minutes from T0.
-Do not change times by hand anywhere else. Do not run this after a prompt is locked.
+It rewrites the blocks between <!-- clock:NAME --> and <!-- /clock:NAME --> in README.md, go/README.md,
+go/bot-run/GO-BOT-RUN.md and go/build-run/GO-BUILD-RUN.md, and writes go/steps-utc.json.
+Every step is an offset in minutes from T0. Do not change times or rates by hand anywhere else.
+Do not run this after stp has sent the prompts (they are locked then).
 """
 import json, re, pathlib
 from datetime import datetime, timedelta, timezone
 
-T0 = datetime(2026, 10, 10, 15, 0, tzinfo=timezone.utc)   # <- the only time to edit
+T0 = datetime(2026, 10, 10, 18, 30, tzinfo=timezone.utc)   # <- the only time to edit (20:30 CEST, stp 10 Oct 17:43 CEST)
 LOCAL = timezone(timedelta(hours=2), "CEST")               # Brussels, UTC+2
+FEE_LOW, FEE_HIGH, FEE_CAP, FEE_FLOOR = 400, 600, 600, 100  # sompi/gram, both sides
+SUCCESS_TX_S = 3000
 
-# id, start, end, drain_end, bot, build   (minutes from T0; None = a point in time)
+# id, kind, start, end, drain_end, bot tx/s, build tx/s, bot text, build text   (minutes from T0; None = a point in time)
 STEPS = [
-    ("PREP", None, -45, None, "Prepare. n2 syncing. No sends. Miner off.", "Start node sync now. Prepare. No sends. Miner off."),
-    ("G1", -45, None, None, "First gate on n2. Rehearsal go/no-go.", "Stop every sender not in this plan. First gate on the desk node."),
-    ("G2", -30, None, None, "Second gate. Start 1 miner, only if n2 is synced.", "Second gate. Start exactly 1 miner."),
-    ("R1", -30, -20, None, "60, only if both gates passed", "0"),
-    ("R2", -20, -15, None, "20", "0"),
-    ("R3", -15, -10, None, "50", "0"),
-    ("R4", -10, -7, None, "60", "0"),
-    ("R5", -7, -4, None, "0", "60"),
-    ("R6", -4, -1, None, "60", "60"),
-    ("R7", -1, 0, None, "0", "0"),
-    ("B0", 0, 10, None, "**T0.** No load. Miner on.", "**T0.** No load. Miner on."),
-    ("S1", 10, 20, None, "60", "0"),
-    ("S2", 20, 30, None, "0", "60"),
-    ("S3", 30, 40, None, "60", "60"),
-    ("X2", 40, 55, 60, "60 (combined 250)", "190"),
-    ("OFF0", 60, 65, None, "Settle, 0. **Miner off.**", "Settle, 0. **Miner off.**"),
-    ("OFF", 65, 80, 85, "Miners-off check: 60 (combined 250, same as X2)", "Miners-off check: 190 (same as X2)"),
-    ("ON", 85, 90, None, "Settle, 0. **Miner on.**", "Settle, 0. **Miner on.**"),
-    ("C1000", 90, 105, 110, "250 (combined 1,000)", "750"),
-    ("C1500", 110, 125, 130, "375 (combined 1,500)", "1,125"),
-    ("C2000", 130, 145, 150, "500 (combined 2,000)", "1,500"),
-    ("C2500", 150, 165, 170, "625 (combined 2,500)", "1,875"),
-    ("MAX", 170, 185, 195, "900 (combined 3,500)", "2,600, may go above with up to 9 senders, never below"),
-    ("B1", 195, 205, None, "No load", "No load"),
-    ("HOLD", 205, 465, None, "800 (combined 3,200); if not clean at that level, the last clean level, or 30 if none", "2,400; if not clean at that level, the last clean rate, or 250 if none"),
-    ("DRAIN", 465, 480, None, "Senders 0", "Senders 0"),
-    ("END", 480, None, None, "Miner off. Live loggers stop.", "Miner off. Live loggers stop. Node stays up."),
-    ("COUNT", 480, 600, None, "Chain count from n2, before pruning", "Chain count from the desk node, before pruning"),
-    ("PUSH", None, 660, None, "Logs to `logs/bot/` in this repo", "Logs to `logs/build/` in this repo"),
+    ("PREP", "prep", None, -30, None, 0, 0, "Re-armed. n2 synced. Coins topped up. No sends. Miner off.", "Read this file. Arm your node or nodes, coins and senders. No sends. Miner off."),
+    ("G1", "gate", -30, None, None, 0, 0, "Gate 1: n2 health, coin buffer, the five public nodes reachable. Logging starts.", "Gate 1: your node health (or the public nodes), coins, disk. Logging starts. Stop every sender not in this plan."),
+    ("G2", "gate", -15, None, None, 0, 0, "Gate 2, **ready check**: stp confirms Build has started. Miner on.", "Gate 2, **ready check**: write `FOR-TN10-OPS-ready-1010.txt`, stp passes it to the bot. Miner on."),
+    ("B0", "baseline", 0, 10, None, 0, 0, "**T0.** No load. Miner on.", "**T0.** No load. Miner on."),
+    ("X250", "step", 10, 25, 30, 60, 190, "60", "190"),
+    ("C1000", "step", 30, 45, 50, 250, 750, "250", "750"),
+    ("C1500", "step", 50, 65, 70, 375, 1125, "375", "1,125"),
+    ("C2000", "step", 70, 85, 90, 500, 1500, "500", "1,500"),
+    ("C2500", "step", 90, 105, 110, 625, 1875, "625", "1,875"),
+    ("MAX", "step", 110, 125, 130, 900, 2600, "900", "2,600 (may go above, never below)"),
+    ("B1", "baseline", 130, 140, None, 0, 0, "No load", "No load"),
+    ("HOLD", "hold", 140, 465, None, 800, 2400, "800 (see the hold rule)", "2,400 (see the hold rule)"),
+    ("DRAIN", "drain", 465, 480, None, 0, 0, "Senders 0", "Senders 0"),
+    ("END", "end", 480, None, None, 0, 0, "Senders stop. Miner off. Live loggers stop.", "Senders stop. Miner off. Live loggers stop. Node stays up."),
+    ("COUNT", "count", 480, 600, None, 0, 0, "Chain count from n2, before pruning", "Chain count from your node, before pruning (skip if you have no node)"),
+    ("PUSH", "push", None, 660, None, 0, 0, "Logs to `logs/bot/`", "Logs to `logs/build/`, plus `FOR-TN10-OPS-result-1010.txt` to stp"),
 ]
+G1, G2, END = -30, -15, 480
 
-# Fixed targets in tx/s (stp, 10 Oct 12:05 CEST; split 25% bot / 75% Build chosen by stp 12:11 CEST): step -> (combined, bot, build). B0 is measured and reported, not used for targets.
-TARGETS = {"X2": (250, 60, 190), "OFF": (250, 60, 190), "C1000": (1000, 250, 750), "C1500": (1500, 375, 1125),
-           "C2000": (2000, 500, 1500), "C2500": (2500, 625, 1875), "MAX": (3500, 900, 2600), "HOLD": (3200, 800, 2400)}
-SUCCESS_TX_S = 3000   # network unique accepted, step median over >= 10 valid minutes, counted once
-
-def t(m, tz=timezone.utc):
+def at(m, tz=timezone.utc):
     d = (T0 + timedelta(minutes=m)).astimezone(tz)
     s = d.strftime("%H:%M")
-    return s + (" " + d.strftime("%a") if d.date() != T0.astimezone(tz).date() else "")
+    return s + (" Sun" if d.date() != T0.astimezone(tz).date() else "")
 
 def span(s, e, dr, tz):
-    if s is None: return "until " + t(e, tz)
-    if e is None: return t(s, tz)
-    out = f"{t(s, tz)}–{t(e, tz)}"
-    return out + (f", drain to {t(dr, tz)}" if dr is not None else "")
+    if s is None: return ("by " if e > 0 else "until ") + at(e, tz)
+    if e is None: return at(s, tz)
+    return f"{at(s, tz)}–{at(e, tz)}" + (f", drain to {at(dr, tz)}" if dr is not None else "")
 
 def table():
-    rows = ["| Step | UTC | Brussels (CEST) | Bot | Build |", "|---|---|---|---|---|"]
-    for sid, s, e, dr, bot, build in STEPS:
-        u, l = span(s, e, dr, timezone.utc), span(s, e, dr, LOCAL)
-        if sid == "PUSH": u, l = "by " + t(e), "by " + t(e, LOCAL)
-        b = f"**{sid}**" if sid in ("B0", "END") else sid
-        rows.append(f"| {b} | {u} | {l} | {bot} | {build} |")
+    rows = ["| Step | Brussels (CEST) | UTC | Bot tx/s | Build tx/s | Combined tx/s |", "|---|---|---|---|---|---|"]
+    for sid, kind, s, e, dr, bot, build, bt, bdt in STEPS:
+        comb = f"{bot + build:,}" if kind in ("step", "hold") else "0" if kind in ("baseline", "drain") else "–"
+        b = f"**{sid}**" if sid in ("B0", "MAX", "HOLD", "END") else sid
+        rows.append(f"| {b} | {span(s, e, dr, LOCAL)} | {span(s, e, dr, timezone.utc)} | {bt} | {bdt} | {comb} |")
     return "\n".join(rows)
-
-def both(m): return f"{t(m)}Z ({t(m, LOCAL)} Brussels)"
 
 def key():
     return "\n".join([
-        "| What | UTC | Brussels (CEST) |", "|---|---|---|",
-        f"| First gate G1 | {t(-45)} | {t(-45, LOCAL)} |",
-        f"| Second gate G2, miners on, rehearsal | {t(-30)} | {t(-30, LOCAL)} |",
-        f"| **T0** (B0 starts) | **{t(0)}** | **{t(0, LOCAL)}** |",
-        f"| Miners off (OFF0 to ON) | {t(60)}–{t(85)} | {t(60, LOCAL)}–{t(85, LOCAL)} |",
-        f"| End (END), miners off | {t(480)} | {t(480, LOCAL)} |",
-        f"| Chain count (COUNT) | {t(480)}–{t(600)} | {t(480, LOCAL)}–{t(600, LOCAL)} |",
-        f"| Logs pushed (PUSH) | by {t(660)} | by {t(660, LOCAL)} |",
-        f"| Suggested window for Kaspa Pulse's counter | {t(-35)}–{t(485)} | {t(-35, LOCAL)}–{t(485, LOCAL)} |",
+        "| What | Brussels (CEST) | UTC |", "|---|---|---|",
+        f"| Gate 1 (G1), logging starts | {at(G1, LOCAL)} | {at(G1)} |",
+        f"| Gate 2 (G2), ready check incl. **Build started?**, miners on | {at(G2, LOCAL)} | {at(G2)} |",
+        f"| **T0** (B0 starts) | **{at(0, LOCAL)}** | **{at(0)}** |",
+        f"| First send step (X250) | {at(10, LOCAL)} | {at(10)} |",
+        f"| MAX | {at(110, LOCAL)}–{at(125, LOCAL)} | {at(110)}–{at(125)} |",
+        f"| Long hold (HOLD) | {at(140, LOCAL)}–{at(465, LOCAL)} | {at(140)}–{at(465)} |",
+        f"| **END**, senders stop, miners off | **{at(END, LOCAL)}** | **{at(END)}** |",
+        f"| Chain count (COUNT) | {at(480, LOCAL)}–{at(600, LOCAL)} | {at(480)}–{at(600)} |",
+        f"| Logs pushed (PUSH) | by {at(660, LOCAL)} | by {at(660)} |",
+        f"| Suggested window for Kaspa Pulse's counter | {at(G2 - 5, LOCAL)}–{at(END + 5, LOCAL)} | {at(G2 - 5)}–{at(END + 5)} |",
     ])
 
 def header():
-    return (f"T0 is **{T0:%Y-%m-%dT%H:%M:%SZ} ({t(0, LOCAL)} Brussels)**. End is **{both(480)}**. "
-            f"Gates G1 {t(-45)}Z and G2 {t(-30)}Z. Every time is in [Key times](#key-times) and the [Timeline](#timeline). "
-            "Do not send or mine before the row that says so. Do not move T0.")
+    d = T0.astimezone(LOCAL)
+    return (f"T0 is **{at(0, LOCAL)} CEST ({at(0)} UTC), Saturday {d.day} Oct 2026**. END is **{at(END, LOCAL)} CEST ({at(END)} UTC)**. "
+            f"Gate 1 {at(G1, LOCAL)} CEST ({at(G1)} UTC), Gate 2 {at(G2, LOCAL)} CEST ({at(G2)} UTC). "
+            "Every time is in [Key times](#key-times) and the [Timeline](#timeline). Do not send before X250. Do not move T0.")
 
 def targets():
-    rows = ["| Step | UTC | Brussels (CEST) | Combined target | Bot | Build |", "|---|---|---|---|---|---|"]
-    for sid, s, e, dr, bot, build in STEPS:
-        if sid not in TARGETS: continue
-        c, b, d = TARGETS[sid]
-        rows.append(f"| {sid} | {t(s)}–{t(e)} | {t(s, LOCAL)}–{t(e, LOCAL)} | {c:,} | {b:,} | {d:,} |")
-    return "\n".join([
-        "**Changed 10 Oct 2026, 12:05 CEST, by stp:** \"make sure that bot and Build go over 3,000 tx/s, share the load.\" "
-        "The goal is now **over 3,000 tx/s combined**, with the load shared between the two sides. "
-        "The scaled rule, combined = (multiplier − 1) × B, is dropped. Friday's B was about 55 to 59 tx/s, so scaling would have shrunk "
-        "every step (the 2,500 step to about 1,700) and the run could never reach 3,000. "
-        "**The combined targets are now fixed.** B0 is still measured and reported, but it no longer sets any rate. "
-        "**Split, 12:11 CEST, stp:** about 25% bot, 75% Build, to keep load off the box (n2 and the bot's senders share one machine). "
-        "Times, rows, gates, fees, the node-dead rule, the miners and logging are unchanged. Only the rates changed.",
-        "",
-        "Rates in tx/s, send window only (drains are 0). S1, S2, S3 and the rehearsal keep their rates from the timeline table.",
-        "",
-        *rows,
-        "",
-        "- **MAX:** Build may go above 2,600 (up to 9 senders), never below its share.",
-        "- **HOLD:** each side holds its HOLD rate only if it was clean at that rate or higher at MAX. If not, it holds its last clean rate "
-        "(bot: or 30 if none; Build: or 250 if none). Neither side raises its rate mid-step to cover the other's shortfall.",
-        f"- **Success line:** network unique accepted ≥ **{SUCCESS_TX_S:,} tx/s**, as the median of a step's valid minutes, over at least 10 valid minutes "
-        "(a valid minute is a complete minute in the chain count). The headline is counted once from chain data, never summed across the two nodes. "
-        "Report the signed shape (Build) and the no-signature hop shape (bot) separately.",
-        "",
-        "**Not sure / open for debate: n2's disk at 2,000+ tx/s.** On this same box, the old pruned node n0 grew 2 to 3 GB a minute under sustained "
-        "load of about 2,000 tx/s or more and filled its disk. n2 has the same disk, and it also runs the UTXO index. So n2 may hit its disk guard "
-        "during MAX or the long hold. If it does, the bot's senders stop (logged as `disk-guard` and `node-dead`) and Build carries on alone. "
-        "Then the combined rate can fall below 3,000. n2 grows with the total network load, not with the bot's share, so the 25/75 split does not remove this risk. "
-        "We have not measured n2's growth at these rates yet.",
-    ])
+    rows = ["| Step | Brussels (CEST) | UTC | Combined | Bot (25%) | Build (75%) |", "|---|---|---|---|---|---|"]
+    for sid, kind, s, e, dr, bot, build, bt, bdt in STEPS:
+        if kind in ("step", "hold"):
+            rows.append(f"| {sid} | {at(s, LOCAL)}–{at(e, LOCAL)} | {at(s)}–{at(e)} | {bot + build:,} | {bot:,} | {build:,} |")
+    return "\n".join(rows + ["",
+        f"Fees, both sides: half the lanes at **{FEE_LOW}** and half at **{FEE_HIGH}** sompi/gram, frozen per step. Floor {FEE_FLOOR}, cap {FEE_CAP}. "
+        f"Success line: network unique accepted at or above **{SUCCESS_TX_S:,} tx/s**, median of a step's valid minutes, at least 10 valid minutes, counted once from chain data."])
 
 BLOCKS = {"table": table(), "key": key(), "header": header(), "targets": targets()}
-
 root = pathlib.Path(__file__).resolve().parent.parent
-for f in ["README.md", "go/README.md", "go/bot/GO-BOT.md", "go/build/GO-BUILD.md"]:
+for f in ["README.md", "go/README.md", "go/bot-run/GO-BOT-RUN.md", "go/build-run/GO-BUILD-RUN.md"]:
     p = root / f; s = p.read_text()
     for name, body in BLOCKS.items():
         s = re.sub(rf"(<!-- clock:{name} -->\n)(?:.*?\n)?(<!-- /clock:{name} -->)", lambda m: m.group(1) + body + "\n" + m.group(2), s, flags=re.S)
     p.write_text(s)
 
-steps = []
-for sid, s, e, dr, bot, build in STEPS:
-    iso = lambda m: None if m is None else (T0 + timedelta(minutes=m)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    row = {"step": sid, "start": iso(s), "end": iso(e), "drain_end": iso(dr), "bot": bot, "build": build}
-    if sid in TARGETS: row.update(dict(zip(("combined_tx_s", "bot_tx_s", "build_tx_s"), TARGETS[sid])))
-    steps.append(row)
-(root / "go/steps-utc.json").write_text(json.dumps({"t0": T0.strftime("%Y-%m-%dT%H:%M:%SZ"), "end": (T0 + timedelta(minutes=480)).strftime("%Y-%m-%dT%H:%M:%SZ"), "success_network_unique_accepted_tx_s": SUCCESS_TX_S, "targets_note": "Fixed combined targets (stp, 10 Oct 12:05 CEST), split about 25% bot / 75% Build (stp 12:11 CEST). B0 is measured and reported, not used for targets.", "steps": steps}, indent=1, ensure_ascii=False) + "\n")
-print("T0", T0.isoformat())
+iso = lambda m: None if m is None else (T0 + timedelta(minutes=m)).strftime("%Y-%m-%dT%H:%M:%SZ")
+steps = [{"step": sid, "kind": kind, "start": iso(s), "end": iso(e), "drain_end": iso(dr), "bot_tx_s": bot, "build_tx_s": build,
+          "combined_tx_s": bot + build, "bot": bt, "build": bdt} for sid, kind, s, e, dr, bot, build, bt, bdt in STEPS]
+(root / "go/steps-utc.json").write_text(json.dumps({
+    "name": "tn10-storm-1010 bot run + build run", "t0": iso(0), "end": iso(END), "gate1": iso(G1), "gate2": iso(G2),
+    "miners": {"on": iso(G2), "off": iso(END)},
+    "fees": {"low": FEE_LOW, "high": FEE_HIGH, "cap": FEE_CAP, "floor": FEE_FLOOR},
+    "split": {"bot": 0.25, "build": 0.75}, "success_network_unique_accepted_tx_s": SUCCESS_TX_S,
+    "hold_rule": "Each side holds its HOLD rate if its MAX step was clean; otherwise its highest clean step rate (bot: 60 if none; Build: 190 if none).",
+    "steps": steps}, indent=1, ensure_ascii=False) + "\n")
+print("T0", iso(0), "END", iso(END))

@@ -1,94 +1,101 @@
 > **Experimental. We are just trying this.** [Disclaimer](DISCLAIMER.md)
 
-# tn10-storm-1010
+# tn10-storm-1010: the bot run and the build run
 
 > 📘 **[MASTER: every storm, late Sep to 10 Oct 2026, in one file](history/MASTER.md)**
 
 **Thank you first to Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)).** He counted our chain from outside, on his own two nodes, and shaped this plan with his questions, method and fixes. Every input he gave us, with its source and what we changed, is in [credits/KASPA-PULSE.md](credits/KASPA-PULSE.md).
 
-Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host, IP, port or address in this repo. This repo is public. It includes Kaspa Pulse's night count, published with his yes (as relayed by stp on 10 Oct 2026).
+Kaspa Testnet-10 (TN10) only. tKAS has no value. Counts only: no txid, key, seed, host IP, port or wallet address in this repo. This repo is public. The public TN10 node names below are the community resolver nodes, not ours.
+
+**Rewritten 10 Oct 2026, 17:43 CEST, by stp's order**, for a new start at **20:30 CEST**. The 17:00 CEST run was halted by stp at 17:39 CEST because Build had not been started. Nothing from that run is resumed. The old `go/bot` and `go/build` prompts are gone; there is one plan, in two prompts.
 
 ## What
 
-One TN10 storm on Saturday 10 Oct 2026, run by two sides at the same time:
+One TN10 storm on Saturday evening, 10 Oct 2026, run by two sides at the same time, on one clock:
 
-- **The bot** (TN10 ops, with tn ops2) on the box, on its own node **n2**.
-- **Grok Build** on stp's Windows desk, on its own new desk node.
+- **The bot run**: the bot (TN10 ops, with tn ops2) on the box. It **submits only to the five public TN10 nodes**, spread at random. Its own private node **n2** is used for reads, coins, the chain count and its one miner. Prompt: [go/bot-run/GO-BOT-RUN.md](go/bot-run/GO-BOT-RUN.md).
+- **The build run**: Grok Build on stp's Windows desk, with its own coins. Build sends to the same five public nodes or to its own desk node, as it decides. Prompt: [go/build-run/GO-BUILD-RUN.md](go/build-run/GO-BUILD-RUN.md).
 
-Each node is private and not archival. No shared node. No tunnel between the sides. One miner per side.
-
-**Changed 10 Oct 2026, 14:35/14:36 CEST, by stp (bot side only):** the bot submits only to the five public TN10 nodes (muon-10.kaspa.blue, boson-10.kaspa.red, electron-10.kaspa.blue, neutrino-10.kaspa.stream, vector-10.kaspa.green), spread over all five. n2 stays private and is used for reads, coins, the chain count and the bot's miner. The node-dead rule now keys on the public nodes per sender (16:19 CEST); n2 lag no longer zeros the senders. The rehearsal was not run: G1 failed while n2's tip was frozen (about 15:57 to 16:21 CEST, restarted 16:19). Coins: 1M tKAS fill from the bot wallet (done 14:10 CEST), top-ups after. Disk: senders pause at 8 GB free, n2 guard 5 GB / 3 GB. Build's own node rules are unchanged. Details: [GO-BOT](go/bot/GO-BOT.md#changed-during-the-run-bot-submits-to-public-nodes-stp-10-oct-2026). The public-node test report is in the private repo `tn10-storm-1010-public-nodes`.
+Load split: **25% bot, 75% Build**. Goal: **over 3,000 tx/s combined**, network unique accepted, counted once.
 
 <!-- clock:key -->
-| What | UTC | Brussels (CEST) |
+| What | Brussels (CEST) | UTC |
 |---|---|---|
-| First gate G1 | 14:15 | 16:15 |
-| Second gate G2, miners on, rehearsal | 14:30 | 16:30 |
-| **T0** (B0 starts) | **15:00** | **17:00** |
-| Miners off (OFF0 to ON) | 16:00–16:25 | 18:00–18:25 |
-| End (END), miners off | 23:00 | 01:00 Sun |
-| Chain count (COUNT) | 23:00–01:00 Sun | 01:00 Sun–03:00 Sun |
-| Logs pushed (PUSH) | by 02:00 Sun | by 04:00 Sun |
-| Suggested window for Kaspa Pulse's counter | 14:25–23:05 | 16:25–01:05 Sun |
+| Gate 1 (G1), logging starts | 20:00 | 18:00 |
+| Gate 2 (G2), ready check incl. **Build started?**, miners on | 20:15 | 18:15 |
+| **T0** (B0 starts) | **20:30** | **18:30** |
+| First send step (X250) | 20:40 | 18:40 |
+| MAX | 22:20–22:35 | 20:20–20:35 |
+| Long hold (HOLD) | 22:50–04:15 Sun | 20:50–02:15 Sun |
+| **END**, senders stop, miners off | **04:30 Sun** | **02:30 Sun** |
+| Chain count (COUNT) | 04:30 Sun–06:30 Sun | 02:30 Sun–04:30 Sun |
+| Logs pushed (PUSH) | by 07:30 Sun | by 05:30 Sun |
+| Suggested window for Kaspa Pulse's counter | 20:10–04:35 Sun | 18:10–02:35 Sun |
 <!-- /clock:key -->
-
-All times are set in one place, [go/clock.py](go/clock.py). The full timeline is in [go/README.md](go/README.md#timeline).
 
 ## Tonight
 
 <!-- clock:targets -->
-**Changed 10 Oct 2026, 12:05 CEST, by stp:** "make sure that bot and Build go over 3,000 tx/s, share the load." The goal is now **over 3,000 tx/s combined**, with the load shared between the two sides. The scaled rule, combined = (multiplier − 1) × B, is dropped. Friday's B was about 55 to 59 tx/s, so scaling would have shrunk every step (the 2,500 step to about 1,700) and the run could never reach 3,000. **The combined targets are now fixed.** B0 is still measured and reported, but it no longer sets any rate. **Split, 12:11 CEST, stp:** about 25% bot, 75% Build, to keep load off the box (n2 and the bot's senders share one machine). Times, rows, gates, fees, the node-dead rule, the miners and logging are unchanged. Only the rates changed.
-
-Rates in tx/s, send window only (drains are 0). S1, S2, S3 and the rehearsal keep their rates from the timeline table.
-
-| Step | UTC | Brussels (CEST) | Combined target | Bot | Build |
+| Step | Brussels (CEST) | UTC | Combined | Bot (25%) | Build (75%) |
 |---|---|---|---|---|---|
-| X2 | 15:40–15:55 | 17:40–17:55 | 250 | 60 | 190 |
-| OFF | 16:05–16:20 | 18:05–18:20 | 250 | 60 | 190 |
-| C1000 | 16:30–16:45 | 18:30–18:45 | 1,000 | 250 | 750 |
-| C1500 | 16:50–17:05 | 18:50–19:05 | 1,500 | 375 | 1,125 |
-| C2000 | 17:10–17:25 | 19:10–19:25 | 2,000 | 500 | 1,500 |
-| C2500 | 17:30–17:45 | 19:30–19:45 | 2,500 | 625 | 1,875 |
-| MAX | 17:50–18:05 | 19:50–20:05 | 3,500 | 900 | 2,600 |
-| HOLD | 18:25–22:45 | 20:25–00:45 Sun | 3,200 | 800 | 2,400 |
+| X250 | 20:40–20:55 | 18:40–18:55 | 250 | 60 | 190 |
+| C1000 | 21:00–21:15 | 19:00–19:15 | 1,000 | 250 | 750 |
+| C1500 | 21:20–21:35 | 19:20–19:35 | 1,500 | 375 | 1,125 |
+| C2000 | 21:40–21:55 | 19:40–19:55 | 2,000 | 500 | 1,500 |
+| C2500 | 22:00–22:15 | 20:00–20:15 | 2,500 | 625 | 1,875 |
+| MAX | 22:20–22:35 | 20:20–20:35 | 3,500 | 900 | 2,600 |
+| HOLD | 22:50–04:15 Sun | 20:50–02:15 Sun | 3,200 | 800 | 2,400 |
 
-- **MAX:** Build may go above 2,600 (up to 9 senders), never below its share.
-- **HOLD:** each side holds its HOLD rate only if it was clean at that rate or higher at MAX. If not, it holds its last clean rate (bot: or 30 if none; Build: or 250 if none). Neither side raises its rate mid-step to cover the other's shortfall.
-- **Success line:** network unique accepted ≥ **3,000 tx/s**, as the median of a step's valid minutes, over at least 10 valid minutes (a valid minute is a complete minute in the chain count). The headline is counted once from chain data, never summed across the two nodes. Report the signed shape (Build) and the no-signature hop shape (bot) separately.
-
-**Not sure / open for debate: n2's disk at 2,000+ tx/s.** On this same box, the old pruned node n0 grew 2 to 3 GB a minute under sustained load of about 2,000 tx/s or more and filled its disk. n2 has the same disk, and it also runs the UTXO index. So n2 may hit its disk guard during MAX or the long hold. If it does, the bot's senders stop (logged as `disk-guard` and `node-dead`) and Build carries on alone. Then the combined rate can fall below 3,000. n2 grows with the total network load, not with the bot's share, so the 25/75 split does not remove this risk. We have not measured n2's growth at these rates yet.
+Fees, both sides: half the lanes at **400** and half at **600** sompi/gram, frozen per step. Floor 100, cap 600. Success line: network unique accepted at or above **3,000 tx/s**, median of a step's valid minutes, at least 10 valid minutes, counted once from chain data.
 <!-- /clock:targets -->
+
+The full timeline, with both columns, is in [go/README.md](go/README.md#timeline). All times come from one file, [go/clock.py](go/clock.py). Both prompts carry the same tables.
 
 ## Why
 
-Same 8-hour plan as Friday night. Friday failed because the shared desk node **locus** died at about 01:28 UTC and the senders kept firing at it. Kaspa Pulse's count shows the chain at base load (about 55 tx/s) from then on ([his notes](credits/kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-notes.txt)). The bot's node **keel** sat behind a tunnel and lagged. Saturday's take 2 on the same desk nodes hit two more locus aborts and was halted at 08:06 UTC. So today: same plan, each side on its own node, and a sender stops by itself when its node dies.
+Earlier runs never held a clean 3,000 tx/s because a node broke under the load: n0 filled its disk (to 8 Oct), the shared desk node locus aborted three times (9 and 10 Oct morning), and today at about 15:57 CEST the bot's private node n2 froze at its tip. Each time, the senders kept firing at a node that could not take them.
+
+Today's afternoon public-node test changed the picture (**Claim (measured on TN10)**): from one box, the bot alone reached a peak of about **3,170 tx/s** submitted (2,970 accepted) on the five public nodes, and held about **900 to 985 tx/s** clean on 14 senders, with zero rejects in the clean phase. Build sent to the same nodes at the same time. So tonight the bot submits to the public nodes and keeps n2 out of the submit path, and Build's 75% share does the heavy lifting.
+
+## How
+
+1. **One clock.** T0 20:30 CEST. Two gates before it, at 20:00 and 20:15 CEST. The second gate is a **ready check**: both sides must be started, and stp confirms Build is running before T0. That is the lesson of 17:39 CEST.
+2. **A short ramp.** B0 (no load), then 250, 1,000, 1,500, 2,000, 2,500 combined, then MAX at 3,500 combined, a short no-load B1, and a **long hold at 3,200 combined until 04:15 CEST**. END 04:30 CEST.
+3. **Senders that do not die with a node.** Each bot sender holds four of the five public nodes. A node that fails is cooled and the load moves to the others. n2 lagging does **not** zero the senders.
+4. **Count from the chain.** Network unique accepted per minute, once, from chain data. Each side reports its own submitted and accepted next to it.
+5. **Log everything** in one format ([go/LOGGING.md](go/LOGGING.md)). Build hands its results to the bot as a text file, because the bot cannot see Build's screen.
 
 ## Plans, old and new
 
 | Plan | Nodes | Result |
 |---|---|---|
 | Up to 8 Oct | Box node n0 (+ public nodes for Build) | n0 filled its disk while pruning and was retired. |
-| 9 Oct night, 10 Oct take 2 ([tn10-locus](https://github.com/STP-KAS/tn10-locus)) | Two nodes on one desk: locus (Build) and keel (bot, via a tunnel) | keel lagged; locus aborted at 01:28, 06:52 and 07:26 UTC. Failed as a test of the plan. |
-| **Today** ([tn10-private](https://github.com/STP-KAS/tn10-private) @ `517fb43`, refined here, clock 2 h later) | Two private, non-archival nodes on two machines: n2 (box) and Build's new desk node | This run. |
-
-## Sources
-
-- TN10 ops' plan: [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43). This repo keeps its step shape, gates and fees. The rates changed on 10 Oct 12:05 CEST (stp): fixed combined targets, shared load, over 3,000 tx/s combined. The clock is 2 hours later (T0 15:00Z, not 13:00Z), as relayed by TN10 ops at 11:32 CEST.
-- Friday and take 2: [tn10-locus](https://github.com/STP-KAS/tn10-locus), its [run report](https://github.com/STP-KAS/tn10-locus/blob/main/tn10-storm-2026-10-09/build/RUN-REPORT.md) and [abort note](https://github.com/STP-KAS/tn10-locus/blob/main/tn10-storm-2026-10-10/build/INCIDENT-0652.md).
-- Method and questions: [tn10-storm-throughput-questions](https://github.com/STP-KAS/tn10-storm-throughput-questions).
-- Everything earlier: [history/MASTER.md](history/MASTER.md).
+| 9 Oct night, 10 Oct take 2 ([tn10-locus](https://github.com/STP-KAS/tn10-locus)) | Two nodes on one desk: locus (Build) and keel (bot, via a tunnel) | keel lagged; locus aborted at 03:28, 08:52 and 09:26 CEST. Failed as a test of the plan. |
+| 10 Oct 17:00 CEST ([tn10-private](https://github.com/STP-KAS/tn10-private) shape, refined here) | n2 for the bot (public-node submit from 14:36 CEST), a desk node for Build | Halted by stp at 17:39 CEST: Build had not been started. The bot's S1 row (60 tx/s) was evaluated clean; S3 ran at 60 tx/s and was not evaluated before the halt. [history/2026-10-10-1700-halted.md](history/2026-10-10-1700-halted.md). |
+| 10 Oct public-node test, 14:23 to 16:18 CEST (private repo `tn10-storm-1010-public-nodes`) | Bot senders on the five public nodes, n2 for reads | Peak about 3,170 bot tx/s; clean hold about 900 to 985 bot tx/s on 14 senders. Lessons are folded into this plan. |
+| **Tonight, T0 20:30 CEST** (this repo) | Bot: five public nodes, n2 for reads. Build: public nodes or its own node | This run. |
 
 ## Map
 
 | Folder | What is in it |
 |---|---|
-| [go/](go/README.md) | Goals, the timeline, gates, fees and rules |
-| [go/bot/GO-BOT.md](go/bot/GO-BOT.md) | The prompt stp pastes to the bot |
-| [go/build/GO-BUILD.md](go/build/GO-BUILD.md) | The prompt stp pastes into Grok Build |
-| [go/LOGGING.md](go/LOGGING.md) | What both sides log, file names and columns |
+| [go/](go/README.md) | Goals, the timeline, gates, fees, rules, what we kept and what we cut |
+| [go/bot-run/GO-BOT-RUN.md](go/bot-run/GO-BOT-RUN.md) | The prompt stp pastes to the bot |
+| [go/build-run/GO-BUILD-RUN.md](go/build-run/GO-BUILD-RUN.md) | The prompt stp pastes into Grok Build |
+| [go/LOGGING.md](go/LOGGING.md) | What both sides log, file names, columns, and Build's handoff text files |
+| [go/steps-utc.json](go/steps-utc.json) | The timeline, machine-readable (UTC) |
 | [logs/](logs/README.md) | Where each side drops its logs after the run ([bot](logs/bot/README.md), [Build](logs/build/README.md)) |
 | [history/](history/README.md) | All earlier runs. [MASTER.md](history/MASTER.md) is the one master file |
 | [credits/](credits/KASPA-PULSE.md) | Kaspa Pulse's inputs, and his night count in [kaspa-pulse/2026-10-09-night/](credits/kaspa-pulse/2026-10-09-night/README.md) |
+
+## Certainty labels
+
+| Label | Meaning |
+|---|---|
+| **Claim (measured on TN10)** | Seen on Testnet-10 by us, with a number and a source. |
+| **Not sure / open for debate** | A reading that fits, but other readings fit too. |
+| **Needs more testing** | One run is not enough to say. |
 
 ---
 
