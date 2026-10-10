@@ -1,6 +1,6 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **00:30:17 CEST / 22:30:17 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **00:45:05 CEST / 22:45:05 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
@@ -8,9 +8,9 @@ Updated **00:30:17 CEST / 22:30:17 UTC**, about every 10 minutes from G1 to END.
 |---|---|
 | Step | **HOLD**, until 04:15 CEST / 02:15 UTC |
 | Bot target (plan) | 880 tx/s |
-| Bot submitted, last 10 min | 112.2 tx/s (67,336 tx) |
-| Bot accepted on n2, last 10 min | 110.4 tx/s (66,268 tx) |
-| Rejects, last 10 min | 0 consensus/mempool; 2,971 public-node transport errors |
+| Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
+| Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
+| Rejects, last 10 min | 0 consensus/mempool; 28,522 public-node transport errors |
 | Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
 | Build started? | yes (BUILD-OK present) |
@@ -20,24 +20,24 @@ Updated **00:30:17 CEST / 22:30:17 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 13,772 | 0 | 645 | 0 |
-| electron-10.kaspa.blue | 13,365 | 0 | 599 | 0 |
-| muon-10.kaspa.blue | 16,850 | 0 | 578 | 0 |
-| neutrino-10.kaspa.stream | 9,829 | 0 | 550 | 0 |
-| vector-10.kaspa.green | 13,520 | 0 | 599 | 0 |
+| boson-10.kaspa.red | 0 | 0 | 6,028 | 0 |
+| electron-10.kaspa.blue | 0 | 0 | 5,791 | 0 |
+| muon-10.kaspa.blue | 0 | 0 | 6,859 | 0 |
+| neutrino-10.kaspa.stream | 0 | 0 | 3,610 | 0 |
+| vector-10.kaspa.green | 0 | 0 | 6,234 | 0 |
 
-Rejects by class: rpc 2,971
+Rejects by class: rpc 28,522
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
 | n2 synced / UTXO index | True / False |
-| n2 sink age (lag) | 186.9 s |
-| n2 virtual DAA score | 593,370,102 |
+| n2 sink age (lag) | 0.2 s |
+| n2 virtual DAA score | 593,381,912 |
 | Miner processes | 1 |
 | Coins left (unclaimed) | 488,999 tKAS in 15,426 coins |
-| Disk free / RAM available | 39 GB / 2,418 MB |
+| Disk free / RAM available | 38 GB / 4,076 MB |
 
 ## Steps so far
 
