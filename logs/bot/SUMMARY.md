@@ -1,6 +1,6 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **01:47:16 CEST / 23:47:16 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **02:11:56 CEST / 00:11:56 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
@@ -10,7 +10,7 @@ Updated **01:47:16 CEST / 23:47:16 UTC**, about every 10 minutes from G1 to END.
 | Bot target (plan) | 880 tx/s |
 | Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
 | Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
-| Rejects, last 10 min | 0 consensus/mempool; 12,725 public-node transport errors |
+| Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
 | Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
 | Build started? | yes (BUILD-OK present) |
@@ -20,24 +20,22 @@ Updated **01:47:16 CEST / 23:47:16 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 0 | 0 | 2,337 | 0 |
-| electron-10.kaspa.blue | 0 | 0 | 2,695 | 0 |
-| muon-10.kaspa.blue | 0 | 0 | 3,189 | 0 |
-| neutrino-10.kaspa.stream | 0 | 0 | 2,425 | 0 |
-| vector-10.kaspa.green | 0 | 0 | 2,079 | 0 |
-
-Rejects by class: rpc 12,725
+| boson-10.kaspa.red | 0 | 0 | 0 | 0 |
+| electron-10.kaspa.blue | 0 | 0 | 0 | 0 |
+| muon-10.kaspa.blue | 0 | 0 | 0 | 0 |
+| neutrino-10.kaspa.stream | 0 | 0 | 0 | 0 |
+| vector-10.kaspa.green | 0 | 0 | 0 | 0 |
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
-| n2 synced / UTXO index | True / False |
-| n2 sink age (lag) | 0.2 s |
-| n2 virtual DAA score | 593,418,917 |
+| n2 synced / UTXO index | False / False |
+| n2 sink age (lag) | 787.5 s |
+| n2 virtual DAA score | 593,427,279 |
 | Miner processes | 1 |
-| Coins left (unclaimed) | 459,637 tKAS in 14,497 coins |
-| Disk free / RAM available | 37 GB / 2,343 MB |
+| Coins left (unclaimed) | 360,193 tKAS in 11,331 coins |
+| Disk free / RAM available | 37 GB / 2,508 MB |
 
 ## Steps so far
 
@@ -63,17 +61,17 @@ Rejects by class: rpc 12,725
 
 | CEST | Event | Step | Detail |
 |---|---|---|---|
-| 00:28:29 | sender-relaunch | HOLD | S13 relaunch 6/30 |
-| 00:28:29 | sender-start | HOLD | S13 mode=pub |
-| 00:28:32 | sender-relaunch | HOLD | S14 relaunch 7/30 |
-| 00:28:32 | sender-start | HOLD | S14 mode=pub |
-| 00:28:35 | sender-relaunch | HOLD | S15 relaunch 7/30 |
-| 00:28:35 | sender-start | HOLD | S15 mode=pub |
-| 00:29:32 | miner-on | HOLD | n2 synced again / process relaunch |
-| 00:29:52 | coin-refresh | HOLD | buffer check 488999 tKAS 15426 coins |
-| 00:59:58 | coin-refresh | HOLD | buffer check 488999 tKAS 15426 coins |
-| 01:30:03 | coin-refresh | HOLD | buffer check 473932 tKAS 14971 coins |
-| 01:33:40 | sender-relaunch | HOLD | S5 relaunch 7/30 |
-| 01:33:40 | sender-start | HOLD | S5 mode=pub |
+| 01:53:24 | sender-start | HOLD | S9 mode=pub |
+| 01:53:27 | sender-relaunch | HOLD | S10 relaunch 7/30 |
+| 01:53:27 | sender-start | HOLD | S10 mode=pub |
+| 01:53:30 | sender-relaunch | HOLD | S12 relaunch 7/30 |
+| 01:53:30 | sender-start | HOLD | S12 mode=pub |
+| 01:53:33 | sender-relaunch | HOLD | S13 relaunch 7/30 |
+| 01:53:33 | sender-start | HOLD | S13 mode=pub |
+| 01:53:37 | sender-relaunch | HOLD | S14 relaunch 8/30 |
+| 01:53:37 | sender-start | HOLD | S14 mode=pub |
+| 01:53:40 | sender-relaunch | HOLD | S15 relaunch 8/30 |
+| 01:53:40 | sender-start | HOLD | S15 mode=pub |
+| 02:11:55 | coin-refresh | HOLD | buffer check 360193 tKAS 11331 coins |
 
 How to read: *Now* answers "is the bot sending what the plan says?"; *Public nodes* shows which node rejects or errors; *Steps so far* is the per-step verdict (clean = at least 90% of target delivered, at least 99% accepted, p90 at most 10 s). Final per-second files land here after END.
