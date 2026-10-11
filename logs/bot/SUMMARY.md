@@ -1,16 +1,16 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **04:12:18 CEST / 02:12:18 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **04:15:05 CEST / 02:15:05 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
 | What | Value |
 |---|---|
-| Step | **HOLD**, until 04:15 CEST / 02:15 UTC |
-| Bot target (plan) | 880 tx/s |
-| Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
-| Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
-| Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
+| Step | **DRAIN**, until 04:30 CEST / 02:30 UTC |
+| Bot target (plan) | 0 tx/s |
+| Bot submitted, last 10 min | 34.9 tx/s (20,946 tx) |
+| Bot accepted on n2, last 10 min | 34.9 tx/s (20,946 tx) |
+| Rejects, last 10 min | 0 consensus/mempool; 3,298 public-node transport errors |
 | Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
 | Build started? | yes (BUILD-OK present) |
@@ -20,22 +20,24 @@ Updated **04:12:18 CEST / 02:12:18 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 0 | 0 | 0 | 0 |
-| electron-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| muon-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| neutrino-10.kaspa.stream | 0 | 0 | 0 | 0 |
-| vector-10.kaspa.green | 0 | 0 | 0 | 0 |
+| boson-10.kaspa.red | 3,683 | 0 | 717 | 0 |
+| electron-10.kaspa.blue | 3,604 | 0 | 717 | 0 |
+| muon-10.kaspa.blue | 4,888 | 0 | 432 | 0 |
+| neutrino-10.kaspa.stream | 3,847 | 0 | 716 | 0 |
+| vector-10.kaspa.green | 4,924 | 0 | 716 | 0 |
+
+Rejects by class: rpc 3,298
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
-| n2 synced / UTXO index | False / False |
-| n2 sink age (lag) | 1,074.1 s |
-| n2 virtual DAA score | 593,496,433 |
+| n2 synced / UTXO index | True / False |
+| n2 sink age (lag) | 388.4 s |
+| n2 virtual DAA score | 593,503,481 |
 | Miner processes | 1 |
 | Coins left (unclaimed) | 0 tKAS in 0 coins |
-| Disk free / RAM available | 36 GB / 3,005 MB |
+| Disk free / RAM available | 36 GB / 2,886 MB |
 
 ## Steps so far
 
@@ -56,22 +58,23 @@ Updated **04:12:18 CEST / 02:12:18 UTC**, about every 10 minutes from G1 to END.
 | MAX-drain | 0 | – | – | – | – | running or not evaluated |
 | B1 | 0 | – | – | – | – | running or not evaluated |
 | HOLD | 880 | – | – | – | – | running or not evaluated |
+| DRAIN | 0 | – | – | – | – | running or not evaluated |
 
 ## Last events
 
 | CEST | Event | Step | Detail |
 |---|---|---|---|
-| 03:49:26 | sender-relaunch | HOLD | S10 relaunch 19/30 |
-| 03:49:26 | sender-start | HOLD | S10 mode=pub |
-| 03:49:30 | sender-relaunch | HOLD | S11 relaunch 19/30 |
-| 03:49:30 | sender-start | HOLD | S11 mode=pub |
-| 03:49:33 | sender-relaunch | HOLD | S12 relaunch 23/30 |
-| 03:49:33 | sender-start | HOLD | S12 mode=pub |
-| 03:49:36 | sender-relaunch | HOLD | S13 relaunch 23/30 |
-| 03:49:36 | sender-start | HOLD | S13 mode=pub |
-| 03:49:39 | sender-relaunch | HOLD | S14 relaunch 23/30 |
-| 03:49:39 | sender-start | HOLD | S14 mode=pub |
-| 03:49:42 | sender-relaunch | HOLD | S15 relaunch 23/30 |
-| 03:49:42 | sender-start | HOLD | S15 mode=pub |
+| 04:14:52 | sender-start | HOLD | S11 mode=pub |
+| 04:14:55 | sender-relaunch | HOLD | S12 relaunch 24/30 |
+| 04:14:55 | sender-start | HOLD | S12 mode=pub |
+| 04:14:58 | sender-relaunch | HOLD | S13 relaunch 24/30 |
+| 04:14:58 | sender-start | HOLD | S13 mode=pub |
+| 04:14:59 | miner-on | HOLD | n2 synced again / process relaunch |
+| 04:15:00 | step-end | HOLD | HOLD |
+| 04:15:00 | step-start | DRAIN | DRAIN bot 0 |
+| 04:15:01 | sender-relaunch | DRAIN | S14 relaunch 24/30 |
+| 04:15:01 | sender-start | DRAIN | S14 mode=pub |
+| 04:15:04 | sender-relaunch | DRAIN | S15 relaunch 24/30 |
+| 04:15:04 | sender-start | DRAIN | S15 mode=pub |
 
 How to read: *Now* answers "is the bot sending what the plan says?"; *Public nodes* shows which node rejects or errors; *Steps so far* is the per-step verdict (clean = at least 90% of target delivered, at least 99% accepted, p90 at most 10 s). Final per-second files land here after END.
