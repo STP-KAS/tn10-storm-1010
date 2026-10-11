@@ -7,7 +7,7 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)), for the outside 
 | File | What |
 |---|---|
 | [MASTER.md](MASTER.md) | **The one master file.** Every TN10 storm, mid Sep to 10 Oct 2026: setup, reported peaks with sources, what broke, what we learned |
-| [2026-10-09-night.md](2026-10-09-night.md) | Friday night storm, with Kaspa Pulse's step-by-step chain count (private) |
+| [2026-10-09-night.md](2026-10-09-night.md) | Friday night storm, with Kaspa Pulse's step-by-step chain count (published with his yes, as relayed by stp, 10 Oct) |
 | [2026-10-10-take2.md](2026-10-10-take2.md) | Saturday morning take 2, halted at 08:06 UTC |
 
 Every number is "reported": what the linked source says. Earlier history pages: [tn10-locus history](https://github.com/STP-KAS/tn10-locus/blob/main/history/README.md), [tn10-storm-throughput-questions](https://github.com/STP-KAS/tn10-storm-throughput-questions).

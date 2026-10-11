@@ -44,7 +44,7 @@ Source: [notes](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-notes.txt
 - **493–716** blocks per minute, **9.92** blocks/s on average, longest gap between blocks **1.13 s**. The chain never stalled.
 - Miners-off **22:01–22:24Z** confirmed: 0 of our blocks, network at **9.2** blocks/s.
 - Our chain count is **1.2 %** higher in sum over 238 valid minutes (median **3.5 %** per minute).
-- Locus stopped at **01:28Z**. Base load about **55 tx/s** after that.
+- Locus stopped at **01:28Z**. Base load about **55 tx/s** after that (measured that night; TN10 base load is about 56 tx/s, figure from Kaspa Pulse).
 
 The step-by-step table is in [history/2026-10-09-night.md](../history/2026-10-09-night.md).
 
