@@ -2,7 +2,7 @@
 
 # tn10-storm-1010: the bot run and the build run
 
-**Status:** T0 **20:30 CEST Sat 10 Oct 2026** (18:30 UTC), END 04:30 Sun CEST (02:30 Sun UTC). Private during the test; made public after the run, once the logs are on it. Kaspa Testnet-10 only; tKAS has no value.
+**Status:** run finished END **04:30 CEST Sun 11 Oct 2026** (02:30 UTC). Logs on GitHub; made public after wrap-up. Kaspa Testnet-10 only; tKAS has no value.
 
 ## Map: where to find what
 
@@ -30,7 +30,7 @@
 | [credits/](credits/KASPA-PULSE.md) | Kaspa Pulse's inputs, with sources and what we changed |
 | [credits/kaspa-pulse/](credits/kaspa-pulse/) | Kaspa Pulse's own counts |
 | [credits/kaspa-pulse/2026-10-09-night/](credits/kaspa-pulse/2026-10-09-night/README.md) | His count of the 9 Oct night storm (CSV, notes) |
-| [tn10-storm-1010-public-nodes](https://github.com/STP-KAS/tn10-storm-1010-public-nodes) | Sister repo (private): the afternoon public-node test, report and data |
+| [tn10-storm-1010-public-nodes](https://github.com/STP-KAS/tn10-storm-1010-public-nodes) | Sister repo: the afternoon public-node test, report and data |
 | [tn10-private](https://github.com/STP-KAS/tn10-private), [tn10-locus](https://github.com/STP-KAS/tn10-locus) | Earlier plans (see [docs/PLANS.md](docs/PLANS.md)) |
 | [Kaspa Pulse (@gokugalax)](https://x.com/gokugalax) | The outside counter who shaped this plan |
 
@@ -98,16 +98,29 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 
 ## Results
 
-**Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain count.** No numbers yet. **After the run, once the logs are on GitHub, TN10 ops makes this repo public.**
+**Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain count.** Bot workbook: [`logs/bot/run-2026-10-10.xlsx`](logs/bot/run-2026-10-10.xlsx). Detail: [docs/RESULTS.md](docs/RESULTS.md). Live/final bot summary: [`logs/bot/SUMMARY.md`](logs/bot/SUMMARY.md). Timeline: [`logs/bot/timeline.md`](logs/bot/timeline.md). Night notes: [`logs/bot/night-notes.md`](logs/bot/night-notes.md).
 
 | Key number | Value | Detail |
 |---|---|---|
-| Network unique accepted, best step median (tx/s) | filled after END | [docs/RESULTS.md](docs/RESULTS.md) |
-| HOLD median, network unique accepted (tx/s) | filled after END | [docs/RESULTS.md](docs/RESULTS.md) |
-| Success line (3,000 tx/s) met? | filled after END | [docs/RESULTS.md](docs/RESULTS.md) |
-| Bot: submitted / accepted per step | filled after END | [logs/bot/](logs/bot/README.md) |
-| Build: submitted / accepted per step | filled after END | [logs/build/](logs/build/README.md) |
-| Kaspa Pulse's outside count | filled after END | [credits/](credits/KASPA-PULSE.md) |
+| Network unique accepted, best step median (tx/s) | **~2,642** (MAX; chain-1m valid median, 15 min) | [docs/RESULTS.md](docs/RESULTS.md) |
+| HOLD median, network unique accepted (tx/s) | **~939** (chain-1m valid median; many WS stalls) | [docs/RESULTS.md](docs/RESULTS.md) |
+| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 valid minutes). Recount averages for C2500/MAX exceeded 3,000 with thinner minute coverage — see RESULTS. | [docs/RESULTS.md](docs/RESULTS.md) |
+| Bot: submitted / accepted per step | X250 66/66 clean; C1000 139/139 unclean; C1500 0/0.3 unclean; C2000 546/546 clean; C2500 675/674 clean; **MAX 919/919 clean**; HOLD 469/469 unclean | [logs/bot/](logs/bot/README.md), [xlsx](logs/bot/run-2026-10-10.xlsx) |
+| Build: submitted / accepted per step | not on box (bot-only wrap) | [logs/build/](logs/build/README.md) |
+| Kaspa Pulse's outside count | pending | [credits/](credits/KASPA-PULSE.md) |
+
+### Bot per-step headline (EVAL)
+
+| Step | Target | Submitted tx/s | Accepted tx/s | Clean |
+|---|---:|---:|---:|---|
+| X250 | 66 | 66.0 | 66.0 | yes |
+| C1000 | 275 | 139.3 | 139.2 | no (disk/freeze) |
+| C1500 | 413 | 0 | 0.3 | no (21:08 disk/freeze zeroed) |
+| C2000 | 550 | 545.5 | 545.6 | yes |
+| C2500 | 688 | 674.7 | 674.3 | yes |
+| MAX | 990 | 919.1 | 919.3 | yes |
+| HOLD | 880 | 469.2 | 468.6 | no (WS/RPC stalls overnight) |
+
 
 <details>
 <summary><b>Certainty labels</b></summary>
