@@ -1,6 +1,6 @@
 | 17:58:06 CEST | 15:58:06 UTC | watchdog: scheduler not running -> (re)start |
 | 17:58:06 CEST | 15:58:06 UTC | scheduler armed; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
-| 17:58:06 CEST | 15:58:06 UTC | PLAN (STP-KAS/tn10-storm-1010 go/steps-utc.json @ 39c4554): bot run, T0 18:30 UTC (20:30 CEST), G1 18:00 / G2 18:15 UTC, END 02:30 UTC. Submit ONLY to the 5 public TN10 nodes (each sender 4 of 5 at random), n2 reads/coins/count/miner. Bot rates: X250 60, C1000 250, C1500 375, C2000 500, C2500 625, MAX 900, HOLD 800; hold 800 if MAX clean else highest clean (60 if none). Fees 400/600, floor 100, cap 600, sit out if quote > 400. 15 senders x 200 lanes, staggered, max 8 relaunches each, no launch at RAM < 1.5 GB. No send until BUILD-OK (stp confirms Build started). n2 lag does not zero senders; n2 frozen > 3 min -> restart (max 1 per 20 min). Miner 1 thread 18:15-02:30 UTC. |
+| 17:58:06 CEST | 15:58:06 UTC | PLAN (STP-KAS/tn10-storm-2026-10-10 go/steps-utc.json @ 39c4554): bot run, T0 18:30 UTC (20:30 CEST), G1 18:00 / G2 18:15 UTC, END 02:30 UTC. Submit ONLY to the 5 public TN10 nodes (each sender 4 of 5 at random), n2 reads/coins/count/miner. Bot rates: X250 60, C1000 250, C1500 375, C2000 500, C2500 625, MAX 900, HOLD 800; hold 800 if MAX clean else highest clean (60 if none). Fees 400/600, floor 100, cap 600, sit out if quote > 400. 15 senders x 200 lanes, staggered, max 8 relaunches each, no launch at RAM < 1.5 GB. No send until BUILD-OK (stp confirms Build started). n2 lag does not zero senders; n2 frozen > 3 min -> restart (max 1 per 20 min). Miner 1 thread 18:15-02:30 UTC. |
 | 17:58:06 CEST | 15:58:06 UTC | n2 first read: synced true, utxoindex true, sink lag 0.3 s, DAA 593137555 |
 | 17:58:06 CEST | 15:58:06 UTC | coin refresh started (run 1, first refresh once n2 is synced) |
 | 17:58:06 CEST | 15:58:06 UTC | prep: n2 synced true, utxoindex true, lag 0.3 s; no sends, miner off until 18:15 UTC |
@@ -201,7 +201,7 @@
 | 18:49:41 CEST | 16:49:41 UTC | n2 unhealthy under pubMode (sink lag 114.7 s > 60): senders KEEP submitting on public nodes (stp 16:19) |
 | 18:49:42 CEST | 16:49:42 UTC | n2 unhealthy under pubMode (sink lag 87.9 s > 60): senders KEEP submitting on public nodes (stp 16:19) |
 | 18:58:08 CEST | 16:58:08 UTC | prep: n2 synced true, utxoindex true, lag 0.5 s; no sends, miner off until 18:15 UTC |
-| 19:05:02 CEST | 17:05:02 UTC | RE-ARM (stp 19:03 CEST, bot rates +10%): steps from STP-KAS/tn10-storm-1010 @ 9a6e010; bot X250 66, C1000 275, C1500 413, C2000 550, C2500 688, MAX 990, HOLD 880 (fallback 66); Build unchanged; scheduler restarted via watchdog; T0 20:30 CEST unchanged; BUILD-OK gate unchanged |
+| 19:05:02 CEST | 17:05:02 UTC | RE-ARM (stp 19:03 CEST, bot rates +10%): steps from STP-KAS/tn10-storm-2026-10-10 @ 9a6e010; bot X250 66, C1000 275, C1500 413, C2000 550, C2500 688, MAX 990, HOLD 880 (fallback 66); Build unchanged; scheduler restarted via watchdog; T0 20:30 CEST unchanged; BUILD-OK gate unchanged |
 | 19:05:11 CEST | 17:05:11 UTC | watchdog: scheduler not running -> (re)start |
 | 19:05:11 CEST | 17:05:11 UTC | scheduler restarted (resume by clock); T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 19:05:11 CEST | 17:05:11 UTC | n2 first read: synced true, utxoindex true, sink lag 0.5 s, DAA 593175840 |
@@ -376,8 +376,8 @@
 | 20:01:46 CEST | 18:01:46 UTC | n2 unhealthy under pubMode (sink lag 67.1 s > 60): senders KEEP submitting on public nodes (stp 16:19) |
 | 20:10:00 CEST | 18:10:00 UTC | BOT BLOCK: session down, runners 0, disk 23.9 GB, n2 synced true utxoindex true lag 0.3 s mempool 496, bot sub/acc 0/0 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 937.8 tx/s (6/9 valid), miner 0, mining share 0%, dup share 0.4494 |
 | 20:15:00 CEST | 18:15:00 UTC | GATE 2 18:15 UTC (ready check) (own n2 sink): synced true, utxoindex true, sink lag 0.4 s, mempool 496, quote 161.9 -> PASS |
-| 20:15:00 CEST | 18:15:00 UTC | READY CHECK: Build started? CONFIRMED (stp 19:22 CEST: GO pasted (tn10-storm-1010), Build is ready); n2 gate pass |
-| 20:15:00 CEST | 18:15:00 UTC | BUILD CONFIRMED: stp 19:22 CEST: GO pasted (tn10-storm-1010), Build is ready -> bot sends from the open step |
+| 20:15:00 CEST | 18:15:00 UTC | READY CHECK: Build started? CONFIRMED (stp 19:22 CEST: GO pasted (tn10-storm-2026-10-10), Build is ready); n2 gate pass |
+| 20:15:00 CEST | 18:15:00 UTC | BUILD CONFIRMED: stp 19:22 CEST: GO pasted (tn10-storm-2026-10-10), Build is ready -> bot sends from the open step |
 | 20:15:00 CEST | 18:15:00 UTC | miner ON (1 box CPU kaspa-miner, 1 thread, n2 gRPC): 18:15 UTC start, n2 synced |
 | 20:15:23 CEST | 18:15:23 UTC | live summary: pushed logs/bot/SUMMARY.md (f633b4e) |
 | 20:20:00 CEST | 18:20:00 UTC | BOT BLOCK: session up, runners 15, disk 23.8 GB, n2 synced true utxoindex true lag 0.2 s mempool 0, bot sub/acc 0/0 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 53.8 tx/s (9/9 valid), miner 1, mining share 10.56%, dup share 0.3993 |

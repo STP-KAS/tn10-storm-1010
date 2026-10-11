@@ -91,7 +91,7 @@ Brussels is UTC+2. Clocks in git stay in UTC.
 - **G2 (20:15 CEST):** write `FOR-TN10-OPS-ready-1010.txt` (below). stp passes it to the bot. Miner on.
 - **One step clock.** One holder process reads one copy of [go/steps-utc.json](../steps-utc.json) as it was when stp sent this prompt. Refuse any step file whose `t0` is not `2026-10-10T18:30:00Z`. Never start a second holder.
 - If you open this file after a step has ended, join the open step. Never rerun a finished step.
-- If stp has to paste anything, give him **one** PowerShell block that does all of it (node and watcher, senders with the public fallback, loggers, the step clock) and then needs nothing more from him. Put everything under `%USERPROFILE%\grok-build\tn10-storm-1010\`.
+- If stp has to paste anything, give him **one** PowerShell block that does all of it (node and watcher, senders with the public fallback, loggers, the step clock) and then needs nothing more from him. Put everything under `%USERPROFILE%\grok-build\tn10-storm-2026-10-10\`.
 
 ## Key times
 
@@ -149,7 +149,7 @@ The bot cannot see your screen. stp carries two plain-text files from you to the
 1. **END (04:30 CEST):** senders stop, miner off, live loggers stop. Your desk node stays up.
 2. **COUNT (04:30 to 06:30 CEST):** write `chain-count.csv` from your node per minute from one hour before T0 to END, before pruning.
 3. Write `steps.csv`, `SUMMARY.md` and the result handoff file.
-4. **By PUSH (07:30 CEST):** commit your files to `logs/build/` in **STP-KAS/tn10-storm-1010**. Counts only. No force-push. No tags or releases.
+4. **By PUSH (07:30 CEST):** commit your files to `logs/build/` in **STP-KAS/tn10-storm-2026-10-10**. Counts only. No force-push. No tags or releases.
 5. **Make public (the bot's task):** after the run, once the logs are on GitHub, TN10 ops makes this repo public. Until then it stays private.
 
 ## Never

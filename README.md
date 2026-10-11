@@ -1,6 +1,10 @@
 > **Experimental. We are just trying this.** [Disclaimer](DISCLAIMER.md)
+>
+> **Part of [tn-master](https://github.com/STP-KAS/tn-master)**, the map of every TN10 storm. Renamed on 11 Oct 2026 from `tn10-storm-1010`; old links redirect here.
+>
+> ← previous storm: [tn10-storm-2026-10-09](https://github.com/STP-KAS/tn10-storm-2026-10-09) | next storm: [tn10-storm-2026-10-10-plan](https://github.com/STP-KAS/tn10-storm-2026-10-10-plan) →
 
-# tn10-storm-1010: the bot run and the build run
+# tn10-storm-2026-10-10: the bot run and the build run
 
 **Status:** run finished END **04:30 CEST Sun 11 Oct 2026** (02:30 UTC). Logs on GitHub; made public after wrap-up. Kaspa Testnet-10 only; tKAS has no value.
 
@@ -30,8 +34,8 @@
 | [credits/](credits/KASPA-PULSE.md) | Kaspa Pulse's inputs, with sources and what we changed |
 | [credits/kaspa-pulse/](credits/kaspa-pulse/) | Kaspa Pulse's own counts |
 | [credits/kaspa-pulse/2026-10-09-night/](credits/kaspa-pulse/2026-10-09-night/README.md) | His count of the 9 Oct night storm (CSV, notes) |
-| [tn10-storm-1010-public-nodes](https://github.com/STP-KAS/tn10-storm-1010-public-nodes) | Sister repo: the afternoon public-node test, report and data |
-| [tn10-private](https://github.com/STP-KAS/tn10-private), [tn10-locus](https://github.com/STP-KAS/tn10-locus) | Earlier plans (see [docs/PLANS.md](docs/PLANS.md)) |
+| [tn10-storm-2026-10-10-public-nodes](https://github.com/STP-KAS/tn10-storm-2026-10-10-public-nodes) | Sister repo: the afternoon public-node test, report and data |
+| [tn10-storm-2026-10-10-plan](https://github.com/STP-KAS/tn10-storm-2026-10-10-plan), [tn10-storm-2026-10-09](https://github.com/STP-KAS/tn10-storm-2026-10-09) | Earlier plans (see [docs/PLANS.md](docs/PLANS.md)) |
 | [Kaspa Pulse (@gokugalax)](https://x.com/gokugalax) | The outside counter who shaped this plan |
 
 ## Intro
