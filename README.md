@@ -98,28 +98,29 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 
 ## Results
 
-**Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain count.** Bot workbook: [`logs/bot/run-2026-10-10.xlsx`](logs/bot/run-2026-10-10.xlsx). Detail: [docs/RESULTS.md](docs/RESULTS.md). Live/final bot summary: [`logs/bot/SUMMARY.md`](logs/bot/SUMMARY.md). Timeline: [`logs/bot/timeline.md`](logs/bot/timeline.md). Night notes: [`logs/bot/night-notes.md`](logs/bot/night-notes.md).
+**Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain count.** Combined: [`logs/COMBINED.md`](logs/COMBINED.md) · write-up: [`logs/WRITE-UP.md`](logs/WRITE-UP.md). Bot workbook: [`logs/bot/run-2026-10-10.xlsx`](logs/bot/run-2026-10-10.xlsx). Detail: [docs/RESULTS.md](docs/RESULTS.md). Build: [`logs/build/SUMMARY.md`](logs/build/SUMMARY.md).
 
 | Key number | Value | Detail |
 |---|---|---|
-| Network unique accepted, best step median (tx/s) | **~2,642** (MAX; chain-1m valid median, 15 min) | [docs/RESULTS.md](docs/RESULTS.md) |
-| HOLD median, network unique accepted (tx/s) | **~939** (chain-1m valid median; many WS stalls) | [docs/RESULTS.md](docs/RESULTS.md) |
-| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 valid minutes). Recount averages for C2500/MAX exceeded 3,000 with thinner minute coverage — see RESULTS. | [docs/RESULTS.md](docs/RESULTS.md) |
-| Bot: submitted / accepted per step | X250 66/66 clean; C1000 139/139 unclean; C1500 0/0.3 unclean; C2000 546/546 clean; C2500 675/674 clean; **MAX 919/919 clean**; HOLD 469/469 unclean | [logs/bot/](logs/bot/README.md), [xlsx](logs/bot/run-2026-10-10.xlsx) |
-| Build: submitted / accepted per step | not on box (bot-only wrap) | [logs/build/](logs/build/README.md) |
+| Network unique accepted, best step median (tx/s) | **2,644.9** (MAX; `complete_minute=yes`, n=12) | [logs/COMBINED.md](logs/COMBINED.md) |
+| HOLD median, network unique accepted (tx/s) | **936.5** (complete n=177; many WS stalls) | [logs/COMBINED.md](logs/COMBINED.md) |
+| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 complete minutes). Recount avgs C2500/MAX &gt;3000 with thinner coverage — supporting only. Build HOLD desk median **4,032** (Build clock, 175 min). | [logs/COMBINED.md](logs/COMBINED.md) |
+| Bot: submit / n2-accepted mean (steps.csv) | X250 64.29/64.22 clean; C1000 274.06/273.58 unclean; C1500 0/0.69 unclean; C2000 544.16/543.69 clean; C2500 673.68/672.51 clean; **MAX 916.69/915.38 clean**; HOLD 638.74/637.93 unclean | [logs/bot/steps.csv](logs/bot/steps.csv) |
+| Build: submit (own clock / UTC-overlap) | Own-clock: C2500 mean 1,949; MAX mean 2,687 (before bot T0); HOLD mean **1,718** @1875. UTC-overlap during bot C2500/MAX ~1.6–1.8k. Build T0 was 15:00Z (joined ~17:28Z). | [logs/build/](logs/build/README.md) |
+| Miners at END | **Off** at 02:30Z; after-END wrap senders=0 miner=0 | [logs/bot/timeline.md](logs/bot/timeline.md) |
 | Kaspa Pulse's outside count | pending | [credits/](credits/KASPA-PULSE.md) |
 
-### Bot per-step headline (EVAL)
+### Bot per-step headline (steps.csv means)
 
-| Step | Target | Submitted tx/s | Accepted tx/s | Clean |
+| Step | Target | Submit-ok mean | n2-accepted mean | Clean |
 |---|---:|---:|---:|---|
-| X250 | 66 | 66.0 | 66.0 | yes |
-| C1000 | 275 | 139.3 | 139.2 | no (disk/freeze) |
-| C1500 | 413 | 0 | 0.3 | no (21:08 disk/freeze zeroed) |
-| C2000 | 550 | 545.5 | 545.6 | yes |
-| C2500 | 688 | 674.7 | 674.3 | yes |
-| MAX | 990 | 919.1 | 919.3 | yes |
-| HOLD | 880 | 469.2 | 468.6 | no (WS/RPC stalls overnight) |
+| X250 | 66 | 64.29 | 64.22 | yes |
+| C1000 | 275 | 274.06 | 273.58 | no (disk/freeze) |
+| C1500 | 413 | 0 | 0.69 | no (21:08 disk/freeze zeroed) |
+| C2000 | 550 | 544.16 | 543.69 | yes |
+| C2500 | 688 | 673.68 | 672.51 | yes |
+| MAX | 990 | 916.69 | 915.38 | yes |
+| HOLD | 880 | 638.74 | 637.93 | no (WS/RPC stalls overnight) |
 
 
 <details>

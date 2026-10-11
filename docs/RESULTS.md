@@ -4,25 +4,25 @@
 
 Back to [README](../README.md).
 
-**Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain recount (~04:33 CEST).** Bot-side wrap on the box. Build numbers were not present on the box at wrap time — leave blank.
+**Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain recount (~04:33 CEST).** Combined page: [`logs/COMBINED.md`](../logs/COMBINED.md), narrative [`logs/WRITE-UP.md`](../logs/WRITE-UP.md). Build logs are in [`logs/build/`](../logs/build/README.md). Network unique below prefers bot `chain-count.csv` with `complete_minute=yes` (plan rule); recount averages stay as supporting.
 
-Sources: [`logs/bot/`](../logs/bot/README.md), [`logs/bot/run-2026-10-10.xlsx`](../logs/bot/run-2026-10-10.xlsx), [`logs/bot/SUMMARY.md`](../logs/bot/SUMMARY.md), [`logs/bot/timeline.md`](../logs/bot/timeline.md), [`logs/bot/night-notes.md`](../logs/bot/night-notes.md), [`logs/bot/recount-1m.csv`](../logs/bot/recount-1m.csv). How to read them: [go/LOGGING.md](../go/LOGGING.md#how-to-read-the-run-in-5-minutes).
+Sources: [`logs/bot/`](../logs/bot/README.md), [`logs/bot/run-2026-10-10.xlsx`](../logs/bot/run-2026-10-10.xlsx), [`logs/bot/SUMMARY.md`](../logs/bot/SUMMARY.md), [`logs/bot/timeline.md`](../logs/bot/timeline.md), [`logs/bot/night-notes.md`](../logs/bot/night-notes.md), [`logs/bot/recount-1m.csv`](../logs/bot/recount-1m.csv), [`logs/build/SUMMARY.md`](../logs/build/SUMMARY.md). How to read them: [go/LOGGING.md](../go/LOGGING.md#how-to-read-the-run-in-5-minutes).
 
 ## Headline
 
-| Step | Combined target | Network unique (chain-1m valid median, tx/s) | Network unique (recount avg, tx/s) | Bot submitted / accepted | Build | Clean | Label |
+| Step | Combined target | Network unique (complete_minute=yes median, tx/s) | Network unique (recount avg, tx/s) | Bot submit / n2-accepted mean (steps.csv) | Build submit mean (UTC-overlap, minute.csv/60) | Clean (bot) | Label |
 |---|---:|---:|---:|---|---|---|---|
-| X250 | 256 | 298.3 (n=15) | 402.3 (n=11) | 66.0 / 66.0 | — | yes | Claim (measured on TN10) |
-| C1000 | 1,025 | 512.0 (n=8) | 1,194.9 (n=6) | 139.3 / 139.2 | — | no | Claim (measured on TN10); disk/freeze |
-| C1500 | 1,538 | 245.9 (n=2) | 1,506.2 (n=2) | 0 / 0.3 | — | no | Claim (measured on TN10); zeroed by 21:08 freeze |
-| C2000 | 2,050 | 796.5 (n=15) | 2,093.2 (n=10) | 545.5 / 545.6 | — | yes | Claim (measured on TN10) |
-| C2500 | 2,563 | 2,526.3 (n=15) | 3,426.4 (n=11) | 674.7 / 674.3 | — | yes | Claim (measured on TN10) |
-| MAX | 3,590 | **2,642.4** (n=15) | **3,271.5** (n=12) | **919.1 / 919.3** | — | yes | Claim (measured on TN10) |
-| HOLD | 3,280 | 938.7 (n=212) | 2,145.3 (n=173) | 469.2 / 468.6 | — | no | Claim (measured on TN10); many WS/RPC stalls |
+| X250 | 256 | **293.6** (n=11) | 402.3 (n=11) | 64.29 / 64.22 | 174.1 (aborted 2400 HOLD arm) | yes | Claim (measured on TN10) |
+| C1000 | 1,025 | **512.0** (n=6) | 1,194.9 (n=6) | 274.06 / 273.58 | 172.5 | no | Claim (measured on TN10); disk/freeze |
+| C1500 | 1,538 | **245.9** (n=2) | 1,506.2 (n=2) | 0 / 0.69 | 163.5 | no | Claim (measured on TN10); zeroed by 21:08 freeze |
+| C2000 | 2,050 | **796.5** (n=11) | 2,093.2 (n=10) | 544.16 / 543.69 | 1,193 (re-arm 1875 mid-window; Build skipped own C2000) | yes | Claim (measured on TN10) |
+| C2500 | 2,563 | **2,526.3** (n=11) | 3,426.4 (n=11) | 673.68 / 672.51 | 1,754.1 (Build HOLD@1875) | yes | Claim (measured on TN10) |
+| MAX | 3,590 | **2,644.9** (n=12) | **3,271.5** (n=12) | **916.69 / 915.38** | 1,617.0 (Build HOLD@1875) | yes | Claim (measured on TN10) |
+| HOLD | 3,280 | **936.5** (n=177) | 2,145.3 (n=173) | 638.74 / 637.93 | 1,529 (Build ended 23:00Z; own-clock HOLD med unique **4,032**/175) | no | Claim (measured on TN10); many WS/RPC stalls |
 
-- **Success line (3,000 tx/s network unique accepted):** plan metric = median of a step's valid minutes, ≥10 valid minutes. **Not met** on that metric (best: MAX ~2,642). Post-run recount averages for C2500 (~3,426) and MAX (~3,272) exceed 3,000 but with fewer boundary-sink minutes (merged/missing minutes during freezes) — treat as supporting, not the plan pass/fail.
-- **Combined vs goal:** network unique is the whole network (bot + Build + others). Build column unknown on this wrap; do not add bot+Build submit rates as a substitute.
-- **Bot last clean level:** 990 (MAX). HOLD unclean; average includes long dead periods overnight.
+- **Success line (3,000 tx/s network unique accepted):** plan metric = median of a step's **complete** minutes (`complete_minute=yes`), ≥10 valid minutes. **Not met** (best: MAX **2,644.9**, n=12). Post-run recount averages for C2500 (~3,426) and MAX (~3,272) exceed 3,000 but with thinner freeze-gap coverage — supporting only, not the plan pass/fail.
+- **Combined vs goal:** network unique is the whole network (bot + Build + others), counted once. Build submit figures are in the table and in [`logs/COMBINED.md`](../logs/COMBINED.md); do not add bot+Build submit as a substitute for network unique. Build's own clock was T0 15:00Z (joined ~17:28Z).
+- **Bot last clean level:** 990 (MAX). HOLD unclean; mean includes long dead periods overnight. Miners off at END 02:30Z (timeline).
 
 ## What went wrong (short)
 

@@ -2,7 +2,7 @@
 
 # logs: where the results land
 
-Empty until the run (T0 20:30 CEST, 10 Oct 2026). Each side drops its files here after the chain count, by the PUSH time in [go/README.md](../go/README.md#key-times).
+Both sides filled after the 10 Oct run (T0 20:30 CEST). Combined write-up added post-run. PUSH times: [go/README.md](../go/README.md#key-times).
 
 | Folder | Side | Submits to | Who writes it |
 |---|---|---|---|
@@ -11,7 +11,7 @@ Empty until the run (T0 20:30 CEST, 10 Oct 2026). Each side drops its files here
 
 File names and columns are in [go/LOGGING.md](../go/LOGGING.md). Both folders use the same names, so files can be joined on `minute_utc` and lined up with Kaspa Pulse's count.
 
-The headline, network unique accepted tx/s, is counted once from chain data, never summed across sides. A combined page, `COMBINED.md`, is written here after both folders are filled.
+The headline, network unique accepted tx/s, is counted once from chain data, never summed across sides. Combined: [`COMBINED.md`](COMBINED.md). Narrative: [`WRITE-UP.md`](WRITE-UP.md).
 
 Live during the run: [bot/SUMMARY.md](bot/SUMMARY.md), every 15 minutes. How to read the run in 5 minutes: [go/LOGGING.md](../go/LOGGING.md#how-to-read-the-run-in-5-minutes).
 

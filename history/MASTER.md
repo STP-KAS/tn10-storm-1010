@@ -37,7 +37,7 @@ Numbers from different eras are not directly comparable.
 | 9 Oct day | keel runs 1–5 | keel via tunnel | Unique accepted avg 1,627, max 2,435 tx/s | Unique accepted | keel lag up to 868.3 s |
 | 9–10 Oct night | Friday storm | locus (Build) + keel (bot) | **7,541,103** in blocks; peak minute 1,223 tx/s | Kaspa Pulse | Wrong step file; locus died 01:28 |
 | 10 Oct morning | Take 2 | locus + keel | Rehearsal row: 58 tx/s mean, clean | Submit | locus aborted 06:52 and 07:26; halted 08:06 |
-| **10 Oct, from T0** | **This run** ([times](../go/README.md#key-times)) | **n2 (box) + Build's own desk node** | **pending** | Unique accepted | — |
+| **10 Oct, from T0** | **This run** ([times](../go/README.md#key-times)) | **n2 (box) + Build's own desk node** | MAX median **2,644.9** tx/s (complete n=12); 3000 line **not met**; Build HOLD desk med **4,032** | Unique accepted | Disk freeze zeroed C1500; sdk210 delete; n2 utxoindex off; HOLD WS stalls; Build clock mismatch |
 
 ## Mid September: first contact
 
@@ -137,5 +137,9 @@ Details: [2026-10-10-take2.md](2026-10-10-take2.md).
 
 ## 10 Oct, from T0: this run
 
-- **Setup:** bot on n2 (box), Build on its own new desk node. Private, pruned, no tunnel, one miner per side. Plan: [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43), refined in [go/](../go/README.md). Times: [go/README.md](../go/README.md#key-times).
-- **Results:** pending. They go to [logs/](../logs/README.md).
+- **Setup:** bot on n2 (box), Build on its own new desk node. Private, pruned, no tunnel, one miner per side. Bot submits to the five public TN10 nodes; n2 for reads/coins/count/miner. Build sends to its desk node (public fallback). Plan: [tn10-private @ 517fb43](https://github.com/STP-KAS/tn10-private/tree/517fb43), refined in [go/](../go/README.md). Times: [go/README.md](../go/README.md#key-times) (T0 18:30Z, END 02:30Z). Build's own SUMMARY used T0 15:00Z / END 23:00Z — align by UTC wall clock.
+- **Reported (bot chain-count, `complete_minute=yes`, bot clock windows):** X250 med **293.6** (n=11); C1000 **512.0** (n=6); C1500 **245.9** (n=2); C2000 **796.5** (n=11); C2500 **2,526.3** (n=11); MAX **2,644.9** (n=12); HOLD **936.5** (n=177). Recount averages (supporting): C2500 **3,426.4**, MAX **3,271.5**. Bot submit means (steps.csv): X250 64.29 … MAX 916.69, HOLD 638.74. Build submit on UTC overlap during bot C2500/MAX ~1.6–1.8k; Build HOLD own-clock mean submit **1,718**, desk network-unique median **4,032** over 175 min.
+- **Success line (3,000 tx/s, median of ≥10 complete minutes):** **not met**. Best plan-metric step MAX ~2,645. Miners **off** at END 02:30Z; after-END wrap senders=0 miner=0.
+- **What broke:** box disk/freeze 21:08–21:29 CEST zeroed C1500; sdk210 deleted in cleanup then restored; n2 restarted without utxoindex ~19:58Z; HOLD overnight WS/RPC stalls and coin buffer to 0; Build late join, wrong clock, C2000 skipped, HOLD re-armed at 1875 not 2400.
+- **Source:** [logs/COMBINED.md](../logs/COMBINED.md), [logs/WRITE-UP.md](../logs/WRITE-UP.md), [docs/RESULTS.md](../docs/RESULTS.md), [logs/bot/](../logs/bot/README.md), [logs/build/](../logs/build/README.md).
+- **Learned:** both sides must run the same T0 file; disk reclaim must spare the storm SDK; dropping utxoindex mid-HOLD ends top-ups; plan pass/fail stays on complete-minute chain medians, not recount averages or a partner desk HOLD.
