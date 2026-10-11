@@ -26,7 +26,7 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). The node-dead ru
 
 ## Where you send
 
-- **Submit only to the five public TN10 nodes:** `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green` (wRPC, Borsh, testnet-10). Never submit to n2. (stp, 14:36 CEST: "Skip your node. Only use public nodes.")
+- **Submit only to the five public TN10 nodes:** `pub-1`, `pub-2`, `pub-4`, `pub-5`, `pub-3` (wRPC, Borsh, testnet-10). Never submit to n2. (stp, 14:36 CEST: "Skip your node. Only use public nodes.")
 - **Random spread:** each sender picks four of the five at random at launch, one connection each, and spreads its lanes over them. Over 15 senders every node gets load.
 - **Per-node back-off:** a node that gives 20 connection or RPC errors in a row is cooled for 30 s; its lanes move to the sender's other live nodes; the dropped connection is retried in the background. If no node of a sender is live, that sender waits and counts no attempt. Log `node-dead` / `node-back` with the node name.
 - **Per-node fee check:** every minute, read each node's normal fee quote. A node quoting above 400 is skipped for that minute (`node-quote-skip`).
@@ -45,7 +45,7 @@ Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). The node-dead ru
 
 - **15 senders**, one scheduler, locked so a second copy cannot start. Rate per sender = the Bot column divided by the senders that are up.
 - **Launch stability (lesson of the public-node test):** launches staggered a few seconds apart; at most one relaunch per sender per minute; at most 8 relaunches per sender for the whole run (then that sender stays down and the others carry its share); no launch while free memory on the box is under 1.5 GB.
-- **Fees:** half the lanes at 400, half at 600 sompi/gram. Floor 100, cap 600. Sit a step out if n2's normal quote (or, if n2 cannot answer, muon-10's) is above 400 at step start; log `step-sit-out` with the quote.
+- **Fees:** half the lanes at 400, half at 600 sompi/gram. Floor 100, cap 600. Sit a step out if n2's normal quote (or, if n2 cannot answer, pub-1's) is above 400 at step start; log `step-sit-out` with the quote.
 - Shape: the no-signature hop (anyone-can-spend P2SH lanes). Label it in every report: "no-signature hop, anyone-can-spend, not realistic payments".
 - **Disk:** senders pause at 8 GB free on the box. n2's guard writes STOP at 5 GB and stops n2 at 3 GB.
 - **Counting (lesson of 17:21 CEST):** the senders keep no per-transaction file, so each step's submitted and accepted counts come from the senders' per-second files. A step that shows 0 submitted while the senders logged sends is a counting bug, not a result.

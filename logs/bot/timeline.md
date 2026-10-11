@@ -581,7 +581,7 @@
 | 22:04:44 CEST | 20:04:44 UTC | rate: C2500 senders 688 tx/s total (14 up x 49.143), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 22:04:47 CEST | 20:04:47 UTC | S15 not running -> relaunch 5/30 |
 | 22:04:47 CEST | 20:04:47 UTC | rate: C2500 senders 688 tx/s total (15 up x 45.867), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
-| 22:05:36 CEST | 20:05:36 UTC | DEVIATION (fix 5): C2500 rate dip ~614/688 (60s) — S6/S14/S15 stuck on muon-10 (pending~375, intermittent 0 sub). Night-watch killed+relaunched 5/30 at 22:04 with fresh pub picks (S6/S14 no muon). Post-fix full seconds ~675–709 sub. Coins ~719k. Disk 41G. No user ping |
+| 22:05:36 CEST | 20:05:36 UTC | DEVIATION (fix 5): C2500 rate dip ~614/688 (60s) — S6/S14/S15 stuck on pub-1 (pending~375, intermittent 0 sub). Night-watch killed+relaunched 5/30 at 22:04 with fresh pub picks (S6/S14 no pub-1). Post-fix full seconds ~675–709 sub. Coins ~719k. Disk 41G. No user ping |
 | 22:05:36 CEST | 20:05:36 UTC | night-watch: C2500 ~680–700 after S6/S14/S15 restart; 15 senders; n2 synced no-utxoindex; disk 41G; MemAvail ~5.1G; coins ~719k; no user ping |
 | 22:10:00 CEST | 20:10:00 UTC | BOT BLOCK: session up, runners 15, disk 40.6 GB, n2 synced true utxoindex false lag 0.1 s mempool 3153, bot sub/acc 666.9/665.7 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 2526.3 tx/s (9/9 valid), miner 1, mining share 24.47%, dup share 0.364 |
 | 22:15:00 CEST | 20:15:00 UTC | ROW C2500-drain C2500-drain begins (20:15-20:20 UTC; plan bot: 0; Build: 0; miner on) |
@@ -597,7 +597,7 @@
 | 22:30:01 CEST | 20:30:01 UTC | BOT BLOCK: session up, runners 15, disk 40.8 GB, n2 synced true utxoindex false lag 0.3 s mempool 5095, bot sub/acc 912.2/910.8 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 2689.2 tx/s (9/9 valid), miner 1, mining share 25.34%, dup share 0.3605 |
 | 22:30:14 CEST | 20:30:14 UTC | live summary: pushed logs/bot/SUMMARY.md (8644a7f) |
 | 22:33:12 CEST | 20:33:12 UTC | S7 not running -> relaunch 5/30 |
-| 22:34:14 CEST | 20:34:14 UTC | DEVIATION (fix 6): MAX rate ~912 vs 990 — S7 at 0 sub (node_cool/WS on electron/vector/boson/neutrino). Night-watch TERM+relaunch 5/30 at 22:33:12 CEST pid 2747535 pubs electron/boson/muon/vector. Post-fix ~960–996 sub (avg ~979), S7 at target. Coins 713k. Disk 41G. No user ping |
+| 22:34:14 CEST | 20:34:14 UTC | DEVIATION (fix 6): MAX rate ~912 vs 990 — S7 at 0 sub (node_cool/WS on pub-4/pub-3/pub-2/pub-5). Night-watch TERM+relaunch 5/30 at 22:33:12 CEST pid 2747535 pubs pub-4/pub-2/pub-1/pub-3. Post-fix ~960–996 sub (avg ~979), S7 at target. Coins 713k. Disk 41G. No user ping |
 | 22:34:14 CEST | 20:34:14 UTC | night-watch: MAX OK after S7 restart; ~979/990; 15 senders; n2 synced no-utxoindex; disk 41G; MemAvail ~4.5G; coins ~713k; no user ping |
 | 22:35:00 CEST | 20:35:00 UTC | ROW MAX-drain MAX-drain begins (20:35-20:40 UTC; plan bot: 0; Build: 0; miner on) |
 | 22:35:00 CEST | 20:35:00 UTC | rate: MAX-drain senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
@@ -1068,7 +1068,7 @@
 | 03:37:42 CEST | 01:37:42 UTC | rate: HOLD senders 880 tx/s total (14 up x 62.857), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 03:37:45 CEST | 01:37:45 UTC | S15 not running -> relaunch 21/30 |
 | 03:37:45 CEST | 01:37:45 UTC | rate: HOLD senders 880 tx/s total (15 up x 58.667), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
-| 03:38:13 CEST | 01:38:13 UTC | DEVIATION (fix 15): HOLD collapsed ~03:25–03:33 (BOT BLOCK 03:32 116.9/117.2; live 0) — S1–S11 rpc_down stuck; mass TERM 03:33 reused spent 03:10 tips → lanes_dead=200. Rebuilt S1–S15 tip files via pub getUtxosByAddresses (electron utxoindex; 200 UTXOs/~9.8k tKAS each). Unskipped S12–S15 (storm.mjs.bak-0336-unskip); reset relaunch caps; storm restart 03:36:57. Post-fix ~878/880 with 15/15; coins 0 unclaimed; disk 36G; MemAvail ~5.4G. No user ping |
+| 03:38:13 CEST | 01:38:13 UTC | DEVIATION (fix 15): HOLD collapsed ~03:25–03:33 (BOT BLOCK 03:32 116.9/117.2; live 0) — S1–S11 rpc_down stuck; mass TERM 03:33 reused spent 03:10 tips → lanes_dead=200. Rebuilt S1–S15 tip files via pub getUtxosByAddresses (pub-4 utxoindex; 200 UTXOs/~9.8k tKAS each). Unskipped S12–S15 (storm.mjs.bak-0336-unskip); reset relaunch caps; storm restart 03:36:57. Post-fix ~878/880 with 15/15; coins 0 unclaimed; disk 36G; MemAvail ~5.4G. No user ping |
 | 03:38:13 CEST | 01:38:13 UTC | night-watch: HOLD OK after fix #15; ~878/880; 15 senders; tips refreshed from pub UTXO index; n2 synced no-utxoindex; disk 36G; MemAvail ~5.4G; coins 0 unclaimed (lane-reuse); WS live; no user ping |
 | 03:40:00 CEST | 01:40:00 UTC | BOT BLOCK: session up, runners 15, disk 35.9 GB, n2 synced true utxoindex false lag 0.3 s mempool 96, bot sub/acc 237.1/236.1 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 57.2 tx/s (7/8 valid), miner 1, mining share 20.37%, dup share 0.4971 |
 | 03:44:28 CEST | 01:44:28 UTC | coin buffer: 0 tKAS unclaimed (0 coins) |
@@ -1121,7 +1121,7 @@
 | 03:49:42 CEST | 01:49:42 UTC | S15 not running -> relaunch 23/30 |
 | 03:49:42 CEST | 01:49:42 UTC | rate: HOLD senders 880 tx/s total (15 up x 58.667), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 03:50:00 CEST | 01:50:00 UTC | BOT BLOCK: session up, runners 15, disk 35.8 GB, n2 synced true utxoindex false lag 0.2 s mempool 0, bot sub/acc 232.4/230.5 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 53.7 tx/s (5/6 valid), miner 1, mining share 18.94%, dup share 0.5119 |
-| 03:50:29 CEST | 01:50:29 UTC | DEVIATION (fix 16): HOLD dead ~03:41–03:49 (live 0; pending~74; node_cool/rpc_down) — rebuilt tips via electron getUtxosByAddresses; first relaunch polluted by SIGTERM spent tip-save (lanes_dead=200). Quarantined bad tips; rebuild#2; KILL -9 only; post-fix ~876/880 with 15/15 lanes_dead=0. Coins 0; disk 36G; MemAvail ~2.6G. No user ping |
+| 03:50:29 CEST | 01:50:29 UTC | DEVIATION (fix 16): HOLD dead ~03:41–03:49 (live 0; pending~74; node_cool/rpc_down) — rebuilt tips via pub-4 getUtxosByAddresses; first relaunch polluted by SIGTERM spent tip-save (lanes_dead=200). Quarantined bad tips; rebuild#2; KILL -9 only; post-fix ~876/880 with 15/15 lanes_dead=0. Coins 0; disk 36G; MemAvail ~2.6G. No user ping |
 | 03:50:29 CEST | 01:50:29 UTC | night-watch: HOLD OK after fix #16; ~876/880; 15 senders; tips refreshed; n2 synced no-utxoindex; disk 36G; MemAvail ~2.6G; coins 0 (lane-reuse); WS live; no user ping |
 | 04:12:13 CEST | 02:12:13 UTC | BOT BLOCK: session up, runners 15, disk 35.7 GB, n2 synced false utxoindex false lag 1068.1 s mempool 0, bot sub/acc 0/0 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted not measured tx/s (0/0 valid), miner 1, mining share -%, dup share - |
 | 04:12:25 CEST | 02:12:25 UTC | live summary: pushed logs/bot/SUMMARY.md (1367fd1) |
@@ -1155,7 +1155,7 @@
 | 04:15:04 CEST | 02:15:04 UTC | S15 not running -> relaunch 24/30 |
 | 04:15:04 CEST | 02:15:04 UTC | rate: DRAIN senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 04:15:14 CEST | 02:15:14 UTC | live summary: pushed logs/bot/SUMMARY.md (27c76fc) |
-| 04:16:21 CEST | 02:16:21 UTC | DEVIATION (fix 17): HOLD dead ~03:54–04:14 (BOT BLOCK 04:12 0/0; pending~75–81; node_cool/rpc_down) — rebuilt tips via electron getUtxosByAddresses (200/sender stillOld=0); KILL -9 only; relaunch caps reset; brief HOLD ~802–880 with 10–13 up in final ~40s before DRAIN 04:15. Coins 0; disk 36G; MemAvail ~2.9G. No user ping |
+| 04:16:21 CEST | 02:16:21 UTC | DEVIATION (fix 17): HOLD dead ~03:54–04:14 (BOT BLOCK 04:12 0/0; pending~75–81; node_cool/rpc_down) — rebuilt tips via pub-4 getUtxosByAddresses (200/sender stillOld=0); KILL -9 only; relaunch caps reset; brief HOLD ~802–880 with 10–13 up in final ~40s before DRAIN 04:15. Coins 0; disk 36G; MemAvail ~2.9G. No user ping |
 | 04:16:21 CEST | 02:16:21 UTC | night-watch: DRAIN OK after fix #17; plan target 0 from 04:15; 15 senders; tips refreshed; n2 synced no-utxoindex; disk 36G; MemAvail ~2.9G; coins 0 (lane-reuse); WS live; no user ping |
 | 04:20:00 CEST | 02:20:00 UTC | BOT BLOCK: session up, runners 15, disk 35.6 GB, n2 synced true utxoindex false lag 0.1 s mempool 293, bot sub/acc 34.9/34.9 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 56.1 tx/s (4/6 valid), miner 1, mining share 9.62%, dup share 0.4549 |
 | 04:26:57 CEST | 02:26:57 UTC | night-watch: DRAIN OK pre-END; 15 senders target 0; disk 36G; MemAvail ~2.3G; coins 0; after-END wrap starts at 04:30; no user ping |
