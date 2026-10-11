@@ -134,7 +134,7 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 
 </details>
 
-Counts only: no txid, key, seed, host IP, port or wallet address in this repo. No public node names: the five public TN10 community nodes are labelled `pub-1` … `pub-5`.
+Counts only: no txid, key, seed, host IP, port or wallet address in this repo. The public TN10 node names are the community resolver nodes, not ours.
 
 ---
 

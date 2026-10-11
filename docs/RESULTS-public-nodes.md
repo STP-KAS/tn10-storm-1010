@@ -15,6 +15,6 @@ Back to [README](../README.md). Full report and data: [tn10-storm-1010-public-no
 | Box limit | RAM: the out-of-memory killer took n2 at about 14:51 CEST above about 20 senders | Claim (measured on TN10) |
 | n2 tip freeze | about 15:57 to 16:20 CEST; fixed by a restart | Claim (measured on TN10) |
 | Launcher overspawn | two launchers, senders past 20, rate fell from about 2,850 to about 200 tx/s; fixed with one locked launcher and a hard cap | Claim (measured on TN10) |
-| Per-node behaviour | pub-1 and pub-3 took most ok submits; pub-2, pub-4 and pub-5 often refused connections when many senders booted at once | Claim; the cause is Not sure / open for debate |
+| Per-node behaviour | muon-10 and vector-10 took most ok submits; boson-10, electron-10 and neutrino-10 often refused connections when many senders booted at once | Claim; the cause is Not sure / open for debate |
 
 What this plan took from it: [LESSONS.md](LESSONS.md).

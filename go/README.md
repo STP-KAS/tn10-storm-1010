@@ -84,7 +84,7 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 
 | Side | Submits to | Reads (health, accepted, coins, count) | Miner |
 |---|---|---|---|
-| Bot | **Only** the five public TN10 nodes: `pub-1`, `pub-2`, `pub-4`, `pub-5`, `pub-3` | n2, its own private pruned node (kaspad 2.1.0, UTXO index on, loopback only) | 1 thread, on n2 |
+| Bot | **Only** the five public TN10 nodes: `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green` | n2, its own private pruned node (kaspad 2.1.0, UTXO index on, loopback only) | 1 thread, on n2 |
 | Build | **Its own desk node (primary)**; the same five public nodes **only as fallback** when its node lags, freezes, unsyncs, dies, or desk RAM gets tight | Its own desk node | At most 1 thread, on its own node |
 
 stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now and the 17:00 test. More space, more runners." stp, 18:18 CEST, for Build: its own desk node is primary for its 75% share; the public nodes are its fallback only. Build moves the affected senders to the public nodes when its node has a sink lag over 60 s, a virtual DAA stall of 30 s, is not synced, or dies, and moves back after 2 minutes of good health. It keeps at least 4 GB RAM free on the desk. So the load on the public nodes is mostly the bot's 25%.
@@ -100,7 +100,7 @@ stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now an
 - Both sides: **half the lanes at 400, half at 600 sompi/gram**, frozen for the step. **Floor 100** (never lower), **cap 600**.
 - Why 400/600: stp asked for double fees at 14:25 CEST in the public-node test ("scale and use double fees"). The old pair was 200/300; doubled, it is 400/600. **Claim (measured on TN10):** at 400 the public-node test ran with zero rejects in its clean phase, and n2's normal fee quote read 100 at every step start the bot logged (16:30 to 17:40 CEST).
 - **Sit-out:** if the normal fee quote at step start is above 400, that side sits the step out and logs `step-sit-out` with the quote.
-- **Per public node:** if one public node quotes above 400 (pub-3 has quoted higher than the others before), skip that node for a minute and spread its load over the others. Log `node-quote-skip`.
+- **Per public node:** if one public node quotes above 400 (vector-10 has quoted higher than the others before), skip that node for a minute and spread its load over the others. Log `node-quote-skip`.
 
 ## Node-dead rule (Kaspa Pulse), per node
 
@@ -154,7 +154,7 @@ stp, 14:36 CEST, for the bot: "Skip your node. Only use public nodes. For now an
 | Each relaunch claimed fresh coins for every lane; the coin list ran to 0 unclaimed at about 15:10 CEST | Fewer lanes per sender and the relaunch limit. A coin buffer check every 30 minutes, with a top-up. |
 | The step evaluation counted 0 submitted for the public-node senders (they keep no per-transaction file) | The evaluation counts from the senders' per-second files. |
 | After a kill, a watchdog started senders again | A halt stops the watchdog first, then the scheduler, then the senders with a hard kill. |
-| pub-2, pub-4 and pub-5 often refused connections when many senders booted at once | Staggered launches. Each sender holds four of the five nodes, picked at random, and moves its lanes off a node that fails. **Not sure / open for debate:** why those three refused. |
+| boson, electron and neutrino often refused connections when many senders booted at once | Staggered launches. Each sender holds four of the five nodes, picked at random, and moves its lanes off a node that fails. **Not sure / open for debate:** why those three refused. |
 | Build was not started at 17:00 CEST | The ready check at G2 and the handoff file. |
 | Build pushed over 3,000 tx/s into blocks from the desk last week (**Claim**) | Build's own desk node is primary for its 75% share. |
 | On 9 Oct keel and locus lagged and froze about every 10 minutes; locus died at about 03:28 CEST Sat (**Claim**) | Build's senders move to the public fallback when the desk node lags or freezes, and back after 2 minutes healthy. |

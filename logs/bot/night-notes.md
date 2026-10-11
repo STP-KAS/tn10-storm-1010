@@ -11,13 +11,13 @@ Private watch log for final report. Times CEST.
 ## 2026-10-10 20:30 CEST — night-watch fire (T0 / B0)
 - Status: OK. T0 hit on time. ROW B0 began; senders 0/15 (plan). Scheduler 2631138, watchdog 2589569, live-loop 2606950 (SUMMARY 20:30 + push a0be987), n2mon+chain up, miner 1.
 - n2: synced, utxoindex true, lag ~0.1–0.3 s; disk 24G free; MemAvailable ~3.5–3.8 GB; coins 1,034,706 tKAS / 32,565.
-- Public nodes :443 OK (pub-1/pub-2/pub-4/pub-5/pub-3). BUILD-OK present. Rates +10% armed. No HALT.
+- Public nodes :443 OK (muon/boson/electron/neutrino/vector). BUILD-OK present. Rates +10% armed. No HALT.
 - No fix applied. Next gate: X250 at 20:40 CEST (bot 66 tx/s).
 
 ## 2026-10-10 20:50 CEST — night-watch fire (X250)
 - Status: OK. ROW X250 (bot target 66); BOT BLOCK 20:50 sub/acc 63.3/63.2 tx/s, n2 unique accepted 300.3 tx/s (10/10). Scheduler 2631138, watchdog 2589569, live-loop 2606950 (SUMMARY push 20:45 cd14524), n2mon+chain up, miner 1, senders 15.
 - n2: synced, utxoindex true, lag ~0.2–0.3 s; disk 24G free; MemAvailable ~4.3–4.5 GB; coins 934,337 tKAS / 29,485.
-- Public nodes :443 reachable (pub-1/pub-2/pub-4/pub-5/pub-3). BUILD-OK present. No HALT.
+- Public nodes :443 reachable (muon/boson/electron/neutrino/vector). BUILD-OK present. No HALT.
 - Note (self-healed, no action): at X250 start 20:40 CEST storm relaunched S1–S15 (1/8 each) within ~51 s; all 15 back by 20:40:51. Rates restored to 66 total.
 - No fix applied this fire. No user ping. Next: C1000 at 20:55 CEST (bot 275).
 
@@ -38,7 +38,7 @@ Private watch log for final report. Times CEST.
 ## 2026-10-10 21:54 CEST — night-watch fire (C2000)
 - Status: OK. ROW C2000 bot target 550; last-sec ~554/549 sub/acc; BOT BLOCK 21:50 540.3/539.1; n2 unique accepted 734.3. Scheduler 2631138, watchdog 2589569, live-loop 2606950 (SUMMARY 21:50), n2mon+chain up, miner 1, senders 15.
 - n2: synced, utxoindex true, lag ~0.1–0.2 s; disk **28G** free (n2 datadir ~76G); MemAvailable ~3.3–3.5 GB; coins 831,799 tKAS / 26,273.
-- Public nodes all submitting (pub-1/pub-2/pub-4/pub-5/pub-3). MAIN_NODE=pub. BUILD-OK present. No HALT/STOP.
+- Public nodes all submitting (muon/boson/electron/neutrino/vector). MAIN_NODE=pub. BUILD-OK present. No HALT/STOP.
 - Risk: live scheduler still has MAX_RELAUNCH=8 (file already 30 since 21:46); S1 relaunches=6/8 (burned by SDK restore + MAIN_NODE move). Will restart scheduler in C2000-drain and reset relaunch counters so HOLD is safe.
 - Prior deviations (already in timeline): C1500 0-sub (pub WS stale after box freeze), n2 disk bursts, diskguard v2. No user ping.
 
@@ -61,14 +61,14 @@ Private watch log for final report. Times CEST.
 - Backups: pub-sender.mjs.bak-2144, storm.mjs.bak-2148, n2/n2-diskguard.sh.bak-2147, n2/start-n2.sh.bak-2147.
 
 ## 2026-10-10 22:05 CEST — night-watch fire (C2500)
-- Status: OK after fix. ROW C2500 bot target 688; before fix 60s avg ~614 (S6/S14/S15 stalling on pub-1, pending ~375, intermittent 0 sub). After kill+relaunch (fresh --pub picks, S6/S14 without pub-1): last full seconds ~675–709 sub, pending ~30–60. Within ~5% of 688.
-- Fix: TERM S6/S14/S15 at 22:04:41–22:04:47 CEST; storm relaunch 5/30 each. New pubs: S6 pub-4/pub-5/pub-3/pub-2; S14 pub-3/pub-2/pub-4/pub-5; S15 pub-2/pub-1/pub-3/pub-4.
+- Status: OK after fix. ROW C2500 bot target 688; before fix 60s avg ~614 (S6/S14/S15 stalling on muon, pending ~375, intermittent 0 sub). After kill+relaunch (fresh --pub picks, S6/S14 without muon): last full seconds ~675–709 sub, pending ~30–60. Within ~5% of 688.
+- Fix: TERM S6/S14/S15 at 22:04:41–22:04:47 CEST; storm relaunch 5/30 each. New pubs: S6 electron/neutrino/vector/boson; S14 vector/boson/electron/neutrino; S15 boson/muon/vector/electron.
 - Health: scheduler 2721667, watchdog 2589569, live-loop 2606950, 15 senders, miner 1, n2mon+chain up. n2 synced utxoindex=false lag ~0.6 s. Disk **41G**. MemAvailable ~5.1G. Coins ~719k tKAS / 22,767 (down from ~738k; 3 restarts locked coins). MAIN_NODE=pub. sdk210 OK. No HALT/STOP.
 - Next: C2500 until 22:15 CEST; then C2500-drain; MAX 990 at 22:20. No user ping.
 
 ## 2026-10-10 22:34 CEST — night-watch fire (MAX)
-- Status: ROW MAX (22:20–22:35 CEST) bot target 990. Pre-fix BOT BLOCK 22:30 was 912.2/910.8 (~8% low). Cause: **S7 stuck at 0 sub** for ~15+ s (all 4 pubs cycling node_cool / WS disconnect / RPC timeout: pub-4, pub-3, pub-2, pub-5). Other senders mostly ~64–68; S13 briefly soft then recovered. Aggregate last-sec ~902 without S7.
-- Fix: TERM S7 pid 2722082 at 22:33:09 CEST; storm relaunch 5/30 at 22:33:12 as pid **2747535** with fresh pubs pub-4/pub-2/pub-1/pub-3 (pub-1 added; pub-5 dropped). S7 armed 22:33:14, submitting at target by ~22:33:30.
+- Status: ROW MAX (22:20–22:35 CEST) bot target 990. Pre-fix BOT BLOCK 22:30 was 912.2/910.8 (~8% low). Cause: **S7 stuck at 0 sub** for ~15+ s (all 4 pubs cycling node_cool / WS disconnect / RPC timeout: electron, vector, boson, neutrino). Other senders mostly ~64–68; S13 briefly soft then recovered. Aggregate last-sec ~902 without S7.
+- Fix: TERM S7 pid 2722082 at 22:33:09 CEST; storm relaunch 5/30 at 22:33:12 as pid **2747535** with fresh pubs electron/boson/muon/vector (muon added; neutrino dropped). S7 armed 22:33:14, submitting at target by ~22:33:30.
 - Post-fix: 5s windows ~960–996 sub (avg ~979, within ~5% of 990); S7 ~65–67; pending cleared from 600→~100. Accepts catching up after restart backlog.
 - Health: scheduler 2721667, watchdog 2589569, live-loop 2606950, 15 senders, miner 1, n2mon+chain up. n2 synced utxoindex=false lag ~0.2 s. Disk **41G**. MemAvailable ~4.5G. Coins **713,059** tKAS / 22,567 (was 719k; ~200 coins locked by S7 restart). MAIN_NODE=pub. No HALT/STOP. Public HTTPS :443 all answer.
 - Next: MAX ends 22:35 CEST; HOLD 880 at 22:50. Coin refresh still broken (no utxoindex); buffer OK for night if we avoid casual restarts. No user ping.
@@ -77,11 +77,11 @@ Private watch log for final report. Times CEST.
 - Status: OK. ROW B1 (plan bot 0) until HOLD 880 at 22:50 CEST. MAX EVAL clean=true: 919.1/919.3 sub/acc vs 990 (772,023 tx), transport errors 7857, accept 100%, p90 0.19 s. C2500 clean=true 674.7/674.3 vs 688.
 - n2 FREEZE during MAX-drain/B1: virtual DAA stalled ~470 s from ~22:37; storm SIGINT+restart at 22:45:30 (pid 2750152); FREEZE end 22:45:57 length 498 s, lag 0.5→0.3 s. Senders kept on public nodes (pubMode). Miner relaunched. Synced, utxoindex=false.
 - Health: scheduler 2721667, watchdog 2589569, live-loop 2606950, 15 senders (lanes ~198–200), miner 1, n2mon+chain up. Disk **41G**. MemAvailable ~2.2–2.5G. Coins **713,059** tKAS / 22,567. MAIN_NODE=pub. sdk210 OK. No HALT/STOP.
-- Public wrpc HTTPS: pub-4/pub-2/pub-1/pub-3/pub-5 all answer (502 on GET = alive). No sender restart this fire (B1 rate 0; avoid locking ~200 coins). HOLD next.
+- Public wrpc HTTPS: electron/boson/muon/vector/neutrino.stream all answer (502 on GET = alive). No sender restart this fire (B1 rate 0; avoid locking ~200 coins). HOLD next.
 - No user ping.
 
 ## 2026-10-10 22:54 CEST — night-watch fire (HOLD fix)
-- **Problem:** HOLD started 22:50 CEST at plan 880, but bot submitted **0** for ~3.5 min. All 15 senders had TARGET/ctrl 58.667 but public WS clients stuck in RPC timeout → node_cool loops (waves at 22:51:04 and 22:52:39 on pub-1/pub-2/pub-3/pub-4/pub-5). Sec target showed 0 because main-pub getInfo set rpcDown (display only; rate path still TARGET). Attempts briefly ~59 then 0 while cool.
+- **Problem:** HOLD started 22:50 CEST at plan 880, but bot submitted **0** for ~3.5 min. All 15 senders had TARGET/ctrl 58.667 but public WS clients stuck in RPC timeout → node_cool loops (waves at 22:51:04 and 22:52:39 on muon/boson/vector/electron/neutrino). Sec target showed 0 because main-pub getInfo set rpcDown (display only; rate path still TARGET). Attempts briefly ~59 then 0 while cool.
 - **Fix:** TERM S1–S15 at 22:53:36–22:53:42 CEST; storm relaunched 5–7/30 with fresh --pub picks by 22:54:27. Post-fix full seconds **876–887 sub** (sum tgt 880), all 15 at ~57–60. Accepts catching up.
 - Health after: scheduler 2721667, watchdog 2589569, live-loop, miner 1, n2 synced lag ~0.2 s utxoindex=false. Disk **41G**. MemAvailable ~4.6G. Coins **618,443** tKAS / 19,567 (was 713k; 15 restarts locked ~200 coins each). MAIN_NODE=pub. No HALT/STOP. Relaunches max 7/30 (S1).
 - Earlier this fire: MAX clean=true 919.1/990; n2 FREEZE 498 s ended 22:45:57; B1 OK at 0. No user ping.
@@ -106,7 +106,7 @@ Private watch log for final report. Times CEST.
 - Step: HOLD target 880. Live aggregate **~875–887 sub** (15 senders × ~57–61; last-sec avg ~880). Within 5%. No node_cool. Zero-sub samples: 0. Rejects quiet.
 - Health: storm/scheduler 2721667, watchdog 2589569, live-loop up (last SUMMARY ~00:00), miner 1, n2mon+chain up. n2 synced lag ~0.2–1 s utxoindex=false.
 - Disk **40G**. MemAvailable **~4.1G**. Coins **584,088** tKAS / 18,430 (ok; no restarts). MAIN_NODE=pub. No HALT/STOP.
-- Public HTTPS :443 all answer (404 = alive): pub-4/pub-2/pub-1/pub-3/pub-5. Ctrl all HOLD 58.667 fees 400/600.
+- Public HTTPS :443 all answer (404 = alive): electron/boson/muon/vector/neutrino.stream. Ctrl all HOLD 58.667 fees 400/600.
 - No fix needed. No user ping.
 
 ## Night-watch 00:30 CEST (routine fire ~00:26)
@@ -116,7 +116,7 @@ Private watch log for final report. Times CEST.
 
 ### Follow-up 00:31 CEST — public wrpc 502 (rate died again ~00:30:10)
 - After fix #8, HOLD held ~872–886 for ~90s then all senders back to 0 (pending stuck, `resubscribed`, then `node_cool` RPC timeout on all 4 pubs per sender).
-- Root cause: **all 5 public TN10 wrpc/borsh endpoints HTTP 502** (pub-4/pub-2/pub-1/pub-3/pub-5) while `/` still 404=alive. Polled 00:30:51–00:31:16 CEST: every sample 502. Cannot submit until public wrpc recovers; plan forbids n2 submit.
+- Root cause: **all 5 public TN10 wrpc/borsh endpoints HTTP 502** (electron/boson/muon/vector/neutrino) while `/` still 404=alive. Polled 00:30:51–00:31:16 CEST: every sample 502. Cannot submit until public wrpc recovers; plan forbids n2 submit.
 - Action: do **not** burn more relaunches/coins while all pubs 502. Background watcher will relaunch S1–S15 when ≥1 wrpc answers non-502, then verify ~880. Box OK (disk ~39G, MemAvail ~2.5–4G). No user ping (not a box-ending total loss; wait for pubs).
 
 ## Night-watch wrpc-502 recovery (2026-10-11 00:32 CEST)
@@ -134,7 +134,7 @@ Private watch log for final report. Times CEST.
 ## 2026-10-11 01:34 CEST — supervisor fire (fix 9: S5 stuck)
 - **Problem:** HOLD slipped below 5% band. BOT BLOCK 01:20 **840.5/840.4**, 01:30 **817.8/818** vs target **880**. Cause: **S5 only** stuck at submitted=0 with pending/depth **525**, quiet15/resubscribe/conn_reconnect since ~01:13 CEST (UTC 23:13); other 14 senders still ~57–60 each (~819 total). Not node_cool on the live flock; S5 backlog never cleared after earlier WS stall.
 - **Note on wrpc HTTP 502 poll:** out/wrpc-poll.log still shows ok=0/5 HTTP 502 on /wrpc/borsh for all 5 pubs, but **WebSocket submit works** (14/15 then 15/15). HTTP GET health is a false negative — do not mass-relaunch on that alone.
-- **Fix:** TERM S5 pid 2789663 at **01:33:40 CEST**; storm relaunch **7/30** with fresh pubs (pub-4,pub-5,pub-1,pub-2). S5 armed HOLD 58.667 within ~2s; lanes_dead=0.
+- **Fix:** TERM S5 pid 2789663 at **01:33:40 CEST**; storm relaunch **7/30** with fresh pubs (electron,neutrino,muon,boson). S5 armed HOLD 58.667 within ~2s; lanes_dead=0.
 - **Post-fix:** live last-sec aggregate **~876 sub** (all 15 up, zeros none) — within 5% of 880. Coins ~**468k** tKAS / 14770 (S5 restart locked a small chunk; still >>100k). Disk **38G**. MemAvailable **~3.8G**. Scheduler 2721667, watchdog 2589569, live-loop, miner 1, n2mon+chain up. MAIN_NODE=pub. No HALT/STOP. No user ping.
 
 ## 2026-10-11 01:35 CEST — night-watch routine fire (HOLD OK; post fix #9)
@@ -149,7 +149,7 @@ Private watch log for final report. Times CEST.
 ## 2026-10-11 01:54 CEST — supervisor fire (fix 10: HOLD 0, mass sender relaunch)
 
 - **Problem:** HOLD target **880** dead for ~**17 min** (~**01:36–01:53 CEST**). Live sec logs all-zero from ~01:36; BOT BLOCK **01:40** ~487 (partial), **01:50** **0/0**. All 15 senders `rpc_down=true`, `target=0` (ctrl still HOLD 58.667), stuck `node_cool` / RPC request timeout with frozen pending (~60–140). Scheduler/watchdog stayed up; ctrl files never zeroed.
-- **Pub health:** Python WS probe: **all 5 OPEN** (pub-2/pub-4/pub-1/pub-3/pub-5). HTTP GET `/wrpc/borsh` still **502** for all 5 — **false negative** (same as fix #9 note). Do not wait on HTTP poll alone.
+- **Pub health:** Python WS probe: **all 5 OPEN** (boson/electron/muon/vector/neutrino). HTTP GET `/wrpc/borsh` still **502** for all 5 — **false negative** (same as fix #9 note). Do not wait on HTTP poll alone.
 - **Fix:** Sender processes had exited by ~01:52 (stuck WS state); storm `ensureRunners` auto-relaunched **S1–S15** at **01:52:57–01:53:40 CEST** (counts **7–9/30**; S1 at 9/30). HOLD rate rewritten as senders came up. No manual TERM needed this round; pattern same as fix #7/#8.
 - **Post-fix:** live last-sec aggregate **~876–886 sub** (zeros: none), within 5% of 880. 15/15 senders, lanes_dead=0, targets 58.667.
 - **Resources:** disk **38G**; MemAvailable **~4.1G**; coin buffer **~360k tKAS** / 11331 coins (down from ~456k after mass restart locks; still >>100k). Miner 1, n2mon+chain, live-loop up. n2 synced, utxoindex=false, lag ~0.2–0.3 s. MAIN_NODE=pub. No HALT/STOP. No user ping.
@@ -169,7 +169,7 @@ Private watch log for final report. Times CEST.
 ## 2026-10-11 02:35 CEST — night-watch routine fire (fix 12: HOLD 0, mass sender relaunch)
 
 - **Problem:** HOLD target **880** dead ~**02:20–02:33 CEST**. BOT BLOCK **02:20** ~549 (partial), **02:32** **0/0**. All 15 senders alive but stuck: pending≈65–69 (S5 **600**), attempts/rpc rejects, lat_p50≈60s, `resubscribed` every ~20s. Same class as fix #10/#11 WS/RPC stall. n2 lag spiked in BOT BLOCK (609 s @ 02:32) then recovered (synced, sinkAge~0.3–60s).
-- **Pub health:** Python WS probe: **all 5 OPEN** on `wss://*/kaspa/testnet-10/wrpc/borsh` (pub-2/pub-4/pub-1/pub-5/pub-3). Bare `/wrpc/borsh` 404 — not used by senders. HTTP GET poll still false-neg 502 historically; ignore for relaunch decisions.
+- **Pub health:** Python WS probe: **all 5 OPEN** on `wss://*/kaspa/testnet-10/wrpc/borsh` (boson/electron/muon/neutrino/vector). Bare `/wrpc/borsh` 404 — not used by senders. HTTP GET poll still false-neg 502 historically; ignore for relaunch decisions.
 - **Fix:** Night-watch **TERM** S1–S15 at **02:33:14 CEST** (slow to exit), then **KILL** at **02:33:21**; storm relaunch **9–12/30** by **02:34:19** (S1 hit 12/30 after double detect). HOLD rate rewritten as senders came up.
 - **Post-fix:** live last-sec aggregate **~875–882 sub / ~809 acc** (zeros: none), within 5% of 880. 15/15 up, lanes_dead=0, targets 58.667, lat_p50~100ms.
 - **Resources:** disk **37G**; MemAvailable **~2.8G**; coin buffer **~168k tKAS** / 5318 coins (down from ~264k after mass restart locks; still >>100k — **avoid further mass restarts** unless rate dies again). Miner 1, n2mon+chain, live-loop, watchdog, storm up. MAIN_NODE=pub. No HALT/STOP. No user ping.
@@ -178,7 +178,7 @@ Private watch log for final report. Times CEST.
 
 - **Time:** supervisor fire ~02:43–02:46 CEST (still HOLD; END 04:30).
 - **Problem:** HOLD target **880** dead ~**02:41–02:44 CEST** (~4 min). BOT BLOCK **02:40** already degraded **~560/559**; live sec all-zero from ~**02:43**. All 15 senders alive but stuck: pending≈55–58, attempts/rpc rejects, lat_p50≈60–156s. Same WS/RPC stall class as fix #10/#11/#12. Not node_cool (ctrl still HOLD 58.667).
-- **Pub health:** Python WS probe: **all 5 OPEN** on `wss://*/kaspa/testnet-10/wrpc/borsh` (pub-2/pub-4/pub-1/pub-5/pub-3).
+- **Pub health:** Python WS probe: **all 5 OPEN** on `wss://*/kaspa/testnet-10/wrpc/borsh` (boson/electron/muon/neutrino/vector).
 - **Fix:** Night-watch **TERM** S1–S15 at **02:44:51 CEST**, then **KILL** at **02:44:56**; storm relaunch **10–11/30** by **02:45:39**. HOLD rate rewritten as senders came up.
 - **Post-fix:** live last-sec aggregate **~875–881 sub** (zeros: none), within 5% of 880; acc recovering (~700–1100 oscillating as pending drains). 15/15 up, lat_p50~100–108ms.
 - **Coins (IMPORTANT):** buffer **~74k tKAS** / 2312 coins after this restart (was ~168k pre-kill). **Below 100k supervisor floor.** Mass restart locked ~94k. **utxoindex dir deleted** — `coin-refresh.mjs` aborts (requires hasUtxoIndex); `topup.sh`/`dump_utxoindex.py` impossible (no `datadir/utxoindex`). **Policy until END:** do **not** mass-restart again unless rate dies to ~0; keep highest sustainable HOLD; no user ping.
@@ -197,13 +197,13 @@ Private watch log for final report. Times CEST.
 - **Found @ ~03:32 CEST:** BOT BLOCK **03:32** bot sub/acc **116.9/117.2** vs HOLD **880** (10-min avg; live already ~0). All S1–S11 alive but rpc_down=true target=0 pending~74–77 (same WS/RPC stall class as fix #10–#14). S12–S15 still skipped (spent tips). WS all 5 pubs OPEN. Scheduler/watchdog/live-loop/miner up. Disk **36G**. MemAvail ~**2.3–6.3G**. Coins **0** unclaimed. MAIN_NODE=pub. n2 synced utxoindex=false (lag spiked ~159s in block then recovered).
 - **First attempt (03:33:14):** TERM/KILL S1–S11. Storm relaunched with lane-reuse of 03:10 tip files → all **lanes_dead=200** (those tips spent during the prior good HOLD window; KILL before graceful tip-save). Rate stayed 0.
 - **Root cause:** no fresh tip files after fix #14 success; coin buffer 0; utxoindex absent so coin-refresh/topup impossible.
-- **Fix #15:** Rebuild tip files for S1–S15 via public-node getUtxosByAddresses (pub-4 has utxoindex) — 200 live UTXOs/sender (~9.8k tKAS each; stillOld=0). Unskipped S12–S15 in storm.mjs (bak storm.mjs.bak-0336-unskip); cleared capped + reset S12–S15 relaunches 30→20. TERM/KILL S1–S11 + storm restart 03:36:57; watchdog relaunched storm **2873697**.
+- **Fix #15:** Rebuild tip files for S1–S15 via public-node getUtxosByAddresses (electron has utxoindex) — 200 live UTXOs/sender (~9.8k tKAS each; stillOld=0). Unskipped S12–S15 in storm.mjs (bak storm.mjs.bak-0336-unskip); cleared capped + reset S12–S15 relaunches 30→20. TERM/KILL S1–S11 + storm restart 03:36:57; watchdog relaunched storm **2873697**.
 - **Post-fix @ ~03:37:55:** live last-sec agg **~878 sub** (zeros: none), within 5% of 880. **15/15** senders, lanes_dead=0, targets 58.667. Disk **36G**. MemAvail ~**5.4–5.6G**. Coins still 0 unclaimed (lane tips carry load; do not mass-restart unless rate dies). Miner 1, n2mon+chain, live-loop, watchdog, storm up. MAIN_NODE=pub. No HALT/STOP. No user ping.
 
 ## 2026-10-11 03:50 CEST — night-watch routine fire (fix 16: HOLD 0, tip rebuild + KILL)
 
 - **Found @ ~03:44–03:46 CEST:** HOLD target **880** dead from ~**03:41:54** (last non-zero). Live agg **0/0**; all 15 senders alive but stuck pending~71–75, resubscribe loop, then **node_cool** RPC timeouts + **rpc_down_pause** (same WS/RPC stall class as fix #10–#15). WS all 5 pubs OPEN. Scheduler/watchdog/live-loop/miner up. Disk **36G**. MemAvail ~**2.5–3.6G**. Coins **0** unclaimed. MAIN_NODE=pub. n2 synced utxoindex=false. Topup auto-started 03:44:28 then aborted (`venv-rdb` missing; no utxoindex) — expected.
-- **First attempt (03:47):** Rebuilt tips via pub-4 `getUtxosByAddresses` (200/sender, stillOld=0, ~9.8k tKAS). TERM then KILL senders. Storm relaunched — but SIGTERM graceful tip-save wrote **spent** tip files (`1791683228*`) that outranked the rebuild → **lanes_dead=200** on all senders, rate stayed 0.
+- **First attempt (03:47):** Rebuilt tips via electron `getUtxosByAddresses` (200/sender, stillOld=0, ~9.8k tKAS). TERM then KILL senders. Storm relaunched — but SIGTERM graceful tip-save wrote **spent** tip files (`1791683228*`) that outranked the rebuild → **lanes_dead=200** on all senders, rate stayed 0.
 - **Fix #16:** Quarantined spent exit tips to `/home/box/secure/bad-tips-0347/`. Rebuilt tips again (`179168332*`, same live UTXOs, stillOld=200 vs prior rebuild). **KILL -9** only (no TERM) so senders cannot overwrite tips. Storm relaunch 03:49 loaded good tips; lanes_dead=0.
 - **Post-fix @ ~03:50 CEST:** live last-sec agg **~876 sub** (within 5% of 880). **15/15** senders, targets 58.667, lat_p50~105–108ms. Disk **36G**. MemAvail ~**2.6G**. Coins still 0 unclaimed (lane tips carry; **no further mass restart** unless rate dies; if restart needed: rebuild tips then KILL -9 only). Miner 1, n2mon+chain, live-loop, watchdog, storm up. MAIN_NODE=pub. No HALT/STOP. No user ping.
 
@@ -211,7 +211,7 @@ Private watch log for final report. Times CEST.
 
 - **Time:** supervisor fire ~04:12 CEST (HOLD until 04:15; END 04:30).
 - **Found @ ~04:12 CEST:** BOT BLOCK **04:12** bot sub/acc **0/0** vs HOLD **880**. All 15 senders alive but stuck pending~75–81, attempts 0, `resubscribed` loop, then **node_cool** RPC timeouts + **rpc_down_pause** ~04:13:17 (same WS/RPC stall class as fix #10–#16). Last nonzero ~**03:54:25** CEST (after fix #16). Senders had been auto-relaunched ~04:06 on spent 03:48 tips → never recovered. WS all 5 pubs **OPEN**. Scheduler/watchdog/live-loop/miner up. Disk **36G**. MemAvail ~**2.9–3.1G**. Coins **0** unclaimed. MAIN_NODE=pub. n2 was lagging/FREEZE (~18 min) then catch-up by 04:16.
-- **Fix #17:** Rebuilt tips via pub-4 `getUtxosByAddresses` (`/tmp/rebuild-tips-1010.mjs`) — 200/sender, stillOld=0, ~9.8k tKAS each (`pub-chains-P2WP1010*-179168484*.json`). Reset relaunch counters 19–24→15. **KILL -9** only (no TERM) at **04:14:21 CEST**. Storm relaunch loaded fresh tips; lanes_dead=0.
+- **Fix #17:** Rebuilt tips via electron `getUtxosByAddresses` (`/tmp/rebuild-tips-1010.mjs`) — 200/sender, stillOld=0, ~9.8k tKAS each (`pub-chains-P2WP1010*-179168484*.json`). Reset relaunch counters 19–24→15. **KILL -9** only (no TERM) at **04:14:21 CEST**. Storm relaunch loaded fresh tips; lanes_dead=0.
 - **Post-fix pre-DRAIN @ ~04:14:54:** live agg **~802 sub** with 10/15 up (rest still coming), then 12–13 up rewriting HOLD 880. Brief HOLD recovery in final ~40s before plan row change.
 - **04:15:00 CEST:** plan **DRAIN** begins (bot target **0** through END 04:30; miner on). Rate 0 is **expected**. 15/15 senders DRAIN target 0, lanes_dead=0.
 - **Status now (04:16):** DRAIN OK; storm/watchdog/live-loop/miner/n2mon+chain up; n2 synced utxoindex=false sinkAge~0.2s; disk **36G**; MemAvail ~**2.9G**; coins 0 (lane tips held); all 5 pub WS OPEN; MAIN_NODE=pub. No HALT/STOP. No user ping. Post-END wrap-up is parent's job after 04:30.

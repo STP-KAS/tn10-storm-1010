@@ -28,7 +28,7 @@ The 17:00 CEST run was halted by stp at 17:39 CEST because Build had not been st
 
 - **Primary, your desk node:** kaspad 2.1.0, `--testnet --netsuffix=10 --utxoindex`, pruned (no `--archival`), peers and RPC on loopback only, no tunnel, no public peer port, a watcher that restarts it on the same flags. It must be **synced with the UTXO index on by G2 (20:15 CEST)**.
 - **If it is not synced by G2:** start on the public nodes at the listed times, log a `deviation`, and move to your node once it is synced and healthy for 2 minutes (log `node-back`).
-- **Fallback, the five public TN10 nodes:** `pub-1`, `pub-2`, `pub-4`, `pub-5`, `pub-3` (wRPC, Borsh, testnet-10), random spread over all five, per-node back-off (below).
+- **Fallback, the five public TN10 nodes:** `muon-10.kaspa.blue`, `boson-10.kaspa.red`, `electron-10.kaspa.blue`, `neutrino-10.kaspa.stream`, `vector-10.kaspa.green` (wRPC, Borsh, testnet-10), random spread over all five, per-node back-off (below).
 - **Move to the fallback** (only the affected senders) when your desk node: has a sink lag over 60 s, or its virtual DAA score stalls for 30 s, or stops being synced, or dies (RPC fails for 5 s). Log `node-fallback` and a `deviation` with the reason.
 - **Move back** when your node has been healthy (synced, sink lag at most 60 s, DAA moving) for **2 minutes**. Log `node-back`.
 - **Desk safety:** keep **at least 4 GB RAM free** on the desk. If memory gets tight, move senders to the public fallback (log `node-fallback`, reason `desk RAM`) instead of letting the node crash.
