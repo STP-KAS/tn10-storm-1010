@@ -1,5 +1,5 @@
 | 17:58:06 CEST | 15:58:06 UTC | watchdog: scheduler not running -> (re)start |
-| 17:58:06 CEST | 15:58:06 UTC | scheduler armed pid 2589578; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
+| 17:58:06 CEST | 15:58:06 UTC | scheduler armed; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 17:58:06 CEST | 15:58:06 UTC | PLAN (STP-KAS/tn10-storm-1010 go/steps-utc.json @ 39c4554): bot run, T0 18:30 UTC (20:30 CEST), G1 18:00 / G2 18:15 UTC, END 02:30 UTC. Submit ONLY to the 5 public TN10 nodes (each sender 4 of 5 at random), n2 reads/coins/count/miner. Bot rates: X250 60, C1000 250, C1500 375, C2000 500, C2500 625, MAX 900, HOLD 800; hold 800 if MAX clean else highest clean (60 if none). Fees 400/600, floor 100, cap 600, sit out if quote > 400. 15 senders x 200 lanes, staggered, max 8 relaunches each, no launch at RAM < 1.5 GB. No send until BUILD-OK (stp confirms Build started). n2 lag does not zero senders; n2 frozen > 3 min -> restart (max 1 per 20 min). Miner 1 thread 18:15-02:30 UTC. |
 | 17:58:06 CEST | 15:58:06 UTC | n2 first read: synced true, utxoindex true, sink lag 0.3 s, DAA 593137555 |
 | 17:58:06 CEST | 15:58:06 UTC | coin refresh started (run 1, first refresh once n2 is synced) |
@@ -23,7 +23,7 @@
 | 18:00:57 CEST | 16:00:57 UTC | coin refresh: added 9909 coins 30870.7 tKAS, dropped spent 0, unclaimed 1034706.1 tKAS (32565 coins), caught up true, method block walk, 3264 blocks/16 pages, kaspad RSS peak 2294 MB, MemAvailable min 6625 MB, 5 s |
 | 18:13:06 CEST | 16:13:06 UTC | prep: n2 synced true, utxoindex true, lag 0.1 s; no sends, miner off until 18:15 UTC |
 | 18:26:42 CEST | 16:26:42 UTC | live summary: DRY pushed logs/bot/SUMMARY.md (8eba339) |
-| 18:26:48 CEST | 16:26:48 UTC | live summary: loop started (pid 2606950): write every 10 min, push every 15 min from G1 to END+15 min |
+| 18:26:48 CEST | 16:26:48 UTC | live summary: loop started: write every 10 min, push every 15 min from G1 to END+15 min |
 | 18:28:07 CEST | 16:28:07 UTC | prep: n2 synced true, utxoindex true, lag 0.3 s; no sends, miner off until 18:15 UTC |
 | 18:43:07 CEST | 16:43:07 UTC | prep: n2 synced true, utxoindex true, lag 0.2 s; no sends, miner off until 18:15 UTC |
 | 18:46:51 CEST | 16:46:51 UTC | n2 unhealthy under pubMode (sink lag 84.2 s > 60): senders KEEP submitting on public nodes (stp 16:19) |
@@ -203,7 +203,7 @@
 | 18:58:08 CEST | 16:58:08 UTC | prep: n2 synced true, utxoindex true, lag 0.5 s; no sends, miner off until 18:15 UTC |
 | 19:05:02 CEST | 17:05:02 UTC | RE-ARM (stp 19:03 CEST, bot rates +10%): steps from STP-KAS/tn10-storm-1010 @ 9a6e010; bot X250 66, C1000 275, C1500 413, C2000 550, C2500 688, MAX 990, HOLD 880 (fallback 66); Build unchanged; scheduler restarted via watchdog; T0 20:30 CEST unchanged; BUILD-OK gate unchanged |
 | 19:05:11 CEST | 17:05:11 UTC | watchdog: scheduler not running -> (re)start |
-| 19:05:11 CEST | 17:05:11 UTC | scheduler restarted (resume by clock) pid 2631138; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
+| 19:05:11 CEST | 17:05:11 UTC | scheduler restarted (resume by clock); T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 19:05:11 CEST | 17:05:11 UTC | n2 first read: synced true, utxoindex true, sink lag 0.5 s, DAA 593175840 |
 | 19:05:11 CEST | 17:05:11 UTC | prep: n2 synced true, utxoindex true, lag 0.5 s; no sends, miner off until 18:15 UTC |
 | 19:20:12 CEST | 17:20:12 UTC | prep: n2 synced true, utxoindex true, lag 0.2 s; no sends, miner off until 18:15 UTC |
@@ -523,14 +523,14 @@
 | 21:45:26 CEST | 19:45:26 UTC | live summary: pushed logs/bot/SUMMARY.md (1c465fc) |
 | 21:45:40 CEST | 19:45:40 UTC | S1 not running -> relaunch 6/8 |
 | 21:45:40 CEST | 19:45:40 UTC | rate: C2000 senders 550 tx/s total (15 up x 36.667), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
-| 21:47:01 CEST | 19:47:01 UTC | DEVIATION (fix 1): C1500 0 sub cause = all 15 senders' public WS sockets went stale during the 21:08-21:29 box freeze (every submit 'RPC request timeout' -> node_cool loop). 21:37 rolling restart of senders -> relaunch crashed: night-watch cleanup had deleted /workspace/sdk210 (kaspa SDK 2.1.0). Restored from identical 2.1.0 copy at 21:38; all 15 relaunched 21:39; C2000 at 550/550 sub/acc 0 rej from 21:40 |
+| 21:47:01 CEST | 19:47:01 UTC | DEVIATION (fix 1): C1500 0 sub cause = all 15 senders' public WS sockets went stale during the 21:08-21:29 box freeze (every submit 'RPC request timeout' -> node_cool loop). 21:37 rolling restart of senders -> relaunch crashed: night-watch cleanup had deleted the local kaspa SDK 2.1.0 folder. Restored from identical 2.1.0 copy at 21:38; all 15 relaunched 21:39; C2000 at 550/550 sub/acc 0 rej from 21:40 |
 | 21:47:01 CEST | 19:47:01 UTC | DEVIATION (fix 2): n2 datadir bursts (76G->92G->77G, ~600 MB/min peaks under load). pub-sender patched: MAIN_NODE=pub -> health/VCC/reads on a public node (no n2), no utxoindex refusal, n2/main getInfo failure no longer zeros submits. S1 verified on public main 21:46 (37/37 tx/s). Others move in the C2000 drain 21:55 |
-| 21:47:01 CEST | 19:47:01 UTC | DEVIATION (fix 3): n2 disk guard v2 (pid 2716451): never writes box-1008 STOP; free<10G stops n2 cleanly + n2.HALT (sender disk pause 8G). start-n2.sh: --utxoindex removed (applies on next n2 start). Scheduler MAX_RELAUNCH 8->30 in file (applies on scheduler restart in drain) |
+| 21:47:01 CEST | 19:47:01 UTC | DEVIATION (fix 3): n2 disk guard v2: never writes the old run's STOP flag; free<10G stops n2 cleanly + n2.HALT (sender disk pause 8G). start-n2.sh: --utxoindex removed (applies on next n2 start). Scheduler MAX_RELAUNCH 8->30 in file (applies on scheduler restart in drain) |
 | 21:50:00 CEST | 19:50:00 UTC | BOT BLOCK: session up, runners 15, disk 27.8 GB, n2 synced true utxoindex true lag 0.2 s mempool 4257, bot sub/acc 540.3/539.1 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 734.3 tx/s (10/10 valid), miner 1, mining share 23.77%, dup share 0.5652 |
 | 21:55:00 CEST | 19:55:00 UTC | ROW C2000-drain C2000-drain begins (19:55-20:00 UTC; plan bot: 0; Build: 0; miner on) |
 | 21:55:00 CEST | 19:55:00 UTC | rate: C2000-drain senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 21:55:16 CEST | 19:55:16 UTC | watchdog: scheduler not running -> (re)start |
-| 21:55:16 CEST | 19:55:16 UTC | scheduler restarted (resume by clock) pid 2721667; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
+| 21:55:16 CEST | 19:55:16 UTC | scheduler restarted (resume by clock); T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 21:55:16 CEST | 19:55:16 UTC | n2 first read: synced true, utxoindex true, sink lag 0.2 s, DAA 593281118 |
 | 21:55:16 CEST | 19:55:16 UTC | rate: C2000-drain senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 21:55:43 CEST | 19:55:43 UTC | S2 not running -> relaunch 4/30 |
@@ -554,14 +554,14 @@
 | 21:56:19 CEST | 19:56:19 UTC | rate: C2000-drain senders 0 tx/s total (14 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 21:56:22 CEST | 19:56:22 UTC | S15 not running -> relaunch 4/30 |
 | 21:56:22 CEST | 19:56:22 UTC | rate: C2000-drain senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
-| 21:57:16 CEST | 19:57:16 UTC | night-watch: C2000-drain OK; scheduler 2721667 MAX_RELAUNCH=30 live; senders 15 @0; disk 28G; MemAvail ~4.8G; n2 synced; C2500 next |
+| 21:57:16 CEST | 19:57:16 UTC | night-watch: C2000-drain OK; scheduler MAX_RELAUNCH=30 live; senders 15 @0; disk 28G; MemAvail ~4.8G; n2 synced; C2500 next |
 | 21:57:25 CEST | 19:57:25 UTC | FREEZE start: n2 virtual DAA not moving for 30 s (>= 30 s) (lag 30.8 s) |
 | 21:57:55 CEST | 19:57:55 UTC | miner OFF: n2 not synced for 60 s |
 | 21:58:01 CEST | 19:58:01 UTC | n2 unhealthy under pubMode (utxoindex off, sink lag 66.9 s > 60, virtual DAA stalled >= 30 s): senders KEEP submitting on public nodes (stp 16:19) |
 | 21:58:01 CEST | 19:58:01 UTC | miner ON (1 box CPU kaspa-miner, 1 thread, n2 gRPC): n2 synced again / process relaunch |
 | 21:58:03 CEST | 19:58:03 UTC | FREEZE end: length 68 s, n2 lag 68.8 s |
 | 21:58:07 CEST | 19:58:07 UTC | n2 kaspad restarted (new process, uptime 8 s) |
-| 21:58:07 CEST | 19:58:07 UTC | night-watch: n2 FREEZE/dead mid no-utxoindex swap (HALT set 21:56) -> SIGINT pid 2729440 |
+| 21:58:07 CEST | 19:58:07 UTC | night-watch: n2 FREEZE/dead mid no-utxoindex swap (HALT set 21:56) -> SIGINT the n2 process |
 | 21:58:25 CEST | 19:58:25 UTC | night-watch: n2 down (HALT cleared); starting via start-n2.sh (no --utxoindex) |
 | 21:58:26 CEST | 19:58:26 UTC | n2 kaspad restarted (new process, uptime 1 s) |
 | 21:58:26 CEST | 19:58:26 UTC | miner relaunched (process had exited): n2 synced again / process relaunch |
@@ -597,12 +597,12 @@
 | 22:30:01 CEST | 20:30:01 UTC | BOT BLOCK: session up, runners 15, disk 40.8 GB, n2 synced true utxoindex false lag 0.3 s mempool 5095, bot sub/acc 912.2/910.8 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 2689.2 tx/s (9/9 valid), miner 1, mining share 25.34%, dup share 0.3605 |
 | 22:30:14 CEST | 20:30:14 UTC | live summary: pushed logs/bot/SUMMARY.md (8644a7f) |
 | 22:33:12 CEST | 20:33:12 UTC | S7 not running -> relaunch 5/30 |
-| 22:34:14 CEST | 20:34:14 UTC | DEVIATION (fix 6): MAX rate ~912 vs 990 — S7 at 0 sub (node_cool/WS on electron/vector/boson/neutrino). Night-watch TERM+relaunch 5/30 at 22:33:12 CEST pid 2747535 pubs electron/boson/muon/vector. Post-fix ~960–996 sub (avg ~979), S7 at target. Coins 713k. Disk 41G. No user ping |
+| 22:34:14 CEST | 20:34:14 UTC | DEVIATION (fix 6): MAX rate ~912 vs 990 — S7 at 0 sub (node_cool/WS on electron/vector/boson/neutrino). Night-watch TERM+relaunch 5/30 at 22:33:12 CEST with pubs electron/boson/muon/vector. Post-fix ~960–996 sub (avg ~979), S7 at target. Coins 713k. Disk 41G. No user ping |
 | 22:34:14 CEST | 20:34:14 UTC | night-watch: MAX OK after S7 restart; ~979/990; 15 senders; n2 synced no-utxoindex; disk 41G; MemAvail ~4.5G; coins ~713k; no user ping |
 | 22:35:00 CEST | 20:35:00 UTC | ROW MAX-drain MAX-drain begins (20:35-20:40 UTC; plan bot: 0; Build: 0; miner on) |
 | 22:35:00 CEST | 20:35:00 UTC | rate: MAX-drain senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 22:45:29 CEST | 20:45:29 UTC | FREEZE start: n2 virtual DAA not moving for 470 s (>= 30 s) (lag 470.2 s) |
-| 22:45:30 CEST | 20:45:30 UTC | N2 FREEZE 469 s, lag 470.2 s -> restart n2 (SIGINT pid 2730142; guard relaunches same flags); senders keep submitting to public nodes |
+| 22:45:30 CEST | 20:45:30 UTC | N2 FREEZE 469 s, lag 470.2 s -> restart n2 (SIGINT the n2 process; guard relaunches same flags); senders keep submitting to public nodes |
 | 22:45:30 CEST | 20:45:30 UTC | ROW B1 B1 begins (joined late, 330 s after its start) (20:40-20:50 UTC; plan bot: 0; Build: 0; miner on) |
 | 22:45:31 CEST | 20:45:31 UTC | EVAL MAX: bot submitted 772023 (919.1/919.3 sub/acc tx/s, sec-S*.jsonl (pub-sender), public-node transport errors 7857, delivered>=90% true) (own ids, no-signature hop, anyone-can-spend, not realistic payments), eventual accept 100%, p90 0.19 s, rejects 92, n2 lag max 1.4 s, full time at rate true -> clean=true; last clean level 990 |
 | 22:45:31 CEST | 20:45:31 UTC | rate: B1 senders 0 tx/s total (15 up x 0), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
@@ -1010,7 +1010,7 @@
 | 03:17:00 CEST | 01:17:00 UTC | S15 not running -> relaunch 16/30 |
 | 03:17:00 CEST | 01:17:00 UTC | rate: HOLD senders 880 tx/s total (15 up x 58.667), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 03:17:18 CEST | 01:17:18 UTC | watchdog: scheduler not running -> (re)start |
-| 03:17:18 CEST | 01:17:18 UTC | scheduler restarted (resume by clock) pid 2862955; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
+| 03:17:18 CEST | 01:17:18 UTC | scheduler restarted (resume by clock); T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 03:17:19 CEST | 01:17:19 UTC | n2 first read: synced true, utxoindex false, sink lag 0.3 s, DAA 593473418 |
 | 03:17:19 CEST | 01:17:19 UTC | S12 not running -> relaunch 17/30 |
 | 03:17:19 CEST | 01:17:19 UTC | rate: HOLD senders 880 tx/s total (12 up x 73.333), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
@@ -1021,10 +1021,10 @@
 | 03:17:28 CEST | 01:17:28 UTC | S15 not running -> relaunch 17/30 |
 | 03:17:28 CEST | 01:17:28 UTC | rate: HOLD senders 880 tx/s total (15 up x 58.667), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 03:17:43 CEST | 01:17:43 UTC | watchdog: scheduler not running -> (re)start |
-| 03:17:43 CEST | 01:17:43 UTC | scheduler restarted (resume by clock) pid 2863275; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
+| 03:17:43 CEST | 01:17:43 UTC | scheduler restarted (resume by clock); T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 03:17:44 CEST | 01:17:44 UTC | n2 first read: synced true, utxoindex false, sink lag 0.4 s, DAA 593473712 |
 | 03:17:44 CEST | 01:17:44 UTC | rate: HOLD senders 880 tx/s total (11 up x 80), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
-| 03:18:44 CEST | 01:18:44 UTC | DEVIATION (fix 14): HOLD 0 sub from ~03:00 (BOT BLOCK 03:06 0/0) — all 15 senders stuck pending~60–68 + resubscribe + rpc rejects (lat~60–836s); WS pubs OPEN. Night-watch TERM/KILL S1–S15 at 03:08:31–03:08:36; storm relaunch burned coin buffer 74k→0 and bloated sender RSS to 400–980 MB (MemAvail crashed <1G; n2 restarted 03:10:31; RAM<1G self-stops). Second kill at 03:11:24 reclaimed MemAvail~7.7G; coinless relaunches still bloated. Root cause: keel-coins unclaimed=0 and lane-reuse was disabled (if(false) + wrong n2-chains-P2WT prefix). Fix: enabled pub-chains-P2WP1010 lane-reuse in pub-sender.mjs (03:14:26); S1–S11 reused 200 tips and recovered ~880. S12–S15 tips already spent (lanes_dead=200) → skipped in storm.mjs ensureRunners; HOLD carried by 11 up × 80. Post-fix ~874–883/880 sub. Coins still 0 unclaimed (utxoindex absent; topup aborted no venv-rdb). Disk 37G. MemAvail ~6.3G. RSS~220 MB/sender. No user ping |
+| 03:18:44 CEST | 01:18:44 UTC | DEVIATION (fix 14): HOLD 0 sub from ~03:00 (BOT BLOCK 03:06 0/0) — all 15 senders stuck pending~60–68 + resubscribe + rpc rejects (lat~60–836s); WS pubs OPEN. Night-watch TERM/KILL S1–S15 at 03:08:31–03:08:36; storm relaunch burned coin buffer 74k→0 and bloated sender RSS to 400–980 MB (MemAvail crashed <1G; n2 restarted 03:10:31; RAM<1G self-stops). Second kill at 03:11:24 reclaimed MemAvail~7.7G; coinless relaunches still bloated. Root cause: keel-coins unclaimed=0 and lane-reuse was disabled (if(false) + wrong tip-file prefix). Fix: enabled lane-reuse in pub-sender.mjs (03:14:26); S1–S11 reused 200 tips and recovered ~880. S12–S15 tips already spent (lanes_dead=200) → skipped in storm.mjs ensureRunners; HOLD carried by 11 up × 80. Post-fix ~874–883/880 sub. Coins still 0 unclaimed (utxoindex absent; topup aborted no venv-rdb). Disk 37G. MemAvail ~6.3G. RSS~220 MB/sender. No user ping |
 | 03:18:44 CEST | 01:18:44 UTC | night-watch: HOLD OK after fix #14; ~874–883/880; 11 senders (S12–S15 skipped spent tips); zeros 0 on live; n2 synced no-utxoindex; disk 37G; MemAvail ~6.3G; coins 0 unclaimed (lane-reuse active); WS live; no user ping |
 | 03:20:00 CEST | 01:20:00 UTC | BOT BLOCK: session up, runners 11, disk 36.1 GB, n2 synced true utxoindex false lag 0.3 s mempool 0, bot sub/acc 426.7/426.2 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 675.6 tx/s (9/10 valid), miner 1, mining share 17.77%, dup share 0.5151 |
 | 03:32:03 CEST | 01:32:03 UTC | BOT BLOCK: session up, runners 11, disk 36 GB, n2 synced true utxoindex false lag 159.4 s mempool 1, bot sub/acc 116.9/117.2 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 53.7 tx/s (5/7 valid), miner 1, mining share 20.86%, dup share 0.5668 |
@@ -1044,7 +1044,7 @@
 | 03:33:48 CEST | 01:33:48 UTC | S11 not running -> relaunch 16/30 |
 | 03:33:48 CEST | 01:33:48 UTC | rate: HOLD senders 880 tx/s total (11 up x 80), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 03:37:02 CEST | 01:37:02 UTC | watchdog: scheduler not running -> (re)start |
-| 03:37:02 CEST | 01:37:02 UTC | scheduler restarted (resume by clock) pid 2873697; T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
+| 03:37:02 CEST | 01:37:02 UTC | scheduler restarted (resume by clock); T0 18:30 UTC, gates 18:00/18:15 UTC, end 02:30 UTC; node n2 (own private node, loopback) |
 | 03:37:02 CEST | 01:37:02 UTC | n2 first read: synced true, utxoindex false, sink lag 0.1 s, DAA 593486247 |
 | 03:37:02 CEST | 01:37:02 UTC | S1 not running -> relaunch 20/30 |
 | 03:37:02 CEST | 01:37:02 UTC | rate: HOLD senders 880 tx/s total (9 up x 97.778), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
@@ -1068,7 +1068,7 @@
 | 03:37:42 CEST | 01:37:42 UTC | rate: HOLD senders 880 tx/s total (14 up x 62.857), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
 | 03:37:45 CEST | 01:37:45 UTC | S15 not running -> relaunch 21/30 |
 | 03:37:45 CEST | 01:37:45 UTC | rate: HOLD senders 880 tx/s total (15 up x 58.667), fees 400/600 [no-signature hop, anyone-can-spend, not realistic payments] |
-| 03:38:13 CEST | 01:38:13 UTC | DEVIATION (fix 15): HOLD collapsed ~03:25–03:33 (BOT BLOCK 03:32 116.9/117.2; live 0) — S1–S11 rpc_down stuck; mass TERM 03:33 reused spent 03:10 tips → lanes_dead=200. Rebuilt S1–S15 tip files via pub getUtxosByAddresses (electron utxoindex; 200 UTXOs/~9.8k tKAS each). Unskipped S12–S15 (storm.mjs.bak-0336-unskip); reset relaunch caps; storm restart 03:36:57. Post-fix ~878/880 with 15/15; coins 0 unclaimed; disk 36G; MemAvail ~5.4G. No user ping |
+| 03:38:13 CEST | 01:38:13 UTC | DEVIATION (fix 15): HOLD collapsed ~03:25–03:33 (BOT BLOCK 03:32 116.9/117.2; live 0) — S1–S11 rpc_down stuck; mass TERM 03:33 reused spent 03:10 tips → lanes_dead=200. Rebuilt S1–S15 tip files via pub getUtxosByAddresses (electron utxoindex; 200 UTXOs/~9.8k tKAS each). Unskipped S12–S15 (backed up first); reset relaunch caps; storm restart 03:36:57. Post-fix ~878/880 with 15/15; coins 0 unclaimed; disk 36G; MemAvail ~5.4G. No user ping |
 | 03:38:13 CEST | 01:38:13 UTC | night-watch: HOLD OK after fix #15; ~878/880; 15 senders; tips refreshed from pub UTXO index; n2 synced no-utxoindex; disk 36G; MemAvail ~5.4G; coins 0 unclaimed (lane-reuse); WS live; no user ping |
 | 03:40:00 CEST | 01:40:00 UTC | BOT BLOCK: session up, runners 15, disk 35.9 GB, n2 synced true utxoindex false lag 0.3 s mempool 96, bot sub/acc 237.1/236.1 tx/s (no-signature hop, anyone-can-spend, not realistic payments), n2 unique accepted 57.2 tx/s (7/8 valid), miner 1, mining share 20.37%, dup share 0.4971 |
 | 03:44:28 CEST | 01:44:28 UTC | coin buffer: 0 tKAS unclaimed (0 coins) |
@@ -1168,8 +1168,8 @@
 | 04:32:03 CEST | 02:32:03 UTC | after-END wrap: watchdog stopped; storm/chain/live-loop stopped; senders=0 miner=0; n2 left running |
 | 04:32:15 CEST | 02:32:15 UTC | chain recount on n2 starting (window 2026-10-10T17:30:00Z - 2026-10-11T02:30:00Z, before pruning) |
 | 04:32:28 CEST | 02:32:28 UTC | end clock read (HTTP Date method; UDP NTP is blocked from the box) |
-| 04:32:59 CEST | 02:32:59 UTC | chain recount done (out/recount-1m.csv) |
-| 04:33:07 CEST | 02:33:07 UTC | repo log files written to out/logs-bot (LOGGING.md names, counts only, leak scan clean) |
-| 04:33:22 CEST | 02:33:22 UTC | local bot summary written to out/summary |
+| 04:32:59 CEST | 02:32:59 UTC | chain recount done (local file) |
+| 04:33:07 CEST | 02:33:07 UTC | repo log files written locally (LOGGING.md names, counts only, leak scan clean) |
+| 04:33:22 CEST | 02:33:22 UTC | local bot summary written locally |
 | 04:33:22 CEST | 02:33:22 UTC | FINISHED marker written (2026-10-11T02:33:22Z) |
-| 04:33:36 CEST | 02:33:36 UTC | local bot summary written to out/summary (summarize.py fixed for missing bot_hop_accepted_s) |
+| 04:33:36 CEST | 02:33:36 UTC | local bot summary written locally (summarize.py fixed for missing bot_hop_accepted_s) |

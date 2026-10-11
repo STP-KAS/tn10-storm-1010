@@ -32,7 +32,7 @@ From [`logs/bot/night-notes.md`](../logs/bot/night-notes.md) / timeline:
 2. **sdk210 accidental delete** during night-watch reclaim — restored from identical 2.1.0 copy; relaunches then worked for C2000.
 3. **n2 utxoindex removed ~21:58 CEST** (datadir bursts; ~14G reclaimed). n2 restarted without `--utxoindex`. Coin refresh/top-up no longer possible; buffer had to carry the night.
 4. **HOLD WS/RPC stalls** overnight — fixes **#7–#17** (mass sender TERM/KILL + tip rebuilds via public-node `getUtxosByAddresses`). HTTP wrpc/borsh 502 was a false negative; WS submit often still worked.
-5. **Coin buffer → 0** late night; **lane-reuse** enabled in `pub-sender.mjs` (correct `pub-chains-P2WP1010*` prefix). Tip rebuilds after spent tips / SIGTERM tip-save pollution (KILL -9 only thereafter).
+5. **Coin buffer → 0** late night; **lane-reuse** enabled in `pub-sender.mjs` (correct tip-file prefix). Tip rebuilds after spent tips / SIGTERM tip-save pollution (KILL -9 only thereafter).
 
 ## Workbook
 
