@@ -1,6 +1,6 @@
 # Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
 
-Updated **02:45:17 CEST / 00:45:17 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Updated **03:07:03 CEST / 01:07:03 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
 
 ## Now
 
@@ -8,10 +8,10 @@ Updated **02:45:17 CEST / 00:45:17 UTC**, about every 10 minutes from G1 to END.
 |---|---|
 | Step | **HOLD**, until 04:15 CEST / 02:15 UTC |
 | Bot target (plan) | 880 tx/s |
-| Bot submitted, last 10 min | 586.3 tx/s (351,777 tx) |
-| Bot accepted on n2, last 10 min | 585.0 tx/s (350,987 tx) |
-| Rejects, last 10 min | 2 consensus/mempool; 3,000 public-node transport errors |
-| Senders writing rows | 15 (processes up: 8) |
+| Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
+| Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
+| Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
+| Senders writing rows | 15 (processes up: 15) |
 | Scheduler / watchdog | running / running |
 | Build started? | yes (BUILD-OK present) |
 | HALT | no |
@@ -20,24 +20,22 @@ Updated **02:45:17 CEST / 00:45:17 UTC**, about every 10 minutes from G1 to END.
 
 | Node | Submits ok | Rejects | Errors | Down (s) |
 |---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 58,625 | 0 | 500 | 0 |
-| electron-10.kaspa.blue | 87,680 | 0 | 750 | 0 |
-| muon-10.kaspa.blue | 70,631 | 0 | 600 | 0 |
-| neutrino-10.kaspa.stream | 70,220 | 2 | 600 | 0 |
-| vector-10.kaspa.green | 64,621 | 0 | 550 | 0 |
-
-Rejects by class: orphan 2, rpc 3,000
+| boson-10.kaspa.red | 0 | 0 | 0 | 0 |
+| electron-10.kaspa.blue | 0 | 0 | 0 | 0 |
+| muon-10.kaspa.blue | 0 | 0 | 0 | 0 |
+| neutrino-10.kaspa.stream | 0 | 0 | 0 | 0 |
+| vector-10.kaspa.green | 0 | 0 | 0 | 0 |
 
 ## n2 (bot's private reader node) and the box
 
 | What | Value |
 |---|---|
-| n2 synced / UTXO index | True / False |
-| n2 sink age (lag) | 0.6 s |
-| n2 virtual DAA score | 593,452,235 |
+| n2 synced / UTXO index | False / False |
+| n2 sink age (lag) | 792.2 s |
+| n2 virtual DAA score | 593,459,856 |
 | Miner processes | 1 |
-| Coins left (unclaimed) | 130,163 tKAS in 4,116 coins |
-| Disk free / RAM available | 37 GB / 3,384 MB |
+| Coins left (unclaimed) | 73,831 tKAS in 2,312 coins |
+| Disk free / RAM available | 36 GB / 2,711 MB |
 
 ## Steps so far
 
@@ -63,17 +61,17 @@ Rejects by class: orphan 2, rpc 3,000
 
 | CEST | Event | Step | Detail |
 |---|---|---|---|
-| 02:45:02 | sender-relaunch | HOLD | S3 relaunch 10/30 |
-| 02:45:02 | sender-start | HOLD | S3 mode=pub |
-| 02:45:06 | sender-relaunch | HOLD | S4 relaunch 10/30 |
-| 02:45:06 | sender-start | HOLD | S4 mode=pub |
-| 02:45:09 | sender-relaunch | HOLD | S5 relaunch 11/30 |
-| 02:45:09 | sender-start | HOLD | S5 mode=pub |
-| 02:45:12 | sender-relaunch | HOLD | S6 relaunch 11/30 |
-| 02:45:12 | sender-start | HOLD | S6 mode=pub |
-| 02:45:15 | sender-relaunch | HOLD | S7 relaunch 11/30 |
-| 02:45:15 | sender-start | HOLD | S7 mode=pub |
-| 02:45:18 | sender-relaunch | HOLD | S8 relaunch 10/30 |
-| 02:45:18 | sender-start | HOLD | S8 mode=pub |
+| 02:45:24 | sender-relaunch | HOLD | S10 relaunch 10/30 |
+| 02:45:24 | sender-start | HOLD | S10 mode=pub |
+| 02:45:27 | sender-relaunch | HOLD | S11 relaunch 10/30 |
+| 02:45:27 | sender-start | HOLD | S11 mode=pub |
+| 02:45:30 | sender-relaunch | HOLD | S12 relaunch 10/30 |
+| 02:45:30 | sender-start | HOLD | S12 mode=pub |
+| 02:45:33 | sender-relaunch | HOLD | S13 relaunch 10/30 |
+| 02:45:33 | sender-start | HOLD | S13 mode=pub |
+| 02:45:36 | sender-relaunch | HOLD | S14 relaunch 11/30 |
+| 02:45:36 | sender-start | HOLD | S14 mode=pub |
+| 02:45:39 | sender-relaunch | HOLD | S15 relaunch 11/30 |
+| 02:45:39 | sender-start | HOLD | S15 mode=pub |
 
 How to read: *Now* answers "is the bot sending what the plan says?"; *Public nodes* shows which node rejects or errors; *Steps so far* is the per-step verdict (clean = at least 90% of target delivered, at least 99% accepted, p90 at most 10 s). Final per-second files land here after END.
