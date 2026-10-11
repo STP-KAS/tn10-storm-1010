@@ -2,6 +2,8 @@
 
 # Write-up — TN10 storm 10–11 Oct 2026
 
+> **Correction, 11 Oct 2026 21:45 CEST.** The first `logs/bot/chain-count.csv` counted 89 minutes twice in the 18:10-02:29Z window: minutes inside a lumped recount row (a boundary block off the final chain merges several minutes into one row) also got a value from the live chain logger, so their transactions were in the lumped row **and** in their own row. Sum 18:10-02:29Z was 38,362,793; corrected **32,299,895** (6,062,898 counted twice). The same minutes were also flagged `complete_minute=yes`, and the 'recount avg' divided lumped rows by 60 instead of by their length. Fixed file: [logs/bot/chain-count.csv](bot/chain-count.csv) (rule: [METHOD](bot/chain-count.csv.METHOD.md)); old file kept as [chain-count.csv.superseded](bot/chain-count.csv.superseded). Step numbers below are recomputed. The 3,000 line is still not met; the earlier 'recount avg above 3,000' for C2500 and MAX was an artifact and is withdrawn. The workbook `run-2026-10-10.xlsx` predates this fix.
+
 Companion to [COMBINED.md](COMBINED.md). Figures from log files only. Clocks: plan/bot **T0 18:30Z / END 02:30Z**; Build SUMMARY **T0 15:00Z / END 23:00Z** (mismatch — align by UTC wall clock).
 
 ## What ran
@@ -17,13 +19,13 @@ Live run dir finished **2026-10-11T02:33:22Z** (FINISHED). Bot chain-count cover
 
 | Step | Bot submit mean | Network unique median (complete) | What happened |
 |---|---:|---:|---|
-| X250 | 64.29 | 293.6 (n=11) | Clean bot ramp; Build still on low-rate aborted 2400 HOLD arm. |
-| C1000 | 274.06 | 512.0 (n=6) | Bot near target submit; chain coverage thin; freeze coming. |
-| C1500 | 0 | 245.9 (n=2) | **Zeroed** by box disk/freeze 21:08–21:29 CEST; public WS stale. |
-| C2000 | 544.16 | 796.5 (n=11) | Recovered after sdk210 restore; bot clean. |
-| C2500 | 673.68 | 2,526.3 (n=11) | Strongest pre-MAX; recount avg 3,426 (supporting). |
-| MAX | 916.69 | **2,644.9** (n=12) | Best plan-metric median; last clean bot level **990**. |
-| HOLD | 638.74 | 936.5 (n=177) | Long night of WS/RPC stalls, tip rebuilds, coin buffer → 0. |
+| X250 | 64.29 | 293.4 (n=7) | Clean bot ramp; Build still on low-rate aborted 2400 HOLD arm. |
+| C1000 | 274.06 | 512.0 (n=4) | Bot near target submit; chain coverage thin; freeze coming. |
+| C1500 | 0 | 251.1 (n=1) | **Zeroed** by box disk/freeze 21:08–21:29 CEST; public WS stale. |
+| C2000 | 544.16 | 1,241.6 (n=6) | Recovered after sdk210 restore; bot clean. |
+| C2500 | 673.68 | 2,526.3 (n=7) | Strongest pre-MAX; recount avg 2,513 (corrected; was shown as 3,426). |
+| MAX | 916.69 | **2,642.4** (n=9) | Best plan-metric median; last clean bot level **990**. |
+| HOLD | 638.74 | 939.1 (n=123) | Long night of WS/RPC stalls, tip rebuilds, coin buffer → 0. |
 
 Build's desk HOLD median network unique **4,032** (175 min) is on **Build's clock and desk count** — useful context, not the plan pass/fail.
 
@@ -52,4 +54,4 @@ Build's desk HOLD median network unique **4,032** (175 min) is on **Build's cloc
 
 ## Pass/fail
 
-**3,000 tx/s plan line: not met.** Best bot-clock complete-minute median: MAX **~2,645**. Miners off at END: **confirmed**.
+**3,000 tx/s plan line: not met.** Best bot-clock complete-minute median: MAX **~2,642** (n=9; corrected 11 Oct). Miners off at END: **confirmed**.

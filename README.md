@@ -104,13 +104,15 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 
 ## Results
 
+> **Correction, 11 Oct 2026 21:45 CEST.** The first `logs/bot/chain-count.csv` counted 89 minutes twice in the 18:10-02:29Z window: minutes inside a lumped recount row (a boundary block off the final chain merges several minutes into one row) also got a value from the live chain logger, so their transactions were in the lumped row **and** in their own row. Sum 18:10-02:29Z was 38,362,793; corrected **32,299,895** (6,062,898 counted twice). The same minutes were also flagged `complete_minute=yes`, and the 'recount avg' divided lumped rows by 60 instead of by their length. Fixed file: [logs/bot/chain-count.csv](logs/bot/chain-count.csv) (rule: [METHOD](logs/bot/chain-count.csv.METHOD.md)); old file kept as [chain-count.csv.superseded](logs/bot/chain-count.csv.superseded). Step numbers below are recomputed. The 3,000 line is still not met; the earlier 'recount avg above 3,000' for C2500 and MAX was an artifact and is withdrawn. The workbook `run-2026-10-10.xlsx` predates this fix.
+
 **Filled after END (04:30 Sun CEST / 02:30 Sun UTC) and the chain count.** Combined: [`logs/COMBINED.md`](logs/COMBINED.md) · write-up: [`logs/WRITE-UP.md`](logs/WRITE-UP.md). Bot workbook: [`logs/bot/run-2026-10-10.xlsx`](logs/bot/run-2026-10-10.xlsx). Detail: [docs/RESULTS.md](docs/RESULTS.md). Build: [`logs/build/SUMMARY.md`](logs/build/SUMMARY.md).
 
 | Key number | Value | Detail |
 |---|---|---|
-| Network unique accepted, best step median (tx/s) | **2,644.9** (MAX; `complete_minute=yes`, n=12) | [logs/COMBINED.md](logs/COMBINED.md) |
-| HOLD median, network unique accepted (tx/s) | **936.5** (complete n=177; many WS stalls) | [logs/COMBINED.md](logs/COMBINED.md) |
-| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 complete minutes). Recount avgs C2500/MAX &gt;3000 with thinner coverage — supporting only. Build HOLD desk median **4,032** (Build clock, 175 min). | [logs/COMBINED.md](logs/COMBINED.md) |
+| Network unique accepted, best step median (tx/s) | **2,642.4** (MAX; `complete_minute=yes`, n=9, below the 10-minute rule; corrected 11 Oct, was 2,644.9 n=12) | [logs/COMBINED.md](logs/COMBINED.md) |
+| HOLD median, network unique accepted (tx/s) | **939.1** (complete n=123; many WS stalls; corrected 11 Oct, was 936.5 n=177) | [logs/COMBINED.md](logs/COMBINED.md) |
+| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 complete minutes). Corrected recount averages: C2500 2,512.7, MAX 2,617.2 (the earlier &gt;3000 was a counting artifact, withdrawn). Build HOLD desk median **4,032** (Build clock, 175 min). | [logs/COMBINED.md](logs/COMBINED.md) |
 | Bot: submit / n2-accepted mean (steps.csv) | X250 64.29/64.22 clean; C1000 274.06/273.58 unclean; C1500 0/0.69 unclean; C2000 544.16/543.69 clean; C2500 673.68/672.51 clean; **MAX 916.69/915.38 clean**; HOLD 638.74/637.93 unclean | [logs/bot/steps.csv](logs/bot/steps.csv) |
 | Build: submit (own clock / UTC-overlap) | Own-clock: C2500 mean 1,949; MAX mean 2,687 (before bot T0); HOLD mean **1,718** @1875. UTC-overlap during bot C2500/MAX ~1.6–1.8k. Build T0 was 15:00Z (joined ~17:28Z). | [logs/build/](logs/build/README.md) |
 | Miners at END | **Off** at 02:30Z; after-END wrap senders=0 miner=0 | [logs/bot/timeline.md](logs/bot/timeline.md) |
