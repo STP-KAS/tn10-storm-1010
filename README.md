@@ -4,7 +4,9 @@
 >
 > ← previous storm: [tn10-storm-2026-10-09](https://github.com/STP-KAS/tn10-storm-2026-10-09) | next storm: [tn10-storm-2026-10-10-plan](https://github.com/STP-KAS/tn10-storm-2026-10-10-plan) →
 
-# tn10-storm-2026-10-10: the bot run and the build run
+# tn10-storm-2026-10-10 · Sat 10 Oct 18:10 - Sun 11 Oct 02:35 UTC (20:10-04:35 CEST): the bot run and the build run
+
+**Window.** Count window 18:10Z Sat to 02:35Z Sun (the window set for outside counters); bot T0 18:30Z, END 02:30Z. Not to be mixed up with [tn10-storm-2026-10-11](https://github.com/STP-KAS/tn10-storm-2026-10-11) (Sun 11 Oct, 07:30-12:33 UTC).
 
 **Status:** run finished END **04:30 CEST Sun 11 Oct 2026** (02:30 UTC). Logs on GitHub; made public after wrap-up. Kaspa Testnet-10 only; tKAS has no value.
 
@@ -112,7 +114,7 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 | Bot: submit / n2-accepted mean (steps.csv) | X250 64.29/64.22 clean; C1000 274.06/273.58 unclean; C1500 0/0.69 unclean; C2000 544.16/543.69 clean; C2500 673.68/672.51 clean; **MAX 916.69/915.38 clean**; HOLD 638.74/637.93 unclean | [logs/bot/steps.csv](logs/bot/steps.csv) |
 | Build: submit (own clock / UTC-overlap) | Own-clock: C2500 mean 1,949; MAX mean 2,687 (before bot T0); HOLD mean **1,718** @1875. UTC-overlap during bot C2500/MAX ~1.6–1.8k. Build T0 was 15:00Z (joined ~17:28Z). | [logs/build/](logs/build/README.md) |
 | Miners at END | **Off** at 02:30Z; after-END wrap senders=0 miner=0 | [logs/bot/timeline.md](logs/bot/timeline.md) |
-| Kaspa Pulse's outside count | pending | [credits/](credits/KASPA-PULSE.md) |
+| Kaspa Pulse's outside count | (Kaspa Pulse's independent count: pending his review) | [credits/](credits/KASPA-PULSE.md) |
 
 ### Bot per-step headline (steps.csv means)
 

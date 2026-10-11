@@ -17,4 +17,16 @@ Live during the run: [bot/SUMMARY.md](bot/SUMMARY.md), every 15 minutes. How to 
 
 After the run, once the logs are on GitHub, TN10 ops makes this repo public.
 
+## Method per file
+
+Each per-minute CSV has a method sidecar next to it (`<file>.METHOD.md`), so the CSVs stay plain for parsers: what is counted, which node, how minutes are bucketed, timezone UTC.
+
+| CSV | Counted on | Bucketing | Method |
+|---|---|---|---|
+| [bot/chain-count.csv](bot/chain-count.csv) (headline) | n2 | n2 receive time (UTC-minute boundary tips) | [METHOD](bot/chain-count.csv.METHOD.md) |
+| [bot/recount-1m.csv](bot/recount-1m.csv) | n2 | n2 receive time | [METHOD](bot/recount-1m.csv.METHOD.md) |
+| [bot/minute.csv](bot/minute.csv) | bot senders; n2 for network columns | n2 receive time | [METHOD](bot/minute.csv.METHOD.md) |
+| [build/chain-count.csv](build/chain-count.csv) | Build's desk node | not stated by Build (open) | [METHOD](build/chain-count.csv.METHOD.md) |
+| [build/minute.csv](build/minute.csv) | Build senders; desk node for network columns | not stated by Build (open) | [METHOD](build/minute.csv.METHOD.md) |
+
 Counts only. No txid, key, seed, host IP, port or wallet address.

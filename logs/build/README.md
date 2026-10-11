@@ -25,4 +25,6 @@ Status: **10 Oct 2026 run.** Counts only. Per-transaction logs stayed on the des
 
 How to read the run in 5 minutes: [go/LOGGING.md](../../go/LOGGING.md#how-to-read-the-run-in-5-minutes).
 
+Method sidecars (what is counted, which node, bucketing, UTC): [chain-count](chain-count.csv.METHOD.md), [minute](minute.csv.METHOD.md).
+
 Columns: [go/LOGGING.md](../../go/LOGGING.md). Counts only. Per-transaction logs and ids stay local.
