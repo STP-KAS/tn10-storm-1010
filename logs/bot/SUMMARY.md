@@ -1,78 +1,554 @@
-# Bot side, live summary (TN10 storm, Sat 10 Oct 2026)
+# Bot side, TN10 storm 10 Oct 2026 (node n2)
 
-Updated **04:30:18 CEST / 02:30:18 UTC**, about every 10 minutes from G1 to END. Counts only, written on the box by `live-summary.py` (read-only, sends nothing). Column meanings: [go/LOGGING.md](../../go/LOGGING.md). Plan and times: [go/README.md](../../go/README.md).
+Counts only. Generated on the box by repo-logs.py from the scheduler's raw logs. Columns: [go/LOGGING.md](../../go/LOGGING.md).
 
-## Now
+T0 2026-10-10T18:30:00Z, END 2026-10-11T02:30:00Z. Rehearsal: not run. B = 244.2 (fixed). Last clean bot level: 990.
 
-| What | Value |
-|---|---|
-| Step | **END (senders stopped)** |
-| Bot target (plan) | 0 tx/s |
-| Bot submitted, last 10 min | 0.0 tx/s (0 tx) |
-| Bot accepted on n2, last 10 min | 0.0 tx/s (0 tx) |
-| Rejects, last 10 min | 0 consensus/mempool; 0 public-node transport errors |
-| Senders writing rows | 15 (processes up: 0) |
-| Scheduler / watchdog | running / running |
-| Build started? | yes (BUILD-OK present) |
-| HALT | no |
+| Step | Target | Mean sent | Mean submit-ok | Mean n2-accepted | Rejects | Clean | Reason |
+|---|---:|---:|---:|---:|---:|---|---|
+| B0 | 0 | 0 | 0 | 0 | 0 |  | bot 0 in this row |
+| X250 | 66 | 64.32 | 64.29 | 64.22 | 1 | yes |  |
+| C1000 | 275 | 274.27 | 274.06 | 273.58 | 22 | no | eventual accept 99.96%, p90 0.12 s, lag max 1 s |
+| C1500 | 413 | 34.81 | 0 | 0.69 | 9086 | no | eventual accept None%, p90 65 s, lag max 1417.5 s |
+| C2000 | 550 | 544.22 | 544.16 | 543.69 | 14 | yes |  |
+| C2500 | 688 | 675.01 | 673.68 | 672.51 | 1112 | yes |  |
+| MAX | 990 | 926.45 | 916.69 | 915.38 | 7949 | yes |  |
+| B1 | 0 | 0 | 0 | 0 | 0 |  | bot 0 in this row |
+| HOLD | 880 | 651.37 | 638.74 | 637.93 | 169079 | no | eventual accept 99.87%, p90 0.26 s, lag max 1224 s |
 
-## Public nodes, last 10 min
+## What broke and what was done
 
-| Node | Submits ok | Rejects | Errors | Down (s) |
-|---|---:|---:|---:|---:|
-| boson-10.kaspa.red | 0 | 0 | 0 | 0 |
-| electron-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| muon-10.kaspa.blue | 0 | 0 | 0 | 0 |
-| neutrino-10.kaspa.stream | 0 | 0 | 0 | 0 |
-| vector-10.kaspa.green | 0 | 0 | 0 | 0 |
+- 2026-10-10T17:59:06Z PREP **deviation** pubMode: n2 sink lag 65.1 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:07Z PREP **deviation** pubMode: n2 sink lag 66.3 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:08Z PREP **deviation** pubMode: n2 sink lag 67.3 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:09Z PREP **deviation** pubMode: n2 sink lag 68.3 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:10Z PREP **deviation** pubMode: n2 sink lag 69.3 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:11Z PREP **deviation** pubMode: n2 sink lag 70.3 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:12Z PREP **deviation** pubMode: n2 sink lag 71.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:13Z PREP **deviation** pubMode: n2 sink lag 72.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:14Z PREP **deviation** pubMode: n2 sink lag 73.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:15Z PREP **deviation** pubMode: n2 sink lag 74.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:16Z PREP **deviation** pubMode: n2 sink lag 75.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:17Z PREP **deviation** pubMode: n2 sink lag 76.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:18Z PREP **deviation** pubMode: n2 sink lag 77.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:19Z PREP **deviation** pubMode: n2 sink lag 78.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:20Z PREP **deviation** pubMode: n2 sink lag 79.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:21Z PREP **deviation** pubMode: n2 sink lag 80.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:22Z PREP **deviation** pubMode: n2 sink lag 81.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:23Z PREP **deviation** pubMode: n2 sink lag 82.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:24Z PREP **deviation** pubMode: n2 sink lag 83.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:25Z PREP **deviation** pubMode: n2 sink lag 84.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:26Z PREP **deviation** pubMode: n2 sink lag 85.4 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:27Z PREP **deviation** pubMode: n2 sink lag 86.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:28Z PREP **deviation** pubMode: n2 sink lag 87.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:29Z PREP **deviation** pubMode: n2 sink lag 88.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:30Z PREP **deviation** pubMode: n2 sink lag 89.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:31Z PREP **deviation** pubMode: n2 sink lag 90.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:32Z PREP **deviation** pubMode: n2 sink lag 91.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:33Z PREP **deviation** pubMode: n2 sink lag 92.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:34Z PREP **deviation** pubMode: n2 sink lag 93.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:35Z PREP **deviation** pubMode: n2 sink lag 94.5 s > 60; senders continue on public nodes
+- 2026-10-10T17:59:36Z PREP **deviation** pubMode: n2 sink lag 95.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:37Z PREP **deviation** pubMode: n2 sink lag 96.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:38Z PREP **deviation** pubMode: n2 sink lag 97.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:39Z PREP **deviation** pubMode: n2 sink lag 98.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:40Z PREP **deviation** pubMode: n2 sink lag 99.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:41Z PREP **deviation** pubMode: n2 sink lag 100.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:42Z PREP **deviation** pubMode: n2 sink lag 101.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:43Z PREP **deviation** pubMode: n2 sink lag 102.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:44Z PREP **deviation** pubMode: n2 sink lag 103.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:45Z PREP **deviation** pubMode: n2 sink lag 104.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:46Z PREP **deviation** pubMode: n2 sink lag 105.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:47Z PREP **deviation** pubMode: n2 sink lag 106.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:48Z PREP **deviation** pubMode: n2 sink lag 107.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:49Z PREP **deviation** pubMode: n2 sink lag 108.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:50Z PREP **deviation** pubMode: n2 sink lag 109.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:51Z PREP **deviation** pubMode: n2 sink lag 110.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:52Z PREP **deviation** pubMode: n2 sink lag 111.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:53Z PREP **deviation** pubMode: n2 sink lag 112.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:54Z PREP **deviation** pubMode: n2 sink lag 113.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:55Z PREP **deviation** pubMode: n2 sink lag 114.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:57Z PREP **deviation** pubMode: n2 sink lag 115.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:58Z PREP **deviation** pubMode: n2 sink lag 116.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T17:59:59Z PREP **deviation** pubMode: n2 sink lag 117.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:00Z G1 **deviation** pubMode: n2 sink lag 118.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:01Z G1 **deviation** pubMode: n2 sink lag 119.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:02Z G1 **deviation** pubMode: n2 sink lag 120.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:03Z G1 **deviation** pubMode: n2 sink lag 121.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:04Z G1 **deviation** pubMode: n2 sink lag 122.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:05Z G1 **deviation** pubMode: n2 sink lag 123.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:06Z G1 **deviation** pubMode: n2 sink lag 124.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:07Z G1 **deviation** pubMode: n2 sink lag 125.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:08Z G1 **deviation** pubMode: n2 sink lag 126.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:09Z G1 **deviation** pubMode: n2 sink lag 127.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:10Z G1 **deviation** pubMode: n2 sink lag 128.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:11Z G1 **deviation** pubMode: n2 sink lag 129.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:12Z G1 **deviation** pubMode: n2 sink lag 130.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:13Z G1 **deviation** pubMode: n2 sink lag 131.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:14Z G1 **deviation** pubMode: n2 sink lag 132.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:15Z G1 **deviation** pubMode: n2 sink lag 133.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:16Z G1 **deviation** pubMode: n2 sink lag 134.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:17Z G1 **deviation** pubMode: n2 sink lag 135.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:18Z G1 **deviation** pubMode: n2 sink lag 136.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:19Z G1 **deviation** pubMode: n2 sink lag 137.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:20Z G1 **deviation** pubMode: n2 sink lag 138.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:21Z G1 **deviation** pubMode: n2 sink lag 139.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:22Z G1 **deviation** pubMode: n2 sink lag 140.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:23Z G1 **deviation** pubMode: n2 sink lag 141.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:24Z G1 **deviation** pubMode: n2 sink lag 142.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:25Z G1 **deviation** pubMode: n2 sink lag 143.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:26Z G1 **deviation** pubMode: n2 sink lag 144.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:27Z G1 **deviation** pubMode: n2 sink lag 145.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:28Z G1 **deviation** pubMode: n2 sink lag 146.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:29Z G1 **deviation** pubMode: n2 sink lag 147.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:30Z G1 **deviation** pubMode: n2 sink lag 148.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:31Z G1 **deviation** pubMode: n2 sink lag 149.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:32Z G1 **deviation** pubMode: n2 sink lag 150.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:33Z G1 **deviation** pubMode: n2 sink lag 151.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:34Z G1 **deviation** pubMode: n2 sink lag 152.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:35Z G1 **deviation** pubMode: n2 sink lag 153.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:36Z G1 **deviation** pubMode: n2 sink lag 154.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:37Z G1 **deviation** pubMode: n2 sink lag 155.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:38Z G1 **deviation** pubMode: n2 sink lag 156.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:39Z G1 **deviation** pubMode: n2 sink lag 157.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:40Z G1 **deviation** pubMode: n2 sink lag 158.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:41Z G1 **deviation** pubMode: n2 sink lag 159.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:42Z G1 **deviation** pubMode: n2 sink lag 160.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:43Z G1 **deviation** pubMode: n2 sink lag 161.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:44Z G1 **deviation** pubMode: n2 sink lag 162.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:45Z G1 **deviation** pubMode: n2 sink lag 163.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:46Z G1 **deviation** pubMode: n2 sink lag 164.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:47Z G1 **deviation** pubMode: n2 sink lag 165.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:48Z G1 **deviation** pubMode: n2 sink lag 166.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:49Z G1 **deviation** pubMode: n2 sink lag 167.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:50Z G1 **deviation** pubMode: n2 sink lag 168.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:51Z G1 **deviation** pubMode: n2 sink lag 169.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:52Z G1 **deviation** pubMode: n2 sink lag 170.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:53Z G1 **deviation** pubMode: n2 sink lag 171.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:54Z G1 **deviation** pubMode: n2 sink lag 172.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:55Z G1 **deviation** pubMode: n2 sink lag 174 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:56Z G1 **deviation** pubMode: n2 sink lag 175 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:57Z G1 **deviation** pubMode: n2 sink lag 176 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:58Z G1 **deviation** pubMode: n2 sink lag 177 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:00:59Z G1 **deviation** pubMode: n2 sink lag 178 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:00Z G1 **deviation** pubMode: n2 sink lag 179 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:01Z G1 **deviation** pubMode: n2 sink lag 180 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:02Z G1 **deviation** pubMode: n2 sink lag 181 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:03Z G1 **deviation** pubMode: n2 sink lag 182 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:04Z G1 **deviation** pubMode: n2 sink lag 183 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:06Z G1 **deviation** pubMode: n2 sink lag 185 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:07Z G1 **deviation** pubMode: n2 sink lag 186 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:08Z G1 **deviation** pubMode: n2 sink lag 187 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:09Z G1 **deviation** pubMode: n2 sink lag 188 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:10Z G1 **deviation** pubMode: n2 sink lag 189 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:11Z G1 **deviation** pubMode: n2 sink lag 190 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:12Z G1 **deviation** pubMode: n2 sink lag 191 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:13Z G1 **deviation** pubMode: n2 sink lag 192 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:14Z G1 **deviation** pubMode: n2 sink lag 193 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:15Z G1 **deviation** pubMode: n2 sink lag 194.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:16Z G1 **deviation** pubMode: n2 sink lag 195.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:17Z G1 **deviation** pubMode: n2 sink lag 196.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:18Z G1 **deviation** pubMode: n2 sink lag 197.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:19Z G1 **deviation** pubMode: n2 sink lag 198.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:20Z G1 **deviation** pubMode: n2 sink lag 199.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:21Z G1 **deviation** pubMode: n2 sink lag 200.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:22Z G1 **deviation** pubMode: n2 sink lag 201.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:23Z G1 **deviation** pubMode: n2 sink lag 202.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:24Z G1 **deviation** pubMode: n2 sink lag 203.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:25Z G1 **deviation** pubMode: n2 sink lag 204.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:26Z G1 **deviation** pubMode: n2 sink lag 205.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:27Z G1 **deviation** pubMode: n2 sink lag 206.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:28Z G1 **deviation** pubMode: n2 sink lag 207.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:29Z G1 **deviation** pubMode: n2 sink lag 208.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:30Z G1 **deviation** pubMode: n2 sink lag 209.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T18:01:31Z G1 **deviation** pubMode: n2 sink lag 210.1 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:32Z G1 **deviation** pubMode: n2 sink lag 207.2 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:33Z G1 **deviation** pubMode: n2 sink lag 190.5 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:34Z G1 **deviation** pubMode: n2 sink lag 183.8 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:35Z G1 **deviation** pubMode: n2 sink lag 173.6 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:36Z G1 **deviation** pubMode: n2 sink lag 165.8 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:37Z G1 **deviation** pubMode: n2 sink lag 156.4 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:38Z G1 **deviation** pubMode: n2 sink lag 152.7 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:39Z G1 **deviation** pubMode: n2 sink lag 136.7 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:40Z G1 **deviation** pubMode: n2 sink lag 130.2 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:41Z G1 **deviation** pubMode: n2 sink lag 118.8 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:42Z G1 **deviation** pubMode: n2 sink lag 112.3 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:44Z G1 **deviation** pubMode: n2 sink lag 93.1 s > 60; senders continue on public nodes
+- 2026-10-10T18:01:46Z G1 **deviation** pubMode: n2 sink lag 67.1 s > 60; senders continue on public nodes
+- 2026-10-10T18:15:00Z  **deviation** build-confirmed: at G2
+- 2026-10-10T18:15:00Z  **deviation** build-confirmed: BUILD-OK
+- 2026-10-10T18:40:09Z X250 **deviation** sender-relaunch: S3 relaunch 1/8
+- 2026-10-10T18:40:12Z X250 **deviation** sender-relaunch: S1 relaunch 1/8
+- 2026-10-10T18:40:15Z X250 **deviation** sender-relaunch: S2 relaunch 1/8
+- 2026-10-10T18:40:18Z X250 **deviation** sender-relaunch: S4 relaunch 1/8
+- 2026-10-10T18:40:21Z X250 **deviation** sender-relaunch: S5 relaunch 1/8
+- 2026-10-10T18:40:24Z X250 **deviation** sender-relaunch: S6 relaunch 1/8
+- 2026-10-10T18:40:27Z X250 **deviation** sender-relaunch: S7 relaunch 1/8
+- 2026-10-10T18:40:30Z X250 **deviation** sender-relaunch: S8 relaunch 1/8
+- 2026-10-10T18:40:33Z X250 **deviation** sender-relaunch: S9 relaunch 1/8
+- 2026-10-10T18:40:36Z X250 **deviation** sender-relaunch: S10 relaunch 1/8
+- 2026-10-10T18:40:39Z X250 **deviation** sender-relaunch: S11 relaunch 1/8
+- 2026-10-10T18:40:42Z X250 **deviation** sender-relaunch: S12 relaunch 1/8
+- 2026-10-10T18:40:45Z X250 **deviation** sender-relaunch: S13 relaunch 1/8
+- 2026-10-10T18:40:48Z X250 **deviation** sender-relaunch: S14 relaunch 1/8
+- 2026-10-10T18:40:51Z X250 **deviation** sender-relaunch: S15 relaunch 1/8
+- 2026-10-10T19:07:20Z C1000 **disk-guard** box disk 16.1 GB free (< 20)
+- 2026-10-10T19:07:20Z C1000 **deviation** box disk 16.1 GB free (< 20): senders pause at 8 GB; n2 disk guard STOP at 5 GB, halt at 3 GB; pub submit fallback below 10 GB
+- 2026-10-10T19:29:16Z C1000 **deviation** pubMode: n2 not synced, sink lag 1271.3 s > 60; senders continue on public nodes
+- 2026-10-10T19:29:45Z C1500 **disk-guard** n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:30:15Z C1500 **disk-guard** n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:30:45Z C1500 **disk-guard** n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:31:15Z C1500 **disk-guard** n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:31:45Z C1500 **disk-guard** n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:32:10Z C1500 **deviation** pubMode: n2 sink lag 658.7 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:11Z C1500 **deviation** pubMode: n2 sink lag 628.2 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:12Z C1500 **deviation** pubMode: n2 sink lag 593.6 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:13Z C1500 **deviation** pubMode: n2 sink lag 571 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:14Z C1500 **deviation** pubMode: n2 sink lag 550.3 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:15Z C1500 **deviation** pubMode: n2 sink lag 525.2 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:16Z C1500 **deviation** pubMode: n2 sink lag 499.8 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:16Z C1500 **disk-guard** n2 disk guard: LOW free=9G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:32:17Z C1500 **deviation** pubMode: n2 sink lag 486.4 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:18Z C1500 **deviation** pubMode: n2 sink lag 455.1 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:19Z C1500 **deviation** pubMode: n2 sink lag 433.3 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:20Z C1500 **deviation** pubMode: n2 sink lag 411.2 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:21Z C1500 **deviation** pubMode: n2 sink lag 379.6 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:22Z C1500 **deviation** pubMode: n2 sink lag 359.3 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:23Z C1500 **deviation** pubMode: n2 sink lag 339.6 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:24Z C1500 **deviation** pubMode: n2 sink lag 300.1 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:25Z C1500 **deviation** pubMode: n2 sink lag 273.8 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:26Z C1500 **deviation** pubMode: n2 sink lag 253.4 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:28Z C1500 **deviation** pubMode: n2 sink lag 213.2 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:29Z C1500 **deviation** pubMode: n2 sink lag 179.3 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:31Z C1500 **deviation** pubMode: n2 sink lag 133.6 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:32Z C1500 **deviation** pubMode: n2 sink lag 113.7 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:33Z C1500 **deviation** pubMode: n2 sink lag 85.5 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:36Z C1500 **deviation** pubMode: n2 sink lag 63.2 s > 60; senders continue on public nodes
+- 2026-10-10T19:32:46Z C1500 **disk-guard** n2 disk guard: LOW free=9G -> truncated RocksDB LOGs + info logs
+- 2026-10-10T19:38:00Z C1500 **deviation** sender-relaunch: S15 relaunch 2/8
+- 2026-10-10T19:38:03Z C1500 **deviation** sender-relaunch: S1 relaunch 2/8
+- 2026-10-10T19:38:07Z C1500 **deviation** sender-relaunch: S2 relaunch 2/8
+- 2026-10-10T19:38:10Z C1500 **deviation** sender-relaunch: S3 relaunch 2/8
+- 2026-10-10T19:38:13Z C1500 **deviation** sender-relaunch: S4 relaunch 2/8
+- 2026-10-10T19:38:16Z C1500 **deviation** sender-relaunch: S5 relaunch 2/8
+- 2026-10-10T19:38:19Z C1500 **deviation** sender-relaunch: S6 relaunch 2/8
+- 2026-10-10T19:38:22Z C1500 **deviation** sender-relaunch: S7 relaunch 2/8
+- 2026-10-10T19:38:25Z C1500 **deviation** sender-relaunch: S8 relaunch 2/8
+- 2026-10-10T19:38:28Z C1500 **deviation** sender-relaunch: S9 relaunch 2/8
+- 2026-10-10T19:38:31Z C1500 **deviation** sender-relaunch: S10 relaunch 2/8
+- 2026-10-10T19:38:34Z C1500 **deviation** sender-relaunch: S11 relaunch 2/8
+- 2026-10-10T19:38:37Z C1500 **deviation** sender-relaunch: S12 relaunch 2/8
+- 2026-10-10T19:38:40Z C1500 **deviation** sender-relaunch: S13 relaunch 2/8
+- 2026-10-10T19:38:43Z C1500 **deviation** sender-relaunch: S14 relaunch 2/8
+- 2026-10-10T19:39:01Z C1500 **deviation** sender-relaunch: S15 relaunch 3/8
+- 2026-10-10T19:39:04Z C1500 **deviation** sender-relaunch: S1 relaunch 3/8
+- 2026-10-10T19:39:07Z C1500 **deviation** sender-relaunch: S2 relaunch 3/8
+- 2026-10-10T19:39:10Z C1500 **deviation** sender-relaunch: S3 relaunch 3/8
+- 2026-10-10T19:39:13Z C1500 **deviation** sender-relaunch: S4 relaunch 3/8
+- 2026-10-10T19:39:16Z C1500 **deviation** sender-relaunch: S5 relaunch 3/8
+- 2026-10-10T19:39:19Z C1500 **deviation** sender-relaunch: S6 relaunch 3/8
+- 2026-10-10T19:39:22Z C1500 **deviation** sender-relaunch: S7 relaunch 3/8
+- 2026-10-10T19:39:25Z C1500 **deviation** sender-relaunch: S8 relaunch 3/8
+- 2026-10-10T19:39:28Z C1500 **deviation** sender-relaunch: S9 relaunch 3/8
+- 2026-10-10T19:39:31Z C1500 **deviation** sender-relaunch: S10 relaunch 3/8
+- 2026-10-10T19:39:34Z C1500 **deviation** sender-relaunch: S11 relaunch 3/8
+- 2026-10-10T19:39:37Z C1500 **deviation** sender-relaunch: S12 relaunch 3/8
+- 2026-10-10T19:39:40Z C1500 **deviation** sender-relaunch: S13 relaunch 3/8
+- 2026-10-10T19:39:43Z C1500 **deviation** sender-relaunch: S14 relaunch 3/8
+- 2026-10-10T19:43:33Z C2000 **deviation** sender-relaunch: S1 relaunch 4/8
+- 2026-10-10T19:44:39Z C2000 **deviation** sender-relaunch: S1 relaunch 5/8
+- 2026-10-10T19:45:40Z C2000 **deviation** sender-relaunch: S1 relaunch 6/8
+- 2026-10-10T19:55:43Z C2000 **deviation** sender-relaunch: S2 relaunch 4/30
+- 2026-10-10T19:55:46Z C2000 **deviation** sender-relaunch: S3 relaunch 4/30
+- 2026-10-10T19:55:49Z C2000 **deviation** sender-relaunch: S4 relaunch 4/30
+- 2026-10-10T19:55:52Z C2000 **deviation** sender-relaunch: S5 relaunch 4/30
+- 2026-10-10T19:55:55Z C2000 **deviation** sender-relaunch: S6 relaunch 4/30
+- 2026-10-10T19:55:58Z C2000 **deviation** sender-relaunch: S7 relaunch 4/30
+- 2026-10-10T19:56:01Z C2000 **deviation** sender-relaunch: S8 relaunch 4/30
+- 2026-10-10T19:56:04Z C2000 **deviation** sender-relaunch: S9 relaunch 4/30
+- 2026-10-10T19:56:07Z C2000 **deviation** sender-relaunch: S10 relaunch 4/30
+- 2026-10-10T19:56:10Z C2000 **deviation** sender-relaunch: S11 relaunch 4/30
+- 2026-10-10T19:56:13Z C2000 **deviation** sender-relaunch: S12 relaunch 4/30
+- 2026-10-10T19:56:16Z C2000 **deviation** sender-relaunch: S13 relaunch 4/30
+- 2026-10-10T19:56:19Z C2000 **deviation** sender-relaunch: S14 relaunch 4/30
+- 2026-10-10T19:56:22Z C2000 **deviation** sender-relaunch: S15 relaunch 4/30
+- 2026-10-10T19:56:54Z C2000 **disk-guard** n2 disk guard: storm1010r 21:57 deviation: stop n2 to restart WITHOUT --utxoindex (disk); n2.HALT set during swap
+- 2026-10-10T19:58:01Z C2000 **deviation** pubMode: n2 utxoindex off, sink lag 66.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes
+- 2026-10-10T19:58:07Z C2000 **node-restart** kaspad pid changed (n2 restarted on the same flags by its guard), uptime 8 s
+- 2026-10-10T19:58:26Z C2000 **node-restart** kaspad pid changed (n2 restarted on the same flags by its guard), uptime 1 s
+- 2026-10-10T20:04:41Z C2500 **deviation** sender-relaunch: S6 relaunch 5/30
+- 2026-10-10T20:04:44Z C2500 **deviation** sender-relaunch: S14 relaunch 5/30
+- 2026-10-10T20:04:47Z C2500 **deviation** sender-relaunch: S15 relaunch 5/30
+- 2026-10-10T20:33:12Z MAX **deviation** sender-relaunch: S7 relaunch 5/30
+- 2026-10-10T20:45:30Z MAX **node-restart** n2 frozen, lag 470.2 s
+- 2026-10-10T20:45:41Z B1 **disk-guard** n2 disk guard: n2 kaspad not running (pid) -> restart via start-n2.sh
+- 2026-10-10T20:45:49Z B1 **node-restart** kaspad pid changed (n2 restarted on the same flags by its guard), uptime 7 s
+- 2026-10-10T20:53:42Z HOLD **deviation** sender-relaunch: S1 relaunch 7/30
+- 2026-10-10T20:53:45Z HOLD **deviation** sender-relaunch: S2 relaunch 5/30
+- 2026-10-10T20:53:48Z HOLD **deviation** sender-relaunch: S3 relaunch 5/30
+- 2026-10-10T20:53:51Z HOLD **deviation** sender-relaunch: S4 relaunch 5/30
+- 2026-10-10T20:53:55Z HOLD **deviation** sender-relaunch: S5 relaunch 5/30
+- 2026-10-10T20:53:58Z HOLD **deviation** sender-relaunch: S6 relaunch 6/30
+- 2026-10-10T20:54:01Z HOLD **deviation** sender-relaunch: S7 relaunch 6/30
+- 2026-10-10T20:54:04Z HOLD **deviation** sender-relaunch: S8 relaunch 5/30
+- 2026-10-10T20:54:07Z HOLD **deviation** sender-relaunch: S9 relaunch 5/30
+- 2026-10-10T20:54:10Z HOLD **deviation** sender-relaunch: S10 relaunch 5/30
+- 2026-10-10T20:54:13Z HOLD **deviation** sender-relaunch: S11 relaunch 5/30
+- 2026-10-10T20:54:16Z HOLD **deviation** sender-relaunch: S12 relaunch 5/30
+- 2026-10-10T20:54:19Z HOLD **deviation** sender-relaunch: S13 relaunch 5/30
+- 2026-10-10T20:54:22Z HOLD **deviation** sender-relaunch: S14 relaunch 6/30
+- 2026-10-10T20:54:25Z HOLD **deviation** sender-relaunch: S15 relaunch 6/30
+- 2026-10-10T22:27:53Z HOLD **deviation** sender-relaunch: S1 relaunch 8/30
+- 2026-10-10T22:27:56Z HOLD **deviation** sender-relaunch: S2 relaunch 6/30
+- 2026-10-10T22:27:59Z HOLD **deviation** sender-relaunch: S3 relaunch 6/30
+- 2026-10-10T22:28:02Z HOLD **deviation** sender-relaunch: S4 relaunch 6/30
+- 2026-10-10T22:28:05Z HOLD **deviation** sender-relaunch: S5 relaunch 6/30
+- 2026-10-10T22:28:08Z HOLD **deviation** sender-relaunch: S6 relaunch 7/30
+- 2026-10-10T22:28:11Z HOLD **deviation** sender-relaunch: S7 relaunch 7/30
+- 2026-10-10T22:28:14Z HOLD **deviation** sender-relaunch: S8 relaunch 6/30
+- 2026-10-10T22:28:17Z HOLD **deviation** sender-relaunch: S9 relaunch 6/30
+- 2026-10-10T22:28:20Z HOLD **deviation** sender-relaunch: S10 relaunch 6/30
+- 2026-10-10T22:28:23Z HOLD **deviation** sender-relaunch: S11 relaunch 6/30
+- 2026-10-10T22:28:26Z HOLD **deviation** sender-relaunch: S12 relaunch 6/30
+- 2026-10-10T22:28:29Z HOLD **deviation** sender-relaunch: S13 relaunch 6/30
+- 2026-10-10T22:28:32Z HOLD **deviation** sender-relaunch: S14 relaunch 7/30
+- 2026-10-10T22:28:35Z HOLD **deviation** sender-relaunch: S15 relaunch 7/30
+- 2026-10-10T23:33:40Z HOLD **deviation** sender-relaunch: S5 relaunch 7/30
+- 2026-10-10T23:52:57Z HOLD **deviation** sender-relaunch: S11 relaunch 7/30
+- 2026-10-10T23:53:00Z HOLD **deviation** sender-relaunch: S4 relaunch 7/30
+- 2026-10-10T23:53:03Z HOLD **deviation** sender-relaunch: S1 relaunch 9/30
+- 2026-10-10T23:53:06Z HOLD **deviation** sender-relaunch: S2 relaunch 7/30
+- 2026-10-10T23:53:09Z HOLD **deviation** sender-relaunch: S3 relaunch 7/30
+- 2026-10-10T23:53:12Z HOLD **deviation** sender-relaunch: S5 relaunch 8/30
+- 2026-10-10T23:53:15Z HOLD **deviation** sender-relaunch: S6 relaunch 8/30
+- 2026-10-10T23:53:18Z HOLD **deviation** sender-relaunch: S7 relaunch 8/30
+- 2026-10-10T23:53:21Z HOLD **deviation** sender-relaunch: S8 relaunch 7/30
+- 2026-10-10T23:53:24Z HOLD **deviation** sender-relaunch: S9 relaunch 7/30
+- 2026-10-10T23:53:27Z HOLD **deviation** sender-relaunch: S10 relaunch 7/30
+- 2026-10-10T23:53:30Z HOLD **deviation** sender-relaunch: S12 relaunch 7/30
+- 2026-10-10T23:53:33Z HOLD **deviation** sender-relaunch: S13 relaunch 7/30
+- 2026-10-10T23:53:37Z HOLD **deviation** sender-relaunch: S14 relaunch 8/30
+- 2026-10-10T23:53:40Z HOLD **deviation** sender-relaunch: S15 relaunch 8/30
+- 2026-10-11T00:13:24Z HOLD **deviation** sender-relaunch: S1 relaunch 10/30
+- 2026-10-11T00:13:27Z HOLD **deviation** sender-relaunch: S2 relaunch 8/30
+- 2026-10-11T00:13:30Z HOLD **deviation** sender-relaunch: S3 relaunch 8/30
+- 2026-10-11T00:13:33Z HOLD **deviation** sender-relaunch: S4 relaunch 8/30
+- 2026-10-11T00:13:36Z HOLD **deviation** sender-relaunch: S5 relaunch 9/30
+- 2026-10-11T00:13:39Z HOLD **deviation** sender-relaunch: S6 relaunch 9/30
+- 2026-10-11T00:13:42Z HOLD **deviation** sender-relaunch: S7 relaunch 9/30
+- 2026-10-11T00:13:45Z HOLD **deviation** sender-relaunch: S8 relaunch 8/30
+- 2026-10-11T00:13:48Z HOLD **deviation** sender-relaunch: S9 relaunch 8/30
+- 2026-10-11T00:13:51Z HOLD **deviation** sender-relaunch: S10 relaunch 8/30
+- 2026-10-11T00:13:54Z HOLD **deviation** sender-relaunch: S11 relaunch 8/30
+- 2026-10-11T00:13:57Z HOLD **deviation** sender-relaunch: S12 relaunch 8/30
+- 2026-10-11T00:14:00Z HOLD **deviation** sender-relaunch: S13 relaunch 8/30
+- 2026-10-11T00:14:03Z HOLD **deviation** sender-relaunch: S14 relaunch 9/30
+- 2026-10-11T00:14:06Z HOLD **deviation** sender-relaunch: S15 relaunch 9/30
+- 2026-10-11T00:33:19Z HOLD **deviation** sender-relaunch: S1 relaunch 11/30
+- 2026-10-11T00:33:22Z HOLD **deviation** sender-relaunch: S2 relaunch 9/30
+- 2026-10-11T00:33:25Z HOLD **deviation** sender-relaunch: S3 relaunch 9/30
+- 2026-10-11T00:33:28Z HOLD **deviation** sender-relaunch: S4 relaunch 9/30
+- 2026-10-11T00:33:31Z HOLD **deviation** sender-relaunch: S5 relaunch 10/30
+- 2026-10-11T00:33:34Z HOLD **deviation** sender-relaunch: S6 relaunch 10/30
+- 2026-10-11T00:33:37Z HOLD **deviation** sender-relaunch: S7 relaunch 10/30
+- 2026-10-11T00:33:40Z HOLD **deviation** sender-relaunch: S8 relaunch 9/30
+- 2026-10-11T00:33:43Z HOLD **deviation** sender-relaunch: S9 relaunch 9/30
+- 2026-10-11T00:33:46Z HOLD **deviation** sender-relaunch: S10 relaunch 9/30
+- 2026-10-11T00:33:49Z HOLD **deviation** sender-relaunch: S11 relaunch 9/30
+- 2026-10-11T00:33:52Z HOLD **deviation** sender-relaunch: S12 relaunch 9/30
+- 2026-10-11T00:33:55Z HOLD **deviation** sender-relaunch: S13 relaunch 9/30
+- 2026-10-11T00:33:58Z HOLD **deviation** sender-relaunch: S14 relaunch 10/30
+- 2026-10-11T00:34:01Z HOLD **deviation** sender-relaunch: S15 relaunch 10/30
+- 2026-10-11T00:34:19Z HOLD **deviation** sender-relaunch: S1 relaunch 12/30
+- 2026-10-11T00:44:56Z HOLD **deviation** sender-relaunch: S1 relaunch 13/30
+- 2026-10-11T00:44:59Z HOLD **deviation** sender-relaunch: S2 relaunch 10/30
+- 2026-10-11T00:45:02Z HOLD **deviation** sender-relaunch: S3 relaunch 10/30
+- 2026-10-11T00:45:06Z HOLD **deviation** sender-relaunch: S4 relaunch 10/30
+- 2026-10-11T00:45:09Z HOLD **deviation** sender-relaunch: S5 relaunch 11/30
+- 2026-10-11T00:45:12Z HOLD **deviation** sender-relaunch: S6 relaunch 11/30
+- 2026-10-11T00:45:15Z HOLD **deviation** sender-relaunch: S7 relaunch 11/30
+- 2026-10-11T00:45:18Z HOLD **deviation** sender-relaunch: S8 relaunch 10/30
+- 2026-10-11T00:45:21Z HOLD **deviation** sender-relaunch: S9 relaunch 10/30
+- 2026-10-11T00:45:24Z HOLD **deviation** sender-relaunch: S10 relaunch 10/30
+- 2026-10-11T00:45:27Z HOLD **deviation** sender-relaunch: S11 relaunch 10/30
+- 2026-10-11T00:45:30Z HOLD **deviation** sender-relaunch: S12 relaunch 10/30
+- 2026-10-11T00:45:33Z HOLD **deviation** sender-relaunch: S13 relaunch 10/30
+- 2026-10-11T00:45:36Z HOLD **deviation** sender-relaunch: S14 relaunch 11/30
+- 2026-10-11T00:45:39Z HOLD **deviation** sender-relaunch: S15 relaunch 11/30
+- 2026-10-11T01:08:37Z HOLD **deviation** sender-relaunch: S1 relaunch 14/30
+- 2026-10-11T01:08:40Z HOLD **deviation** sender-relaunch: S2 relaunch 11/30
+- 2026-10-11T01:08:43Z HOLD **deviation** sender-relaunch: S3 relaunch 11/30
+- 2026-10-11T01:08:46Z HOLD **deviation** sender-relaunch: S4 relaunch 11/30
+- 2026-10-11T01:08:49Z HOLD **deviation** sender-relaunch: S5 relaunch 12/30
+- 2026-10-11T01:08:52Z HOLD **deviation** sender-relaunch: S6 relaunch 12/30
+- 2026-10-11T01:08:55Z HOLD **deviation** sender-relaunch: S7 relaunch 12/30
+- 2026-10-11T01:08:58Z HOLD **deviation** sender-relaunch: S8 relaunch 11/30
+- 2026-10-11T01:09:01Z HOLD **deviation** sender-relaunch: S9 relaunch 11/30
+- 2026-10-11T01:09:04Z HOLD **deviation** sender-relaunch: S10 relaunch 11/30
+- 2026-10-11T01:09:07Z HOLD **deviation** sender-relaunch: S11 relaunch 11/30
+- 2026-10-11T01:09:10Z HOLD **deviation** sender-relaunch: S12 relaunch 11/30
+- 2026-10-11T01:09:13Z HOLD **deviation** sender-relaunch: S13 relaunch 11/30
+- 2026-10-11T01:09:16Z HOLD **deviation** sender-relaunch: S14 relaunch 12/30
+- 2026-10-11T01:09:19Z HOLD **deviation** sender launch held, RAM 1394 MB
+- 2026-10-11T01:09:26Z HOLD **deviation** sender-relaunch: S15 relaunch 12/30
+- 2026-10-11T01:09:47Z HOLD **deviation** sender-relaunch: S4 relaunch 12/30
+- 2026-10-11T01:09:50Z HOLD **deviation** sender-relaunch: S5 relaunch 13/30
+- 2026-10-11T01:10:02Z HOLD **deviation** sender-relaunch: S9 relaunch 12/30
+- 2026-10-11T01:10:14Z HOLD **deviation** sender-relaunch: S2 relaunch 12/30
+- 2026-10-11T01:10:29Z HOLD **deviation** sender-relaunch: S6 relaunch 13/30
+- 2026-10-11T01:10:30Z HOLD **disk-guard** n2 disk guard: n2 kaspad not running (pid) -> restart via start-n2.sh
+- 2026-10-11T01:10:31Z HOLD **node-restart** kaspad pid changed (n2 restarted on the same flags by its guard), uptime 1 s
+- 2026-10-11T01:10:33Z HOLD **deviation** sender-relaunch: S7 relaunch 13/30
+- 2026-10-11T01:10:36Z HOLD **deviation** sender-relaunch: S10 relaunch 12/30
+- 2026-10-11T01:10:42Z HOLD **deviation** sender-relaunch: S14 relaunch 13/30
+- 2026-10-11T01:10:49Z HOLD **deviation** sender-relaunch: S4 relaunch 13/30
+- 2026-10-11T01:10:52Z HOLD **deviation** sender-relaunch: S1 relaunch 15/30
+- 2026-10-11T01:10:56Z HOLD **deviation** sender-relaunch: S3 relaunch 12/30
+- 2026-10-11T01:10:59Z HOLD **deviation** sender-relaunch: S5 relaunch 14/30
+- 2026-10-11T01:11:02Z HOLD **deviation** sender-relaunch: S8 relaunch 12/30
+- 2026-10-11T01:11:05Z HOLD **deviation** sender-relaunch: S9 relaunch 13/30
+- 2026-10-11T01:11:15Z HOLD **deviation** sender-relaunch: S2 relaunch 13/30
+- 2026-10-11T01:11:20Z HOLD **deviation** sender-relaunch: S11 relaunch 12/30
+- 2026-10-11T01:11:27Z HOLD **deviation** sender-relaunch: S12 relaunch 12/30
+- 2026-10-11T01:11:30Z HOLD **deviation** sender-relaunch: S6 relaunch 14/30
+- 2026-10-11T01:11:33Z HOLD **deviation** sender-relaunch: S7 relaunch 14/30
+- 2026-10-11T01:11:36Z HOLD **deviation** sender-relaunch: S10 relaunch 13/30
+- 2026-10-11T01:11:39Z HOLD **deviation** sender-relaunch: S13 relaunch 12/30
+- 2026-10-11T01:11:42Z HOLD **deviation** sender-relaunch: S14 relaunch 14/30
+- 2026-10-11T01:11:45Z HOLD **deviation** sender-relaunch: S15 relaunch 13/30
+- 2026-10-11T01:11:50Z HOLD **deviation** sender-relaunch: S4 relaunch 14/30
+- 2026-10-11T01:11:53Z HOLD **deviation** sender-relaunch: S1 relaunch 16/30
+- 2026-10-11T01:11:57Z HOLD **deviation** sender-relaunch: S3 relaunch 13/30
+- 2026-10-11T01:12:00Z HOLD **deviation** sender-relaunch: S5 relaunch 15/30
+- 2026-10-11T01:12:04Z HOLD **deviation** sender-relaunch: S8 relaunch 13/30
+- 2026-10-11T01:12:07Z HOLD **deviation** sender-relaunch: S9 relaunch 14/30
+- 2026-10-11T01:12:18Z HOLD **deviation** sender-relaunch: S2 relaunch 14/30
+- 2026-10-11T01:12:22Z HOLD **deviation** sender-relaunch: S11 relaunch 13/30
+- 2026-10-11T01:12:30Z HOLD **deviation** sender-relaunch: S12 relaunch 13/30
+- 2026-10-11T01:12:41Z HOLD **deviation** sender-relaunch: S13 relaunch 13/30
+- 2026-10-11T01:12:48Z HOLD **deviation** sender-relaunch: S6 relaunch 15/30
+- 2026-10-11T01:12:51Z HOLD **deviation** sender-relaunch: S4 relaunch 15/30
+- 2026-10-11T01:12:54Z HOLD **deviation** sender-relaunch: S1 relaunch 17/30
+- 2026-10-11T01:12:57Z HOLD **deviation** sender-relaunch: S7 relaunch 15/30
+- 2026-10-11T01:13:00Z HOLD **deviation** sender-relaunch: S3 relaunch 14/30
+- 2026-10-11T01:13:03Z HOLD **deviation** sender-relaunch: S5 relaunch 16/30
+- 2026-10-11T01:13:06Z HOLD **deviation** sender-relaunch: S8 relaunch 14/30
+- 2026-10-11T01:13:09Z HOLD **deviation** sender-relaunch: S9 relaunch 15/30
+- 2026-10-11T01:13:12Z HOLD **deviation** sender-relaunch: S10 relaunch 14/30
+- 2026-10-11T01:13:15Z HOLD **deviation** sender-relaunch: S14 relaunch 15/30
+- 2026-10-11T01:13:18Z HOLD **deviation** sender-relaunch: S2 relaunch 15/30
+- 2026-10-11T01:13:21Z HOLD **deviation** sender-relaunch: S15 relaunch 14/30
+- 2026-10-11T01:13:24Z HOLD **deviation** sender-relaunch: S11 relaunch 14/30
+- 2026-10-11T01:13:31Z HOLD **deviation** sender-relaunch: S12 relaunch 14/30
+- 2026-10-11T01:13:41Z HOLD **deviation** sender-relaunch: S13 relaunch 14/30
+- 2026-10-11T01:13:50Z HOLD **deviation** sender-relaunch: S6 relaunch 16/30
+- 2026-10-11T01:14:02Z HOLD **deviation** sender-relaunch: S7 relaunch 16/30
+- 2026-10-11T01:14:09Z HOLD **deviation** sender-relaunch: S5 relaunch 17/30
+- 2026-10-11T01:14:16Z HOLD **deviation** sender-relaunch: S9 relaunch 16/30
+- 2026-10-11T01:14:22Z HOLD **deviation** sender launch held, RAM 1235 MB
+- 2026-10-11T01:14:23Z HOLD **deviation** sender-relaunch: S2 relaunch 16/30
+- 2026-10-11T01:14:28Z HOLD **deviation** sender-relaunch: S1 relaunch 18/30
+- 2026-10-11T01:14:31Z HOLD **deviation** sender-relaunch: S3 relaunch 15/30
+- 2026-10-11T01:14:34Z HOLD **deviation** sender-relaunch: S4 relaunch 16/30
+- 2026-10-11T01:14:37Z HOLD **deviation** sender-relaunch: S8 relaunch 15/30
+- 2026-10-11T01:14:40Z HOLD **deviation** sender-relaunch: S10 relaunch 15/30
+- 2026-10-11T01:14:43Z HOLD **deviation** sender-relaunch: S11 relaunch 15/30
+- 2026-10-11T01:14:46Z HOLD **deviation** sender-relaunch: S12 relaunch 15/30
+- 2026-10-11T01:14:49Z HOLD **deviation** sender-relaunch: S13 relaunch 15/30
+- 2026-10-11T01:14:52Z HOLD **deviation** sender-relaunch: S6 relaunch 17/30
+- 2026-10-11T01:14:55Z HOLD **deviation** sender-relaunch: S14 relaunch 16/30
+- 2026-10-11T01:14:58Z HOLD **deviation** sender-relaunch: S15 relaunch 15/30
+- 2026-10-11T01:15:02Z HOLD **deviation** sender-relaunch: S7 relaunch 17/30
+- 2026-10-11T01:15:09Z HOLD **deviation** sender-relaunch: S5 relaunch 18/30
+- 2026-10-11T01:15:16Z HOLD **deviation** sender-relaunch: S9 relaunch 17/30
+- 2026-10-11T01:15:23Z HOLD **deviation** sender-relaunch: S2 relaunch 17/30
+- 2026-10-11T01:16:50Z HOLD **deviation** sender-relaunch: S12 relaunch 16/30
+- 2026-10-11T01:16:54Z HOLD **deviation** sender-relaunch: S13 relaunch 16/30
+- 2026-10-11T01:16:57Z HOLD **deviation** sender-relaunch: S14 relaunch 17/30
+- 2026-10-11T01:17:00Z HOLD **deviation** sender-relaunch: S15 relaunch 16/30
+- 2026-10-11T01:17:19Z HOLD **deviation** sender-relaunch: S12 relaunch 17/30
+- 2026-10-11T01:17:22Z HOLD **deviation** sender-relaunch: S13 relaunch 17/30
+- 2026-10-11T01:17:25Z HOLD **deviation** sender-relaunch: S14 relaunch 18/30
+- 2026-10-11T01:17:28Z HOLD **deviation** sender-relaunch: S15 relaunch 17/30
+- 2026-10-11T01:33:18Z HOLD **deviation** sender-relaunch: S1 relaunch 19/30
+- 2026-10-11T01:33:21Z HOLD **deviation** sender-relaunch: S2 relaunch 18/30
+- 2026-10-11T01:33:24Z HOLD **deviation** sender-relaunch: S3 relaunch 16/30
+- 2026-10-11T01:33:27Z HOLD **deviation** sender-relaunch: S4 relaunch 17/30
+- 2026-10-11T01:33:30Z HOLD **deviation** sender-relaunch: S5 relaunch 19/30
+- 2026-10-11T01:33:33Z HOLD **deviation** sender-relaunch: S6 relaunch 18/30
+- 2026-10-11T01:33:36Z HOLD **deviation** sender-relaunch: S7 relaunch 18/30
+- 2026-10-11T01:33:39Z HOLD **deviation** sender-relaunch: S8 relaunch 16/30
+- 2026-10-11T01:33:42Z HOLD **deviation** sender-relaunch: S9 relaunch 18/30
+- 2026-10-11T01:33:45Z HOLD **deviation** sender-relaunch: S10 relaunch 16/30
+- 2026-10-11T01:33:48Z HOLD **deviation** sender-relaunch: S11 relaunch 16/30
+- 2026-10-11T01:37:02Z HOLD **deviation** sender-relaunch: S1 relaunch 20/30
+- 2026-10-11T01:37:05Z HOLD **deviation** sender-relaunch: S2 relaunch 19/30
+- 2026-10-11T01:37:08Z HOLD **deviation** sender-relaunch: S3 relaunch 17/30
+- 2026-10-11T01:37:11Z HOLD **deviation** sender-relaunch: S4 relaunch 18/30
+- 2026-10-11T01:37:14Z HOLD **deviation** sender-relaunch: S5 relaunch 20/30
+- 2026-10-11T01:37:17Z HOLD **deviation** sender-relaunch: S6 relaunch 19/30
+- 2026-10-11T01:37:21Z HOLD **deviation** sender-relaunch: S7 relaunch 19/30
+- 2026-10-11T01:37:24Z HOLD **deviation** sender-relaunch: S8 relaunch 17/30
+- 2026-10-11T01:37:27Z HOLD **deviation** sender-relaunch: S9 relaunch 19/30
+- 2026-10-11T01:37:30Z HOLD **deviation** sender-relaunch: S10 relaunch 17/30
+- 2026-10-11T01:37:33Z HOLD **deviation** sender-relaunch: S11 relaunch 17/30
+- 2026-10-11T01:37:36Z HOLD **deviation** sender-relaunch: S12 relaunch 21/30
+- 2026-10-11T01:37:39Z HOLD **deviation** sender-relaunch: S13 relaunch 21/30
+- 2026-10-11T01:37:42Z HOLD **deviation** sender-relaunch: S14 relaunch 21/30
+- 2026-10-11T01:37:45Z HOLD **deviation** sender-relaunch: S15 relaunch 21/30
+- 2026-10-11T01:47:08Z HOLD **deviation** sender-relaunch: S1 relaunch 21/30
+- 2026-10-11T01:47:11Z HOLD **deviation** sender-relaunch: S2 relaunch 20/30
+- 2026-10-11T01:47:14Z HOLD **deviation** sender-relaunch: S3 relaunch 18/30
+- 2026-10-11T01:47:17Z HOLD **deviation** sender-relaunch: S4 relaunch 19/30
+- 2026-10-11T01:47:20Z HOLD **deviation** sender-relaunch: S5 relaunch 21/30
+- 2026-10-11T01:47:23Z HOLD **deviation** sender-relaunch: S6 relaunch 20/30
+- 2026-10-11T01:47:26Z HOLD **deviation** sender-relaunch: S7 relaunch 20/30
+- 2026-10-11T01:47:29Z HOLD **deviation** sender-relaunch: S8 relaunch 18/30
+- 2026-10-11T01:47:32Z HOLD **deviation** sender-relaunch: S9 relaunch 20/30
+- 2026-10-11T01:47:35Z HOLD **deviation** sender-relaunch: S10 relaunch 18/30
+- 2026-10-11T01:47:38Z HOLD **deviation** sender-relaunch: S11 relaunch 18/30
+- 2026-10-11T01:47:41Z HOLD **deviation** sender-relaunch: S12 relaunch 22/30
+- 2026-10-11T01:47:44Z HOLD **deviation** sender-relaunch: S13 relaunch 22/30
+- 2026-10-11T01:47:47Z HOLD **deviation** sender-relaunch: S14 relaunch 22/30
+- 2026-10-11T01:47:50Z HOLD **deviation** sender-relaunch: S15 relaunch 22/30
+- 2026-10-11T01:48:08Z HOLD **deviation** sender-relaunch: S1 relaunch 22/30
+- 2026-10-11T01:48:11Z HOLD **deviation** sender-relaunch: S2 relaunch 21/30
+- 2026-10-11T01:48:59Z HOLD **deviation** sender-relaunch: S3 relaunch 19/30
+- 2026-10-11T01:49:02Z HOLD **deviation** sender-relaunch: S4 relaunch 20/30
+- 2026-10-11T01:49:05Z HOLD **deviation** sender-relaunch: S5 relaunch 22/30
+- 2026-10-11T01:49:08Z HOLD **deviation** sender-relaunch: S1 relaunch 23/30
+- 2026-10-11T01:49:11Z HOLD **deviation** sender-relaunch: S2 relaunch 22/30
+- 2026-10-11T01:49:14Z HOLD **deviation** sender-relaunch: S6 relaunch 21/30
+- 2026-10-11T01:49:17Z HOLD **deviation** sender-relaunch: S7 relaunch 21/30
+- 2026-10-11T01:49:20Z HOLD **deviation** sender-relaunch: S8 relaunch 19/30
+- 2026-10-11T01:49:23Z HOLD **deviation** sender-relaunch: S9 relaunch 21/30
+- 2026-10-11T01:49:26Z HOLD **deviation** sender-relaunch: S10 relaunch 19/30
+- 2026-10-11T01:49:30Z HOLD **deviation** sender-relaunch: S11 relaunch 19/30
+- 2026-10-11T01:49:33Z HOLD **deviation** sender-relaunch: S12 relaunch 23/30
+- 2026-10-11T01:49:36Z HOLD **deviation** sender-relaunch: S13 relaunch 23/30
+- 2026-10-11T01:49:39Z HOLD **deviation** sender-relaunch: S14 relaunch 23/30
+- 2026-10-11T01:49:42Z HOLD **deviation** sender-relaunch: S15 relaunch 23/30
+- 2026-10-11T02:14:21Z HOLD **deviation** sender-relaunch: S1 relaunch 24/30
+- 2026-10-11T02:14:24Z HOLD **deviation** sender-relaunch: S2 relaunch 23/30
+- 2026-10-11T02:14:27Z HOLD **deviation** sender-relaunch: S3 relaunch 20/30
+- 2026-10-11T02:14:30Z HOLD **deviation** sender-relaunch: S4 relaunch 21/30
+- 2026-10-11T02:14:34Z HOLD **deviation** sender-relaunch: S5 relaunch 23/30
+- 2026-10-11T02:14:37Z HOLD **deviation** sender-relaunch: S6 relaunch 22/30
+- 2026-10-11T02:14:40Z HOLD **deviation** sender-relaunch: S7 relaunch 22/30
+- 2026-10-11T02:14:43Z HOLD **deviation** sender-relaunch: S8 relaunch 20/30
+- 2026-10-11T02:14:46Z HOLD **deviation** sender-relaunch: S9 relaunch 22/30
+- 2026-10-11T02:14:49Z HOLD **deviation** sender-relaunch: S10 relaunch 20/30
+- 2026-10-11T02:14:52Z HOLD **deviation** sender-relaunch: S11 relaunch 20/30
+- 2026-10-11T02:14:55Z HOLD **deviation** sender-relaunch: S12 relaunch 24/30
+- 2026-10-11T02:14:58Z HOLD **deviation** sender-relaunch: S13 relaunch 24/30
+- 2026-10-11T02:15:01Z DRAIN **deviation** sender-relaunch: S14 relaunch 24/30
+- 2026-10-11T02:15:04Z DRAIN **deviation** sender-relaunch: S15 relaunch 24/30
 
-## n2 (bot's private reader node) and the box
+## Notes on the method
 
-| What | Value |
-|---|---|
-| n2 synced / UTXO index | True / False |
-| n2 sink age (lag) | 0.6 s |
-| n2 virtual DAA score | 593,517,323 |
-| Miner processes | 0 |
-| Coins left (unclaimed) | 0 tKAS in 0 coins |
-| Disk free / RAM available | 36 GB / 4,705 MB |
-
-## Steps so far
-
-| Step | Bot target | Submitted tx/s | Accepted tx/s | Rejects | Transport errors | Clean |
-|---|---:|---:|---:|---:|---:|---|
-| B0 | 0 | – | – | – | – | running or not evaluated |
-| X250 | 66 | 66.0 | 66.0 | 0 | 1 | yes |
-| X250-drain | 0 | – | – | – | – | running or not evaluated |
-| C1000 | 275 | 139.3 | 139.2 | 0 | 22 | no |
-| C1000-drain | 0 | – | – | – | – | running or not evaluated |
-| C1500 | 413 | 0.0 | 0.3 | 0 | 9,086 | no |
-| C1500-drain | 0 | – | – | – | – | running or not evaluated |
-| C2000 | 550 | 545.5 | 545.6 | 0 | 0 | yes |
-| C2000-drain | 0 | – | – | – | – | running or not evaluated |
-| C2500 | 688 | 674.7 | 674.3 | 24 | 1,076 | yes |
-| C2500-drain | 0 | – | – | – | – | running or not evaluated |
-| MAX | 990 | 919.1 | 919.3 | 92 | 7,857 | yes |
-| MAX-drain | 0 | – | – | – | – | running or not evaluated |
-| B1 | 0 | – | – | – | – | running or not evaluated |
-| HOLD | 880 | 469.2 | 468.6 | 61,152 | 107,927 | no |
-| DRAIN | 0 | – | – | – | – | running or not evaluated |
-
-## Last events
-
-| CEST | Event | Step | Detail |
-|---|---|---|---|
-| 04:14:58 | sender-start | HOLD | S13 mode=pub |
-| 04:14:59 | miner-on | HOLD | n2 synced again / process relaunch |
-| 04:15:00 | step-end | HOLD | HOLD |
-| 04:15:00 | step-start | DRAIN | DRAIN bot 0 |
-| 04:15:01 | sender-relaunch | DRAIN | S14 relaunch 24/30 |
-| 04:15:01 | sender-start | DRAIN | S14 mode=pub |
-| 04:15:04 | sender-relaunch | DRAIN | S15 relaunch 24/30 |
-| 04:15:04 | sender-start | DRAIN | S15 mode=pub |
-| 04:30:00 | miner-off | DRAIN | 02:30 UTC end |
-| 04:30:00 | step-end | DRAIN | DRAIN |
-| 04:30:01 | sender-stop | - | END: all senders 0 and stop |
-| 04:30:01 | miner-off | - | 02:30 UTC end |
-
-How to read: *Now* answers "is the bot sending what the plan says?"; *Public nodes* shows which node rejects or errors; *Steps so far* is the per-step verdict (clean = at least 90% of target delivered, at least 99% accepted, p90 at most 10 s). Final per-second files land here after END.
+- `sent` = submit calls; `submit_ok` = taken into n2's mempool; a failed submit is a reject. `node_accepted` = own transactions seen accepted on n2's virtual chain.
+- `target_tx_s` in sec/minute is the rate the scheduler gave the senders that second (0 while the node-dead rule or a sit-out holds); in steps.csv it is the plan's bot rate for the row.
+- `network_unique_accepted` is from n2's virtual chain, each id once, all senders. It is a check against Build's count, never a sum.
+- `kaspad_cpu_pct` is percent of one core. NTP offsets use the HTTP Date method (UDP 123 is blocked from the box).
+- `order.csv`: per sender, a transaction counts as reordered when it was seen accepted in a later accept batch than one the same sender submitted after it (same-batch ties are not reordering). `confirm.csv`: submit-ok to accept; fee tier 400 or 600 sompi/gram.
+- Bot senders send no-signature hops (anyone-can-spend), not realistic payments.

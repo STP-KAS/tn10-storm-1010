@@ -1,0 +1,928 @@
+utc,side,step,event,detail
+2026-10-10T17:50:01Z,bot,PREP,coin-refresh,buffer check 1034706 tKAS 32565 coins
+2026-10-10T17:59:06Z,bot,PREP,deviation,pubMode: n2 sink lag 65.1 s > 60; senders continue on public nodes
+2026-10-10T17:59:07Z,bot,PREP,deviation,pubMode: n2 sink lag 66.3 s > 60; senders continue on public nodes
+2026-10-10T17:59:08Z,bot,PREP,deviation,pubMode: n2 sink lag 67.3 s > 60; senders continue on public nodes
+2026-10-10T17:59:09Z,bot,PREP,deviation,pubMode: n2 sink lag 68.3 s > 60; senders continue on public nodes
+2026-10-10T17:59:10Z,bot,PREP,deviation,pubMode: n2 sink lag 69.3 s > 60; senders continue on public nodes
+2026-10-10T17:59:11Z,bot,PREP,deviation,pubMode: n2 sink lag 70.3 s > 60; senders continue on public nodes
+2026-10-10T17:59:12Z,bot,PREP,deviation,pubMode: n2 sink lag 71.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:13Z,bot,PREP,deviation,pubMode: n2 sink lag 72.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:14Z,bot,PREP,deviation,pubMode: n2 sink lag 73.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:15Z,bot,PREP,deviation,pubMode: n2 sink lag 74.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:16Z,bot,PREP,deviation,pubMode: n2 sink lag 75.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:17Z,bot,PREP,deviation,pubMode: n2 sink lag 76.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:18Z,bot,PREP,deviation,pubMode: n2 sink lag 77.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:19Z,bot,PREP,deviation,pubMode: n2 sink lag 78.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:20Z,bot,PREP,deviation,pubMode: n2 sink lag 79.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:21Z,bot,PREP,deviation,pubMode: n2 sink lag 80.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:22Z,bot,PREP,deviation,pubMode: n2 sink lag 81.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:23Z,bot,PREP,deviation,pubMode: n2 sink lag 82.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:24Z,bot,PREP,deviation,pubMode: n2 sink lag 83.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:25Z,bot,PREP,deviation,pubMode: n2 sink lag 84.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:26Z,bot,PREP,deviation,pubMode: n2 sink lag 85.4 s > 60; senders continue on public nodes
+2026-10-10T17:59:27Z,bot,PREP,deviation,pubMode: n2 sink lag 86.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:28Z,bot,PREP,deviation,pubMode: n2 sink lag 87.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:29Z,bot,PREP,deviation,pubMode: n2 sink lag 88.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:30Z,bot,PREP,deviation,pubMode: n2 sink lag 89.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:31Z,bot,PREP,deviation,pubMode: n2 sink lag 90.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:32Z,bot,PREP,deviation,pubMode: n2 sink lag 91.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:33Z,bot,PREP,deviation,pubMode: n2 sink lag 92.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:34Z,bot,PREP,deviation,pubMode: n2 sink lag 93.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:35Z,bot,PREP,deviation,pubMode: n2 sink lag 94.5 s > 60; senders continue on public nodes
+2026-10-10T17:59:36Z,bot,PREP,deviation,"pubMode: n2 sink lag 95.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:37Z,bot,PREP,deviation,"pubMode: n2 sink lag 96.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:38Z,bot,PREP,deviation,"pubMode: n2 sink lag 97.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:39Z,bot,PREP,deviation,"pubMode: n2 sink lag 98.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:40Z,bot,PREP,deviation,"pubMode: n2 sink lag 99.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:41Z,bot,PREP,deviation,"pubMode: n2 sink lag 100.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:42Z,bot,PREP,deviation,"pubMode: n2 sink lag 101.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:43Z,bot,PREP,deviation,"pubMode: n2 sink lag 102.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:44Z,bot,PREP,deviation,"pubMode: n2 sink lag 103.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:45Z,bot,PREP,deviation,"pubMode: n2 sink lag 104.5 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:46Z,bot,PREP,deviation,"pubMode: n2 sink lag 105.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:47Z,bot,PREP,deviation,"pubMode: n2 sink lag 106.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:48Z,bot,PREP,deviation,"pubMode: n2 sink lag 107.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:49Z,bot,PREP,deviation,"pubMode: n2 sink lag 108.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:50Z,bot,PREP,deviation,"pubMode: n2 sink lag 109.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:51Z,bot,PREP,deviation,"pubMode: n2 sink lag 110.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:52Z,bot,PREP,deviation,"pubMode: n2 sink lag 111.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:53Z,bot,PREP,deviation,"pubMode: n2 sink lag 112.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:54Z,bot,PREP,deviation,"pubMode: n2 sink lag 113.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:55Z,bot,PREP,deviation,"pubMode: n2 sink lag 114.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:57Z,bot,PREP,deviation,"pubMode: n2 sink lag 115.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:58Z,bot,PREP,deviation,"pubMode: n2 sink lag 116.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T17:59:59Z,bot,PREP,deviation,"pubMode: n2 sink lag 117.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:00Z,bot,G1,deviation,"pubMode: n2 sink lag 118.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:00Z,bot,G1,gate,G1 fail synced true utxoindex true lag 118.6
+2026-10-10T18:00:01Z,bot,G1,deviation,"pubMode: n2 sink lag 119.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:02Z,bot,G1,deviation,"pubMode: n2 sink lag 120.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:03Z,bot,G1,deviation,"pubMode: n2 sink lag 121.6 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:04Z,bot,G1,deviation,"pubMode: n2 sink lag 122.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:05Z,bot,G1,deviation,"pubMode: n2 sink lag 123.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:06Z,bot,G1,deviation,"pubMode: n2 sink lag 124.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:07Z,bot,G1,deviation,"pubMode: n2 sink lag 125.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:08Z,bot,G1,deviation,"pubMode: n2 sink lag 126.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:09Z,bot,G1,deviation,"pubMode: n2 sink lag 127.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:10Z,bot,G1,deviation,"pubMode: n2 sink lag 128.7 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:11Z,bot,G1,deviation,"pubMode: n2 sink lag 129.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:12Z,bot,G1,deviation,"pubMode: n2 sink lag 130.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:13Z,bot,G1,deviation,"pubMode: n2 sink lag 131.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:14Z,bot,G1,deviation,"pubMode: n2 sink lag 132.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:15Z,bot,G1,deviation,"pubMode: n2 sink lag 133.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:16Z,bot,G1,deviation,"pubMode: n2 sink lag 134.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:17Z,bot,G1,deviation,"pubMode: n2 sink lag 135.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:18Z,bot,G1,deviation,"pubMode: n2 sink lag 136.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:19Z,bot,G1,deviation,"pubMode: n2 sink lag 137.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:20Z,bot,G1,deviation,"pubMode: n2 sink lag 138.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:21Z,bot,G1,deviation,"pubMode: n2 sink lag 139.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:22Z,bot,G1,deviation,"pubMode: n2 sink lag 140.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:23Z,bot,G1,deviation,"pubMode: n2 sink lag 141.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:24Z,bot,G1,deviation,"pubMode: n2 sink lag 142.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:25Z,bot,G1,deviation,"pubMode: n2 sink lag 143.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:26Z,bot,G1,deviation,"pubMode: n2 sink lag 144.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:27Z,bot,G1,deviation,"pubMode: n2 sink lag 145.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:28Z,bot,G1,deviation,"pubMode: n2 sink lag 146.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:29Z,bot,G1,deviation,"pubMode: n2 sink lag 147.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:30Z,bot,G1,deviation,"pubMode: n2 sink lag 148.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:31Z,bot,G1,deviation,"pubMode: n2 sink lag 149.8 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:32Z,bot,G1,deviation,"pubMode: n2 sink lag 150.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:33Z,bot,G1,deviation,"pubMode: n2 sink lag 151.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:34Z,bot,G1,deviation,"pubMode: n2 sink lag 152.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:35Z,bot,G1,deviation,"pubMode: n2 sink lag 153.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:36Z,bot,G1,deviation,"pubMode: n2 sink lag 154.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:37Z,bot,G1,deviation,"pubMode: n2 sink lag 155.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:38Z,bot,G1,deviation,"pubMode: n2 sink lag 156.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:39Z,bot,G1,deviation,"pubMode: n2 sink lag 157.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:40Z,bot,G1,deviation,"pubMode: n2 sink lag 158.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:41Z,bot,G1,deviation,"pubMode: n2 sink lag 159.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:42Z,bot,G1,deviation,"pubMode: n2 sink lag 160.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:43Z,bot,G1,deviation,"pubMode: n2 sink lag 161.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:44Z,bot,G1,deviation,"pubMode: n2 sink lag 162.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:45Z,bot,G1,deviation,"pubMode: n2 sink lag 163.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:46Z,bot,G1,deviation,"pubMode: n2 sink lag 164.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:47Z,bot,G1,deviation,"pubMode: n2 sink lag 165.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:48Z,bot,G1,deviation,"pubMode: n2 sink lag 166.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:49Z,bot,G1,deviation,"pubMode: n2 sink lag 167.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:50Z,bot,G1,deviation,"pubMode: n2 sink lag 168.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:51Z,bot,G1,deviation,"pubMode: n2 sink lag 169.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:52Z,bot,G1,deviation,"pubMode: n2 sink lag 170.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:53Z,bot,G1,deviation,"pubMode: n2 sink lag 171.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:54Z,bot,G1,deviation,"pubMode: n2 sink lag 172.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:55Z,bot,G1,deviation,"pubMode: n2 sink lag 174 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:56Z,bot,G1,deviation,"pubMode: n2 sink lag 175 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:57Z,bot,G1,deviation,"pubMode: n2 sink lag 176 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:58Z,bot,G1,deviation,"pubMode: n2 sink lag 177 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:00:59Z,bot,G1,deviation,"pubMode: n2 sink lag 178 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:00Z,bot,G1,deviation,"pubMode: n2 sink lag 179 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:01Z,bot,G1,deviation,"pubMode: n2 sink lag 180 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:02Z,bot,G1,deviation,"pubMode: n2 sink lag 181 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:03Z,bot,G1,deviation,"pubMode: n2 sink lag 182 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:04Z,bot,G1,deviation,"pubMode: n2 sink lag 183 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:06Z,bot,G1,deviation,"pubMode: n2 sink lag 185 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:07Z,bot,G1,deviation,"pubMode: n2 sink lag 186 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:08Z,bot,G1,deviation,"pubMode: n2 sink lag 187 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:09Z,bot,G1,deviation,"pubMode: n2 sink lag 188 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:10Z,bot,G1,deviation,"pubMode: n2 sink lag 189 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:11Z,bot,G1,deviation,"pubMode: n2 sink lag 190 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:12Z,bot,G1,deviation,"pubMode: n2 sink lag 191 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:13Z,bot,G1,deviation,"pubMode: n2 sink lag 192 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:14Z,bot,G1,deviation,"pubMode: n2 sink lag 193 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:15Z,bot,G1,deviation,"pubMode: n2 sink lag 194.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:16Z,bot,G1,deviation,"pubMode: n2 sink lag 195.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:17Z,bot,G1,deviation,"pubMode: n2 sink lag 196.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:18Z,bot,G1,deviation,"pubMode: n2 sink lag 197.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:19Z,bot,G1,deviation,"pubMode: n2 sink lag 198.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:20Z,bot,G1,deviation,"pubMode: n2 sink lag 199.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:21Z,bot,G1,deviation,"pubMode: n2 sink lag 200.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:22Z,bot,G1,deviation,"pubMode: n2 sink lag 201.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:23Z,bot,G1,deviation,"pubMode: n2 sink lag 202.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:24Z,bot,G1,deviation,"pubMode: n2 sink lag 203.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:25Z,bot,G1,deviation,"pubMode: n2 sink lag 204.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:26Z,bot,G1,deviation,"pubMode: n2 sink lag 205.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:27Z,bot,G1,deviation,"pubMode: n2 sink lag 206.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:28Z,bot,G1,deviation,"pubMode: n2 sink lag 207.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:29Z,bot,G1,deviation,"pubMode: n2 sink lag 208.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:30Z,bot,G1,deviation,"pubMode: n2 sink lag 209.1 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T18:01:31Z,bot,G1,deviation,pubMode: n2 sink lag 210.1 s > 60; senders continue on public nodes
+2026-10-10T18:01:32Z,bot,G1,deviation,pubMode: n2 sink lag 207.2 s > 60; senders continue on public nodes
+2026-10-10T18:01:33Z,bot,G1,deviation,pubMode: n2 sink lag 190.5 s > 60; senders continue on public nodes
+2026-10-10T18:01:34Z,bot,G1,deviation,pubMode: n2 sink lag 183.8 s > 60; senders continue on public nodes
+2026-10-10T18:01:35Z,bot,G1,deviation,pubMode: n2 sink lag 173.6 s > 60; senders continue on public nodes
+2026-10-10T18:01:36Z,bot,G1,deviation,pubMode: n2 sink lag 165.8 s > 60; senders continue on public nodes
+2026-10-10T18:01:37Z,bot,G1,deviation,pubMode: n2 sink lag 156.4 s > 60; senders continue on public nodes
+2026-10-10T18:01:38Z,bot,G1,deviation,pubMode: n2 sink lag 152.7 s > 60; senders continue on public nodes
+2026-10-10T18:01:39Z,bot,G1,deviation,pubMode: n2 sink lag 136.7 s > 60; senders continue on public nodes
+2026-10-10T18:01:40Z,bot,G1,deviation,pubMode: n2 sink lag 130.2 s > 60; senders continue on public nodes
+2026-10-10T18:01:41Z,bot,G1,deviation,pubMode: n2 sink lag 118.8 s > 60; senders continue on public nodes
+2026-10-10T18:01:42Z,bot,G1,deviation,pubMode: n2 sink lag 112.3 s > 60; senders continue on public nodes
+2026-10-10T18:01:44Z,bot,G1,deviation,pubMode: n2 sink lag 93.1 s > 60; senders continue on public nodes
+2026-10-10T18:01:46Z,bot,G1,deviation,pubMode: n2 sink lag 67.1 s > 60; senders continue on public nodes
+2026-10-10T18:14:00Z,bot,G1,sender-start,S1 mode=pub
+2026-10-10T18:14:03Z,bot,G1,sender-start,S2 mode=pub
+2026-10-10T18:14:06Z,bot,G1,sender-start,S3 mode=pub
+2026-10-10T18:14:09Z,bot,G1,sender-start,S4 mode=pub
+2026-10-10T18:14:12Z,bot,G1,sender-start,S5 mode=pub
+2026-10-10T18:14:15Z,bot,G1,sender-start,S6 mode=pub
+2026-10-10T18:14:18Z,bot,G1,sender-start,S7 mode=pub
+2026-10-10T18:14:21Z,bot,G1,sender-start,S8 mode=pub
+2026-10-10T18:14:24Z,bot,G1,sender-start,S9 mode=pub
+2026-10-10T18:14:27Z,bot,G1,sender-start,S10 mode=pub
+2026-10-10T18:14:30Z,bot,G1,sender-start,S11 mode=pub
+2026-10-10T18:14:33Z,bot,G1,sender-start,S12 mode=pub
+2026-10-10T18:14:36Z,bot,G1,sender-start,S13 mode=pub
+2026-10-10T18:14:39Z,bot,G1,sender-start,S14 mode=pub
+2026-10-10T18:14:42Z,bot,G1,sender-start,S15 mode=pub
+2026-10-10T18:15:00Z,bot,,gate,G2 pass synced true utxoindex true lag 0.4
+2026-10-10T18:15:00Z,bot,,deviation,build-confirmed: at G2
+2026-10-10T18:15:00Z,bot,,deviation,build-confirmed: BUILD-OK
+2026-10-10T18:15:00Z,bot,,miner-on,"18:15 UTC start, n2 synced"
+2026-10-10T18:20:02Z,bot,,coin-refresh,buffer check 1034706 tKAS 32565 coins
+2026-10-10T18:30:00Z,bot,B0,step-start,B0 bot 0
+2026-10-10T18:40:00Z,bot,B0,step-end,B0
+2026-10-10T18:40:00Z,bot,X250,step-start,X250 bot 66
+2026-10-10T18:40:09Z,bot,X250,deviation,sender-relaunch: S3 relaunch 1/8
+2026-10-10T18:40:09Z,bot,X250,sender-start,S3 mode=pub
+2026-10-10T18:40:12Z,bot,X250,deviation,sender-relaunch: S1 relaunch 1/8
+2026-10-10T18:40:12Z,bot,X250,sender-start,S1 mode=pub
+2026-10-10T18:40:15Z,bot,X250,deviation,sender-relaunch: S2 relaunch 1/8
+2026-10-10T18:40:15Z,bot,X250,sender-start,S2 mode=pub
+2026-10-10T18:40:18Z,bot,X250,deviation,sender-relaunch: S4 relaunch 1/8
+2026-10-10T18:40:18Z,bot,X250,sender-start,S4 mode=pub
+2026-10-10T18:40:21Z,bot,X250,deviation,sender-relaunch: S5 relaunch 1/8
+2026-10-10T18:40:21Z,bot,X250,sender-start,S5 mode=pub
+2026-10-10T18:40:24Z,bot,X250,deviation,sender-relaunch: S6 relaunch 1/8
+2026-10-10T18:40:24Z,bot,X250,sender-start,S6 mode=pub
+2026-10-10T18:40:27Z,bot,X250,deviation,sender-relaunch: S7 relaunch 1/8
+2026-10-10T18:40:27Z,bot,X250,sender-start,S7 mode=pub
+2026-10-10T18:40:30Z,bot,X250,deviation,sender-relaunch: S8 relaunch 1/8
+2026-10-10T18:40:30Z,bot,X250,sender-start,S8 mode=pub
+2026-10-10T18:40:33Z,bot,X250,deviation,sender-relaunch: S9 relaunch 1/8
+2026-10-10T18:40:33Z,bot,X250,sender-start,S9 mode=pub
+2026-10-10T18:40:36Z,bot,X250,deviation,sender-relaunch: S10 relaunch 1/8
+2026-10-10T18:40:36Z,bot,X250,sender-start,S10 mode=pub
+2026-10-10T18:40:39Z,bot,X250,deviation,sender-relaunch: S11 relaunch 1/8
+2026-10-10T18:40:39Z,bot,X250,sender-start,S11 mode=pub
+2026-10-10T18:40:42Z,bot,X250,deviation,sender-relaunch: S12 relaunch 1/8
+2026-10-10T18:40:42Z,bot,X250,sender-start,S12 mode=pub
+2026-10-10T18:40:45Z,bot,X250,deviation,sender-relaunch: S13 relaunch 1/8
+2026-10-10T18:40:45Z,bot,X250,sender-start,S13 mode=pub
+2026-10-10T18:40:48Z,bot,X250,deviation,sender-relaunch: S14 relaunch 1/8
+2026-10-10T18:40:48Z,bot,X250,sender-start,S14 mode=pub
+2026-10-10T18:40:51Z,bot,X250,deviation,sender-relaunch: S15 relaunch 1/8
+2026-10-10T18:40:51Z,bot,X250,sender-start,S15 mode=pub
+2026-10-10T18:50:07Z,bot,X250,coin-refresh,buffer check 934337 tKAS 29485 coins
+2026-10-10T18:55:00Z,bot,X250,step-end,X250
+2026-10-10T18:55:00Z,bot,X250,step-start,X250-drain bot 0
+2026-10-10T19:00:00Z,bot,X250,step-end,X250-drain
+2026-10-10T19:00:00Z,bot,C1000,step-start,C1000 bot 275
+2026-10-10T19:07:20Z,bot,C1000,disk-guard,box disk 16.1 GB free (< 20)
+2026-10-10T19:07:20Z,bot,C1000,deviation,"box disk 16.1 GB free (< 20): senders pause at 8 GB; n2 disk guard STOP at 5 GB, halt at 3 GB; pub submit fallback below 10 GB"
+2026-10-10T19:29:16Z,bot,C1000,deviation,"pubMode: n2 not synced, sink lag 1271.3 s > 60; senders continue on public nodes"
+2026-10-10T19:29:22Z,bot,C1000,coin-refresh,buffer check 934337 tKAS 29485 coins
+2026-10-10T19:29:22Z,bot,C1000,step-end,C1000
+2026-10-10T19:29:22Z,bot,C1500,step-start,C1500 bot 413
+2026-10-10T19:29:45Z,bot,C1500,disk-guard,n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:30:15Z,bot,C1500,disk-guard,n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:30:16Z,bot,C1500,miner-off,n2 not synced for 60 s
+2026-10-10T19:30:45Z,bot,C1500,disk-guard,n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:31:15Z,bot,C1500,disk-guard,n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:31:45Z,bot,C1500,disk-guard,n2 disk guard: LOW free=10G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:32:10Z,bot,C1500,deviation,pubMode: n2 sink lag 658.7 s > 60; senders continue on public nodes
+2026-10-10T19:32:10Z,bot,C1500,miner-on,n2 synced again / process relaunch
+2026-10-10T19:32:11Z,bot,C1500,deviation,pubMode: n2 sink lag 628.2 s > 60; senders continue on public nodes
+2026-10-10T19:32:12Z,bot,C1500,deviation,pubMode: n2 sink lag 593.6 s > 60; senders continue on public nodes
+2026-10-10T19:32:13Z,bot,C1500,deviation,pubMode: n2 sink lag 571 s > 60; senders continue on public nodes
+2026-10-10T19:32:14Z,bot,C1500,deviation,pubMode: n2 sink lag 550.3 s > 60; senders continue on public nodes
+2026-10-10T19:32:15Z,bot,C1500,deviation,pubMode: n2 sink lag 525.2 s > 60; senders continue on public nodes
+2026-10-10T19:32:16Z,bot,C1500,deviation,pubMode: n2 sink lag 499.8 s > 60; senders continue on public nodes
+2026-10-10T19:32:16Z,bot,C1500,disk-guard,n2 disk guard: LOW free=9G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:32:17Z,bot,C1500,deviation,pubMode: n2 sink lag 486.4 s > 60; senders continue on public nodes
+2026-10-10T19:32:18Z,bot,C1500,deviation,pubMode: n2 sink lag 455.1 s > 60; senders continue on public nodes
+2026-10-10T19:32:19Z,bot,C1500,deviation,pubMode: n2 sink lag 433.3 s > 60; senders continue on public nodes
+2026-10-10T19:32:20Z,bot,C1500,deviation,pubMode: n2 sink lag 411.2 s > 60; senders continue on public nodes
+2026-10-10T19:32:21Z,bot,C1500,deviation,pubMode: n2 sink lag 379.6 s > 60; senders continue on public nodes
+2026-10-10T19:32:22Z,bot,C1500,deviation,pubMode: n2 sink lag 359.3 s > 60; senders continue on public nodes
+2026-10-10T19:32:23Z,bot,C1500,deviation,pubMode: n2 sink lag 339.6 s > 60; senders continue on public nodes
+2026-10-10T19:32:24Z,bot,C1500,deviation,pubMode: n2 sink lag 300.1 s > 60; senders continue on public nodes
+2026-10-10T19:32:25Z,bot,C1500,deviation,pubMode: n2 sink lag 273.8 s > 60; senders continue on public nodes
+2026-10-10T19:32:26Z,bot,C1500,deviation,pubMode: n2 sink lag 253.4 s > 60; senders continue on public nodes
+2026-10-10T19:32:28Z,bot,C1500,deviation,pubMode: n2 sink lag 213.2 s > 60; senders continue on public nodes
+2026-10-10T19:32:29Z,bot,C1500,deviation,pubMode: n2 sink lag 179.3 s > 60; senders continue on public nodes
+2026-10-10T19:32:31Z,bot,C1500,deviation,pubMode: n2 sink lag 133.6 s > 60; senders continue on public nodes
+2026-10-10T19:32:32Z,bot,C1500,deviation,pubMode: n2 sink lag 113.7 s > 60; senders continue on public nodes
+2026-10-10T19:32:33Z,bot,C1500,deviation,pubMode: n2 sink lag 85.5 s > 60; senders continue on public nodes
+2026-10-10T19:32:36Z,bot,C1500,deviation,pubMode: n2 sink lag 63.2 s > 60; senders continue on public nodes
+2026-10-10T19:32:46Z,bot,C1500,disk-guard,n2 disk guard: LOW free=9G -> truncated RocksDB LOGs + info logs
+2026-10-10T19:35:00Z,bot,C1500,step-end,C1500
+2026-10-10T19:35:00Z,bot,C1500,step-start,C1500-drain bot 0
+2026-10-10T19:38:00Z,bot,C1500,deviation,sender-relaunch: S15 relaunch 2/8
+2026-10-10T19:38:00Z,bot,C1500,sender-start,S15 mode=pub
+2026-10-10T19:38:03Z,bot,C1500,deviation,sender-relaunch: S1 relaunch 2/8
+2026-10-10T19:38:03Z,bot,C1500,sender-start,S1 mode=pub
+2026-10-10T19:38:07Z,bot,C1500,deviation,sender-relaunch: S2 relaunch 2/8
+2026-10-10T19:38:07Z,bot,C1500,sender-start,S2 mode=pub
+2026-10-10T19:38:10Z,bot,C1500,deviation,sender-relaunch: S3 relaunch 2/8
+2026-10-10T19:38:10Z,bot,C1500,sender-start,S3 mode=pub
+2026-10-10T19:38:13Z,bot,C1500,deviation,sender-relaunch: S4 relaunch 2/8
+2026-10-10T19:38:13Z,bot,C1500,sender-start,S4 mode=pub
+2026-10-10T19:38:16Z,bot,C1500,deviation,sender-relaunch: S5 relaunch 2/8
+2026-10-10T19:38:16Z,bot,C1500,sender-start,S5 mode=pub
+2026-10-10T19:38:19Z,bot,C1500,deviation,sender-relaunch: S6 relaunch 2/8
+2026-10-10T19:38:19Z,bot,C1500,sender-start,S6 mode=pub
+2026-10-10T19:38:22Z,bot,C1500,deviation,sender-relaunch: S7 relaunch 2/8
+2026-10-10T19:38:22Z,bot,C1500,sender-start,S7 mode=pub
+2026-10-10T19:38:25Z,bot,C1500,deviation,sender-relaunch: S8 relaunch 2/8
+2026-10-10T19:38:25Z,bot,C1500,sender-start,S8 mode=pub
+2026-10-10T19:38:28Z,bot,C1500,deviation,sender-relaunch: S9 relaunch 2/8
+2026-10-10T19:38:28Z,bot,C1500,sender-start,S9 mode=pub
+2026-10-10T19:38:31Z,bot,C1500,deviation,sender-relaunch: S10 relaunch 2/8
+2026-10-10T19:38:31Z,bot,C1500,sender-start,S10 mode=pub
+2026-10-10T19:38:34Z,bot,C1500,deviation,sender-relaunch: S11 relaunch 2/8
+2026-10-10T19:38:34Z,bot,C1500,sender-start,S11 mode=pub
+2026-10-10T19:38:37Z,bot,C1500,deviation,sender-relaunch: S12 relaunch 2/8
+2026-10-10T19:38:37Z,bot,C1500,sender-start,S12 mode=pub
+2026-10-10T19:38:40Z,bot,C1500,deviation,sender-relaunch: S13 relaunch 2/8
+2026-10-10T19:38:40Z,bot,C1500,sender-start,S13 mode=pub
+2026-10-10T19:38:43Z,bot,C1500,deviation,sender-relaunch: S14 relaunch 2/8
+2026-10-10T19:38:43Z,bot,C1500,sender-start,S14 mode=pub
+2026-10-10T19:39:01Z,bot,C1500,deviation,sender-relaunch: S15 relaunch 3/8
+2026-10-10T19:39:01Z,bot,C1500,sender-start,S15 mode=pub
+2026-10-10T19:39:04Z,bot,C1500,deviation,sender-relaunch: S1 relaunch 3/8
+2026-10-10T19:39:04Z,bot,C1500,sender-start,S1 mode=pub
+2026-10-10T19:39:07Z,bot,C1500,deviation,sender-relaunch: S2 relaunch 3/8
+2026-10-10T19:39:07Z,bot,C1500,sender-start,S2 mode=pub
+2026-10-10T19:39:10Z,bot,C1500,deviation,sender-relaunch: S3 relaunch 3/8
+2026-10-10T19:39:10Z,bot,C1500,sender-start,S3 mode=pub
+2026-10-10T19:39:13Z,bot,C1500,deviation,sender-relaunch: S4 relaunch 3/8
+2026-10-10T19:39:13Z,bot,C1500,sender-start,S4 mode=pub
+2026-10-10T19:39:16Z,bot,C1500,deviation,sender-relaunch: S5 relaunch 3/8
+2026-10-10T19:39:16Z,bot,C1500,sender-start,S5 mode=pub
+2026-10-10T19:39:19Z,bot,C1500,deviation,sender-relaunch: S6 relaunch 3/8
+2026-10-10T19:39:19Z,bot,C1500,sender-start,S6 mode=pub
+2026-10-10T19:39:22Z,bot,C1500,deviation,sender-relaunch: S7 relaunch 3/8
+2026-10-10T19:39:22Z,bot,C1500,sender-start,S7 mode=pub
+2026-10-10T19:39:25Z,bot,C1500,deviation,sender-relaunch: S8 relaunch 3/8
+2026-10-10T19:39:25Z,bot,C1500,sender-start,S8 mode=pub
+2026-10-10T19:39:28Z,bot,C1500,deviation,sender-relaunch: S9 relaunch 3/8
+2026-10-10T19:39:28Z,bot,C1500,sender-start,S9 mode=pub
+2026-10-10T19:39:31Z,bot,C1500,deviation,sender-relaunch: S10 relaunch 3/8
+2026-10-10T19:39:31Z,bot,C1500,sender-start,S10 mode=pub
+2026-10-10T19:39:34Z,bot,C1500,deviation,sender-relaunch: S11 relaunch 3/8
+2026-10-10T19:39:34Z,bot,C1500,sender-start,S11 mode=pub
+2026-10-10T19:39:37Z,bot,C1500,deviation,sender-relaunch: S12 relaunch 3/8
+2026-10-10T19:39:37Z,bot,C1500,sender-start,S12 mode=pub
+2026-10-10T19:39:40Z,bot,C1500,deviation,sender-relaunch: S13 relaunch 3/8
+2026-10-10T19:39:40Z,bot,C1500,sender-start,S13 mode=pub
+2026-10-10T19:39:43Z,bot,C1500,deviation,sender-relaunch: S14 relaunch 3/8
+2026-10-10T19:39:43Z,bot,C1500,sender-start,S14 mode=pub
+2026-10-10T19:40:00Z,bot,C1500,step-end,C1500-drain
+2026-10-10T19:40:00Z,bot,C2000,step-start,C2000 bot 550
+2026-10-10T19:43:33Z,bot,C2000,deviation,sender-relaunch: S1 relaunch 4/8
+2026-10-10T19:43:33Z,bot,C2000,sender-start,S1 mode=pub
+2026-10-10T19:44:39Z,bot,C2000,deviation,sender-relaunch: S1 relaunch 5/8
+2026-10-10T19:44:39Z,bot,C2000,sender-start,S1 mode=pub
+2026-10-10T19:45:40Z,bot,C2000,deviation,sender-relaunch: S1 relaunch 6/8
+2026-10-10T19:45:40Z,bot,C2000,sender-start,S1 mode=pub
+2026-10-10T19:55:00Z,bot,C2000,step-end,C2000
+2026-10-10T19:55:00Z,bot,C2000,step-start,C2000-drain bot 0
+2026-10-10T19:55:43Z,bot,C2000,deviation,sender-relaunch: S2 relaunch 4/30
+2026-10-10T19:55:43Z,bot,C2000,sender-start,S2 mode=pub
+2026-10-10T19:55:46Z,bot,C2000,deviation,sender-relaunch: S3 relaunch 4/30
+2026-10-10T19:55:46Z,bot,C2000,sender-start,S3 mode=pub
+2026-10-10T19:55:49Z,bot,C2000,deviation,sender-relaunch: S4 relaunch 4/30
+2026-10-10T19:55:49Z,bot,C2000,sender-start,S4 mode=pub
+2026-10-10T19:55:52Z,bot,C2000,deviation,sender-relaunch: S5 relaunch 4/30
+2026-10-10T19:55:52Z,bot,C2000,sender-start,S5 mode=pub
+2026-10-10T19:55:55Z,bot,C2000,deviation,sender-relaunch: S6 relaunch 4/30
+2026-10-10T19:55:55Z,bot,C2000,sender-start,S6 mode=pub
+2026-10-10T19:55:58Z,bot,C2000,deviation,sender-relaunch: S7 relaunch 4/30
+2026-10-10T19:55:58Z,bot,C2000,sender-start,S7 mode=pub
+2026-10-10T19:56:01Z,bot,C2000,deviation,sender-relaunch: S8 relaunch 4/30
+2026-10-10T19:56:01Z,bot,C2000,sender-start,S8 mode=pub
+2026-10-10T19:56:04Z,bot,C2000,deviation,sender-relaunch: S9 relaunch 4/30
+2026-10-10T19:56:04Z,bot,C2000,sender-start,S9 mode=pub
+2026-10-10T19:56:07Z,bot,C2000,deviation,sender-relaunch: S10 relaunch 4/30
+2026-10-10T19:56:07Z,bot,C2000,sender-start,S10 mode=pub
+2026-10-10T19:56:10Z,bot,C2000,deviation,sender-relaunch: S11 relaunch 4/30
+2026-10-10T19:56:10Z,bot,C2000,sender-start,S11 mode=pub
+2026-10-10T19:56:13Z,bot,C2000,deviation,sender-relaunch: S12 relaunch 4/30
+2026-10-10T19:56:13Z,bot,C2000,sender-start,S12 mode=pub
+2026-10-10T19:56:16Z,bot,C2000,deviation,sender-relaunch: S13 relaunch 4/30
+2026-10-10T19:56:16Z,bot,C2000,sender-start,S13 mode=pub
+2026-10-10T19:56:19Z,bot,C2000,deviation,sender-relaunch: S14 relaunch 4/30
+2026-10-10T19:56:19Z,bot,C2000,sender-start,S14 mode=pub
+2026-10-10T19:56:22Z,bot,C2000,deviation,sender-relaunch: S15 relaunch 4/30
+2026-10-10T19:56:22Z,bot,C2000,sender-start,S15 mode=pub
+2026-10-10T19:56:54Z,bot,C2000,disk-guard,n2 disk guard: storm1010r 21:57 deviation: stop n2 to restart WITHOUT --utxoindex (disk); n2.HALT set during swap
+2026-10-10T19:57:55Z,bot,C2000,miner-off,n2 not synced for 60 s
+2026-10-10T19:58:01Z,bot,C2000,deviation,"pubMode: n2 utxoindex off, sink lag 66.9 s > 60, virtual DAA stalled >= 30 s; senders continue on public nodes"
+2026-10-10T19:58:01Z,bot,C2000,miner-on,n2 synced again / process relaunch
+2026-10-10T19:58:07Z,bot,C2000,node-restart,"kaspad pid changed (n2 restarted on the same flags by its guard), uptime 8 s"
+2026-10-10T19:58:26Z,bot,C2000,node-restart,"kaspad pid changed (n2 restarted on the same flags by its guard), uptime 1 s"
+2026-10-10T19:59:25Z,bot,C2000,coin-refresh,buffer check 831799 tKAS 26273 coins
+2026-10-10T20:00:00Z,bot,C2000,step-end,C2000-drain
+2026-10-10T20:00:00Z,bot,C2500,step-start,C2500 bot 688
+2026-10-10T20:04:41Z,bot,C2500,deviation,sender-relaunch: S6 relaunch 5/30
+2026-10-10T20:04:41Z,bot,C2500,sender-start,S6 mode=pub
+2026-10-10T20:04:44Z,bot,C2500,deviation,sender-relaunch: S14 relaunch 5/30
+2026-10-10T20:04:44Z,bot,C2500,sender-start,S14 mode=pub
+2026-10-10T20:04:47Z,bot,C2500,deviation,sender-relaunch: S15 relaunch 5/30
+2026-10-10T20:04:47Z,bot,C2500,sender-start,S15 mode=pub
+2026-10-10T20:15:00Z,bot,C2500,step-end,C2500
+2026-10-10T20:15:00Z,bot,C2500,step-start,C2500-drain bot 0
+2026-10-10T20:20:00Z,bot,C2500,step-end,C2500-drain
+2026-10-10T20:20:00Z,bot,MAX,step-start,MAX bot 990
+2026-10-10T20:29:32Z,bot,MAX,coin-refresh,buffer check 719142 tKAS 22767 coins
+2026-10-10T20:33:12Z,bot,MAX,deviation,sender-relaunch: S7 relaunch 5/30
+2026-10-10T20:33:12Z,bot,MAX,sender-start,S7 mode=pub
+2026-10-10T20:35:00Z,bot,MAX,step-end,MAX
+2026-10-10T20:35:00Z,bot,MAX,step-start,MAX-drain bot 0
+2026-10-10T20:45:30Z,bot,MAX,node-restart,"n2 frozen, lag 470.2 s"
+2026-10-10T20:45:30Z,bot,MAX,step-end,MAX-drain
+2026-10-10T20:45:30Z,bot,B1,step-start,B1 bot 0
+2026-10-10T20:45:41Z,bot,B1,disk-guard,n2 disk guard: n2 kaspad not running (pid) -> restart via start-n2.sh
+2026-10-10T20:45:49Z,bot,B1,node-restart,"kaspad pid changed (n2 restarted on the same flags by its guard), uptime 7 s"
+2026-10-10T20:50:00Z,bot,B1,step-end,B1
+2026-10-10T20:50:00Z,bot,HOLD,step-start,HOLD bot 880
+2026-10-10T20:53:42Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 7/30
+2026-10-10T20:53:42Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-10T20:53:45Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 5/30
+2026-10-10T20:53:45Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-10T20:53:48Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 5/30
+2026-10-10T20:53:48Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-10T20:53:51Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 5/30
+2026-10-10T20:53:51Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-10T20:53:55Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 5/30
+2026-10-10T20:53:55Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-10T20:53:58Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 6/30
+2026-10-10T20:53:58Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-10T20:54:01Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 6/30
+2026-10-10T20:54:01Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-10T20:54:04Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 5/30
+2026-10-10T20:54:04Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-10T20:54:07Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 5/30
+2026-10-10T20:54:07Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-10T20:54:10Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 5/30
+2026-10-10T20:54:10Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-10T20:54:13Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 5/30
+2026-10-10T20:54:13Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-10T20:54:16Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 5/30
+2026-10-10T20:54:16Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-10T20:54:19Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 5/30
+2026-10-10T20:54:19Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-10T20:54:22Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 6/30
+2026-10-10T20:54:22Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-10T20:54:25Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 6/30
+2026-10-10T20:54:25Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-10T20:59:33Z,bot,HOLD,coin-refresh,buffer check 618443 tKAS 19567 coins
+2026-10-10T21:29:39Z,bot,HOLD,coin-refresh,buffer check 618443 tKAS 19567 coins
+2026-10-10T21:59:46Z,bot,HOLD,coin-refresh,buffer check 584786 tKAS 18446 coins
+2026-10-10T22:27:19Z,bot,HOLD,miner-off,n2 not synced for 60 s
+2026-10-10T22:27:53Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 8/30
+2026-10-10T22:27:53Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-10T22:27:56Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 6/30
+2026-10-10T22:27:56Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-10T22:27:59Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 6/30
+2026-10-10T22:27:59Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-10T22:28:02Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 6/30
+2026-10-10T22:28:02Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-10T22:28:05Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 6/30
+2026-10-10T22:28:05Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-10T22:28:08Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 7/30
+2026-10-10T22:28:08Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-10T22:28:11Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 7/30
+2026-10-10T22:28:11Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-10T22:28:14Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 6/30
+2026-10-10T22:28:14Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-10T22:28:17Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 6/30
+2026-10-10T22:28:17Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-10T22:28:20Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 6/30
+2026-10-10T22:28:20Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-10T22:28:23Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 6/30
+2026-10-10T22:28:23Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-10T22:28:26Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 6/30
+2026-10-10T22:28:26Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-10T22:28:29Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 6/30
+2026-10-10T22:28:29Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-10T22:28:32Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 7/30
+2026-10-10T22:28:32Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-10T22:28:35Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 7/30
+2026-10-10T22:28:35Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-10T22:29:32Z,bot,HOLD,miner-on,n2 synced again / process relaunch
+2026-10-10T22:29:52Z,bot,HOLD,coin-refresh,buffer check 488999 tKAS 15426 coins
+2026-10-10T22:59:58Z,bot,HOLD,coin-refresh,buffer check 488999 tKAS 15426 coins
+2026-10-10T23:30:03Z,bot,HOLD,coin-refresh,buffer check 473932 tKAS 14971 coins
+2026-10-10T23:33:40Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 7/30
+2026-10-10T23:33:40Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-10T23:52:57Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 7/30
+2026-10-10T23:52:57Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-10T23:53:00Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 7/30
+2026-10-10T23:53:00Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-10T23:53:03Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 9/30
+2026-10-10T23:53:03Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-10T23:53:06Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 7/30
+2026-10-10T23:53:06Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-10T23:53:09Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 7/30
+2026-10-10T23:53:09Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-10T23:53:12Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 8/30
+2026-10-10T23:53:12Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-10T23:53:15Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 8/30
+2026-10-10T23:53:15Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-10T23:53:18Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 8/30
+2026-10-10T23:53:18Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-10T23:53:21Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 7/30
+2026-10-10T23:53:21Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-10T23:53:24Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 7/30
+2026-10-10T23:53:24Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-10T23:53:27Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 7/30
+2026-10-10T23:53:27Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-10T23:53:30Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 7/30
+2026-10-10T23:53:30Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-10T23:53:33Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 7/30
+2026-10-10T23:53:33Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-10T23:53:37Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 8/30
+2026-10-10T23:53:37Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-10T23:53:40Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 8/30
+2026-10-10T23:53:40Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T00:11:55Z,bot,HOLD,coin-refresh,buffer check 360193 tKAS 11331 coins
+2026-10-11T00:12:48Z,bot,HOLD,miner-off,n2 not synced for 60 s
+2026-10-11T00:13:24Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 10/30
+2026-10-11T00:13:24Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T00:13:27Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 8/30
+2026-10-11T00:13:27Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T00:13:30Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 8/30
+2026-10-11T00:13:30Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T00:13:33Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 8/30
+2026-10-11T00:13:33Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T00:13:36Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 9/30
+2026-10-11T00:13:36Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T00:13:39Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 9/30
+2026-10-11T00:13:39Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T00:13:42Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 9/30
+2026-10-11T00:13:42Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T00:13:45Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 8/30
+2026-10-11T00:13:45Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T00:13:48Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 8/30
+2026-10-11T00:13:48Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T00:13:51Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 8/30
+2026-10-11T00:13:51Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T00:13:54Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 8/30
+2026-10-11T00:13:54Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T00:13:57Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 8/30
+2026-10-11T00:13:57Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T00:14:00Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 8/30
+2026-10-11T00:14:00Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T00:14:03Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 9/30
+2026-10-11T00:14:03Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T00:14:06Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 9/30
+2026-10-11T00:14:06Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T00:14:18Z,bot,HOLD,miner-on,n2 synced again / process relaunch
+2026-10-11T00:33:19Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 11/30
+2026-10-11T00:33:19Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T00:33:22Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 9/30
+2026-10-11T00:33:22Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T00:33:25Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 9/30
+2026-10-11T00:33:25Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T00:33:28Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 9/30
+2026-10-11T00:33:28Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T00:33:31Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 10/30
+2026-10-11T00:33:31Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T00:33:34Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 10/30
+2026-10-11T00:33:34Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T00:33:37Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 10/30
+2026-10-11T00:33:37Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T00:33:40Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 9/30
+2026-10-11T00:33:40Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T00:33:43Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 9/30
+2026-10-11T00:33:43Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T00:33:46Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 9/30
+2026-10-11T00:33:46Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T00:33:49Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 9/30
+2026-10-11T00:33:49Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T00:33:52Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 9/30
+2026-10-11T00:33:52Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T00:33:55Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 9/30
+2026-10-11T00:33:55Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T00:33:58Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 10/30
+2026-10-11T00:33:58Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T00:34:01Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 10/30
+2026-10-11T00:34:01Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T00:34:19Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 12/30
+2026-10-11T00:34:19Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T00:43:42Z,bot,HOLD,coin-refresh,buffer check 167960 tKAS 5318 coins
+2026-10-11T00:44:56Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 13/30
+2026-10-11T00:44:56Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T00:44:59Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 10/30
+2026-10-11T00:44:59Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T00:45:02Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 10/30
+2026-10-11T00:45:02Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T00:45:06Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 10/30
+2026-10-11T00:45:06Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T00:45:09Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 11/30
+2026-10-11T00:45:09Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T00:45:12Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 11/30
+2026-10-11T00:45:12Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T00:45:15Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 11/30
+2026-10-11T00:45:15Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T00:45:18Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 10/30
+2026-10-11T00:45:18Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T00:45:21Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 10/30
+2026-10-11T00:45:21Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T00:45:24Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 10/30
+2026-10-11T00:45:24Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T00:45:27Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 10/30
+2026-10-11T00:45:27Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T00:45:30Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 10/30
+2026-10-11T00:45:30Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T00:45:33Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 10/30
+2026-10-11T00:45:33Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T00:45:36Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 11/30
+2026-10-11T00:45:36Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T00:45:39Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 11/30
+2026-10-11T00:45:39Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:07:58Z,bot,HOLD,miner-off,n2 not synced for 60 s
+2026-10-11T01:08:37Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 14/30
+2026-10-11T01:08:37Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:08:40Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 11/30
+2026-10-11T01:08:40Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:08:43Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 11/30
+2026-10-11T01:08:43Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:08:46Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 11/30
+2026-10-11T01:08:46Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:08:49Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 12/30
+2026-10-11T01:08:49Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:08:52Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 12/30
+2026-10-11T01:08:52Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:08:55Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 12/30
+2026-10-11T01:08:55Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:08:58Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 11/30
+2026-10-11T01:08:58Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:09:01Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 11/30
+2026-10-11T01:09:01Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:09:04Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 11/30
+2026-10-11T01:09:04Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:09:07Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 11/30
+2026-10-11T01:09:07Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:09:10Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 11/30
+2026-10-11T01:09:10Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:09:13Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 11/30
+2026-10-11T01:09:13Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:09:16Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 12/30
+2026-10-11T01:09:16Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:09:19Z,bot,HOLD,deviation,"sender launch held, RAM 1394 MB"
+2026-10-11T01:09:25Z,bot,HOLD,miner-on,n2 synced again / process relaunch
+2026-10-11T01:09:26Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 12/30
+2026-10-11T01:09:26Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:09:47Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 12/30
+2026-10-11T01:09:47Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:09:50Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 13/30
+2026-10-11T01:09:50Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:10:02Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 12/30
+2026-10-11T01:10:02Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:10:14Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 12/30
+2026-10-11T01:10:14Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:10:29Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 13/30
+2026-10-11T01:10:29Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:10:30Z,bot,HOLD,disk-guard,n2 disk guard: n2 kaspad not running (pid) -> restart via start-n2.sh
+2026-10-11T01:10:31Z,bot,HOLD,node-restart,"kaspad pid changed (n2 restarted on the same flags by its guard), uptime 1 s"
+2026-10-11T01:10:33Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 13/30
+2026-10-11T01:10:33Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:10:36Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 12/30
+2026-10-11T01:10:36Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:10:42Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 13/30
+2026-10-11T01:10:42Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:10:49Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 13/30
+2026-10-11T01:10:49Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:10:52Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 15/30
+2026-10-11T01:10:52Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:10:56Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 12/30
+2026-10-11T01:10:56Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:10:59Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 14/30
+2026-10-11T01:10:59Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:11:02Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 12/30
+2026-10-11T01:11:02Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:11:05Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 13/30
+2026-10-11T01:11:05Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:11:15Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 13/30
+2026-10-11T01:11:15Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:11:20Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 12/30
+2026-10-11T01:11:20Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:11:27Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 12/30
+2026-10-11T01:11:27Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:11:30Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 14/30
+2026-10-11T01:11:30Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:11:33Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 14/30
+2026-10-11T01:11:33Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:11:36Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 13/30
+2026-10-11T01:11:36Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:11:39Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 12/30
+2026-10-11T01:11:39Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:11:42Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 14/30
+2026-10-11T01:11:42Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:11:45Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 13/30
+2026-10-11T01:11:45Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:11:50Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 14/30
+2026-10-11T01:11:50Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:11:53Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 16/30
+2026-10-11T01:11:53Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:11:57Z,bot,HOLD,coin-refresh,buffer check 0 tKAS 0 coins
+2026-10-11T01:11:57Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 13/30
+2026-10-11T01:11:57Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:12:00Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 15/30
+2026-10-11T01:12:00Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:12:04Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 13/30
+2026-10-11T01:12:04Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:12:07Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 14/30
+2026-10-11T01:12:07Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:12:18Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 14/30
+2026-10-11T01:12:18Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:12:22Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 13/30
+2026-10-11T01:12:22Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:12:30Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 13/30
+2026-10-11T01:12:30Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:12:41Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 13/30
+2026-10-11T01:12:41Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:12:48Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 15/30
+2026-10-11T01:12:48Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:12:51Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 15/30
+2026-10-11T01:12:51Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:12:54Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 17/30
+2026-10-11T01:12:54Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:12:57Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 15/30
+2026-10-11T01:12:57Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:13:00Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 14/30
+2026-10-11T01:13:00Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:13:03Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 16/30
+2026-10-11T01:13:03Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:13:06Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 14/30
+2026-10-11T01:13:06Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:13:09Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 15/30
+2026-10-11T01:13:09Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:13:12Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 14/30
+2026-10-11T01:13:12Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:13:15Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 15/30
+2026-10-11T01:13:15Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:13:18Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 15/30
+2026-10-11T01:13:18Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:13:21Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 14/30
+2026-10-11T01:13:21Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:13:24Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 14/30
+2026-10-11T01:13:24Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:13:31Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 14/30
+2026-10-11T01:13:31Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:13:41Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 14/30
+2026-10-11T01:13:41Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:13:50Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 16/30
+2026-10-11T01:13:50Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:14:02Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 16/30
+2026-10-11T01:14:02Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:14:09Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 17/30
+2026-10-11T01:14:09Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:14:16Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 16/30
+2026-10-11T01:14:16Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:14:22Z,bot,HOLD,deviation,"sender launch held, RAM 1235 MB"
+2026-10-11T01:14:23Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 16/30
+2026-10-11T01:14:23Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:14:28Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 18/30
+2026-10-11T01:14:28Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:14:31Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 15/30
+2026-10-11T01:14:31Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:14:34Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 16/30
+2026-10-11T01:14:34Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:14:37Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 15/30
+2026-10-11T01:14:37Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:14:40Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 15/30
+2026-10-11T01:14:40Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:14:43Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 15/30
+2026-10-11T01:14:43Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:14:46Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 15/30
+2026-10-11T01:14:46Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:14:49Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 15/30
+2026-10-11T01:14:49Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:14:52Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 17/30
+2026-10-11T01:14:52Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:14:55Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 16/30
+2026-10-11T01:14:55Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:14:58Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 15/30
+2026-10-11T01:14:58Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:15:02Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 17/30
+2026-10-11T01:15:02Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:15:09Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 18/30
+2026-10-11T01:15:09Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:15:16Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 17/30
+2026-10-11T01:15:16Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:15:23Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 17/30
+2026-10-11T01:15:23Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:16:50Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 16/30
+2026-10-11T01:16:50Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:16:54Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 16/30
+2026-10-11T01:16:54Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:16:57Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 17/30
+2026-10-11T01:16:57Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:17:00Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 16/30
+2026-10-11T01:17:00Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:17:19Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 17/30
+2026-10-11T01:17:19Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:17:22Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 17/30
+2026-10-11T01:17:22Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:17:25Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 18/30
+2026-10-11T01:17:25Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:17:28Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 17/30
+2026-10-11T01:17:28Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:33:18Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 19/30
+2026-10-11T01:33:18Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:33:21Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 18/30
+2026-10-11T01:33:21Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:33:24Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 16/30
+2026-10-11T01:33:24Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:33:27Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 17/30
+2026-10-11T01:33:27Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:33:30Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 19/30
+2026-10-11T01:33:30Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:33:33Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 18/30
+2026-10-11T01:33:33Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:33:36Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 18/30
+2026-10-11T01:33:36Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:33:39Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 16/30
+2026-10-11T01:33:39Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:33:42Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 18/30
+2026-10-11T01:33:42Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:33:45Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 16/30
+2026-10-11T01:33:45Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:33:48Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 16/30
+2026-10-11T01:33:48Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:37:02Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 20/30
+2026-10-11T01:37:02Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:37:05Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 19/30
+2026-10-11T01:37:05Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:37:08Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 17/30
+2026-10-11T01:37:08Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:37:11Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 18/30
+2026-10-11T01:37:11Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:37:14Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 20/30
+2026-10-11T01:37:14Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:37:17Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 19/30
+2026-10-11T01:37:17Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:37:21Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 19/30
+2026-10-11T01:37:21Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:37:24Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 17/30
+2026-10-11T01:37:24Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:37:27Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 19/30
+2026-10-11T01:37:27Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:37:30Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 17/30
+2026-10-11T01:37:30Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:37:33Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 17/30
+2026-10-11T01:37:33Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:37:36Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 21/30
+2026-10-11T01:37:36Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:37:39Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 21/30
+2026-10-11T01:37:39Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:37:42Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 21/30
+2026-10-11T01:37:42Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:37:45Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 21/30
+2026-10-11T01:37:45Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:44:28Z,bot,HOLD,coin-refresh,buffer check 0 tKAS 0 coins
+2026-10-11T01:47:08Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 21/30
+2026-10-11T01:47:08Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:47:11Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 20/30
+2026-10-11T01:47:11Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:47:14Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 18/30
+2026-10-11T01:47:14Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:47:17Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 19/30
+2026-10-11T01:47:17Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:47:20Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 21/30
+2026-10-11T01:47:20Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:47:23Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 20/30
+2026-10-11T01:47:23Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:47:26Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 20/30
+2026-10-11T01:47:26Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:47:29Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 18/30
+2026-10-11T01:47:29Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:47:32Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 20/30
+2026-10-11T01:47:32Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:47:35Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 18/30
+2026-10-11T01:47:35Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:47:38Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 18/30
+2026-10-11T01:47:38Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:47:41Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 22/30
+2026-10-11T01:47:41Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:47:44Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 22/30
+2026-10-11T01:47:44Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:47:47Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 22/30
+2026-10-11T01:47:47Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:47:50Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 22/30
+2026-10-11T01:47:50Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T01:48:08Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 22/30
+2026-10-11T01:48:08Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:48:11Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 21/30
+2026-10-11T01:48:11Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:48:59Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 19/30
+2026-10-11T01:48:59Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T01:49:02Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 20/30
+2026-10-11T01:49:02Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T01:49:05Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 22/30
+2026-10-11T01:49:05Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T01:49:08Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 23/30
+2026-10-11T01:49:08Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T01:49:11Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 22/30
+2026-10-11T01:49:11Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T01:49:14Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 21/30
+2026-10-11T01:49:14Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T01:49:17Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 21/30
+2026-10-11T01:49:17Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T01:49:20Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 19/30
+2026-10-11T01:49:20Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T01:49:23Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 21/30
+2026-10-11T01:49:23Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T01:49:26Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 19/30
+2026-10-11T01:49:26Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T01:49:30Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 19/30
+2026-10-11T01:49:30Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T01:49:33Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 23/30
+2026-10-11T01:49:33Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T01:49:36Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 23/30
+2026-10-11T01:49:36Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T01:49:39Z,bot,HOLD,deviation,sender-relaunch: S14 relaunch 23/30
+2026-10-11T01:49:39Z,bot,HOLD,sender-start,S14 mode=pub
+2026-10-11T01:49:42Z,bot,HOLD,deviation,sender-relaunch: S15 relaunch 23/30
+2026-10-11T01:49:42Z,bot,HOLD,sender-start,S15 mode=pub
+2026-10-11T02:13:13Z,bot,HOLD,miner-off,n2 not synced for 60 s
+2026-10-11T02:14:21Z,bot,HOLD,deviation,sender-relaunch: S1 relaunch 24/30
+2026-10-11T02:14:21Z,bot,HOLD,sender-start,S1 mode=pub
+2026-10-11T02:14:24Z,bot,HOLD,deviation,sender-relaunch: S2 relaunch 23/30
+2026-10-11T02:14:24Z,bot,HOLD,sender-start,S2 mode=pub
+2026-10-11T02:14:27Z,bot,HOLD,deviation,sender-relaunch: S3 relaunch 20/30
+2026-10-11T02:14:27Z,bot,HOLD,sender-start,S3 mode=pub
+2026-10-11T02:14:30Z,bot,HOLD,deviation,sender-relaunch: S4 relaunch 21/30
+2026-10-11T02:14:30Z,bot,HOLD,sender-start,S4 mode=pub
+2026-10-11T02:14:34Z,bot,HOLD,coin-refresh,buffer check 0 tKAS 0 coins
+2026-10-11T02:14:34Z,bot,HOLD,deviation,sender-relaunch: S5 relaunch 23/30
+2026-10-11T02:14:34Z,bot,HOLD,sender-start,S5 mode=pub
+2026-10-11T02:14:37Z,bot,HOLD,deviation,sender-relaunch: S6 relaunch 22/30
+2026-10-11T02:14:37Z,bot,HOLD,sender-start,S6 mode=pub
+2026-10-11T02:14:40Z,bot,HOLD,deviation,sender-relaunch: S7 relaunch 22/30
+2026-10-11T02:14:40Z,bot,HOLD,sender-start,S7 mode=pub
+2026-10-11T02:14:43Z,bot,HOLD,deviation,sender-relaunch: S8 relaunch 20/30
+2026-10-11T02:14:43Z,bot,HOLD,sender-start,S8 mode=pub
+2026-10-11T02:14:46Z,bot,HOLD,deviation,sender-relaunch: S9 relaunch 22/30
+2026-10-11T02:14:46Z,bot,HOLD,sender-start,S9 mode=pub
+2026-10-11T02:14:49Z,bot,HOLD,deviation,sender-relaunch: S10 relaunch 20/30
+2026-10-11T02:14:49Z,bot,HOLD,sender-start,S10 mode=pub
+2026-10-11T02:14:52Z,bot,HOLD,deviation,sender-relaunch: S11 relaunch 20/30
+2026-10-11T02:14:52Z,bot,HOLD,sender-start,S11 mode=pub
+2026-10-11T02:14:55Z,bot,HOLD,deviation,sender-relaunch: S12 relaunch 24/30
+2026-10-11T02:14:55Z,bot,HOLD,sender-start,S12 mode=pub
+2026-10-11T02:14:58Z,bot,HOLD,deviation,sender-relaunch: S13 relaunch 24/30
+2026-10-11T02:14:58Z,bot,HOLD,sender-start,S13 mode=pub
+2026-10-11T02:14:59Z,bot,HOLD,miner-on,n2 synced again / process relaunch
+2026-10-11T02:15:00Z,bot,HOLD,step-end,HOLD
+2026-10-11T02:15:00Z,bot,DRAIN,step-start,DRAIN bot 0
+2026-10-11T02:15:01Z,bot,DRAIN,deviation,sender-relaunch: S14 relaunch 24/30
+2026-10-11T02:15:01Z,bot,DRAIN,sender-start,S14 mode=pub
+2026-10-11T02:15:04Z,bot,DRAIN,deviation,sender-relaunch: S15 relaunch 24/30
+2026-10-11T02:15:04Z,bot,DRAIN,sender-start,S15 mode=pub
+2026-10-11T02:30:00Z,bot,DRAIN,miner-off,02:30 UTC end
+2026-10-11T02:30:00Z,bot,DRAIN,step-end,DRAIN
+2026-10-11T02:30:01Z,bot,END,sender-stop,END: all senders 0 and stop
+2026-10-11T02:30:01Z,bot,END,miner-off,02:30 UTC end
