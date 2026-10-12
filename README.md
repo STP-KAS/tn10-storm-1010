@@ -118,6 +118,10 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 | Miners at END | **Off** at 02:30Z; after-END wrap senders=0 miner=0 | [logs/bot/timeline.md](logs/bot/timeline.md) |
 | Kaspa Pulse's outside count (same method) | 18:10Z Sat - 02:35Z Sun: **32.3 million** tx accepted; best minute **2,785 tx/s** (21:20Z). Includes ~56 tx/s base load. | [credits/kaspa-pulse/2026-10-10-night/](credits/kaspa-pulse/2026-10-10-night/README.md) |
 
+**Comparison with Kaspa Pulse (@gokugalax, kaspapulse.com), approved by him 12 Oct 2026:** Our corrected chain count for 18:10-02:29Z is 32,299,895 tx, against Kaspa Pulse (@gokugalax, kaspapulse.com)'s 32,303,122 for the same minutes (-0.01%). Per-step means agree within a few tx/s (MAX 20:20-20:35Z: ours 2,617.2, his 2,615.3).
+
+**Correction credit:** Our first 10 Oct chain-count.csv double-counted 89 lumped minutes (38.36M, corrected to 32.30M), fixed in d90eb26. Found by comparing with the independent count of Kaspa Pulse (@gokugalax, kaspapulse.com).
+
 ### Bot per-step headline (steps.csv means)
 
 | Step | Target | Submit-ok mean | n2-accepted mean | Clean |

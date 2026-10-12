@@ -56,3 +56,6 @@ The step-by-step table is in [history/2026-10-09-night.md](../history/2026-10-09
 ---
 
 Intentions are good; thought process is questionable. STP remains delusional. Si vis pacem, para bellum.
+
+
+**12 Oct 2026, approved by him:** F1: Our corrected chain count for 18:10-02:29Z is 32,299,895 tx, against Kaspa Pulse (@gokugalax, kaspapulse.com)'s 32,303,122 for the same minutes (-0.01%). Per-step means agree within a few tx/s (MAX 20:20-20:35Z: ours 2,617.2, his 2,615.3). F2: Our first 10 Oct chain-count.csv double-counted 89 lumped minutes (38.36M, corrected to 32.30M), fixed in d90eb26. Found by comparing with the independent count of Kaspa Pulse (@gokugalax, kaspapulse.com).
