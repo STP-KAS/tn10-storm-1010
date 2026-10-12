@@ -8,4 +8,4 @@ Credit: Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](htt
 
 | File | What |
 |---|---|
-| tn10-2026-10-10-1810-0235-accepted.csv | His own per-minute file, unchanged. **To be added** (not yet on our side). |
+| [tn10-2026-10-10-1810-0235-accepted.csv](tn10-2026-10-10-1810-0235-accepted.csv) | His own per-minute file, unchanged: minute_utc, complete_minute, accepted_tx, accepted_tx_per_s, blocks, confirmed_by_both_nodes, different_miners. 18:10-02:34Z, 505 complete minutes, all confirmed by both nodes; 32,319,902 tx. |
