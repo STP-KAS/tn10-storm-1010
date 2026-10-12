@@ -2,7 +2,7 @@
 
 # go: the shared rule book for the bot run and the build run
 
-Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). The node-dead rule, the chain count right after the end, and sending him T0 ahead are his fixes ([credits](../credits/KASPA-PULSE.md)).
+Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)). The node-dead rule, the chain count right after the end, and sending him T0 ahead are his fixes ([credits](../credits/KASPA-PULSE.md)).
 
 This page is the rule book. The two prompts are [bot-run/GO-BOT-RUN.md](bot-run/GO-BOT-RUN.md) and [build-run/GO-BUILD-RUN.md](build-run/GO-BUILD-RUN.md). Each prompt carries the same timeline and the same rates, so each side can run from its own prompt alone. Logging is [LOGGING.md](LOGGING.md). If two files here disagree on a number, the numbers in [clock.py](clock.py) win; tell stp, do not pick one silently.
 

@@ -16,7 +16,7 @@ One check stays, because the 17:00 run was halted when Build had not started: th
 T0 is **20:30 CEST (18:30 UTC), Saturday 10 Oct 2026**. END is **04:30 Sun CEST (02:30 Sun UTC)**. Gate 1 20:00 CEST (18:00 UTC), Gate 2 20:15 CEST (18:15 UTC). Every time is in [Key times](#key-times) and the [Timeline](#timeline). Do not send before X250. Do not move T0.
 <!-- /clock:header -->
 
-Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)). The node-dead rule and the chain count right after END are his fixes.
+Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)). The node-dead rule and the chain count right after END are his fixes.
 
 ## Start clean
 

@@ -4,7 +4,7 @@
 
 # Credits: Kaspa Pulse
 
-Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)), for the guidance and the input from 4 Oct 2026 on. He stays out of the setup. He counts what the chain accepted, on his own two nodes, and sends us the comparison first. The 7 Oct wording stays: sign-and-send processes are **senders**, **runner** is the setup, **bot** is reserved for the operator.
+Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)), for the guidance and the input from 4 Oct 2026 on. He stays out of the setup. He counts what the chain accepted, on his own two nodes, and sends us the comparison first. The 7 Oct wording stays: sign-and-send processes are **senders**, **runner** is the setup, **bot** is reserved for the operator.
 
 All of his inputs came by X DM. Below: every input, where it is recorded, and what we changed because of it.
 
@@ -29,6 +29,9 @@ All of his inputs came by X DM. Below: every input, where it is recorded, and wh
 | 15 | 10 Oct | **The mining address in the plan produced blocks only 21:27–21:31Z; send the actual payout address privately** so he can show mining share per step | [notes, point 2](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-notes.txt) | A to-do for stp, privately. **No payout address goes in this repo.** |
 | 16 | 10 Oct | **Give T0 a few hours ahead, and he counts again** | today's message (below) | A to-do for stp: T0 and a suggested window are in [go/README.md](../go/README.md#key-times). The bots do not send it. |
 | 17 | 10 Oct | Mempool numbers disagree between nodes after 01:30Z (about 2,880 vs about 200), so he uses none for conclusions | [notes, "Limits of this count"](kaspa-pulse/2026-10-09-night/tn10-2026-10-09-2125-0535-notes.txt) | Mempool is logged per node and labelled as that node's view. |
+| 23 | 12 Oct | **His counts of 10-11 Oct night (32.3M accepted, best minute 2,785 at 21:20Z) and 11 Oct (mean 2,844, median 3,055, best minute 3,646 at 11:28Z, 51.2M)**, made public with credit | stp, relaying his OK, 12 Oct | Headline rows in tn-master README, FINDINGS 10, both storm READMEs; files in [kaspa-pulse/2026-10-11/](https://github.com/STP-KAS/tn-master/blob/main/credits/kaspa-pulse/2026-10-11/README.md) and [tn10-storm-2026-10-10 credits/kaspa-pulse/2026-10-10-night/](https://github.com/STP-KAS/tn10-storm-2026-10-10/blob/main/credits/kaspa-pulse/2026-10-10-night/README.md). |
+| 24 | 12 Oct | **Dip analysis, 11 Oct:** larger dips line up with our mining address going to zero blocks (block rate ~7.5-8/s); 09:15-09:29Z is a sender-side dip (blocks ~10.5/s, tx ~1,650 tx/s) | his count of 11 Oct | Credited in tn-master FINDINGS 17 / ADVICE 17 and tn10-storm-2026-10-11 COMBINED "Dips"; our log check added there. |
+| 25 | 12 Oct | **Tile vs per-minute count; say which bucketing a minute uses; method header for each CSV** | his notes | METRICS "Dashboard tile vs per-minute count" now gives 3,708 tile vs his 3,646 best minute, and his 3,646 vs our block-time 3,645.9 vs our receive-time 3,583.1; method sidecars next to every per-minute CSV. |
 
 ## His message, 10 Oct 2026
 

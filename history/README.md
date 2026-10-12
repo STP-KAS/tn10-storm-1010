@@ -2,7 +2,7 @@
 
 # history
 
-Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax)), for the outside count and the method from 4 Oct on.
+Thank you, Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)), for the outside count and the method from 4 Oct on.
 
 | File | What |
 |---|---|
