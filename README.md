@@ -38,7 +38,7 @@
 | [credits/kaspa-pulse/2026-10-09-night/](credits/kaspa-pulse/2026-10-09-night/README.md) | His count of the 9 Oct night storm (CSV, notes) |
 | [tn10-storm-2026-10-10-public-nodes](https://github.com/STP-KAS/tn10-storm-2026-10-10-public-nodes) | Sister repo: the afternoon public-node test, report and data |
 | [tn10-storm-2026-10-10-plan](https://github.com/STP-KAS/tn10-storm-2026-10-10-plan), [tn10-storm-2026-10-09](https://github.com/STP-KAS/tn10-storm-2026-10-09) | Earlier plans (see [docs/PLANS.md](docs/PLANS.md)) |
-| Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)) | The outside counter who shaped this plan |
+| Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)) | Independent counts: accepted in block counts on two external nodes |
 
 ## Intro
 
@@ -48,7 +48,7 @@
 
 **How.** One clock from [go/clock.py](go/clock.py), two gates with a **Build started?** check, a short ramp, MAX, then a long hold. Senders move away from a failing node instead of dying with it (Kaspa Pulse's node-dead rule). Count from the chain, once. Log everything in one format ([go/LOGGING.md](go/LOGGING.md)).
 
-**Thank you first to Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)).** He counted our chain from outside, on his own two nodes, and shaped this plan with his questions, method and fixes ([credits/KASPA-PULSE.md](credits/KASPA-PULSE.md)).
+**Thank you first to Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)).** Independent counts by Kaspa Pulse: accepted in block counts on two external nodes. He counted our chain from outside and shaped this plan with his questions, method and fixes ([credits/KASPA-PULSE.md](credits/KASPA-PULSE.md)).
 
 ## GO
 
@@ -112,11 +112,11 @@ Bot rates +10% (stp 10 Oct 19:03 CEST); Build unchanged; step labels kept as nam
 |---|---|---|
 | Network unique accepted, best step median (tx/s) | **2,642.4** (MAX; `complete_minute=yes`, n=9, below the 10-minute rule; corrected 11 Oct, was 2,644.9 n=12) | [logs/COMBINED.md](logs/COMBINED.md) |
 | HOLD median, network unique accepted (tx/s) | **939.1** (complete n=123; many WS stalls; corrected 11 Oct, was 936.5 n=177) | [logs/COMBINED.md](logs/COMBINED.md) |
-| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 complete minutes). Corrected recount averages: C2500 2,512.7, MAX 2,617.2 (the earlier &gt;3000 was a counting artifact, withdrawn). Build HOLD desk median **4,032** (Build clock, 175 min). | [logs/COMBINED.md](logs/COMBINED.md) |
+| Success line (3,000 tx/s) met? | **No** on plan metric (median of ≥10 complete minutes). Corrected recount averages: C2500 2,512.7, MAX 2,617.2 (the earlier >3000 was a counting artifact, withdrawn). Build HOLD desk median **4,032** (Build clock, 175 min). | [logs/COMBINED.md](logs/COMBINED.md) |
 | Bot: submit / n2-accepted mean (steps.csv) | X250 64.29/64.22 clean; C1000 274.06/273.58 unclean; C1500 0/0.69 unclean; C2000 544.16/543.69 clean; C2500 673.68/672.51 clean; **MAX 916.69/915.38 clean**; HOLD 638.74/637.93 unclean | [logs/bot/steps.csv](logs/bot/steps.csv) |
 | Build: submit (own clock / UTC-overlap) | Own-clock: C2500 mean 1,949; MAX mean 2,687 (before bot T0); HOLD mean **1,718** @1875. UTC-overlap during bot C2500/MAX ~1.6–1.8k. Build T0 was 15:00Z (joined ~17:28Z). | [logs/build/](logs/build/README.md) |
 | Miners at END | **Off** at 02:30Z; after-END wrap senders=0 miner=0 | [logs/bot/timeline.md](logs/bot/timeline.md) |
-| Kaspa Pulse's outside count (same method) | 18:10Z Sat - 02:35Z Sun: **32.3 million** tx accepted; best minute **2,785 tx/s** (21:20Z). Includes ~56 tx/s base load. | [credits/kaspa-pulse/2026-10-10-night/](credits/kaspa-pulse/2026-10-10-night/README.md) |
+| Independent counts by Kaspa Pulse ([@gokugalax](https://x.com/gokugalax), [kaspapulse.com](https://kaspapulse.com)): accepted in block counts on two external nodes | 18:10Z Sat - 02:35Z Sun: **32.3 million** tx accepted; best minute **2,785 tx/s** (21:20Z). Includes ~56 tx/s base load. | [credits/kaspa-pulse/2026-10-10-night/](credits/kaspa-pulse/2026-10-10-night/README.md) |
 
 **Comparison with Kaspa Pulse (@gokugalax, kaspapulse.com), approved by him 12 Oct 2026:** Our corrected chain count for 18:10-02:29Z is 32,299,895 tx, against Kaspa Pulse (@gokugalax, kaspapulse.com)'s 32,303,122 for the same minutes (-0.01%). Per-step means agree within a few tx/s (MAX 20:20-20:35Z: ours 2,617.2, his 2,615.3).
 
